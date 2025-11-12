@@ -1,9 +1,6 @@
 import { createClient } from '@/lib/supabase-server'
 import { redirect } from 'next/navigation'
-import Link from 'next/link'
-import AddGiftForm from './AddGiftForm' // Client component for adding gifts
-import ClaimUnclaimButtons from './ClaimUnclaimButtons' // Client component for claim/unclaim buttons
-import AddMemberForm from './AddMemberForm' // Client component for adding members
+import FamilyListClient from './FamilyListClient' // Client component for the list
 
 interface Gift {
   id: string;
@@ -11,6 +8,7 @@ interface Gift {
   is_purchased: boolean;
   purchased_by?: string;
   user_id: string;
+  order_index?: number; // Add order_index
 }
 
 interface Member {
@@ -27,10 +25,8 @@ interface Family {
 }
 
 export default async function FamilyListPage({ params }: { params: { familyId: string } }) {
-  if (!params.familyId) {
-    redirect('/'); // Redirect to home if familyId is not provided
-  }
-  const supabase = createClient()
+  const supabase = await createClient()
+  const resolvedParams = await params
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
@@ -40,7 +36,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
   const { data: listData, error: listError } = await supabase
     .from('lists')
     .select('id, name, user_id, list_members(profile_id, profiles(full_name))')
-    .eq('id', params.familyId)
+    .eq('id', resolvedParams.familyId)
     .single()
   console.log("listData:", listData);
 
@@ -54,7 +50,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
 
   const { data: itemsData, error: itemsError } = await supabase
     .from('items')
-    .select('id, name, is_purchased, purchased_by, user_id')
+    .select('id, name, is_purchased, purchased_by, user_id, order_index') // Select order_index
     .eq('list_id', resolvedParams.familyId)
 
   if (itemsError) {
@@ -105,6 +101,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
         is_purchased: item.is_purchased,
         purchased_by: item.purchased_by || undefined,
         user_id: item.user_id,
+        order_index: item.order_index || 0, // Assign order_index
       });
     }
   });
@@ -120,57 +117,6 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
   console.log("Family Members:", family.members);
 
   return (
-    <div className="px-4 py-8 mx-auto fresh-gradient min-h-screen">
-      <div className="max-w-screen-lg mx-auto">
-        <h1 className="text-4xl font-bold mb-4">{family.name} Christmas List</h1>
-        <Link href="/" className="text-blue-500 hover:underline mb-4 block">← Back to Home</Link>
-
-        {family.members.map((member) => (
-          <div key={member.id} className="bg-white p-6 rounded-lg shadow-md mb-8">
-            <h2 className="text-2xl font-semibold mb-4">{member.name}'s List</h2>
-            {member.gifts.length === 0 ? (
-              <p>No gifts on {member.name}'s list yet.</p>
-            ) : (
-              <ul className="list-disc pl-5 space-y-2">
-                {member.gifts.map((gift) => (
-                  <li key={gift.id} className="flex justify-between items-center">
-                    <span>
-                      {gift.description}
-                      {gift.is_purchased && user.id !== gift.user_id && (
-                        <span className="ml-2 text-sm text-green-600">
-                          (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
-                        </span>
-                      )}
-                    </span>
-                    {user && user.id !== gift.user_id && (
-                      <ClaimUnclaimButtons
-                        gift={gift}
-                        userId={user.id}
-                      />
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))}
-
-        {user && (
-          <AddGiftForm
-            familyId={family.id}
-            currentUserId={user.id}
-            members={family.members}
-          />
-        )}
-
-        {user && (
-          <AddMemberForm
-            familyId={family.id}
-            currentUserId={user.id}
-            members={family.members}
-          />
-        )}
-      </div>
-    </div>
+    <FamilyListClient initialFamily={family} initialUser={user} familyId={resolvedParams.familyId} />
   )
 }
