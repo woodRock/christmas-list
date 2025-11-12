@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/woodj/Desktop/christmas-list/src/lib/supabase.ts"],"sourcesContent":["import { createBrowserClient } from '@supabase/ssr'\n\nexport function createClient() {\n  return createBrowserClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!\n  )\n}\n"],"names":[],"mappings":";;;;AAII;AAJJ;AAAA;;AAEO,SAAS;IACd,OAAO,IAAA,oMAAmB;AAI5B","debugId":null}},
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///Users/woodj/Desktop/christmas-list/src/components/LogoutButton.tsx"],"sourcesContent":["'use client'\n\nimport { createClient } from '@/lib/supabase'\nimport { useRouter } from 'next/navigation'\n\nexport default function LogoutButton() {\n  const router = useRouter()\n  const supabase = createClient()\n\n  const handleSignOut = async () => {\n    await supabase.auth.signOut()\n    router.push('/login')\n  }\n\n  return (\n    <button\n      onClick={handleSignOut}\n      className=\"px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 text-sm\"\n    >\n      Sign Out\n    </button>\n  )\n}\n"],"names":[],"mappings":";;;;;AAEA;AACA;;;AAHA;;;AAKe,SAAS;;IACtB,MAAM,SAAS,IAAA,kJAAS;IACxB,MAAM,WAAW,IAAA,yIAAY;IAE7B,MAAM,gBAAgB;QACpB,MAAM,SAAS,IAAI,CAAC,OAAO;QAC3B,OAAO,IAAI,CAAC;IACd;IAEA,qBACE,6LAAC;QACC,SAAS;QACT,WAAU;kBACX;;;;;;AAIL;GAjBwB;;QACP,kJAAS;;;KADF","debugId":null}}]
+}

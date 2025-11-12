@@ -1,0 +1,305 @@
+[00:00:00.733] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:00.800] Server  LOG      ✓ Ready in 594ms
+[00:00:31.251] Server  ERROR    ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+[00:00:31.717] Server  ERROR    ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+[00:00:31.844] Browser ERROR   uncaughtError: Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+[00:00:33.270] Server  ERROR    ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+[00:02:30.617] Server  LOG        Reload env: .env.local
+[00:02:30.844] Server  LOG      ✓ Compiled in 193ms
+[00:02:32.607] Server  LOG     listData: {}
+[00:02:32.807] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:02:32.979] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:02:32.980] Server  LOG     membersMap after populating: {}
+[00:02:32.980] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:02:32.981] Server  LOG     Family Members: [{...},{...}]
+[00:02:33.257] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:55.942] Server  LOG     listData: {}
+[00:02:56.141] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:02:56.324] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:02:56.325] Server  LOG     membersMap after populating: {}
+[00:02:56.325] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:02:56.326] Server  LOG     Family Members: [{...},{...}]
+[00:02:56.533] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:33.287] Server  LOG     listData: {}
+[00:03:33.476] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:03:33.685] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:03:33.686] Server  LOG     membersMap after populating: {}
+[00:03:33.686] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:03:33.686] Server  LOG     Family Members: [{...},{...}]
+[00:03:37.343] Server  LOG     listData: {}
+[00:03:37.555] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:03:37.764] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:03:37.764] Server  LOG     membersMap after populating: {}
+[00:03:37.765] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:03:37.765] Server  LOG     Family Members: [{...},{...}]
+[00:09:07.693] Server  LOG     listData: {}
+[00:09:08.020] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:09:08.285] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:09:08.286] Server  LOG     membersMap after populating: {}
+[00:09:08.286] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:09:08.286] Server  LOG     Family Members: [{...},{...}]
+[00:09:08.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:46.824] Server  LOG     listData: {}
+[00:10:46.826] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:46.827] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:46.827] Server  LOG     membersMap after populating: {}
+[00:10:46.827] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:46.827] Server  LOG     Family Members: [{...},{...}]
+[00:10:47.054] Server  LOG     listData: {}
+[00:10:47.055] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:47.057] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:47.057] Server  LOG     membersMap after populating: {}
+[00:10:47.057] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:47.057] Server  LOG     Family Members: [{...},{...}]
+[00:10:47.268] Server  LOG     listData: {}
+[00:10:47.270] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:47.271] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:47.271] Server  LOG     membersMap after populating: {}
+[00:10:47.271] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:47.271] Server  LOG     Family Members: [{...},{...}]
+[00:10:47.516] Server  LOG     listData: {}
+[00:10:47.517] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:47.519] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:47.519] Server  LOG     membersMap after populating: {}
+[00:10:47.519] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:47.519] Server  LOG     Family Members: [{...},{...}]
+[00:10:47.733] Server  LOG     listData: {}
+[00:10:47.734] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:47.736] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:47.736] Server  LOG     membersMap after populating: {}
+[00:10:47.736] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:47.736] Server  LOG     Family Members: [{...},{...}]
+[00:10:47.939] Server  LOG     listData: {}
+[00:10:47.941] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:47.942] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:47.942] Server  LOG     membersMap after populating: {}
+[00:10:47.942] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:47.942] Server  LOG     Family Members: [{...},{...}]
+[00:10:48.166] Server  LOG     listData: {}
+[00:10:48.167] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:48.169] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:48.169] Server  LOG     membersMap after populating: {}
+[00:10:48.169] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:48.169] Server  LOG     Family Members: [{...},{...}]
+[00:10:48.393] Server  LOG     listData: {}
+[00:10:48.395] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:48.396] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:48.396] Server  LOG     membersMap after populating: {}
+[00:10:48.396] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:48.396] Server  LOG     Family Members: [{...},{...}]
+[00:10:48.603] Server  LOG     listData: {}
+[00:10:48.605] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:48.606] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:48.606] Server  LOG     membersMap after populating: {}
+[00:10:48.606] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:48.606] Server  LOG     Family Members: [{...},{...}]
+[00:10:48.801] Server  LOG     listData: {}
+[00:10:48.802] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:48.803] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:48.804] Server  LOG     membersMap after populating: {}
+[00:10:48.804] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:48.804] Server  LOG     Family Members: [{...},{...}]
+[00:10:49.001] Server  LOG     listData: {}
+[00:10:49.003] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:49.004] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:49.004] Server  LOG     membersMap after populating: {}
+[00:10:49.004] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:49.005] Server  LOG     Family Members: [{...},{...}]
+[00:10:49.210] Server  LOG     listData: {}
+[00:10:49.211] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:49.213] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:49.213] Server  LOG     membersMap after populating: {}
+[00:10:49.213] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:49.213] Server  LOG     Family Members: [{...},{...}]
+[00:10:49.422] Server  LOG     listData: {}
+[00:10:49.423] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:49.424] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:49.425] Server  LOG     membersMap after populating: {}
+[00:10:49.425] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:49.425] Server  LOG     Family Members: [{...},{...}]
+[00:10:49.992] Server  LOG     listData: {}
+[00:10:49.994] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:49.996] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:49.996] Server  LOG     membersMap after populating: {}
+[00:10:49.996] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:49.996] Server  LOG     Family Members: [{...},{...}]
+[00:10:50.196] Server  LOG     listData: {}
+[00:10:50.197] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:50.198] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:50.198] Server  LOG     membersMap after populating: {}
+[00:10:50.198] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:50.199] Server  LOG     Family Members: [{...},{...}]
+[00:10:50.420] Server  LOG     listData: {}
+[00:10:50.421] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:50.423] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:50.423] Server  LOG     membersMap after populating: {}
+[00:10:50.423] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:50.423] Server  LOG     Family Members: [{...},{...}]
+[00:10:50.632] Server  LOG     listData: {}
+[00:10:50.633] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:50.635] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:50.635] Server  LOG     membersMap after populating: {}
+[00:10:50.635] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:50.635] Server  LOG     Family Members: [{...},{...}]
+[00:10:50.868] Server  LOG     listData: {}
+[00:10:50.870] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:50.872] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:50.872] Server  LOG     membersMap after populating: {}
+[00:10:50.872] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:50.872] Server  LOG     Family Members: [{...},{...}]
+[00:10:51.076] Server  LOG     listData: {}
+[00:10:51.077] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:51.079] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:51.079] Server  LOG     membersMap after populating: {}
+[00:10:51.079] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:51.079] Server  LOG     Family Members: [{...},{...}]
+[00:11:25.178] Server  LOG     listData: {}
+[00:11:25.181] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:25.182] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:25.183] Server  LOG     membersMap after populating: {}
+[00:11:25.183] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:25.183] Server  LOG     Family Members: [{...},{...}]
+[00:11:25.396] Server  LOG     listData: {}
+[00:11:25.398] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:25.400] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:25.400] Server  LOG     membersMap after populating: {}
+[00:11:25.400] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:25.400] Server  LOG     Family Members: [{...},{...}]
+[00:11:25.608] Server  LOG     listData: {}
+[00:11:25.611] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:25.615] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:25.615] Server  LOG     membersMap after populating: {}
+[00:11:25.615] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:25.616] Server  LOG     Family Members: [{...},{...}]
+[00:11:25.806] Server  LOG     listData: {}
+[00:11:25.807] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:25.809] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:25.809] Server  LOG     membersMap after populating: {}
+[00:11:25.809] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:25.809] Server  LOG     Family Members: [{...},{...}]
+[00:11:26.025] Server  LOG     listData: {}
+[00:11:26.026] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:26.028] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:26.028] Server  LOG     membersMap after populating: {}
+[00:11:26.028] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:26.028] Server  LOG     Family Members: [{...},{...}]
+[00:11:26.248] Server  LOG     listData: {}
+[00:11:26.250] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:26.253] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:26.253] Server  LOG     membersMap after populating: {}
+[00:11:26.253] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:26.253] Server  LOG     Family Members: [{...},{...}]
+[00:11:26.462] Server  LOG     listData: {}
+[00:11:26.463] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:26.465] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:26.465] Server  LOG     membersMap after populating: {}
+[00:11:26.465] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:26.465] Server  LOG     Family Members: [{...},{...}]
+[00:11:26.713] Server  LOG     listData: {}
+[00:11:26.714] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:26.715] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:26.715] Server  LOG     membersMap after populating: {}
+[00:11:26.715] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:26.715] Server  LOG     Family Members: [{...},{...}]
+[00:11:26.920] Server  LOG     listData: {}
+[00:11:26.921] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:26.925] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:26.925] Server  LOG     membersMap after populating: {}
+[00:11:26.925] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:26.925] Server  LOG     Family Members: [{...},{...}]
+[00:11:27.124] Server  LOG     listData: {}
+[00:11:27.125] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:27.126] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:27.126] Server  LOG     membersMap after populating: {}
+[00:11:27.126] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:27.127] Server  LOG     Family Members: [{...},{...}]
+[00:11:27.322] Server  LOG     listData: {}
+[00:11:27.323] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:27.325] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:27.325] Server  LOG     membersMap after populating: {}
+[00:11:27.325] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:27.325] Server  LOG     Family Members: [{...},{...}]
+[00:11:27.533] Server  LOG     listData: {}
+[00:11:27.535] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:27.536] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:27.536] Server  LOG     membersMap after populating: {}
+[00:11:27.536] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:27.536] Server  LOG     Family Members: [{...},{...}]
+[00:11:27.743] Server  LOG     listData: {}
+[00:11:27.745] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:27.747] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:27.747] Server  LOG     membersMap after populating: {}
+[00:11:27.747] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:27.747] Server  LOG     Family Members: [{...},{...}]
+[00:11:27.940] Server  LOG     listData: {}
+[00:11:27.941] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:27.943] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:27.943] Server  LOG     membersMap after populating: {}
+[00:11:27.943] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:27.943] Server  LOG     Family Members: [{...},{...}]
+[00:11:28.142] Server  LOG     listData: {}
+[00:11:28.144] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:28.145] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:28.145] Server  LOG     membersMap after populating: {}
+[00:11:28.145] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:28.145] Server  LOG     Family Members: [{...},{...}]
+[00:11:28.348] Server  LOG     listData: {}
+[00:11:28.349] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:28.350] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:28.350] Server  LOG     membersMap after populating: {}
+[00:11:28.350] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:28.351] Server  LOG     Family Members: [{...},{...}]
+[00:11:28.540] Server  LOG     listData: {}
+[00:11:28.542] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:28.543] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:28.543] Server  LOG     membersMap after populating: {}
+[00:11:28.543] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:28.543] Server  LOG     Family Members: [{...},{...}]
+[00:11:28.750] Server  LOG     listData: {}
+[00:11:28.752] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:28.753] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:28.754] Server  LOG     membersMap after populating: {}
+[00:11:28.754] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:28.754] Server  LOG     Family Members: [{...},{...}]
+[00:11:28.957] Server  LOG     listData: {}
+[00:11:28.959] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:28.960] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:28.960] Server  LOG     membersMap after populating: {}
+[00:11:28.960] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:28.960] Server  LOG     Family Members: [{...},{...}]
+[00:11:29.155] Server  LOG     listData: {}
+[00:11:29.156] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:29.157] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:29.157] Server  LOG     membersMap after populating: {}
+[00:11:29.157] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:29.158] Server  LOG     Family Members: [{...},{...}]
+[00:11:29.364] Server  LOG     listData: {}
+[00:11:29.365] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:29.366] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:29.367] Server  LOG     membersMap after populating: {}
+[00:11:29.367] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:29.367] Server  LOG     Family Members: [{...},{...}]
+[00:11:29.623] Server  LOG     listData: {}
+[00:11:29.624] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:29.625] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:29.626] Server  LOG     membersMap after populating: {}
+[00:11:29.626] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:29.626] Server  LOG     Family Members: [{...},{...}]
+[00:11:58.977] Server  LOG      ✓ Compiled in 13ms
+[00:11:59.318] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
