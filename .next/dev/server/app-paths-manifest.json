@@ -1,6 +1,10 @@
 {
   "/api/gifts/[giftId]/route": "app/api/gifts/[giftId]/route.js",
+  "/api/gifts/fetch-metadata/route": "app/api/gifts/fetch-metadata/route.js",
   "/api/lists/[familyId]/invites/route": "app/api/lists/[familyId]/invites/route.js",
   "/invite/page": "app/invite/page.js",
-  "/list/[familyId]/page": "app/list/[familyId]/page.js"
+  "/list/[familyId]/page": "app/list/[familyId]/page.js",
+  "/login/page": "app/login/page.js",
+  "/onboarding/page": "app/onboarding/page.js",
+  "/page": "app/page.js"
 }

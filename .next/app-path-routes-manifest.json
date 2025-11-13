@@ -18,5 +18,6 @@
   "/invite/page": "/invite",
   "/list/[familyId]/page": "/list/[familyId]",
   "/login/page": "/login",
+  "/onboarding/page": "/onboarding",
   "/page": "/"
 }

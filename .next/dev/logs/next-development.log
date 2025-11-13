@@ -70,3 +70,196 @@
 [00:32:38.657] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:32:38.776] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
 [00:32:52.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:26.557] Server  LOG     listData: {}
+[00:34:26.779] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:34:26.977] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:34:26.978] Server  LOG     membersMap after populating: {}
+[00:34:26.978] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:34:26.978] Server  LOG     Family Members: [{...},{...},{...}]
+[00:34:27.108] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:27.228] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:35:04.256] Server  LOG     listData: {}
+[00:35:04.442] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:35:04.631] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:35:04.631] Server  LOG     membersMap after populating: {}
+[00:35:04.632] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:35:04.632] Server  LOG     Family Members: [{...},{...},{...}]
+[00:35:06.745] Server  LOG     listData: {}
+[00:35:06.929] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:35:07.101] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:35:07.101] Server  LOG     membersMap after populating: {}
+[00:35:07.102] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:35:07.102] Server  LOG     Family Members: [{...},{...},{...}]
+[00:35:07.229] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:07.350] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:35:15.566] Browser LOG     handleDragEnd result: {"combine":null,"destination":{"droppableId":"bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450","index":8},"draggableId":"2e09d32f-9f32-40c7-b1b5-6f4313a28666","mode":"FLUID","reason":"DROP","source":{"droppableId":"bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450","index":8},"type":"DEFAULT"}
+[00:35:15.567] Browser LOG     Dropped into a valid droppable (not trash bin): bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450
+[00:35:18.166] Browser LOG     handleDragEnd result: {"combine":null,"destination":{"droppableId":"bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450","index":8},"draggableId":"2e09d32f-9f32-40c7-b1b5-6f4313a28666","mode":"FLUID","reason":"DROP","source":{"droppableId":"bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450","index":8},"type":"DEFAULT"}
+[00:35:18.166] Browser LOG     Dropped into a valid droppable (not trash bin): bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450
+[00:35:25.599] Browser LOG     handleDragEnd result: {"combine":null,"destination":{"droppableId":"trash-bin-global","index":0},"draggableId":"2e09d32f-9f32-40c7-b1b5-6f4313a28666","mode":"FLUID","reason":"DROP","source":{"droppableId":"bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450","index":8},"type":"DEFAULT"}
+[00:35:25.599] Browser LOG     Dropped into trash bin: trash-bin-global
+[00:35:25.599] Browser LOG     Attempting to delete gift: 2e09d32f-9f32-40c7-b1b5-6f4313a28666
+[00:35:25.742] Server  LOG     DELETE /api/gifts/[giftId] reached!
+[00:35:26.079] Server  LOG     Supabase delete error: null
+[00:35:26.184] Browser LOG     Gift deleted successfully from API: 2e09d32f-9f32-40c7-b1b5-6f4313a28666
+[00:35:26.184] Browser LOG     Local state updated for gift: 2e09d32f-9f32-40c7-b1b5-6f4313a28666
+[00:41:07.498] Browser LOG     handleDragEnd result: {"combine":null,"destination":{"droppableId":"8261fdea-4831-4d14-bccb-f2c3cfa86d8f","index":3},"draggableId":"3c7d1733-fee2-404f-a118-b2b28857abb3","mode":"FLUID","reason":"DROP","source":{"droppableId":"8261fdea-4831-4d14-bccb-f2c3cfa86d8f","index":3},"type":"DEFAULT"}
+[00:41:07.498] Browser LOG     Dropped into a valid droppable (not trash bin): 8261fdea-4831-4d14-bccb-f2c3cfa86d8f
+[00:41:17.079] Browser LOG     handleDragEnd result: {"combine":null,"destination":{"droppableId":"8261fdea-4831-4d14-bccb-f2c3cfa86d8f","index":3},"draggableId":"3c7d1733-fee2-404f-a118-b2b28857abb3","mode":"FLUID","reason":"DROP","source":{"droppableId":"8261fdea-4831-4d14-bccb-f2c3cfa86d8f","index":3},"type":"DEFAULT"}
+[00:41:17.079] Browser LOG     Dropped into a valid droppable (not trash bin): 8261fdea-4831-4d14-bccb-f2c3cfa86d8f
+[00:43:19.855] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:43:20.045] Server  LOG     Fetched families for user: [{...},{...}]
+[00:43:20.046] Server  LOG     Fetch error (if any): null
+[00:43:23.096] Server  LOG     listData: {}
+[00:43:23.278] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:43:23.514] Server  LOG     profilesData after fetching: [{...}]
+[00:43:23.515] Server  LOG     membersMap after populating: {}
+[00:43:23.515] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:43:23.515] Server  LOG     Family Members: [{...}]
+[00:44:19.432] Server  LOG     listData: {}
+[00:44:19.608] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:44:19.793] Server  LOG     profilesData after fetching: [{...}]
+[00:44:19.793] Server  LOG     membersMap after populating: {}
+[00:44:19.794] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:44:19.794] Server  LOG     Family Members: [{...}]
+[00:44:21.528] Server  LOG     listData: {}
+[00:44:21.719] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:44:21.897] Server  LOG     profilesData after fetching: [{...}]
+[00:44:21.897] Server  LOG     membersMap after populating: {}
+[00:44:21.898] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:44:21.898] Server  LOG     Family Members: [{...}]
+[00:44:22.019] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:00.531] Server  LOG     listData: {}
+[00:45:00.702] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:45:00.874] Server  LOG     profilesData after fetching: [{...}]
+[00:45:00.875] Server  LOG     membersMap after populating: {}
+[00:45:00.875] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:45:00.875] Server  LOG     Family Members: [{...}]
+[00:45:03.642] Server  LOG     listData: {}
+[00:45:03.818] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:45:03.991] Server  LOG     profilesData after fetching: [{...}]
+[00:45:03.991] Server  LOG     membersMap after populating: {}
+[00:45:03.991] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:45:03.992] Server  LOG     Family Members: [{...}]
+[00:45:04.095] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:17.518] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:45:17.703] Server  LOG     Fetched families for user: [{...},{...}]
+[00:45:17.703] Server  LOG     Fetch error (if any): null
+[00:45:19.260] Server  LOG     listData: {}
+[00:45:19.442] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:45:19.624] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:45:19.624] Server  LOG     membersMap after populating: {}
+[00:45:19.625] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:45:19.625] Server  LOG     Family Members: [{...},{...},{...}]
+[00:45:19.776] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:45:22.709] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:45:22.884] Server  LOG     Fetched families for user: [{...},{...}]
+[00:45:22.885] Server  LOG     Fetch error (if any): null
+[00:45:24.656] Server  LOG     listData: {}
+[00:45:24.832] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:45:25.008] Server  LOG     profilesData after fetching: [{...}]
+[00:45:25.009] Server  LOG     membersMap after populating: {}
+[00:45:25.009] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:45:25.009] Server  LOG     Family Members: [{...}]
+[00:45:40.998] Server  LOG     listData: {}
+[00:45:41.177] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:45:41.375] Server  LOG     profilesData after fetching: [{...}]
+[00:45:41.376] Server  LOG     membersMap after populating: {}
+[00:45:41.376] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:45:41.376] Server  LOG     Family Members: [{...}]
+[00:45:59.836] Server  LOG     listData: {}
+[00:46:00.021] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:46:00.208] Server  LOG     profilesData after fetching: [{...}]
+[00:46:00.208] Server  LOG     membersMap after populating: {}
+[00:46:00.209] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:46:00.209] Server  LOG     Family Members: [{...}]
+[00:46:01.625] Server  LOG     listData: {}
+[00:46:01.799] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:46:01.981] Server  LOG     profilesData after fetching: [{...}]
+[00:46:01.982] Server  LOG     membersMap after populating: {}
+[00:46:01.982] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:46:01.982] Server  LOG     Family Members: [{...}]
+[00:46:02.078] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:36.829] Server  LOG     listData: {}
+[00:46:37.036] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:46:37.212] Server  LOG     profilesData after fetching: [{...}]
+[00:46:37.212] Server  LOG     membersMap after populating: {}
+[00:46:37.212] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:46:37.212] Server  LOG     Family Members: [{...}]
+[00:46:38.765] Server  LOG     listData: {}
+[00:46:38.956] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:46:39.129] Server  LOG     profilesData after fetching: [{...}]
+[00:46:39.130] Server  LOG     membersMap after populating: {}
+[00:46:39.130] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:46:39.130] Server  LOG     Family Members: [{...}]
+[00:46:39.208] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:05.646] Server  LOG     listData: {}
+[00:47:05.824] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:47:06.007] Server  LOG     profilesData after fetching: [{...}]
+[00:47:06.007] Server  LOG     membersMap after populating: {}
+[00:47:06.007] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:47:06.008] Server  LOG     Family Members: [{...}]
+[00:47:33.527] Server  LOG     listData: {}
+[00:47:33.705] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:47:33.881] Server  LOG     profilesData after fetching: [{...}]
+[00:47:33.882] Server  LOG     membersMap after populating: {}
+[00:47:33.882] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:47:33.882] Server  LOG     Family Members: [{...}]
+[00:47:35.350] Server  LOG     listData: {}
+[00:47:35.537] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:47:35.723] Server  LOG     profilesData after fetching: [{...}]
+[00:47:35.723] Server  LOG     membersMap after populating: {}
+[00:47:35.723] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:47:35.723] Server  LOG     Family Members: [{...}]
+[00:47:35.838] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:59.392] Server  LOG     listData: {}
+[00:47:59.564] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:47:59.738] Server  LOG     profilesData after fetching: [{...}]
+[00:47:59.738] Server  LOG     membersMap after populating: {}
+[00:47:59.739] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:47:59.739] Server  LOG     Family Members: [{...}]
+[00:48:01.495] Server  LOG     listData: {}
+[00:48:01.674] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:48:01.846] Server  LOG     profilesData after fetching: [{...}]
+[00:48:01.846] Server  LOG     membersMap after populating: {}
+[00:48:01.847] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:48:01.847] Server  LOG     Family Members: [{...}]
+[00:48:01.961] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:36.608] Server  LOG     listData: {}
+[00:48:36.788] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:48:36.958] Server  LOG     profilesData after fetching: [{...}]
+[00:48:36.959] Server  LOG     membersMap after populating: {}
+[00:48:36.959] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:48:36.959] Server  LOG     Family Members: [{...}]
+[00:48:38.060] Server  LOG     listData: {}
+[00:48:38.230] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:48:38.396] Server  LOG     profilesData after fetching: [{...}]
+[00:48:38.396] Server  LOG     membersMap after populating: {}
+[00:48:38.396] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:48:38.396] Server  LOG     Family Members: [{...}]
+[00:48:38.526] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:03:36.142] Browser ERROR   {"__isAuthError":true,"code":"refresh_token_not_found","name":"AuthApiError","status":400}
+[02:03:56.024] Server  LOG      ✓ Compiled in 44ms
+[02:04:00.980] Server  LOG      ✓ Compiled in 25ms
+[02:04:06.128] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[02:04:06.439] Server  LOG     Fetched families for user: [{...},{...}]
+[02:04:06.440] Server  LOG     Fetch error (if any): null
+[02:04:08.684] Server  LOG     listData: {}
+[02:04:08.889] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[02:04:09.087] Server  LOG     profilesData after fetching: [{...},{...}]
+[02:04:09.088] Server  LOG     membersMap after populating: {}
+[02:04:09.088] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[02:04:09.088] Server  LOG     Family Members: [{...},{...}]
+[02:04:42.916] Server  LOG      ✓ Compiled in 20ms
+[02:04:47.740] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:06:44.712] Server  LOG      ✓ Compiled in 16ms
+[02:06:57.744] Server  LOG      ✓ Compiled in 9ms
+[02:07:15.988] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[02:07:16.219] Server  LOG     Fetched families for user: [{...},{...}]
+[02:07:16.219] Server  LOG     Fetch error (if any): null
+[02:07:31.820] Server  LOG     listData: {}
+[02:07:32.078] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[02:07:32.284] Server  LOG     profilesData after fetching: [{...},{...}]
+[02:07:32.285] Server  LOG     membersMap after populating: {}
+[02:07:32.285] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[02:07:32.286] Server  LOG     Family Members: [{...},{...}]
