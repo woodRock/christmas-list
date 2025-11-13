@@ -103,10 +103,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2d$se
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
 ;
 ;
-async function PATCH(request, { params }) {
+async function PATCH(request, context) {
     console.log("PATCH /api/gifts/[giftId] reached!");
     const supabase = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2d$server$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["createClient"])();
-    const resolvedParams = await params;
+    const { giftId } = await context.params;
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
         console.log("Unauthorized: No user session.");
@@ -135,9 +135,8 @@ async function PATCH(request, { params }) {
     };
     if (notes !== undefined) updatePayload.notes = notes;
     if (price !== undefined) updatePayload.price = price;
-    const { error } = await supabase.from('items').update(updatePayload).eq('id', resolvedParams.giftId).eq('user_id', user.id) // Ensure only the owner can edit their gift
+    const { error } = await supabase.from('items').update(updatePayload).eq('id', giftId).eq('user_id', user.id) // Ensure only the owner can edit their gift
     ;
-    console.log("Supabase update error:", error);
     console.log("Supabase update error:", error);
     if (error) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
@@ -150,10 +149,10 @@ async function PATCH(request, { params }) {
         message: 'Gift updated successfully'
     });
 }
-async function DELETE(request, { params }) {
+async function DELETE(request, context) {
     console.log("DELETE /api/gifts/[giftId] reached!");
     const supabase = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2d$server$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["createClient"])();
-    const resolvedParams = await params;
+    const { giftId } = await context.params;
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
         console.log("Unauthorized: No user session.");
@@ -163,7 +162,7 @@ async function DELETE(request, { params }) {
             status: 401
         });
     }
-    const { error } = await supabase.from('items').delete().eq('id', resolvedParams.giftId).eq('user_id', user.id) // Ensure only the owner can delete their gift
+    const { error } = await supabase.from('items').delete().eq('id', giftId).eq('user_id', user.id) // Ensure only the owner can delete their gift
     ;
     console.log("Supabase delete error:", error);
     if (error) {

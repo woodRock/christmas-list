@@ -1,3 +1,13 @@
 {
-  "/list/[familyId]/page": "app/list/[familyId]/page.js"
+  "/api/family/[familyId]/members/[memberId]/route": "app/api/family/[familyId]/members/[memberId]/route.js",
+  "/api/family/[familyId]/members/route": "app/api/family/[familyId]/members/route.js",
+  "/api/gifts/[giftId]/claim/route": "app/api/gifts/[giftId]/claim/route.js",
+  "/api/gifts/[giftId]/route": "app/api/gifts/[giftId]/route.js",
+  "/api/gifts/[giftId]/unclaim/route": "app/api/gifts/[giftId]/unclaim/route.js",
+  "/api/gifts/reorder/route": "app/api/gifts/reorder/route.js",
+  "/api/lists/[familyId]/members/[memberId]/route": "app/api/lists/[familyId]/members/[memberId]/route.js",
+  "/api/lists/[familyId]/members/route": "app/api/lists/[familyId]/members/route.js",
+  "/list/[familyId]/page": "app/list/[familyId]/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js"
 }

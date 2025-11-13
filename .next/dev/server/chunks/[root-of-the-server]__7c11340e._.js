@@ -101,9 +101,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2d$se
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
 ;
 ;
-async function PATCH(request, { params }) {
+async function PATCH(request, context) {
     const supabase = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2d$server$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["createClient"])();
-    const resolvedParams = await params;
+    const { giftId } = context.params;
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
@@ -116,7 +116,7 @@ async function PATCH(request, { params }) {
     const { error } = await supabase.from('items').update({
         is_purchased: true,
         purchased_by: claimedByUserId
-    }).eq('id', resolvedParams.giftId);
+    }).eq('id', giftId);
     if (error) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             error: error.message

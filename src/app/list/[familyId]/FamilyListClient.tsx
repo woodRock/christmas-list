@@ -135,6 +135,23 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     }
   };
 
+  const handleRemoveMember = async (memberId: string) => {
+    if (!confirm('Are you sure you want to remove this member? This will delete all of their gifts from the list.')) return
+
+    console.log(`Removing member ${memberId} from family ${family.id}`)
+
+    const res = await fetch(`/api/lists/${family.id}/members/${memberId}`, {
+      method: 'DELETE',
+    })
+
+    if (res.ok) {
+      router.refresh()
+    } else {
+      const errorText = await res.text()
+      alert(`Failed to remove member: ${errorText}`)
+    }
+  }
+
   const sortedGifts = (gifts: Gift[]) => {
     return [...gifts].sort((a, b) => {
       let valA: any;
@@ -184,7 +201,17 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
 
         {family.members.map((member) => (
           <div key={member.id} className="bg-white p-6 rounded-lg shadow-md mb-8">
-            <h2 className="text-2xl font-semibold mb-4">{member.name}'s List</h2>
+            <div className="flex justify-between items-center">
+              <h2 className="text-2xl font-semibold mb-4">{member.name}'s List</h2>
+              {user && user.id === family.owner_id && user.id !== member.id && (
+                <button
+                  onClick={() => handleRemoveMember(member.id)}
+                  className="px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 text-xs"
+                >
+                  Remove
+                </button>
+              )}
+            </div>
             {member.gifts.length === 0 ? (
               <p>No gifts on {member.name}'s list yet.</p>
             ) : (
@@ -275,7 +302,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
           />
         )}
 
-        {user && (
+        {user && user.id === family.owner_id && (
           <AddMemberForm
             familyId={family.id}
             currentUserId={user.id}

@@ -7,6 +7,7 @@ import { useState } from 'react'
 export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [fullName, setFullName] = useState('')
   const [message, setMessage] = useState('')
   const router = useRouter()
   const supabase = createClient()
@@ -17,6 +18,11 @@ export default function Login() {
     const { error } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        data: {
+          full_name: fullName,
+        },
+      },
     })
     if (error) {
       setMessage(error.message)
@@ -45,6 +51,17 @@ export default function Login() {
         <h2 className="text-2xl font-bold mb-6 text-center">Login / Sign Up</h2>
         {message && <p className="text-red-500 text-center mb-4">{message}</p>}
         <form className="space-y-4">
+          <div>
+            <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              required
+            />
+          </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
             <input

@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(
   request: NextRequest,
-  context: { params: Promise<{ familyId: string }> }
+  context: { params: { familyId: string } }
 ) {
   console.log("POST /api/family/[familyId]/members reached!");
   const supabase = await createClient()
@@ -24,19 +24,19 @@ export async function POST(
     return NextResponse.json({ error: 'Member name and email are required' }, { status: 400 })
   }
 
-  // Verify the logged-in user belongs to the list
-  const { data: isMember, error: memberError } = await supabase
-    .from('list_members')
-    .select('role')
-    .eq('list_id', familyId)
-    .eq('profile_id', user.id)
+  // Verify that the current user is the owner of the list
+  const { data: list, error: listError } = await supabase
+    .from('lists')
+    .select('user_id')
+    .eq('id', familyId)
     .single()
-  console.log("Is current user a member of the list?", isMember, memberError);
 
-  if (memberError || !isMember) {
-    console.log("Unauthorized: Current user is not a member of this list.");
-    console.log("Returning Unauthorized: Not a member of this list.");
-    return NextResponse.json({ error: 'Unauthorized: You are not a member of this list' }, { status: 403 })
+  if (listError || !list) {
+    return NextResponse.json({ error: 'List not found' }, { status: 404 })
+  }
+
+  if (list.user_id !== user.id) {
+    return NextResponse.json({ error: 'Only the list owner can add members' }, { status: 403 })
   }
 
   // Find the user ID for the given email

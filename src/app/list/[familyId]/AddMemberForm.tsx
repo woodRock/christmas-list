@@ -36,7 +36,7 @@ export default function AddMemberForm({ familyId, currentUserId, members }: AddM
     }
 
     try {
-      const res = await fetch(`/api/family/${familyId}/members`, {
+      const res = await fetch(`/api/lists/${familyId}/members`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ memberName: newMemberName, memberEmail: newMemberEmail }),

@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function PATCH(
   request: NextRequest,
-  context: { params: Promise<{ giftId: string }> }
+  context: { params: { giftId: string } }
 ) {
   console.log("PATCH /api/gifts/[giftId] reached!");
   const supabase = await createClient()
@@ -32,9 +32,8 @@ export async function PATCH(
     .update(updatePayload)
     .eq('id', giftId)
     .eq('user_id', user.id) // Ensure only the owner can edit their gift
-  console.log("Supabase update error:", error);
-  console.log("Supabase update error:", error);
 
+  console.log("Supabase update error:", error);
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
@@ -44,7 +43,7 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  context: { params: Promise<{ giftId: string }> }
+  context: { params: { giftId: string } }
 ) {
   console.log("DELETE /api/gifts/[giftId] reached!");
   const supabase = await createClient()
