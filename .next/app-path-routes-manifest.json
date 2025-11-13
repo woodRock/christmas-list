@@ -10,6 +10,7 @@
   "/api/lists/[familyId]/leave/route": "/api/lists/[familyId]/leave",
   "/api/lists/[familyId]/members/[memberId]/route": "/api/lists/[familyId]/members/[memberId]",
   "/api/lists/[familyId]/members/route": "/api/lists/[familyId]/members",
+  "/auth/callback/route": "/auth/callback",
   "/auth/update-password/page": "/auth/update-password",
   "/create-family/page": "/create-family",
   "/favicon.ico/route": "/favicon.ico",

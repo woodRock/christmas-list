@@ -10,6 +10,7 @@
   "/api/lists/[familyId]/leave/route": "app/api/lists/[familyId]/leave/route.js",
   "/api/lists/[familyId]/members/[memberId]/route": "app/api/lists/[familyId]/members/[memberId]/route.js",
   "/api/lists/[familyId]/members/route": "app/api/lists/[familyId]/members/route.js",
+  "/auth/callback/route": "app/auth/callback/route.js",
   "/auth/update-password/page": "app/auth/update-password/page.js",
   "/create-family/page": "app/create-family/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",

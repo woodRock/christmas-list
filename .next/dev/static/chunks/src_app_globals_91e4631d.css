@@ -782,10 +782,6 @@
     color: var(--color-blue-600);
   }
 
-  .text-gray-100 {
-    color: var(--color-gray-100);
-  }
-
   .text-gray-300 {
     color: var(--color-gray-300);
   }
