@@ -83,7 +83,7 @@ async function FamilyListPage({ params }) {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/page.tsx",
-            lineNumber: 55,
+            lineNumber: 59,
             columnNumber: 12
         }, this);
     }
@@ -93,7 +93,7 @@ async function FamilyListPage({ params }) {
             children: "Family list not found."
         }, void 0, false, {
             fileName: "[project]/src/app/list/[familyId]/page.tsx",
-            lineNumber: 59,
+            lineNumber: 63,
             columnNumber: 12
         }, this);
     }
@@ -102,7 +102,7 @@ async function FamilyListPage({ params }) {
     if (!isOwner && !isMember) {
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])('/');
     }
-    const { data: itemsData, error: itemsError } = await supabase.from('items').select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price') // Select order_index, notes, price
+    const { data: itemsData, error: itemsError } = await supabase.from('items').select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price, product_url, product_title, product_image_url, product_price') // Select order_index, notes, price, product_url, product_title, product_image_url, product_price
     .eq('list_id', resolvedParams.familyId).order('order_index');
     if (itemsError) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -113,7 +113,7 @@ async function FamilyListPage({ params }) {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/page.tsx",
-            lineNumber: 76,
+            lineNumber: 80,
             columnNumber: 12
         }, this);
     }
@@ -141,7 +141,7 @@ async function FamilyListPage({ params }) {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/page.tsx",
-            lineNumber: 101,
+            lineNumber: 105,
             columnNumber: 12
         }, this);
     }
@@ -165,7 +165,11 @@ async function FamilyListPage({ params }) {
                 user_id: item.user_id,
                 order_index: item.order_index || 0,
                 notes: item.notes || undefined,
-                price: item.price || undefined
+                price: item.price || undefined,
+                product_url: item.product_url || undefined,
+                product_title: item.product_title || undefined,
+                product_image_url: item.product_image_url || undefined,
+                product_price: item.product_price || undefined
             });
         }
     });
@@ -183,7 +187,7 @@ async function FamilyListPage({ params }) {
         familyId: resolvedParams.familyId
     }, void 0, false, {
         fileName: "[project]/src/app/list/[familyId]/page.tsx",
-        lineNumber: 141,
+        lineNumber: 149,
         columnNumber: 5
     }, this);
 }

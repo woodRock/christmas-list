@@ -57,22 +57,44 @@ const formatNotesWithLinks = (notes?: string) => {
 
 export default function FamilyListClient({ initialFamily, initialUser, familyId }: { initialFamily: Family, initialUser: User | null, familyId: string }) {
   const [family, setFamily] = useState<Family>(initialFamily)
-  const [user, setUser] = useState<User | null>(initialUser)
+  const [user] = useState<User | null>(initialUser)
   const [editingGift, setEditingGift] = useState<Gift | null>(null)
-  const [expandedGiftId, setExpandedGiftId] = useState<string | null>(null); // State for expanded gift
   const [sortKey, setSortKey] = useState<keyof Gift | 'order_index'>('order_index'); // Default sort by order_index
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc'); // Default sort order ascending
   const [showQrModal, setShowQrModal] = useState(false)
   const [inviteToken, setInviteToken] = useState<string | null>(null)
+  const [viewMode, setViewMode] = useState<'list' | 'grid'>('list') // New state for view mode
+  const [isDragging, setIsDragging] = useState(false); // New state to track dragging
   const router = useRouter()
 
   const handleDragEnd = async (result: DropResult) => {
-    if (!result.destination) return
+    console.log('handleDragEnd result:', result);
+
+    // Check if dropped into a trash bin
+    if (result.destination && result.destination.droppableId === 'trash-bin') {
+      console.log('Dropped into trash bin:', result.destination.droppableId);
+      handleDeleteGift(result.draggableId);
+      setIsDragging(false); // End dragging after handling delete
+      return;
+    }
+
+    // If dropped outside any droppable (and not a trash bin), delete the item
+    if (!result.destination) {
+      console.log('Dropped outside any droppable. Deleting item:', result.draggableId);
+      handleDeleteGift(result.draggableId);
+      setIsDragging(false); // End dragging if dropped nowhere valid
+      return;
+    }
+
+    console.log('Dropped into a valid droppable (not trash bin):', result.destination.droppableId);
 
     const sourceMemberIndex = family.members.findIndex(m => m.id === result.source.droppableId)
     const destinationMemberIndex = family.members.findIndex(m => m.id === result.destination?.droppableId)
 
-    if (sourceMemberIndex === -1 || destinationMemberIndex === -1) return
+    if (sourceMemberIndex === -1 || destinationMemberIndex === -1) {
+      setIsDragging(false); // End dragging if source/destination not found
+      return;
+    }
 
     const newFamily = { ...family }
     const sourceMember = { ...newFamily.members[sourceMemberIndex] }
@@ -89,6 +111,9 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     newFamily.members[sourceMemberIndex] = sourceMember
     newFamily.members[destinationMemberIndex] = destinationMember
     setFamily(newFamily)
+
+    // Store the original family state for potential rollback
+    const originalFamily = family;
 
     // Collect all gifts from the entire family structure that need their order_index updated
     const giftsToUpdate = newFamily.members.flatMap(member =>
@@ -109,28 +134,36 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     if (!res.ok) {
       const errorText = await res.text()
       alert(`Failed to reorder gifts: ${errorText}`)
-      router.refresh() // Revert UI on failure
+      // Revert UI on API failure
+      setFamily(originalFamily);
     }
+
+    setIsDragging(false); // End dragging after all logic is complete
   }
 
   const handleDeleteGift = async (giftId: string) => {
-    if (!confirm('Are you sure you want to delete this gift?')) return
+    console.log('Attempting to delete gift:', giftId);
 
     const res = await fetch(`/api/gifts/${giftId}`, {
       method: 'DELETE',
     })
 
     if (res.ok) {
-      router.refresh()
+      console.log('Gift deleted successfully from API:', giftId);
+      // Update local state to remove the deleted gift
+      const newFamily = { ...family };
+      newFamily.members = newFamily.members.map(member => ({
+        ...member,
+        gifts: member.gifts.filter(gift => gift.id !== giftId)
+      }));
+      setFamily(newFamily);
+      console.log('Local state updated for gift:', giftId);
     } else {
       const errorText = await res.text()
+      console.error('Failed to delete gift from API:', giftId, errorText);
       alert(`Failed to delete gift: ${errorText}`)
     }
   }
-
-  const handleToggleExpand = (giftId: string) => {
-    setExpandedGiftId(expandedGiftId === giftId ? null : giftId);
-  };
 
   const handleSort = (key: keyof Gift | 'order_index') => {
     if (sortKey === key) {
@@ -151,7 +184,10 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     })
 
     if (res.ok) {
-      router.refresh()
+      // Update local state to remove the member and their gifts
+      const newFamily = { ...family };
+      newFamily.members = newFamily.members.filter(member => member.id !== memberId);
+      setFamily(newFamily);
     } else {
       const errorText = await res.text()
       alert(`Failed to remove member: ${errorText}`)
@@ -234,29 +270,48 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
           >
             {sortOrder === 'asc' ? 'Asc' : 'Desc'}
           </button>
+          <div className="ml-auto flex space-x-2">
+            <button
+              onClick={() => setViewMode('list')}
+              className={`px-3 py-1 rounded-md text-sm ${viewMode === 'list' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            >
+              ☰ List
+            </button>
+            <button
+              onClick={() => setViewMode('grid')}
+              className={`px-3 py-1 rounded-md text-sm ${viewMode === 'grid' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            >
+              ▦ Grid
+            </button>
+          </div>
         </div>
 
-        {family.members.map((member) => (
-          <div key={member.id} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-8">
-            <div className="flex justify-between items-center">
-              <h2 className="text-2xl font-semibold mb-4">{member.name}&apos;s List</h2>
-              {user && user.id === family.owner_id && user.id !== member.id && (
-                <button
-                  onClick={() => handleRemoveMember(member.id)}
-                  className="px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 text-xs"
-                >
-                  Remove
-                </button>
-              )}
-            </div>
-            {member.gifts.length === 0 ? (
-              <p>No gifts on {member.name}'s list yet.</p>
-            ) : (
-              <DragDropContext onDragEnd={handleDragEnd}>
+        <DragDropContext
+          onBeforeDragStart={() => {
+            setIsDragging(true);
+          }}
+          onDragEnd={handleDragEnd}
+        >
+          {family.members.map((member) => (
+            <div key={member.id} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-8">
+              <div className="flex justify-between items-center">
+                <h2 className="text-2xl font-semibold mb-4">{member.name}&apos;s List</h2>
+                {user && user.id === family.owner_id && user.id !== member.id && (
+                  <button
+                    onClick={() => handleRemoveMember(member.id)}
+                    className="px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 text-xs"
+                  >
+                    Remove
+                  </button>
+                )}
+              </div>
+              {member.gifts.length === 0 ? (
+                <p>No gifts on {member.name}'s list yet.</p>
+              ) : (
                 <Droppable droppableId={member.id}>
                   {(provided) => (
                     <ul
-                      className="list-disc pl-5 space-y-2"
+                      className={`${viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4' : 'list-disc pl-5 space-y-2'}`}
                       {...provided.droppableProps}
                       ref={provided.innerRef}
                     >
@@ -266,15 +321,20 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                             <li
                               ref={provided.innerRef}
                               {...provided.draggableProps}
-                              className="flex flex-col justify-between items-start bg-gray-50 dark:bg-gray-700 p-2 rounded-md shadow-sm"
+                              onDoubleClick={() => {
+                                if (user && user.id === gift.user_id) {
+                                  setEditingGift(gift);
+                                }
+                              }}
+                              className="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-2 rounded-md shadow-sm" // li is now the flex container
                             >
-                              <div
-                                className="flex justify-between w-full items-center"
-                                {...provided.dragHandleProps} // Apply drag handle props here
-                              >
+                              <div className="flex items-center flex-grow"> {/* Container for image and description */}
+                                {gift.product_image_url && (
+                                  // eslint-disable-next-line @next/next/no-img-element
+                                  <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-16 h-16 object-cover rounded-md mr-3" />
+                                )}
                                 <span
-                                  className="cursor-pointer flex-grow"
-                                  onClick={() => handleToggleExpand(gift.id)}
+                                  className="flex-grow" // Description span
                                 >
                                   {gift.description}
                                   {gift.is_purchased && user?.id !== gift.user_id && (
@@ -283,67 +343,47 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                     </span>
                                   )}
                                 </span>
-                                <div className="flex items-center space-x-2">
-                                  {user && user.id === gift.user_id && ( // Only owner can edit/delete
-                                    <>
-                                      <button
-                                        onClick={(e) => { e.stopPropagation(); setEditingGift(gift); }}
-                                        className="px-2 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-xs"
-                                      >
-                                        Edit
-                                      </button>
-                                      <button
-                                        onClick={(e) => { e.stopPropagation(); handleDeleteGift(gift.id); }}
-                                        className="px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 text-xs"
-                                      >
-                                        Delete
-                                      </button>
-                                    </>
-                                  )}
-                                  {user && user.id !== gift.user_id && (
-                                    <ClaimUnclaimButtons
-                                      gift={gift}
-                                      userId={user.id}
-                                    />
-                                  )}
-                                </div>
                               </div>
-                              {expandedGiftId === gift.id && (
-                                <div className="mt-2 text-sm text-gray-300 w-full">
-                                  {gift.product_image_url && (
-                                    // eslint-disable-next-line @next/next/no-img-element
-                                    <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-24 h-24 object-cover rounded-md mb-2" />
-                                  )}
-                                  {gift.product_title && gift.product_url ? (
-                                    <p>
-                                      <strong>Product:</strong>{' '}
-                                      <a href={gift.product_url} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
-                                        {gift.product_title}
-                                      </a>
-                                    </p>
-                                  ) : gift.product_title && (
-                                    <p><strong>Product:</strong> {gift.product_title}</p>
-                                  )}
-                                  {gift.notes && (
-                                    <p><strong>Notes:</strong> {formatNotesWithLinks(gift.notes)}</p>
-                                  )}
-                                  {gift.price && (
-                                    <p><strong>Price:</strong> ${gift.price.toFixed(2)}</p>
-                                  )}
-                                </div>
-                              )}
+                              <div className={`flex items-center flex-shrink-0 ${viewMode === 'grid' ? 'flex-col space-y-2' : 'space-x-2'}`} {...provided.dragHandleProps}> {/* Buttons container, now also drag handle */}
+                                {gift.product_url && (
+                                  <a
+                                    href={gift.product_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-2 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-xs"
+                                    onClick={(e) => e.stopPropagation()} // Prevent expanding gift when clicking link
+                                  >
+                                    Open Link
+                                  </a>
+                                )}
+                                {user && user.id !== gift.user_id && (
+                                  <ClaimUnclaimButtons
+                                    gift={gift}
+                                    userId={user.id}
+                                  />
+                                )}
+                              </div>
                             </li>
                           )}
                         </Draggable>
                       ))}
                       {provided.placeholder}
+                      {isDragging && (
+                        <div
+                          className="mt-4 p-4 border-2 border-dashed rounded-lg text-center transition-all duration-200
+                            border-gray-300 bg-gray-50 text-gray-500"
+                        >
+                          Drag outside to delete gift 🗑️
+                        </div>
+                      )}
                     </ul>
                   )}
                 </Droppable>
-              </DragDropContext>
-            )}
-          </div>
-        ))}
+              )}
+            </div>
+          ))}
+
+          </DragDropContext>
 
         {user && (
           <AddGiftForm
@@ -387,7 +427,10 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             onClose={() => setEditingGift(null)}
             onSave={() => {
               setEditingGift(null)
-              router.refresh()
+              // Instead of router.refresh(), update local state
+              // This would involve refetching the family data or updating the specific gift in the family state
+              // For now, we'll just close the form. A full re-fetch might be needed for complex updates.
+              // router.refresh()
             }}
           />
         )}

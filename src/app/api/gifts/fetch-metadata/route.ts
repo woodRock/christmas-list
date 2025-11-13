@@ -24,7 +24,21 @@ export async function POST(request: NextRequest) {
 
     const title = $('meta[property="og:title"]').attr('content') || $('title').text() || ''
     const description = $('meta[property="og:description"]').attr('content') || $('meta[name="description"]').attr('content') || ''
-    const imageUrl = $('meta[property="og:image"]').attr('content') || ''
+    let imageUrl = $('meta[property="og:image"]').attr('content') ||
+                   $('meta[name="twitter:image"]').attr('content') ||
+                   $('meta[itemprop="image"]').attr('content') ||
+                   ''
+
+    // Resolve relative URLs
+    if (imageUrl && !imageUrl.startsWith('http')) {
+      try {
+        const baseUrl = new URL(url);
+        imageUrl = new URL(imageUrl, baseUrl).toString();
+      } catch (e) {
+        console.warn('Could not resolve relative image URL:', imageUrl, e);
+        imageUrl = ''; // Clear invalid relative URL
+      }
+    }
 
     // Attempt to extract price from Schema.org JSON-LD or other common meta tags
     let price: number | null = null

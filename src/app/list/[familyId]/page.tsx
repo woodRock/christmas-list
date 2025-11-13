@@ -11,6 +11,10 @@ interface Gift {
   order_index?: number; // Add order_index
   notes?: string; // Add notes
   price?: number; // Add price
+  product_url?: string;
+  product_title?: string;
+  product_image_url?: string;
+  product_price?: number;
 }
 
 interface Member {
@@ -68,7 +72,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
 
   const { data: itemsData, error: itemsError } = await supabase
     .from('items')
-    .select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price') // Select order_index, notes, price
+    .select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price, product_url, product_title, product_image_url, product_price') // Select order_index, notes, price, product_url, product_title, product_image_url, product_price
     .eq('list_id', resolvedParams.familyId)
     .order('order_index')
 
@@ -123,6 +127,10 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
         order_index: item.order_index || 0, // Assign order_index
         notes: item.notes || undefined,
         price: item.price || undefined,
+        product_url: item.product_url || undefined,
+        product_title: item.product_title || undefined,
+        product_image_url: item.product_image_url || undefined,
+        product_price: item.product_price || undefined,
       });
     }
   });
