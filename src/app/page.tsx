@@ -27,8 +27,8 @@ export default async function Home() {
         {families && families.length === 0 ? (
           <div className="text-center bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold mb-4">Welcome!</h2>
-            <p className="text-gray-300 mb-6">You are not a member of any family lists yet.</p>
-            <p className="text-gray-300">You can either create your own list or ask someone to add you to their existing list.</p>
+            <p className="text-gray-600 dark:text-gray-100 mb-6">You are not a member of any family lists yet.</p>
+            <p className="text-gray-600 dark:text-gray-100">You can either create your own list or ask someone to add you to their existing list.</p>
           </div>
         ) : (
           <ul className="space-y-4">

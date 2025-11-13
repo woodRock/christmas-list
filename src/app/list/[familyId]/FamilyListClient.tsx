@@ -170,6 +170,22 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     }
   }
 
+  const handleLeaveFamily = async () => {
+    if (!confirm('Are you sure you want to leave this family list? You will lose access to all gifts and members.')) return
+
+    const res = await fetch(`/api/lists/${family.id}/leave`, {
+      method: 'DELETE',
+    })
+
+    if (res.ok) {
+      alert('You have successfully left the family list.')
+      router.push('/') // Redirect to home page
+    } else {
+      const errorText = await res.json()
+      alert(`Failed to leave family: ${errorText.error}`)
+    }
+  }
+
   const sortedGifts = (gifts: Gift[]) => {
     return [...gifts].sort((a, b) => {
       let valA: any;
@@ -335,6 +351,17 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             currentUserId={user.id}
             members={family.members}
           />
+        )}
+
+        {user && user.id !== family.owner_id && (
+          <div className="mt-4">
+            <button
+              onClick={handleLeaveFamily}
+              className="w-full bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600"
+            >
+              Leave Family List
+            </button>
+          </div>
         )}
 
         {editingGift && (

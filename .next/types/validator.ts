@@ -47,6 +47,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 }
 
 
+// Validate ../../src/app/auth/update-password/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/auth/update-password">> = Specific
+  const handler = {} as typeof import("../../src/app/auth/update-password/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/create-family/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/create-family">> = Specific
@@ -141,6 +150,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/lists/[familyId]/invites">> = Specific
   const handler = {} as typeof import("../../src/app/api/lists/[familyId]/invites/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/api/lists/[familyId]/leave/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/lists/[familyId]/leave">> = Specific
+  const handler = {} as typeof import("../../src/app/api/lists/[familyId]/leave/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
