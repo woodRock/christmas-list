@@ -17,9 +17,9 @@ interface AddGiftFormProps {
 }
 
 // Debounce function defined outside the component to be stable
-const debounce = <T extends (...args: any[]) => any>(func: T, delay: number): ((...args: Parameters<T>) => void) => {
+const debounce = <Args extends unknown[]>(func: (...args: Args) => unknown, delay: number): ((...args: Args) => void) => {
   let timeout: NodeJS.Timeout | null = null
-  return (...args: Parameters<T>) => {
+  return (...args: Args) => {
     if (timeout) {
       clearTimeout(timeout)
     }

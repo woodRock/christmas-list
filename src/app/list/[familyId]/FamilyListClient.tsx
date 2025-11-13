@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd'
 import Link from 'next/link'
@@ -11,6 +11,7 @@ import AddMemberForm from './AddMemberForm'
 import EditGiftForm from './EditGiftForm' // New component for editing gifts
 import QRCode from 'react-qr-code'
 import { User } from '@supabase/supabase-js'
+import ReactDOM from 'react-dom' // Import ReactDOM
 
 interface Gift {
   id: string;
@@ -68,24 +69,43 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
   const [inviteToken, setInviteToken] = useState<string | null>(null)
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('list') // New state for view mode
   const [isDragging, setIsDragging] = useState(false); // New state to track dragging
+  const [sourceDroppableId, setSourceDroppableId] = useState<string | null>(null); // New state to track the source list of the dragged item
   const router = useRouter()
+  const [mounted, setMounted] = useState(false);
+  const [portalNode, setPortalNode] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    let element = document.getElementById('drag-portal');
+    if (!element) {
+      element = document.createElement('div');
+      element.id = 'drag-portal';
+      document.body.appendChild(element);
+    }
+    const animationFrame = requestAnimationFrame(() => {
+      setPortalNode(element);
+      setMounted(true);
+    });
+    return () => cancelAnimationFrame(animationFrame);
+  }, []);
 
   const handleDragEnd = async (result: DropResult) => {
     console.log('handleDragEnd result:', result);
 
-    // Check if dropped into a trash bin
-    if (result.destination && result.destination.droppableId === 'trash-bin') {
-      console.log('Dropped into trash bin:', result.destination.droppableId);
-      handleDeleteGift(result.draggableId);
-      setIsDragging(false); // End dragging after handling delete
-      return;
-    }
-
-    // If dropped outside any droppable (and not a trash bin), delete the item
+    // If no destination, or dropped outside any droppable, delete the item
     if (!result.destination) {
       console.log('Dropped outside any droppable. Deleting item:', result.draggableId);
       handleDeleteGift(result.draggableId);
-      setIsDragging(false); // End dragging if dropped nowhere valid
+      setIsDragging(false); // End dragging state here if deleted
+      setSourceDroppableId(null); // Clear source droppable ID
+      return;
+    }
+
+    // Check if dropped into a trash bin
+    if (result.destination.droppableId === 'trash-bin-global') {
+      console.log('Dropped into trash bin:', result.destination.droppableId);
+      handleDeleteGift(result.draggableId);
+      setIsDragging(false); // End dragging state here if deleted
+      setSourceDroppableId(null); // Clear source droppable ID
       return;
     }
 
@@ -95,13 +115,20 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     const destinationMemberIndex = family.members.findIndex(m => m.id === result.destination?.droppableId)
 
     if (sourceMemberIndex === -1 || destinationMemberIndex === -1) {
-      setIsDragging(false); // End dragging if source/destination not found
+      console.error('Source or destination member not found.');
+      setIsDragging(false); // End dragging state if members not found
       return;
     }
 
     const newFamily = { ...family }
     const sourceMember = { ...newFamily.members[sourceMemberIndex] }
     const destinationMember = { ...newFamily.members[destinationMemberIndex] }
+
+    // If dropped in the same list and same position, do nothing
+    if (result.source.droppableId === result.destination.droppableId && result.source.index === result.destination.index) {
+      setIsDragging(false); // End dragging state if no change
+      return;
+    }
 
     const [removed] = sourceMember.gifts.splice(result.source.index, 1)
     destinationMember.gifts.splice(result.destination.index, 0, removed)
@@ -139,8 +166,9 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
       alert(`Failed to reorder gifts: ${errorText}`)
       // Revert UI on API failure
       setFamily(originalFamily);
+    } else {
+      router.refresh(); // Refresh the page to ensure server-side state is consistent
     }
-
     setIsDragging(false); // End dragging after all logic is complete
   }
 
@@ -223,8 +251,8 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
       alert('You have successfully left the family list.')
       router.push('/') // Redirect to home page
     } else {
-      const errorText: any = await res.json()
-      alert(`Failed to leave family: ${errorText.error}`)
+      const errorText: unknown = await res.json()
+      alert(`Failed to leave family: ${typeof errorText === 'object' && errorText !== null && 'error' in errorText ? (errorText as { error: string }).error : 'Unknown error'}`)
     }
   }
 
@@ -265,7 +293,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
               aria-label="Add Gift"
             >
               <Image src="/gift.svg" alt="Add Gift" width={24} height={24} />
-              <span className="text-xs mt-1">Add Gift</span>
+              <span className="text-xs mt-1 dark:hover:text-black">Add Gift</span>
             </button>
           )}
           {user && user.id === family.owner_id && (
@@ -275,7 +303,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
               aria-label="Add Member"
             >
               <Image src="/add-user.svg" alt="Add Member" width={24} height={24} />
-              <span className="text-xs mt-1">Add Member</span>
+              <span className="text-xs mt-1 dark:hover:text-black">Add Member</span>
             </button>
           )}
           <button
@@ -284,7 +312,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             aria-label="Invite with QR Code"
           >
             <Image src="/qr_code.svg" alt="QR Code" width={24} height={24} />
-            <span className="text-xs mt-1">Invite</span>
+            <span className="text-xs mt-1 dark:hover:text-black">Invite</span>
           </button>
         </div>
 
@@ -322,15 +350,16 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
         </div>
 
         <DragDropContext
-          onBeforeDragStart={() => {
+          onBeforeDragStart={(start) => {
             setIsDragging(true);
+            setSourceDroppableId(start.source.droppableId); // Set the ID of the list the item is dragged from
           }}
           onDragEnd={handleDragEnd}
         >
           {family.members.map((member) => (
             <div key={member.id} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-8">
               <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-semibold mb-4">{member.name}&apos;s List</h2>
+                <h2 className="text-2xl font-semibold mb-4">{member.name}&#39;s List</h2>
                 {user && user.id === family.owner_id && user.id !== member.id && (
                   <button
                     onClick={() => handleRemoveMember(member.id)}
@@ -341,12 +370,12 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                 )}
               </div>
               {member.gifts.length === 0 ? (
-                <p>No gifts on {member.name}'s list yet.</p>
+                <p>No gifts on {member.name}&#39;s list yet.</p>
               ) : (
-                <Droppable droppableId={member.id}>
+                <Droppable droppableId={member.id} isDropDisabled={isDragging && sourceDroppableId !== member.id}>
                   {(provided) => (
                     <ul
-                      className={`${viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4' : 'list-disc pl-5 space-y-2'}`}
+                      className={`relative ${viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4' : 'list-disc pl-5 space-y-2'}`}
                       {...provided.droppableProps}
                       ref={provided.innerRef}
                     >
@@ -356,6 +385,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                             <li
                               ref={provided.innerRef}
                               {...provided.draggableProps}
+                              {...provided.dragHandleProps} // Apply dragHandleProps here
                               onDoubleClick={() => {
                                 if (user && user.id === gift.user_id) {
                                   setEditingGift(gift);
@@ -379,7 +409,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                   )}
                                 </span>
                               </div>
-                              <div className={`flex items-center flex-shrink-0 ${viewMode === 'grid' ? 'flex-col space-y-2' : 'space-x-2'}`} {...provided.dragHandleProps}> {/* Buttons container, now also drag handle */}
+                              <div className={`flex items-center flex-shrink-0 ${viewMode === 'grid' ? 'flex-col space-y-2' : 'space-x-2'}`}> {/* Buttons container */}
                                 {gift.product_url && (
                                   <a
                                     href={gift.product_url}
@@ -403,14 +433,6 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                         </Draggable>
                       ))}
                       {provided.placeholder}
-                      {isDragging && (
-                        <div
-                          className="mt-4 p-4 border-2 border-dashed rounded-lg text-center transition-all duration-200
-                            border-gray-300 bg-gray-50 text-gray-500"
-                        >
-                          Drag outside to delete gift 🗑️
-                        </div>
-                      )}
                     </ul>
                   )}
                 </Droppable>
@@ -418,7 +440,24 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             </div>
           ))}
 
-          </DragDropContext>
+          {mounted && portalNode && ReactDOM.createPortal(
+            <Droppable droppableId="trash-bin-global">
+              {(provided) => (
+                <div
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                  className={`fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md p-4 border-2 border-dashed rounded-lg text-center transition-all duration-200 z-50
+                    border-red-500 bg-red-50 dark:bg-red-900 text-red-500 dark:text-red-200
+                    ${isDragging ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                >
+                  Drag here to delete gift 🗑️
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>,
+            portalNode
+          )}
+        </DragDropContext>
 
         {/* Modals */}
         {showAddGiftModal && user && (
@@ -429,8 +468,6 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             onClose={() => setShowAddGiftModal(false)} // Pass onClose prop
           />
         )}
-
-        
 
         {showAddMemberModal && user && user.id === family.owner_id && (
           <AddMemberForm
