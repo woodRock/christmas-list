@@ -5,10 +5,13 @@
   "/api/gifts/[giftId]/route": "app/api/gifts/[giftId]/route.js",
   "/api/gifts/[giftId]/unclaim/route": "app/api/gifts/[giftId]/unclaim/route.js",
   "/api/gifts/reorder/route": "app/api/gifts/reorder/route.js",
+  "/api/invites/accept/route": "app/api/invites/accept/route.js",
+  "/api/lists/[familyId]/invites/route": "app/api/lists/[familyId]/invites/route.js",
   "/api/lists/[familyId]/members/[memberId]/route": "app/api/lists/[familyId]/members/[memberId]/route.js",
   "/api/lists/[familyId]/members/route": "app/api/lists/[familyId]/members/route.js",
   "/create-family/page": "app/create-family/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/invite/page": "app/invite/page.js",
   "/list/[familyId]/page": "app/list/[familyId]/page.js",
   "/login/page": "app/login/page.js",
   "/page": "app/page.js"

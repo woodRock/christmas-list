@@ -1,4 +1,5 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/api/gifts/[giftId]/claim/route": "app/api/gifts/[giftId]/claim/route.js",
   "/api/gifts/[giftId]/route": "app/api/gifts/[giftId]/route.js",
   "/api/gifts/[giftId]/unclaim/route": "app/api/gifts/[giftId]/unclaim/route.js",

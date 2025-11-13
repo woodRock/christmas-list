@@ -1,13 +1,12 @@
 import { createClient } from '@/lib/supabase-server'
-import { NextResponse } from 'next/server'
+import { NextResponse, NextRequest } from 'next/server' // Import NextRequest
 import { randomBytes } from 'crypto'
 
 export async function POST(
-  request: Request,
-  { params }: { params: { familyId: string } }
+  request: NextRequest,
+  context: { params: Promise<{ familyId: string }> } // Change to Promise
 ) {
   const supabase = await createClient()
-  const resolvedParams = await params
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
@@ -15,7 +14,8 @@ export async function POST(
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const listId = resolvedParams.familyId
+  const resolvedParams = await context.params; // Await the params
+  const listId = resolvedParams.familyId; // Access familyId from resolved params
 
   // Verify that the user is a member of the list
   const { data: member, error: memberError } = await supabase

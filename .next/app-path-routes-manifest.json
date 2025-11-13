@@ -5,10 +5,13 @@
   "/api/gifts/[giftId]/route": "/api/gifts/[giftId]",
   "/api/gifts/[giftId]/unclaim/route": "/api/gifts/[giftId]/unclaim",
   "/api/gifts/reorder/route": "/api/gifts/reorder",
+  "/api/invites/accept/route": "/api/invites/accept",
+  "/api/lists/[familyId]/invites/route": "/api/lists/[familyId]/invites",
   "/api/lists/[familyId]/members/[memberId]/route": "/api/lists/[familyId]/members/[memberId]",
   "/api/lists/[familyId]/members/route": "/api/lists/[familyId]/members",
   "/create-family/page": "/create-family",
   "/favicon.ico/route": "/favicon.ico",
+  "/invite/page": "/invite",
   "/list/[familyId]/page": "/list/[familyId]",
   "/login/page": "/login",
   "/page": "/"
