@@ -6,11 +6,16 @@ export default async function Home() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
+  console.log("User id: ", user?.id);
+
   if (!user) {
-    redirect('/login')
+    redirect('/login') 
   }
 
-  const { data: families, error } = await supabase.rpc('get_lists_for_user', { user_id: user.id })
+  const { data: families, error } = await supabase.rpc('get_lists_for_user', { p_user_id: user.id })
+
+  console.log("Fetched families for user:", families);
+  console.log("Fetch error (if any):", error);
 
   return (
     <div className="min-h-screen bg-gray-100 py-8">

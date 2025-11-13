@@ -118,3 +118,60 @@
 [00:48:15.425] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:48:17.029] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:48:51.612] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:36.604] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:36.190] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:44.973] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:05:57.160] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:35.791] Browser ERROR   ./src/app/page.tsx:13:52
+Parsing ecmascript source code failed
+  11 |   }
+  12 |
+> 13 |   const { data: families, error } = await supabase.('get_lists_for_user', { user_id: user.id })
+     |                                                    ^
+  14 |
+  15 |   console.log("Fetched families for user:", families);
+  16 |   console.log("Fetch error (if any):", error);
+
+Expected ident
+[01:07:35.791] Browser ERROR   ./src/app/page.tsx:13:52
+Parsing ecmascript source code failed
+  11 |   }
+  12 |
+> 13 |   const { data: families, error } = await supabase.('get_lists_for_user', { user_id: user.id })
+     |                                                    ^
+  14 |
+  15 |   console.log("Fetched families for user:", families);
+  16 |   console.log("Fetch error (if any):", error);
+
+Expected ident
+[01:07:35.791] Browser ERROR   ./src/app/page.tsx:13:52
+Parsing ecmascript source code failed
+  11 |   }
+  12 |
+> 13 |   const { data: families, error } = await supabase.('get_lists_for_user', { user_id: user.id })
+     |                                                    ^
+  14 |
+  15 |   console.log("Fetched families for user:", families);
+  16 |   console.log("Fetch error (if any):", error);
+
+Expected ident
+[01:07:44.589] Server  LOG      ✓ Compiled in 15ms
+[01:07:45.417] Server  LOG     Fetched families for user: null
+[01:07:45.417] Server  LOG     Fetch error (if any): {}
+[01:07:47.502] Server  LOG     Fetched families for user: null
+[01:07:47.502] Server  LOG     Fetch error (if any): {}
+[01:07:47.663] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:09:50.091] Server  LOG      ✓ Compiled in 15ms
+[01:09:50.788] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:09:51.102] Server  LOG     Fetched families for user: null
+[01:09:51.102] Server  LOG     Fetch error (if any): {}
+[01:15:33.369] Server  LOG      ✓ Compiled in 21ms
+[01:15:34.078] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:15:34.465] Server  LOG     Fetched families for user: [{...}]
+[01:15:34.465] Server  LOG     Fetch error (if any): null
+[01:15:37.058] Server  LOG     listData: {}
+[01:15:37.371] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:15:37.627] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:15:37.627] Server  LOG     membersMap after populating: {}
+[01:15:37.627] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:15:37.628] Server  LOG     Family Members: [{...},{...}]
