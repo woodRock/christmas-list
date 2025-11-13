@@ -1,177 +1,122 @@
-[00:00:00.592] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:00.627] Server  LOG      ✓ Ready in 493ms
-[00:00:03.708] Server  LOG     listData: {}
-[00:00:03.893] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:00:04.069] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:00:04.070] Server  LOG     membersMap after populating: {}
-[00:00:04.070] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:00:04.071] Server  LOG     Family Members: [{...},{...}]
-[00:00:04.196] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:38.399] Server  LOG     PATCH /api/gifts/reorder reached!
-[00:05:38.403] Server  LOG     Unauthorized: No user session.
-[00:05:48.602] Server  LOG     listData: {}
-[00:05:48.792] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:05:48.968] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:05:48.968] Server  LOG     membersMap after populating: {}
-[00:05:48.969] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:05:48.969] Server  LOG     Family Members: [{...},{...}]
-[00:05:51.095] Server  LOG     PATCH /api/gifts/reorder reached!
-[00:05:51.272] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
-[00:05:51.273] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
-[00:05:51.440] Server  LOG     Unauthorized: User does not own item being reordered. {}
-[00:07:03.938] Server  LOG     listData: {}
-[00:07:04.134] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:07:04.322] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:07:04.323] Server  LOG     membersMap after populating: {}
-[00:07:04.323] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:07:04.323] Server  LOG     Family Members: [{...},{...}]
-[00:07:18.715] Server  LOG     listData: {}
-[00:07:18.882] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:07:19.053] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:07:19.053] Server  LOG     membersMap after populating: {}
-[00:07:19.054] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:07:19.054] Server  LOG     Family Members: [{...},{...}]
-[00:07:19.243] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:21.376] Server  LOG     PATCH /api/gifts/reorder reached!
-[00:07:21.568] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
-[00:07:21.569] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
-[00:07:21.748] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:07:21.748] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:07:21.749] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:07:21.749] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:07:21.749] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:07:21.750] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:07:21.750] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:07:21.750] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:07:21.750] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "8261fdea-4831-4d14-bccb-f2c3cfa86d8f"
-[00:07:21.751] Server  LOG     Unauthorized: User does not own item being reordered. {}
-[00:07:34.634] Server  LOG     listData: {}
-[00:07:34.822] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:07:35.055] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:07:35.056] Server  LOG     membersMap after populating: {}
-[00:07:35.056] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:07:35.056] Server  LOG     Family Members: [{...},{...}]
-[00:31:28.065] Server  LOG      ✓ Compiled in 24ms
-[00:31:29.135] Server  LOG     listData: {}
-[00:31:29.137] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:31:29.138] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:31:29.138] Server  LOG     membersMap after populating: {}
-[00:31:29.138] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:31:29.138] Server  LOG     Family Members: [{...},{...}]
-[00:31:48.336] Server  LOG      ✓ Compiled in 11ms
-[00:31:48.579] Server  LOG     listData: {}
-[00:31:48.582] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:31:48.584] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:31:48.584] Server  LOG     membersMap after populating: {}
-[00:31:48.584] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:31:48.584] Server  LOG     Family Members: [{...},{...}]
-[00:32:09.251] Server  LOG      ✓ Compiled in 10ms
-[00:32:09.477] Server  LOG     listData: {}
-[00:32:09.479] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:32:09.481] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:32:09.481] Server  LOG     membersMap after populating: {}
-[00:32:09.481] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:32:09.481] Server  LOG     Family Members: [{...},{...}]
-[00:33:18.728] Server  LOG     listData: {}
-[00:33:18.946] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:33:19.122] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:33:19.122] Server  LOG     membersMap after populating: {}
-[00:33:19.123] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:33:19.123] Server  LOG     Family Members: [{...},{...}]
-[00:33:19.333] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:33.438] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:37.558] Server  LOG     listData: {}
-[00:33:46.364] Server  LOG     listData: {}
-[00:33:49.450] Server  LOG     listData: {}
-[00:33:53.011] Server  LOG     listData: {}
-[00:33:57.469] Server  LOG     listData: {}
-[00:34:12.945] Server  LOG     listData: {}
-[00:34:13.123] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:34:13.311] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:34:13.312] Server  LOG     membersMap after populating: {}
-[00:34:13.312] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:34:13.312] Server  LOG     Family Members: [{...},{...}]
-[00:35:08.672] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:35:17.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:35:20.633] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:37:21.429] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:37:23.393] Server  LOG     listData: {}
-[00:37:25.768] Server  LOG     listData: {}
-[00:37:27.963] Server  LOG     listData: {}
-[00:37:32.247] Server  LOG     listData: {}
-[00:37:38.224] Server  LOG     listData: null
-[00:37:38.384] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:37:52.218] Server  LOG     listData: {}
-[00:37:52.982] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:37:59.087] Server  LOG     listData: {}
-[00:40:08.461] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:16.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:56.291] Server  LOG      ✓ Compiled in 14ms
-[00:41:15.267] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:41:17.175] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:41:20.270] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:42:33.840] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:42:35.801] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:44:38.040] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:44:48.872] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:45:01.542] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:48:15.425] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:48:17.029] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:48:51.612] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:57:36.604] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:00:36.190] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:01:44.973] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:05:57.160] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:07:35.791] Browser ERROR   ./src/app/page.tsx:13:52
-Parsing ecmascript source code failed
-  11 |   }
-  12 |
-> 13 |   const { data: families, error } = await supabase.('get_lists_for_user', { user_id: user.id })
-     |                                                    ^
-  14 |
-  15 |   console.log("Fetched families for user:", families);
-  16 |   console.log("Fetch error (if any):", error);
-
-Expected ident
-[01:07:35.791] Browser ERROR   ./src/app/page.tsx:13:52
-Parsing ecmascript source code failed
-  11 |   }
-  12 |
-> 13 |   const { data: families, error } = await supabase.('get_lists_for_user', { user_id: user.id })
-     |                                                    ^
-  14 |
-  15 |   console.log("Fetched families for user:", families);
-  16 |   console.log("Fetch error (if any):", error);
-
-Expected ident
-[01:07:35.791] Browser ERROR   ./src/app/page.tsx:13:52
-Parsing ecmascript source code failed
-  11 |   }
-  12 |
-> 13 |   const { data: families, error } = await supabase.('get_lists_for_user', { user_id: user.id })
-     |                                                    ^
-  14 |
-  15 |   console.log("Fetched families for user:", families);
-  16 |   console.log("Fetch error (if any):", error);
-
-Expected ident
-[01:07:44.589] Server  LOG      ✓ Compiled in 15ms
-[01:07:45.417] Server  LOG     Fetched families for user: null
-[01:07:45.417] Server  LOG     Fetch error (if any): {}
-[01:07:47.502] Server  LOG     Fetched families for user: null
-[01:07:47.502] Server  LOG     Fetch error (if any): {}
-[01:07:47.663] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:09:50.091] Server  LOG      ✓ Compiled in 15ms
-[01:09:50.788] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[01:09:51.102] Server  LOG     Fetched families for user: null
-[01:09:51.102] Server  LOG     Fetch error (if any): {}
-[01:15:33.369] Server  LOG      ✓ Compiled in 21ms
-[01:15:34.078] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[01:15:34.465] Server  LOG     Fetched families for user: [{...}]
-[01:15:34.465] Server  LOG     Fetch error (if any): null
-[01:15:37.058] Server  LOG     listData: {}
-[01:15:37.371] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[01:15:37.627] Server  LOG     profilesData after fetching: [{...},{...}]
-[01:15:37.627] Server  LOG     membersMap after populating: {}
-[01:15:37.627] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[01:15:37.628] Server  LOG     Family Members: [{...},{...}]
+[00:00:00.651] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:00.708] Server  LOG      ✓ Ready in 556ms
+[00:00:03.766] Server  LOG     listData: {}
+[00:00:03.944] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:04.126] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:00:04.127] Server  LOG     membersMap after populating: {}
+[00:00:04.127] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:04.128] Server  LOG     Family Members: [{...},{...}]
+[00:00:04.317] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:12.307] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:00:12.476] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:12.643] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:12.871] Server  LOG     Supabase rpc error: null
+[00:00:17.865] Server  LOG     listData: {}
+[00:00:18.038] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:18.213] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:00:18.213] Server  LOG     membersMap after populating: {}
+[00:00:18.213] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:18.213] Server  LOG     Family Members: [{...},{...}]
+[00:00:18.393] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:25.405] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:00:25.576] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:25.740] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:25.968] Server  LOG     Supabase rpc error: null
+[00:00:28.309] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:00:28.470] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:28.641] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:28.811] Server  LOG     Supabase rpc error: null
+[00:00:36.357] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:00:36.528] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:36.694] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:36.894] Server  LOG     Supabase rpc error: null
+[00:00:38.244] Server  LOG     listData: {}
+[00:00:38.433] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:38.612] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:00:38.612] Server  LOG     membersMap after populating: {}
+[00:00:38.612] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:38.613] Server  LOG     Family Members: [{...},{...}]
+[00:00:38.788] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:48.468] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:00:48.634] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:48.802] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:49.010] Server  LOG     Supabase rpc error: null
+[00:00:49.927] Server  LOG     listData: {}
+[00:00:50.109] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:50.283] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:00:50.284] Server  LOG     membersMap after populating: {}
+[00:00:50.284] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:50.284] Server  LOG     Family Members: [{...},{...}]
+[00:00:50.465] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:52.742] Server  LOG     listData: {}
+[00:00:52.924] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:53.164] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:00:53.164] Server  LOG     membersMap after populating: {}
+[00:00:53.164] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:53.164] Server  LOG     Family Members: [{...},{...}]
+[00:00:53.335] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:55.182] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:00:55.353] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:55.521] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:55.727] Server  LOG     Supabase rpc error: null
+[00:00:58.763] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:00:58.933] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:59.099] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:00:59.270] Server  LOG     Supabase rpc error: null
+[00:01:03.321] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:01:03.481] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:01:03.648] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:01:03.863] Server  LOG     Supabase rpc error: null
+[00:01:30.483] Server  LOG     context: {}
+[00:01:30.682] Server  WARN    Error: Route "/api/gifts/[giftId]/claim" used `...params` or similar expression. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:01:30.682] Server  LOG     context.params: {}
+[00:01:30.683] Server  LOG     giftId: "43941098-6fb6-448e-8fcf-1ffecbfa78e6"
+[00:01:32.465] Server  LOG     listData: {}
+[00:01:32.639] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:01:32.818] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:01:32.819] Server  LOG     membersMap after populating: {}
+[00:01:32.819] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:01:32.819] Server  LOG     Family Members: [{...},{...}]
+[00:01:34.102] Server  LOG     listData: {}
+[00:01:34.276] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:01:34.443] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:01:34.443] Server  LOG     membersMap after populating: {}
+[00:01:34.443] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:01:34.444] Server  LOG     Family Members: [{...},{...}]
+[00:01:34.625] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:41.172] Server  LOG     listData: {}
+[00:01:41.347] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:01:41.521] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:01:41.522] Server  LOG     membersMap after populating: {}
+[00:01:41.522] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:01:41.522] Server  LOG     Family Members: [{...},{...}]
+[00:01:42.488] Server  LOG     listData: {}
+[00:01:42.658] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:01:42.824] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:01:42.824] Server  LOG     membersMap after populating: {}
+[00:01:42.825] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:01:42.825] Server  LOG     Family Members: [{...},{...}]
+[00:01:42.999] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:20.038] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:02:20.200] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:02:20.376] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:02:20.604] Server  LOG     Supabase rpc error: null
+[00:02:22.620] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:02:22.782] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:02:22.941] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:02:23.113] Server  LOG     Supabase rpc error: null
+[00:02:24.557] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:02:24.730] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:02:24.892] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:02:25.061] Server  LOG     Supabase rpc error: null
+[00:02:28.089] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:02:28.333] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:02:28.494] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:02:28.731] Server  LOG     Supabase rpc error: null
+[00:02:29.015] Server  LOG     listData: {}
+[00:02:29.189] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:02:29.370] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:02:29.371] Server  LOG     membersMap after populating: {}
+[00:02:29.371] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:02:29.371] Server  LOG     Family Members: [{...},{...}]
+[00:02:29.555] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

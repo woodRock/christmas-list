@@ -39,10 +39,8 @@ export async function PATCH(request: Request) {
   }))
   console.log("Updates to be sent to Supabase:", updates);
 
-  const { error } = await supabase
-    .from('items')
-    .upsert(updates, { onConflict: 'id' }) // Upsert to update existing items
-  console.log("Supabase upsert error:", error);
+  const { error } = await supabase.rpc('reorder_items', { items_data: updates })
+  console.log("Supabase rpc error:", error);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })

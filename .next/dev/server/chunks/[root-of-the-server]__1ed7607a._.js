@@ -113,7 +113,7 @@ async function PATCH(request) {
             status: 401
         });
     }
-    const { items } = await request.json() // items is an array of { id: string, order_index: number }
+    const { items } = await request.json() // items is an array of { id: string, order_index: number, list_id: string }
     ;
     console.log("Request body (items for reorder):", items);
     if (!Array.isArray(items) || items.length === 0) {
@@ -124,43 +124,25 @@ async function PATCH(request) {
             status: 400
         });
     }
-    const updates = items.map((item)=>({
-            id: item.id,
-            order_index: item.order_index,
-            list_id: item.list_id
-        }));
-    console.log("Updates to be sent to Supabase:", updates);
-    const { error: fetchError, data: existingItems } = await supabase.from('items').select('id, user_id').in('id', updates.map((item)=>item.id));
-    if (fetchError) {
-        console.log("Error fetching existing items for reorder:", fetchError);
+    const listId = items[0].list_id;
+    // Verify that the user is a member of the list
+    const { data: member, error: memberError } = await supabase.from('list_members').select('profile_id').eq('list_id', listId).eq('profile_id', user.id).single();
+    if (memberError || !member) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: fetchError.message
+            error: 'Unauthorized: You are not a member of this list.'
         }, {
-            status: 500
+            status: 403
         });
     }
-    // Verify that the user owns all items they are trying to reorder
-    for (const update of updates){
-        const existingItem = existingItems?.find((item)=>item.id === update.id);
-        console.log("User id: ", user.id, "Existing item for update:", existingItem?.user_id);
-        if (!existingItem || existingItem.user_id !== user.id) {
-            console.log("Unauthorized: User does not own item being reordered.", {
-                itemId: update.id,
-                itemOwner: existingItem?.user_id,
-                currentUser: user.id
-            });
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: 'Unauthorized: You can only reorder your own gifts.'
-            }, {
-                status: 403
-            });
-        }
-    }
-    const { error } = await supabase.from('items').upsert(updates, {
-        onConflict: 'id'
-    }) // Upsert to update existing items
-    ;
-    console.log("Supabase upsert error:", error);
+    const updates = items.map((item)=>({
+            id: item.id,
+            order_index: item.order_index
+        }));
+    console.log("Updates to be sent to Supabase:", updates);
+    const { error } = await supabase.rpc('reorder_items', {
+        items_data: updates
+    });
+    console.log("Supabase rpc error:", error);
     if (error) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             error: error.message

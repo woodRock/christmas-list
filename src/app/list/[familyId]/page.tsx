@@ -61,6 +61,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
     .from('items')
     .select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price') // Select order_index, notes, price
     .eq('list_id', resolvedParams.familyId)
+    .order('order_index')
 
   if (itemsError) {
     return <p className="text-red-500 text-center">Error loading gifts: {itemsError.message}</p>
