@@ -16,7 +16,9 @@ interface Gift {
   is_purchased: boolean;
   purchased_by?: string;
   user_id: string;
-  order_index?: number; // Add order_index
+  order_index?: number;
+  notes?: string; // Add notes
+  price?: number; // Add price
 }
 
 interface Member {
@@ -32,10 +34,29 @@ interface Family {
   members: Member[];
 }
 
+// Utility function to format notes with clickable links
+const formatNotesWithLinks = (notes?: string) => {
+  if (!notes) return null;
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  return notes.split(urlRegex).map((part, index) => {
+    if (part.match(urlRegex)) {
+      return (
+        <a key={index} href={part} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+};
+
 export default function FamilyListClient({ initialFamily, initialUser, familyId }: { initialFamily: Family, initialUser: any, familyId: string }) {
   const [family, setFamily] = useState<Family>(initialFamily)
   const [user] = useState(initialUser)
   const [editingGift, setEditingGift] = useState<Gift | null>(null)
+  const [expandedGiftId, setExpandedGiftId] = useState<string | null>(null); // State for expanded gift
+  const [sortKey, setSortKey] = useState<keyof Gift | 'order_index'>('order_index'); // Default sort by order_index
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc'); // Default sort order ascending
   const supabase = createClient()
   const router = useRouter()
 
@@ -66,14 +87,22 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     setFamily(newFamily)
 
     // Call API to update order
-    const { error } = await supabase
-      .from('items')
-      .upsert(updatedGifts.map(g => ({ id: g.id, order_index: g.order_index })))
+    const res = await fetch('/api/gifts/reorder', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        items: updatedGifts.map(gift => ({
+          id: gift.id,
+          order_index: gift.order_index,
+          list_id: family.id, // Include list_id
+        })),
+      }),
+    })
 
-    if (error) {
-      console.error('Error reordering gifts:', error)
-      // Revert UI if API call fails
-      router.refresh()
+    if (!res.ok) {
+      const errorText = await res.text()
+      alert(`Failed to reorder gifts: ${errorText}`)
+      router.refresh() // Revert UI on failure
     }
   }
 
@@ -92,11 +121,65 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     }
   }
 
+  const handleToggleExpand = (giftId: string) => {
+    setExpandedGiftId(expandedGiftId === giftId ? null : giftId);
+  };
+
+  const handleSort = (key: keyof Gift | 'order_index') => {
+    if (sortKey === key) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortKey(key);
+      setSortOrder('asc');
+    }
+  };
+
+  const sortedGifts = (gifts: Gift[]) => {
+    return [...gifts].sort((a, b) => {
+      let valA: any;
+      let valB: any;
+
+      if (sortKey === 'order_index') {
+        valA = a.order_index || 0;
+        valB = b.order_index || 0;
+      } else if (sortKey === 'price') {
+        valA = a.price || 0;
+        valB = b.price || 0;
+      } else {
+        valA = a[sortKey]?.toString().toLowerCase() || '';
+        valB = b[sortKey]?.toString().toLowerCase() || '';
+      }
+
+      if (valA < valB) return sortOrder === 'asc' ? -1 : 1;
+      if (valA > valB) return sortOrder === 'asc' ? 1 : -1;
+      return 0;
+    });
+  };
+
   return (
     <div className="px-4 py-8 mx-auto fresh-gradient min-h-screen">
       <div className="max-w-screen-lg mx-auto">
         <h1 className="text-4xl font-bold mb-4">{family.name} Christmas List</h1>
         <Link href="/" className="text-blue-500 hover:underline mb-4 block">← Back to Home</Link>
+
+        <div className="mb-4 flex items-center space-x-2">
+          <span className="text-gray-700">Sort by:</span>
+          <select
+            className="px-3 py-1 border border-gray-300 rounded-md text-sm"
+            value={sortKey}
+            onChange={(e) => handleSort(e.target.value as keyof Gift | 'order_index')}
+          >
+            <option value="order_index">Default Order</option>
+            <option value="description">Description</option>
+            <option value="price">Price</option>
+          </select>
+          <button
+            onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
+            className="px-3 py-1 bg-gray-200 rounded-md text-sm"
+          >
+            {sortOrder === 'asc' ? 'Asc' : 'Desc'}
+          </button>
+        </div>
 
         {family.members.map((member) => (
           <div key={member.id} className="bg-white p-6 rounded-lg shadow-md mb-8">
@@ -112,47 +195,60 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                       {...provided.droppableProps}
                       ref={provided.innerRef}
                     >
-                      {member.gifts.sort((a, b) => (a.order_index || 0) - (b.order_index || 0)).map((gift, index) => (
+                      {sortedGifts(member.gifts).map((gift, index) => (
                         <Draggable key={gift.id} draggableId={gift.id} index={index}>
                           {(provided) => (
                             <li
                               ref={provided.innerRef}
                               {...provided.draggableProps}
                               {...provided.dragHandleProps}
-                              className="flex justify-between items-center bg-gray-50 p-2 rounded-md shadow-sm"
+                              className="flex flex-col justify-between items-start bg-gray-50 p-2 rounded-md shadow-sm cursor-pointer"
+                              onClick={() => handleToggleExpand(gift.id)}
                             >
-                              <span>
-                                {gift.description}
-                                {gift.is_purchased && user.id !== gift.user_id && (
-                                  <span className="ml-2 text-sm text-green-600">
-                                    (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
-                                  </span>
-                                )}
-                              </span>
-                              <div className="flex items-center space-x-2">
-                                {user && user.id === gift.user_id && ( // Only owner can edit/delete
-                                  <>
-                                    <button
-                                      onClick={() => setEditingGift(gift)}
-                                      className="px-2 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-xs"
-                                    >
-                                      Edit
-                                    </button>
-                                    <button
-                                      onClick={() => handleDeleteGift(gift.id)}
-                                      className="px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 text-xs"
-                                    >
-                                      Delete
-                                    </button>
-                                  </>
-                                )}
-                                {user && user.id !== gift.user_id && (
-                                  <ClaimUnclaimButtons
-                                    gift={gift}
-                                    userId={user.id}
-                                  />
-                                )}
+                              <div className="flex justify-between w-full items-center">
+                                <span>
+                                  {gift.description}
+                                  {gift.is_purchased && user.id !== gift.user_id && (
+                                    <span className="ml-2 text-sm text-green-600">
+                                      (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
+                                    </span>
+                                  )}
+                                </span>
+                                <div className="flex items-center space-x-2">
+                                  {user && user.id === gift.user_id && ( // Only owner can edit/delete
+                                    <>
+                                      <button
+                                        onClick={(e) => { e.stopPropagation(); setEditingGift(gift); }}
+                                        className="px-2 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-xs"
+                                      >
+                                        Edit
+                                      </button>
+                                      <button
+                                        onClick={(e) => { e.stopPropagation(); handleDeleteGift(gift.id); }}
+                                        className="px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 text-xs"
+                                      >
+                                        Delete
+                                      </button>
+                                    </>
+                                  )}
+                                  {user && user.id !== gift.user_id && (
+                                    <ClaimUnclaimButtons
+                                      gift={gift}
+                                      userId={user.id}
+                                    />
+                                  )}
+                                </div>
                               </div>
+                              {expandedGiftId === gift.id && (
+                                <div className="mt-2 text-sm text-gray-700 w-full">
+                                  {gift.notes && (
+                                    <p><strong>Notes:</strong> {formatNotesWithLinks(gift.notes)}</p>
+                                  )}
+                                  {gift.price && (
+                                    <p><strong>Price:</strong> ${gift.price.toFixed(2)}</p>
+                                  )}
+                                </div>
+                              )}
                             </li>
                           )}
                         </Draggable>
@@ -196,3 +292,4 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     </div>
   )
 }
+

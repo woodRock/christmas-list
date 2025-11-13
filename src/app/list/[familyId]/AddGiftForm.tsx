@@ -17,6 +17,8 @@ interface AddGiftFormProps {
 
 export default function AddGiftForm({ familyId, currentUserId, members }: AddGiftFormProps) {
   const [newGiftDescription, setNewGiftDescription] = useState('')
+  const [newGiftNotes, setNewGiftNotes] = useState('')
+  const [newGiftPrice, setNewGiftPrice] = useState<string>('')
   const [selectedRecipientId, setSelectedRecipientId] = useState(currentUserId) // Default to current user
   const [message, setMessage] = useState('')
   const supabase = createClient()
@@ -36,15 +38,35 @@ export default function AddGiftForm({ familyId, currentUserId, members }: AddGif
       return
     }
 
+    // Get the current max order_index for the list
+    const { data: maxOrderData, error: maxOrderError } = await supabase
+      .from('items')
+      .select('order_index')
+      .eq('list_id', familyId)
+      .order('order_index', { ascending: false })
+      .limit(1)
+      .single()
+
+    const nextOrderIndex = maxOrderData ? maxOrderData.order_index + 1 : 0;
+
     const { error } = await supabase
       .from('items')
-      .insert([{ list_id: familyId, user_id: selectedRecipientId, name: newGiftDescription }])
+      .insert([{
+        list_id: familyId,
+        user_id: selectedRecipientId,
+        name: newGiftDescription,
+        notes: newGiftNotes || null,
+        price: newGiftPrice ? parseFloat(newGiftPrice) : null,
+        order_index: nextOrderIndex
+      }])
 
     if (error) {
       setMessage(`Failed to add gift: ${error.message}`)
     } else {
       setMessage(`Gift "${newGiftDescription}" added successfully!`)
       setNewGiftDescription('')
+      setNewGiftNotes('')
+      setNewGiftPrice('')
       router.refresh() // Refresh the current page to show the new gift
     }
   }
@@ -71,7 +93,7 @@ export default function AddGiftForm({ familyId, currentUserId, members }: AddGif
           </select>
         </div>
         <div>
-          <label htmlFor="gift-desc" className="sr-only">
+          <label htmlFor="gift-desc" className="block text-sm font-medium text-gray-700">
             Gift Description
           </label>
           <input
@@ -82,6 +104,33 @@ export default function AddGiftForm({ familyId, currentUserId, members }: AddGif
             value={newGiftDescription}
             onChange={(e) => setNewGiftDescription(e.target.value)}
             required
+          />
+        </div>
+        <div>
+          <label htmlFor="gift-notes" className="block text-sm font-medium text-gray-700">
+            Notes (Optional)
+          </label>
+          <textarea
+            id="gift-notes"
+            placeholder="e.g., Size M, color blue, link to product"
+            rows={3}
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            value={newGiftNotes}
+            onChange={(e) => setNewGiftNotes(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="gift-price" className="block text-sm font-medium text-gray-700">
+            Price (Optional)
+          </label>
+          <input
+            type="number"
+            id="gift-price"
+            placeholder="e.g., 25.99"
+            step="0.01"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            value={newGiftPrice}
+            onChange={(e) => setNewGiftPrice(e.target.value)}
           />
         </div>
         <button

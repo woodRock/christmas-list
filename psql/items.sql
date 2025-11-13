@@ -6,6 +6,8 @@ create table public.items (
   purchased_by uuid null,
   user_id uuid null,
   order_index integer null,
+  notes text null,
+  price numeric null,
   constraint items_pkey primary key (id),
   constraint items_list_id_fkey foreign KEY (list_id) references lists (id),
   constraint items_purchased_by_fkey foreign KEY (purchased_by) references auth.users (id),

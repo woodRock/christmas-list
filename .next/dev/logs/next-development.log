@@ -1,1399 +1,442 @@
-[00:00:00.733] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:00.800] Server  LOG      ✓ Ready in 594ms
-[00:00:31.251] Server  ERROR    ⨯ Error: Your project's URL and Key are required to create a Supabase client!
-
-Check your Supabase project's API settings to find these values
-
-https://supabase.com/dashboard/project/_/settings/api
-[00:00:31.717] Server  ERROR    ⨯ Error: Your project's URL and Key are required to create a Supabase client!
-
-Check your Supabase project's API settings to find these values
-
-https://supabase.com/dashboard/project/_/settings/api
-[00:00:31.844] Browser ERROR   uncaughtError: Error: Your project's URL and Key are required to create a Supabase client!
-
-Check your Supabase project's API settings to find these values
-
-https://supabase.com/dashboard/project/_/settings/api
-[00:00:33.270] Server  ERROR    ⨯ Error: Your project's URL and Key are required to create a Supabase client!
-
-Check your Supabase project's API settings to find these values
-
-https://supabase.com/dashboard/project/_/settings/api
-[00:02:30.617] Server  LOG        Reload env: .env.local
-[00:02:30.844] Server  LOG      ✓ Compiled in 193ms
-[00:02:32.607] Server  LOG     listData: {}
-[00:02:32.807] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:02:32.979] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:02:32.980] Server  LOG     membersMap after populating: {}
-[00:02:32.980] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:02:32.981] Server  LOG     Family Members: [{...},{...}]
-[00:02:33.257] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:55.942] Server  LOG     listData: {}
-[00:02:56.141] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:02:56.324] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:02:56.325] Server  LOG     membersMap after populating: {}
-[00:02:56.325] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:02:56.326] Server  LOG     Family Members: [{...},{...}]
-[00:02:56.533] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:33.287] Server  LOG     listData: {}
-[00:03:33.476] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:03:33.685] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:03:33.686] Server  LOG     membersMap after populating: {}
-[00:03:33.686] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:03:33.686] Server  LOG     Family Members: [{...},{...}]
-[00:03:37.343] Server  LOG     listData: {}
-[00:03:37.555] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:03:37.764] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:03:37.764] Server  LOG     membersMap after populating: {}
-[00:03:37.765] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:03:37.765] Server  LOG     Family Members: [{...},{...}]
-[00:09:07.693] Server  LOG     listData: {}
-[00:09:08.020] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:09:08.285] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:09:08.286] Server  LOG     membersMap after populating: {}
-[00:09:08.286] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:09:08.286] Server  LOG     Family Members: [{...},{...}]
-[00:09:08.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:46.824] Server  LOG     listData: {}
-[00:10:46.826] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:46.827] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:46.827] Server  LOG     membersMap after populating: {}
-[00:10:46.827] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:46.827] Server  LOG     Family Members: [{...},{...}]
-[00:10:47.054] Server  LOG     listData: {}
-[00:10:47.055] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:47.057] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:47.057] Server  LOG     membersMap after populating: {}
-[00:10:47.057] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:47.057] Server  LOG     Family Members: [{...},{...}]
-[00:10:47.268] Server  LOG     listData: {}
-[00:10:47.270] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:47.271] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:47.271] Server  LOG     membersMap after populating: {}
-[00:10:47.271] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:47.271] Server  LOG     Family Members: [{...},{...}]
-[00:10:47.516] Server  LOG     listData: {}
-[00:10:47.517] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:47.519] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:47.519] Server  LOG     membersMap after populating: {}
-[00:10:47.519] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:47.519] Server  LOG     Family Members: [{...},{...}]
-[00:10:47.733] Server  LOG     listData: {}
-[00:10:47.734] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:47.736] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:47.736] Server  LOG     membersMap after populating: {}
-[00:10:47.736] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:47.736] Server  LOG     Family Members: [{...},{...}]
-[00:10:47.939] Server  LOG     listData: {}
-[00:10:47.941] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:47.942] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:47.942] Server  LOG     membersMap after populating: {}
-[00:10:47.942] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:47.942] Server  LOG     Family Members: [{...},{...}]
-[00:10:48.166] Server  LOG     listData: {}
-[00:10:48.167] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:48.169] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:48.169] Server  LOG     membersMap after populating: {}
-[00:10:48.169] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:48.169] Server  LOG     Family Members: [{...},{...}]
-[00:10:48.393] Server  LOG     listData: {}
-[00:10:48.395] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:48.396] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:48.396] Server  LOG     membersMap after populating: {}
-[00:10:48.396] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:48.396] Server  LOG     Family Members: [{...},{...}]
-[00:10:48.603] Server  LOG     listData: {}
-[00:10:48.605] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:48.606] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:48.606] Server  LOG     membersMap after populating: {}
-[00:10:48.606] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:48.606] Server  LOG     Family Members: [{...},{...}]
-[00:10:48.801] Server  LOG     listData: {}
-[00:10:48.802] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:48.803] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:48.804] Server  LOG     membersMap after populating: {}
-[00:10:48.804] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:48.804] Server  LOG     Family Members: [{...},{...}]
-[00:10:49.001] Server  LOG     listData: {}
-[00:10:49.003] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:49.004] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:49.004] Server  LOG     membersMap after populating: {}
-[00:10:49.004] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:49.005] Server  LOG     Family Members: [{...},{...}]
-[00:10:49.210] Server  LOG     listData: {}
-[00:10:49.211] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:49.213] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:49.213] Server  LOG     membersMap after populating: {}
-[00:10:49.213] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:49.213] Server  LOG     Family Members: [{...},{...}]
-[00:10:49.422] Server  LOG     listData: {}
-[00:10:49.423] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:49.424] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:49.425] Server  LOG     membersMap after populating: {}
-[00:10:49.425] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:49.425] Server  LOG     Family Members: [{...},{...}]
-[00:10:49.992] Server  LOG     listData: {}
-[00:10:49.994] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:49.996] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:49.996] Server  LOG     membersMap after populating: {}
-[00:10:49.996] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:49.996] Server  LOG     Family Members: [{...},{...}]
-[00:10:50.196] Server  LOG     listData: {}
-[00:10:50.197] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:50.198] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:50.198] Server  LOG     membersMap after populating: {}
-[00:10:50.198] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:50.199] Server  LOG     Family Members: [{...},{...}]
-[00:10:50.420] Server  LOG     listData: {}
-[00:10:50.421] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:50.423] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:50.423] Server  LOG     membersMap after populating: {}
-[00:10:50.423] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:50.423] Server  LOG     Family Members: [{...},{...}]
-[00:10:50.632] Server  LOG     listData: {}
-[00:10:50.633] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:50.635] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:50.635] Server  LOG     membersMap after populating: {}
-[00:10:50.635] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:50.635] Server  LOG     Family Members: [{...},{...}]
-[00:10:50.868] Server  LOG     listData: {}
-[00:10:50.870] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:50.872] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:50.872] Server  LOG     membersMap after populating: {}
-[00:10:50.872] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:50.872] Server  LOG     Family Members: [{...},{...}]
-[00:10:51.076] Server  LOG     listData: {}
-[00:10:51.077] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:10:51.079] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:10:51.079] Server  LOG     membersMap after populating: {}
-[00:10:51.079] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:10:51.079] Server  LOG     Family Members: [{...},{...}]
-[00:11:25.178] Server  LOG     listData: {}
-[00:11:25.181] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:25.182] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:25.183] Server  LOG     membersMap after populating: {}
-[00:11:25.183] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:25.183] Server  LOG     Family Members: [{...},{...}]
-[00:11:25.396] Server  LOG     listData: {}
-[00:11:25.398] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:25.400] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:25.400] Server  LOG     membersMap after populating: {}
-[00:11:25.400] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:25.400] Server  LOG     Family Members: [{...},{...}]
-[00:11:25.608] Server  LOG     listData: {}
-[00:11:25.611] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:25.615] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:25.615] Server  LOG     membersMap after populating: {}
-[00:11:25.615] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:25.616] Server  LOG     Family Members: [{...},{...}]
-[00:11:25.806] Server  LOG     listData: {}
-[00:11:25.807] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:25.809] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:25.809] Server  LOG     membersMap after populating: {}
-[00:11:25.809] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:25.809] Server  LOG     Family Members: [{...},{...}]
-[00:11:26.025] Server  LOG     listData: {}
-[00:11:26.026] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:26.028] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:26.028] Server  LOG     membersMap after populating: {}
-[00:11:26.028] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:26.028] Server  LOG     Family Members: [{...},{...}]
-[00:11:26.248] Server  LOG     listData: {}
-[00:11:26.250] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:26.253] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:26.253] Server  LOG     membersMap after populating: {}
-[00:11:26.253] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:26.253] Server  LOG     Family Members: [{...},{...}]
-[00:11:26.462] Server  LOG     listData: {}
-[00:11:26.463] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:26.465] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:26.465] Server  LOG     membersMap after populating: {}
-[00:11:26.465] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:26.465] Server  LOG     Family Members: [{...},{...}]
-[00:11:26.713] Server  LOG     listData: {}
-[00:11:26.714] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:26.715] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:26.715] Server  LOG     membersMap after populating: {}
-[00:11:26.715] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:26.715] Server  LOG     Family Members: [{...},{...}]
-[00:11:26.920] Server  LOG     listData: {}
-[00:11:26.921] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:26.925] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:26.925] Server  LOG     membersMap after populating: {}
-[00:11:26.925] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:26.925] Server  LOG     Family Members: [{...},{...}]
-[00:11:27.124] Server  LOG     listData: {}
-[00:11:27.125] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:27.126] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:27.126] Server  LOG     membersMap after populating: {}
-[00:11:27.126] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:27.127] Server  LOG     Family Members: [{...},{...}]
-[00:11:27.322] Server  LOG     listData: {}
-[00:11:27.323] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:27.325] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:27.325] Server  LOG     membersMap after populating: {}
-[00:11:27.325] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:27.325] Server  LOG     Family Members: [{...},{...}]
-[00:11:27.533] Server  LOG     listData: {}
-[00:11:27.535] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:27.536] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:27.536] Server  LOG     membersMap after populating: {}
-[00:11:27.536] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:27.536] Server  LOG     Family Members: [{...},{...}]
-[00:11:27.743] Server  LOG     listData: {}
-[00:11:27.745] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:27.747] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:27.747] Server  LOG     membersMap after populating: {}
-[00:11:27.747] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:27.747] Server  LOG     Family Members: [{...},{...}]
-[00:11:27.940] Server  LOG     listData: {}
-[00:11:27.941] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:27.943] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:27.943] Server  LOG     membersMap after populating: {}
-[00:11:27.943] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:27.943] Server  LOG     Family Members: [{...},{...}]
-[00:11:28.142] Server  LOG     listData: {}
-[00:11:28.144] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:28.145] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:28.145] Server  LOG     membersMap after populating: {}
-[00:11:28.145] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:28.145] Server  LOG     Family Members: [{...},{...}]
-[00:11:28.348] Server  LOG     listData: {}
-[00:11:28.349] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:28.350] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:28.350] Server  LOG     membersMap after populating: {}
-[00:11:28.350] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:28.351] Server  LOG     Family Members: [{...},{...}]
-[00:11:28.540] Server  LOG     listData: {}
-[00:11:28.542] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:28.543] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:28.543] Server  LOG     membersMap after populating: {}
-[00:11:28.543] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:28.543] Server  LOG     Family Members: [{...},{...}]
-[00:11:28.750] Server  LOG     listData: {}
-[00:11:28.752] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:28.753] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:28.754] Server  LOG     membersMap after populating: {}
-[00:11:28.754] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:28.754] Server  LOG     Family Members: [{...},{...}]
-[00:11:28.957] Server  LOG     listData: {}
-[00:11:28.959] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:28.960] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:28.960] Server  LOG     membersMap after populating: {}
-[00:11:28.960] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:28.960] Server  LOG     Family Members: [{...},{...}]
-[00:11:29.155] Server  LOG     listData: {}
-[00:11:29.156] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:29.157] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:29.157] Server  LOG     membersMap after populating: {}
-[00:11:29.157] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:29.158] Server  LOG     Family Members: [{...},{...}]
-[00:11:29.364] Server  LOG     listData: {}
-[00:11:29.365] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:29.366] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:29.367] Server  LOG     membersMap after populating: {}
-[00:11:29.367] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:29.367] Server  LOG     Family Members: [{...},{...}]
-[00:11:29.623] Server  LOG     listData: {}
-[00:11:29.624] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:11:29.625] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:11:29.626] Server  LOG     membersMap after populating: {}
-[00:11:29.626] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:11:29.626] Server  LOG     Family Members: [{...},{...}]
-[00:11:58.977] Server  LOG      ✓ Compiled in 13ms
-[00:11:59.318] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:12:36.697] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:41.005] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:12:43.665] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:13:38.730] Server  LOG      ✓ Compiled in 16ms
-[00:14:07.709] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:14:09.883] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:14:12.137] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:14:25.062] Server  ERROR    ⨯ ./src/app/list/[familyId]/page.tsx:11:1
-Module not found: Can't resolve './EditGiftForm'
-   9 | import ClaimUnclaimButtons from './ClaimUnclaimButtons'
-  10 | import AddMemberForm from './AddMemberForm'
-> 11 | import EditGiftForm from './EditGiftForm' // New component for editing gifts
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 |
-  13 | interface Gift {
-  14 |   id: string;
-
-
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:14:25.063] Server  ERROR    ⨯ ./src/app/list/[familyId]/page.tsx:11:1
-Module not found: Can't resolve './EditGiftForm'
-   9 | import ClaimUnclaimButtons from './ClaimUnclaimButtons'
-  10 | import AddMemberForm from './AddMemberForm'
-> 11 | import EditGiftForm from './EditGiftForm' // New component for editing gifts
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 |
-  13 | interface Gift {
-  14 |   id: string;
-
-
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:14:25.063] Server  ERROR    ⨯ ./src/app/list/[familyId]/page.tsx:11:1
-Module not found: Can't resolve './EditGiftForm'
-   9 | import ClaimUnclaimButtons from './ClaimUnclaimButtons'
-  10 | import AddMemberForm from './AddMemberForm'
-> 11 | import EditGiftForm from './EditGiftForm' // New component for editing gifts
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 |
-  13 | interface Gift {
-  14 |   id: string;
-
-
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:14:25.064] Server  ERROR    ⨯ ./src/app/list/[familyId]/page.tsx:11:1
-Module not found: Can't resolve './EditGiftForm'
-   9 | import ClaimUnclaimButtons from './ClaimUnclaimButtons'
-  10 | import AddMemberForm from './AddMemberForm'
-> 11 | import EditGiftForm from './EditGiftForm' // New component for editing gifts
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 |
-  13 | interface Gift {
-  14 |   id: string;
-
-
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:14:25.085] Server  ERROR    ⨯ ./src/app/list/[familyId]/page.tsx:11:1
-Module not found: Can't resolve './EditGiftForm'
-   9 | import ClaimUnclaimButtons from './ClaimUnclaimButtons'
-  10 | import AddMemberForm from './AddMemberForm'
-> 11 | import EditGiftForm from './EditGiftForm' // New component for editing gifts
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 |
-  13 | interface Gift {
-  14 |   id: string;
-
-
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:14:25.086] Server  ERROR    ⨯ ./src/app/list/[familyId]/page.tsx:11:1
-Module not found: Can't resolve './EditGiftForm'
-   9 | import ClaimUnclaimButtons from './ClaimUnclaimButtons'
-  10 | import AddMemberForm from './AddMemberForm'
-> 11 | import EditGiftForm from './EditGiftForm' // New component for editing gifts
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 |
-  13 | interface Gift {
-  14 |   id: string;
-
-
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:14:25.087] Server  ERROR    ⨯ ./src/app/list/[familyId]/page.tsx:11:1
-Module not found: Can't resolve './EditGiftForm'
-   9 | import ClaimUnclaimButtons from './ClaimUnclaimButtons'
-  10 | import AddMemberForm from './AddMemberForm'
-> 11 | import EditGiftForm from './EditGiftForm' // New component for editing gifts
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 |
-  13 | interface Gift {
-  14 |   id: string;
-
-
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:14:25.088] Server  ERROR    ⨯ ./src/app/list/[familyId]/page.tsx:11:1
-Module not found: Can't resolve './EditGiftForm'
-   9 | import ClaimUnclaimButtons from './ClaimUnclaimButtons'
-  10 | import AddMemberForm from './AddMemberForm'
-> 11 | import EditGiftForm from './EditGiftForm' // New component for editing gifts
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 |
-  13 | interface Gift {
-  14 |   id: string;
-
-
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:14:25.117] Server  LOG      ✓ Compiled in 124ms
-[00:14:25.547] Browser ERROR   ./src/app/list/[familyId]/page.tsx:11:1
-Module not found: Can't resolve './EditGiftForm'
-   9 | import ClaimUnclaimButtons from './ClaimUnclaimButtons'
-  10 | import AddMemberForm from './AddMemberForm'
-> 11 | import EditGiftForm from './EditGiftForm' // New component for editing gifts
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  12 |
-  13 | interface Gift {
-  14 |   id: string;
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-[00:14:49.275] Server  LOG      ✓ Compiled in 25ms
-[00:15:40.548] Browser ERROR   ./src/app/list/[familyId]/page.tsx:39:20
-Parsing ecmascript source code failed
-  37 |   const [user] = useState(initialUser)
-  38 |   const [editingGift, setEditingGift] = useState<Gift | null>(null)
-> 39 |   const supabase = await createClient()
-     |                    ^^^^^
-  40 |   const router = useRouter()
-  41 |
-  42 |   const handleDragEnd = async (result: DropResult) => {
-
-await isn't allowed in non-async function
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-[00:15:41.281] Server  LOG      ✓ Compiled in 10ms
-[00:15:44.580] Browser ERROR   %s is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server. <FamilyListPageClient>
-[00:15:44.580] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:15:44.580] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:15:44.580] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:15:44.580] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:15:44.580] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:15:44.580] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:15:44.580] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:15:44.580] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:15:44.580] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:15:44.580] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:15:44.580] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:15:44.580] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:15:44.580] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:15:44.580] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:15:44.580] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:15:44.580] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:15:44.580] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:15:44.580] Browser ERROR   uncaughtError: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:29.860] Server  ERROR   Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:30.096] Server  ERROR    ⨯ TypeError: Cannot read properties of null (reading 'useContext')
-[00:16:30.260] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:30.498] Browser ERROR   %s is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server. <FamilyListPageClient>
-[00:16:30.498] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:30.498] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:30.498] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:16:30.498] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:30.498] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
-[00:16:40.687] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:42.830] Browser ERROR   %s is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server. <FamilyListPageClient>
-[00:16:42.830] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:42.830] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:16:42.830] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:42.830] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:42.830] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:16:42.830] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:42.830] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:42.830] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:16:42.830] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:42.830] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:42.830] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:16:42.830] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:42.830] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:42.830] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:16:42.830] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:42.830] Browser ERROR   unhandledRejection: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:16:42.830] Browser ERROR   A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.
-[00:16:42.830] Browser ERROR   uncaughtError: Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-1. You might have mismatching versions of React and the renderer (such as React DOM)
-2. You might be breaking the Rules of Hooks
-3. You might have more than one copy of React in the same app
-See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
-[00:17:19.076] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:17:19.098] Server  LOG      ✓ Compiled in 25ms
-[00:17:19.636] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'name')
-[00:17:19.749] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:20.553] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'name')
-[00:17:28.609] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'name')
-[00:17:28.686] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:28.815] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'name')
-[00:17:29.867] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'name')
-[00:17:29.946] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:30.115] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'name')
-[00:19:17.099] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:22.919] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'name')
-[00:20:28.628] Server  LOG      ✓ Compiled in 15ms
-[00:20:29.548] Browser ERROR   ./src/app/list/[familyId]/page.tsx:102:7
-Parsing ecmascript source code failed
-  100 |
-  101 |         const family: Family = {
-> 102 |     id: listData.id,
-      |       ^
-  103 |     name: listData.name,
-  104 |     owner_id: listData.user_id,
-  105 |     members: Array.from(membersMap.values()),
-
-Expected '</', got ':'
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-[00:20:56.812] Server  ERROR    ⨯ ./src/app/list/[familyId]/page.tsx:102:7
-Parsing ecmascript source code failed
-  100 |
-  101 |         const family: Family = {
-> 102 |     id: listData.id,
-      |       ^
-  103 |     name: listData.name,
-  104 |     owner_id: listData.user_id,
-  105 |     members: Array.from(membersMap.values()),
-
-Expected '</', got ':'
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-
-[00:20:56.953] Browser ERROR   uncaughtError: Error: ./src/app/list/[familyId]/page.tsx:102:7
-Parsing ecmascript source code failed
-  100 |
-  101 |         const family: Family = {
-> 102 |     id: listData.id,
-      |       ^
-  103 |     name: listData.name,
-  104 |     owner_id: listData.user_id,
-  105 |     members: Array.from(membersMap.values()),
-
-Expected '</', got ':'
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-
-[00:20:57.100] Browser ERROR   ./src/app/list/[familyId]/page.tsx:102:7
-Parsing ecmascript source code failed
-  100 |
-  101 |         const family: Family = {
-> 102 |     id: listData.id,
-      |       ^
-  103 |     name: listData.name,
-  104 |     owner_id: listData.user_id,
-  105 |     members: Array.from(membersMap.values()),
-
-Expected '</', got ':'
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-[00:20:57.100] Browser ERROR   ./src/app/list/[familyId]/page.tsx:102:7
-Parsing ecmascript source code failed
-  100 |
-  101 |         const family: Family = {
-> 102 |     id: listData.id,
-      |       ^
-  103 |     name: listData.name,
-  104 |     owner_id: listData.user_id,
-  105 |     members: Array.from(membersMap.values()),
-
-Expected '</', got ':'
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-[00:21:03.554] Server  ERROR    ⨯ ./src/app/list/[familyId]/page.tsx:102:7
-Parsing ecmascript source code failed
-  100 |
-  101 |         const family: Family = {
-> 102 |     id: listData.id,
-      |       ^
-  103 |     name: listData.name,
-  104 |     owner_id: listData.user_id,
-  105 |     members: Array.from(membersMap.values()),
-
-Expected '</', got ':'
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-
-[00:21:03.635] Browser ERROR   uncaughtError: Error: ./src/app/list/[familyId]/page.tsx:102:7
-Parsing ecmascript source code failed
-  100 |
-  101 |         const family: Family = {
-> 102 |     id: listData.id,
-      |       ^
-  103 |     name: listData.name,
-  104 |     owner_id: listData.user_id,
-  105 |     members: Array.from(membersMap.values()),
-
-Expected '</', got ':'
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-
-[00:21:03.771] Browser ERROR   ./src/app/list/[familyId]/page.tsx:102:7
-Parsing ecmascript source code failed
-  100 |
-  101 |         const family: Family = {
-> 102 |     id: listData.id,
-      |       ^
-  103 |     name: listData.name,
-  104 |     owner_id: listData.user_id,
-  105 |     members: Array.from(membersMap.values()),
-
-Expected '</', got ':'
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-[00:21:03.771] Browser ERROR   ./src/app/list/[familyId]/page.tsx:102:7
-Parsing ecmascript source code failed
-  100 |
-  101 |         const family: Family = {
-> 102 |     id: listData.id,
-      |       ^
-  103 |     name: listData.name,
-  104 |     owner_id: listData.user_id,
-  105 |     members: Array.from(membersMap.values()),
-
-Expected '</', got ':'
-
-Import traces:
-  Client Component Browser:
-    ./src/app/list/[familyId]/page.tsx [Client Component Browser]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./src/app/list/[familyId]/page.tsx [Client Component SSR]
-    ./src/app/list/[familyId]/page.tsx [Server Component]
-[00:21:48.801] Server  LOG      ✓ Compiled in 21ms
-[00:21:49.385] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'name')
-[00:21:49.474] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:49.658] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'name')
-[00:21:51.811] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'name')
-[00:21:51.890] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:52.014] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'name')
-[00:21:53.226] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'name')
-[00:21:53.301] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:53.428] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'name')
-[00:25:52.865] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:25:52.866] Server  LOG      ✓ Compiled in 41ms
-[00:25:53.932] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:25:55.122] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:26:20.010] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:26:22.655] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:26:26.108] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:26:28.409] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:26:30.757] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:26:33.273] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:28:26.422] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:27.749] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:28:29.768] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:29:40.425] Server  LOG      ✓ Compiled in 14ms
-[00:29:44.517] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:29:44.818] Server  LOG     listData: null
-[00:30:38.328] Server  LOG      ✓ Compiled in 12ms
-[00:30:39.175] Server  LOG     listData: {}
-[00:30:39.358] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:30:39.525] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:30:39.526] Server  LOG     membersMap after populating: {}
-[00:30:39.526] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:30:39.526] Server  LOG     Family Members: [{...},{...}]
-[00:30:39.544] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:30:46.635] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:30:47.192] Server  LOG     listData: {}
-[00:30:47.374] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:30:47.555] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:30:47.556] Server  LOG     membersMap after populating: {}
-[00:30:47.556] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:30:47.556] Server  LOG     Family Members: [{...},{...}]
-[00:30:47.561] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:30:51.617] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (24f76e44-16c3-4bde-92ff-2e1588c67d1e, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:30:52.099] Server  LOG     listData: {}
-[00:30:52.315] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:30:52.508] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:30:52.508] Server  LOG     membersMap after populating: {}
-[00:30:52.508] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:30:52.508] Server  LOG     Family Members: [{...},{...}]
-[00:30:52.523] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:30:54.910] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (24f76e44-16c3-4bde-92ff-2e1588c67d1e, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:30:55.366] Server  LOG     listData: {}
-[00:30:55.551] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:30:55.731] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:30:55.731] Server  LOG     membersMap after populating: {}
-[00:30:55.731] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:30:55.731] Server  LOG     Family Members: [{...},{...}]
-[00:30:55.741] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:30:59.245] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (24f76e44-16c3-4bde-92ff-2e1588c67d1e, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:30:59.702] Server  LOG     listData: {}
-[00:30:59.883] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:31:00.050] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:31:00.051] Server  LOG     membersMap after populating: {}
-[00:31:00.051] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:31:00.051] Server  LOG     Family Members: [{...},{...}]
-[00:31:00.060] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:31:01.828] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (24f76e44-16c3-4bde-92ff-2e1588c67d1e, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:31:02.299] Server  LOG     listData: {}
-[00:31:02.479] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:31:02.645] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:31:02.645] Server  LOG     membersMap after populating: {}
-[00:31:02.646] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:31:02.646] Server  LOG     Family Members: [{...},{...}]
-[00:31:02.651] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:31:08.726] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (24f76e44-16c3-4bde-92ff-2e1588c67d1e, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:31:09.223] Server  LOG     listData: {}
-[00:31:09.406] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:31:09.582] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:31:09.583] Server  LOG     membersMap after populating: {}
-[00:31:09.583] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:31:09.583] Server  LOG     Family Members: [{...},{...}]
-[00:31:09.591] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:33:37.694] Server  LOG     listData: {}
-[00:33:37.873] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:33:38.056] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:33:38.056] Server  LOG     membersMap after populating: {}
-[00:33:38.056] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:33:38.056] Server  LOG     Family Members: [{...},{...}]
-[00:33:38.064] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:33:38.351] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:49.639] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (24f76e44-16c3-4bde-92ff-2e1588c67d1e, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:33:50.140] Server  LOG     listData: {}
-[00:33:50.310] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:33:50.501] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:33:50.501] Server  LOG     membersMap after populating: {}
-[00:33:50.501] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:33:50.501] Server  LOG     Family Members: [{...},{...}]
-[00:33:50.507] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:36:09.928] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (24f76e44-16c3-4bde-92ff-2e1588c67d1e, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:36:10.497] Server  LOG     listData: {}
-[00:36:10.690] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:36:10.898] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:36:10.898] Server  LOG     membersMap after populating: {}
-[00:36:10.898] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:36:10.899] Server  LOG     Family Members: [{...},{...}]
-[00:36:10.905] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:36:13.712] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (24f76e44-16c3-4bde-92ff-2e1588c67d1e, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:36:14.192] Server  LOG     listData: {}
-[00:36:14.388] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:36:14.577] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:36:14.577] Server  LOG     membersMap after populating: {}
-[00:36:14.577] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:36:14.577] Server  LOG     Family Members: [{...},{...}]
-[00:36:14.583] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:36:16.079] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (24f76e44-16c3-4bde-92ff-2e1588c67d1e, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:36:16.596] Server  LOG     listData: {}
-[00:36:16.774] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:36:16.955] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:36:16.955] Server  LOG     membersMap after populating: {}
-[00:36:16.955] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:36:16.956] Server  LOG     Family Members: [{...},{...}]
-[00:36:16.961] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:36:26.809] Server  LOG     listData: {}
-[00:36:27.016] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:36:27.198] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:36:27.198] Server  LOG     membersMap after populating: {}
-[00:36:27.198] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:36:27.198] Server  LOG     Family Members: [{...},{...}]
-[00:36:27.205] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:36:27.312] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:38:54.308] Server  LOG     listData: {}
-[00:38:54.497] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:38:54.681] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:38:54.682] Server  LOG     membersMap after populating: {}
-[00:38:54.682] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:38:54.682] Server  LOG     Family Members: [{...},{...}]
-[00:38:54.690] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:38:54.932] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:38:59.017] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:38:59.487] Server  LOG     listData: {}
-[00:38:59.685] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:38:59.854] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:38:59.854] Server  LOG     membersMap after populating: {}
-[00:38:59.854] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:38:59.854] Server  LOG     Family Members: [{...},{...}]
-[00:38:59.857] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:38:59.921] Server  LOG     listData: {}
-[00:39:00.095] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:00.261] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:00.262] Server  LOG     membersMap after populating: {}
-[00:39:00.262] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:00.262] Server  LOG     Family Members: [{...},{...}]
-[00:39:00.267] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:00.484] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:02.745] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:39:03.195] Server  LOG     listData: {}
-[00:39:03.381] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:03.569] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:03.569] Server  LOG     membersMap after populating: {}
-[00:39:03.569] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:03.569] Server  LOG     Family Members: [{...},{...}]
-[00:39:03.575] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:04.140] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:39:04.555] Server  LOG     listData: {}
-[00:39:04.743] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:04.915] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:04.915] Server  LOG     membersMap after populating: {}
-[00:39:04.915] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:04.916] Server  LOG     Family Members: [{...},{...}]
-[00:39:04.923] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:05.391] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:39:05.873] Server  LOG     listData: {}
-[00:39:06.048] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:06.215] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:06.215] Server  LOG     membersMap after populating: {}
-[00:39:06.215] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:06.216] Server  LOG     Family Members: [{...},{...}]
-[00:39:06.220] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:06.948] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:39:07.402] Server  LOG     listData: {}
-[00:39:07.575] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:07.760] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:07.760] Server  LOG     membersMap after populating: {}
-[00:39:07.760] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:07.760] Server  LOG     Family Members: [{...},{...}]
-[00:39:07.767] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:08.295] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:39:08.734] Server  LOG     listData: {}
-[00:39:08.915] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:09.087] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:09.087] Server  LOG     membersMap after populating: {}
-[00:39:09.087] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:09.088] Server  LOG     Family Members: [{...},{...}]
-[00:39:09.093] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:09.355] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:39:09.805] Server  LOG     listData: {}
-[00:39:09.979] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:10.140] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:10.140] Server  LOG     membersMap after populating: {}
-[00:39:10.140] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:10.141] Server  LOG     Family Members: [{...},{...}]
-[00:39:10.143] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:10.594] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:39:11.033] Server  LOG     listData: {}
-[00:39:11.199] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:11.368] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:11.368] Server  LOG     membersMap after populating: {}
-[00:39:11.368] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:11.368] Server  LOG     Family Members: [{...},{...}]
-[00:39:11.373] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:12.168] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:39:12.620] Server  LOG     listData: {}
-[00:39:12.796] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:12.969] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:12.970] Server  LOG     membersMap after populating: {}
-[00:39:12.970] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:12.970] Server  LOG     Family Members: [{...},{...}]
-[00:39:12.986] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:13.688] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:39:14.169] Server  LOG     listData: {}
-[00:39:14.337] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:14.497] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:14.497] Server  LOG     membersMap after populating: {}
-[00:39:14.497] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:14.498] Server  LOG     Family Members: [{...},{...}]
-[00:39:14.503] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:14.644] Server  LOG     listData: {}
-[00:39:14.816] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:14.994] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:14.995] Server  LOG     membersMap after populating: {}
-[00:39:14.995] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:14.995] Server  LOG     Family Members: [{...},{...}]
-[00:39:15.006] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:15.106] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:18.262] Server  LOG     listData: {}
-[00:39:18.431] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:18.614] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:18.614] Server  LOG     membersMap after populating: {}
-[00:39:18.614] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:18.615] Server  LOG     Family Members: [{...},{...}]
-[00:39:18.621] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:18.847] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:20.446] Server  LOG     listData: {}
-[00:39:20.615] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:20.782] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:20.782] Server  LOG     membersMap after populating: {}
-[00:39:20.782] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:20.783] Server  LOG     Family Members: [{...},{...}]
-[00:39:20.789] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:20.898] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:29.238] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:39:29.753] Server  LOG     listData: {}
-[00:39:29.924] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:30.100] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:30.100] Server  LOG     membersMap after populating: {}
-[00:39:30.100] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:30.101] Server  LOG     Family Members: [{...},{...}]
-[00:39:30.119] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:30.520] Server  LOG     listData: {}
-[00:39:30.688] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:39:30.856] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:39:30.856] Server  LOG     membersMap after populating: {}
-[00:39:30.856] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:39:30.856] Server  LOG     Family Members: [{...},{...}]
-[00:39:30.861] Server  WARN    Error: Route "/list/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:39:31.081] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:48.372] Server  LOG      ✓ Compiled in 10ms
-[00:40:49.016] Server  LOG     listData: {}
-[00:40:49.019] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:40:49.021] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:40:49.021] Server  LOG     membersMap after populating: {}
-[00:40:49.021] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:40:49.021] Server  LOG     Family Members: [{...},{...}]
-[00:40:54.221] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:40:54.722] Server  LOG     listData: {}
-[00:40:54.902] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:40:55.097] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:40:55.097] Server  LOG     membersMap after populating: {}
-[00:40:55.098] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:40:55.098] Server  LOG     Family Members: [{...},{...}]
-[00:41:07.142] Server  LOG     listData: {}
-[00:41:07.316] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:41:07.494] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:41:07.494] Server  LOG     membersMap after populating: {}
-[00:41:07.494] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:41:07.495] Server  LOG     Family Members: [{...},{...}]
-[00:41:07.620] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:41:12.384] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:41:12.933] Server  LOG     listData: {}
-[00:41:12.984] Server  LOG     listData: {}
-[00:41:13.116] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:41:13.180] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:41:13.284] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:41:13.284] Server  LOG     membersMap after populating: {}
-[00:41:13.284] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:41:13.284] Server  LOG     Family Members: [{...},{...}]
-[00:41:13.408] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:41:13.408] Server  LOG     membersMap after populating: {}
-[00:41:13.408] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:41:13.409] Server  LOG     Family Members: [{...},{...}]
-[00:41:13.519] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:41:15.677] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:41:16.169] Server  LOG     listData: {}
-[00:41:16.206] Server  LOG     listData: {}
-[00:41:16.349] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:41:16.379] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:41:16.522] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:41:16.522] Server  LOG     membersMap after populating: {}
-[00:41:16.523] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:41:16.523] Server  LOG     Family Members: [{...},{...}]
-[00:41:16.554] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:41:16.554] Server  LOG     membersMap after populating: {}
-[00:41:16.554] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:41:16.554] Server  LOG     Family Members: [{...},{...}]
-[00:41:16.649] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:41:19.740] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:41:20.238] Server  LOG     listData: {}
-[00:41:20.332] Server  LOG     listData: {}
-[00:41:20.408] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:41:20.513] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:41:20.580] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:41:20.580] Server  LOG     membersMap after populating: {}
-[00:41:20.581] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:41:20.581] Server  LOG     Family Members: [{...},{...}]
-[00:41:20.680] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:41:20.681] Server  LOG     membersMap after populating: {}
-[00:41:20.681] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:41:20.681] Server  LOG     Family Members: [{...},{...}]
-[00:41:20.787] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:41:23.056] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:41:23.503] Server  LOG     listData: {}
-[00:41:23.682] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:41:23.856] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:41:23.856] Server  LOG     membersMap after populating: {}
-[00:41:23.856] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:41:23.856] Server  LOG     Family Members: [{...},{...}]
-[00:43:40.570] Server  LOG     listData: {}
-[00:43:40.755] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:43:40.937] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:43:40.938] Server  LOG     membersMap after populating: {}
-[00:43:40.938] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:43:40.938] Server  LOG     Family Members: [{...},{...}]
-[00:43:41.046] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:43:45.765] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:43:46.303] Server  LOG     listData: {}
-[00:43:46.491] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:43:46.683] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:43:46.684] Server  LOG     membersMap after populating: {}
-[00:43:46.684] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:43:46.684] Server  LOG     Family Members: [{...},{...}]
-[00:43:51.528] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (04afe79f-01d1-40b7-9146-84e1c8b89c7f, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:43:52.005] Server  LOG     listData: {}
-[00:43:52.178] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:43:52.348] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:43:52.348] Server  LOG     membersMap after populating: {}
-[00:43:52.349] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:43:52.349] Server  LOG     Family Members: [{...},{...}]
-[00:43:54.189] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (04afe79f-01d1-40b7-9146-84e1c8b89c7f, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:43:54.678] Server  LOG     listData: {}
-[00:43:54.869] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:43:55.047] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:43:55.047] Server  LOG     membersMap after populating: {}
-[00:43:55.047] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:43:55.047] Server  LOG     Family Members: [{...},{...}]
-[00:43:56.404] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (04afe79f-01d1-40b7-9146-84e1c8b89c7f, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:43:56.869] Server  LOG     listData: {}
-[00:43:57.098] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:43:57.270] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:43:57.271] Server  LOG     membersMap after populating: {}
-[00:43:57.271] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:43:57.271] Server  LOG     Family Members: [{...},{...}]
-[00:43:59.597] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (04afe79f-01d1-40b7-9146-84e1c8b89c7f, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:44:00.058] Server  LOG     listData: {}
-[00:44:00.227] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:44:00.421] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:44:00.421] Server  LOG     membersMap after populating: {}
-[00:44:00.421] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:44:00.421] Server  LOG     Family Members: [{...},{...}]
-[00:44:01.677] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (04afe79f-01d1-40b7-9146-84e1c8b89c7f, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:44:02.120] Server  LOG     listData: {}
-[00:44:02.296] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:44:02.488] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:44:02.488] Server  LOG     membersMap after populating: {}
-[00:44:02.488] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:44:02.488] Server  LOG     Family Members: [{...},{...}]
-[00:44:05.226] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (04afe79f-01d1-40b7-9146-84e1c8b89c7f, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:44:05.707] Server  LOG     listData: {}
-[00:44:05.878] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:44:06.050] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:44:06.050] Server  LOG     membersMap after populating: {}
-[00:44:06.050] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:44:06.050] Server  LOG     Family Members: [{...},{...}]
-[00:44:07.547] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (04afe79f-01d1-40b7-9146-84e1c8b89c7f, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:44:07.994] Server  LOG     listData: {}
-[00:44:08.164] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:44:08.329] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:44:08.330] Server  LOG     membersMap after populating: {}
-[00:44:08.330] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:44:08.330] Server  LOG     Family Members: [{...},{...}]
-[00:44:10.098] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (04afe79f-01d1-40b7-9146-84e1c8b89c7f, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:44:10.563] Server  LOG     listData: {}
-[00:44:10.745] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:44:10.916] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:44:10.916] Server  LOG     membersMap after populating: {}
-[00:44:10.916] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:44:10.917] Server  LOG     Family Members: [{...},{...}]
-[00:44:11.809] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:44:12.243] Server  LOG     listData: {}
-[00:44:12.417] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:44:12.584] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:44:12.585] Server  LOG     membersMap after populating: {}
-[00:44:12.585] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:44:12.585] Server  LOG     Family Members: [{...},{...}]
-[00:44:14.375] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:44:14.840] Server  LOG     listData: {}
-[00:44:15.013] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:44:15.184] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:44:15.184] Server  LOG     membersMap after populating: {}
-[00:44:15.185] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:44:15.185] Server  LOG     Family Members: [{...},{...}]
-[00:44:17.652] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (04afe79f-01d1-40b7-9146-84e1c8b89c7f, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:44:18.081] Server  LOG     listData: {}
-[00:44:18.252] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:44:18.436] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:44:18.437] Server  LOG     membersMap after populating: {}
-[00:44:18.437] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:44:18.437] Server  LOG     Family Members: [{...},{...}]
-[00:45:45.652] Server  LOG     listData: {}
-[00:45:45.950] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:45:46.264] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:45:46.264] Server  LOG     membersMap after populating: {}
-[00:45:46.264] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:45:46.264] Server  LOG     Family Members: [{...},{...}]
-[00:45:46.384] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:45:49.016] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:45:49.649] Server  LOG     listData: {}
-[00:45:49.957] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:45:50.149] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:45:50.149] Server  LOG     membersMap after populating: {}
-[00:45:50.149] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:45:50.149] Server  LOG     Family Members: [{...},{...}]
-[00:45:51.887] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:45:52.337] Server  LOG     listData: {}
-[00:45:52.515] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:45:52.819] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:45:52.819] Server  LOG     membersMap after populating: {}
-[00:45:52.819] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:45:52.819] Server  LOG     Family Members: [{...},{...}]
-[00:45:54.332] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:45:54.826] Server  LOG     listData: {}
-[00:45:55.030] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:45:55.238] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:45:55.238] Server  LOG     membersMap after populating: {}
-[00:45:55.239] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:45:55.239] Server  LOG     Family Members: [{...},{...}]
-[00:45:55.889] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:45:56.354] Server  LOG     listData: {}
-[00:45:56.527] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:45:56.706] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:45:56.706] Server  LOG     membersMap after populating: {}
-[00:45:56.706] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:45:56.706] Server  LOG     Family Members: [{...},{...}]
-[00:45:57.381] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:45:57.860] Server  LOG     listData: {}
-[00:45:58.063] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:45:58.248] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:45:58.249] Server  LOG     membersMap after populating: {}
-[00:45:58.249] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:45:58.249] Server  LOG     Family Members: [{...},{...}]
-[00:45:59.032] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:45:59.502] Server  LOG     listData: {}
-[00:45:59.689] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:45:59.878] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:45:59.878] Server  LOG     membersMap after populating: {}
-[00:45:59.878] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:45:59.878] Server  LOG     Family Members: [{...},{...}]
-[00:46:00.716] Server  LOG     listData: {}
-[00:46:00.898] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:46:01.085] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:46:01.085] Server  LOG     membersMap after populating: {}
-[00:46:01.085] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:46:01.085] Server  LOG     Family Members: [{...},{...}]
-[00:46:01.201] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:46:09.772] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
-[00:46:10.276] Server  LOG     listData: {}
-[00:46:10.483] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:46:10.655] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:46:10.655] Server  LOG     membersMap after populating: {}
-[00:46:10.655] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:46:10.655] Server  LOG     Family Members: [{...},{...}]
+[00:00:00.594] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:00.649] Server  LOG      ✓ Ready in 527ms
+[00:00:03.404] Server  LOG     listData: {}
+[00:00:03.594] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:03.770] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:00:03.771] Server  LOG     membersMap after populating: {}
+[00:00:03.771] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:03.773] Server  LOG     Family Members: [{...},{...}]
+[00:00:03.910] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:09.974] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:00:10.019] Server  ERROR   TypeError: Cannot read properties of undefined (reading 'getUser')
+[00:00:16.244] Server  LOG     DELETE /api/gifts/[giftId] reached!
+[00:00:16.281] Server  ERROR   TypeError: Cannot read properties of undefined (reading 'getUser')
+[00:01:40.217] Server  LOG      ✓ Compiled in 15ms
+[00:01:40.657] Server  WARN    Error: Route "/list/[familyId]" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:01:40.677] Server  ERROR   TypeError: cookieStore.get is not a function
+[00:01:40.689] Server  ERROR   TypeError: cookieStore.get is not a function
+[00:01:40.706] Server  ERROR    ⨯ TypeError: cookieStore.get is not a function
+[00:01:40.719] Server  ERROR    ⨯ TypeError: cookieStore.get is not a function
+[00:01:40.997] Browser ERROR   uncaughtError: TypeError: cookieStore.get is not a function
+[00:02:23.958] Server  LOG      ✓ Compiled in 14ms
+[00:02:25.370] Server  LOG     listData: {}
+[00:02:25.823] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:02:26.136] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:02:26.137] Server  LOG     membersMap after populating: {}
+[00:02:26.137] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:02:26.138] Server  LOG     Family Members: [{...},{...}]
+[00:02:26.268] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:34.259] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:02:34.311] Server  ERROR   TypeError: Cannot read properties of undefined (reading 'getUser')
+[00:02:39.762] Server  LOG     DELETE /api/gifts/[giftId] reached!
+[00:02:39.807] Server  ERROR   TypeError: Cannot read properties of undefined (reading 'getUser')
+[00:05:22.675] Server  LOG     listData: {}
+[00:05:23.088] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:23.397] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:23.397] Server  LOG     membersMap after populating: {}
+[00:05:23.397] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:23.397] Server  LOG     Family Members: [{...},{...}]
+[00:05:23.541] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:27.387] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:05:27.556] Server  LOG     Request body (description for edit): "Razer Deathadder Mouse"
+[00:05:27.888] Server  LOG     Supabase update error: null
+[00:05:28.713] Server  LOG     listData: {}
+[00:05:29.027] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:29.210] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:29.211] Server  LOG     membersMap after populating: {}
+[00:05:29.211] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:29.211] Server  LOG     Family Members: [{...},{...}]
+[00:05:31.584] Server  LOG     listData: {}
+[00:05:31.892] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:32.064] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:32.064] Server  LOG     membersMap after populating: {}
+[00:05:32.064] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:32.065] Server  LOG     Family Members: [{...},{...}]
+[00:05:32.332] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:36.481] Server  LOG     DELETE /api/gifts/[giftId] reached!
+[00:05:36.845] Server  LOG     Supabase delete error: null
+[00:05:37.415] Server  LOG     listData: {}
+[00:05:37.593] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:37.765] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:37.765] Server  LOG     membersMap after populating: {}
+[00:05:37.766] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:37.766] Server  LOG     Family Members: [{...},{...}]
+[00:05:38.417] Server  LOG     listData: {}
+[00:05:38.591] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:38.761] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:38.761] Server  LOG     membersMap after populating: {}
+[00:05:38.761] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:38.761] Server  LOG     Family Members: [{...},{...}]
+[00:05:39.016] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:54.293] Server  LOG     listData: {}
+[00:05:54.502] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:54.667] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:54.667] Server  LOG     membersMap after populating: {}
+[00:05:54.667] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:54.667] Server  LOG     Family Members: [{...},{...}]
+[00:05:56.639] Server  LOG     listData: {}
+[00:05:56.832] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:57.016] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:57.016] Server  LOG     membersMap after populating: {}
+[00:05:57.017] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:57.017] Server  LOG     Family Members: [{...},{...}]
+[00:05:57.127] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:00.346] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
+[00:06:00.792] Server  LOG     listData: {}
+[00:06:00.964] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:06:01.136] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:06:01.136] Server  LOG     membersMap after populating: {}
+[00:06:01.136] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:06:01.136] Server  LOG     Family Members: [{...},{...}]
+[00:06:03.308] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
+[00:06:03.766] Server  LOG     listData: {}
+[00:06:03.934] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:06:04.106] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:06:04.106] Server  LOG     membersMap after populating: {}
+[00:06:04.107] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:06:04.107] Server  LOG     Family Members: [{...},{...}]
+[00:06:25.198] Browser ERROR   Error reordering gifts: {"code":"23502","details":"Failing row contains (0d2cdeb7-4dce-496e-812f-1be7519efb0d, null, null, f, null, null, 0).","hint":null,"message":"null value in column \"list_id\" of relation \"items\" violates not-null constraint"}
+[00:06:25.753] Server  LOG     listData: {}
+[00:06:25.946] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:06:26.141] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:06:26.142] Server  LOG     membersMap after populating: {}
+[00:06:26.142] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:06:26.142] Server  LOG     Family Members: [{...},{...}]
+[00:08:18.424] Server  LOG      ✓ Compiled in 20ms
+[00:08:24.012] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:08:24.194] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...}]
+[00:08:24.197] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...}]
+[00:08:24.568] Server  LOG     Supabase upsert error: {}
+[00:08:42.242] Server  LOG     listData: {}
+[00:08:42.426] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:08:42.615] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:08:42.615] Server  LOG     membersMap after populating: {}
+[00:08:42.616] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:08:42.616] Server  LOG     Family Members: [{...},{...}]
+[00:09:34.335] Server  LOG      ✓ Compiled in 16ms
+[00:10:01.413] Server  LOG     listData: {}
+[00:10:01.625] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:01.818] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:01.818] Server  LOG     membersMap after populating: {}
+[00:10:01.818] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:01.819] Server  LOG     Family Members: [{...},{...}]
+[00:10:01.939] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:04.878] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:10:05.071] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...}]
+[00:10:05.072] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...}]
+[00:10:05.484] Server  LOG     Supabase upsert error: {}
+[00:10:09.415] Server  LOG     listData: {}
+[00:10:09.584] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:09.613] Server  LOG     listData: {}
+[00:10:09.770] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:09.770] Server  LOG     membersMap after populating: {}
+[00:10:09.771] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:09.771] Server  LOG     Family Members: [{...},{...}]
+[00:10:09.825] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:10.004] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:10.005] Server  LOG     membersMap after populating: {}
+[00:10:10.005] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:10.005] Server  LOG     Family Members: [{...},{...}]
+[00:10:10.127] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:11.348] Server  LOG     listData: {}
+[00:10:11.556] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:11.862] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:11.862] Server  LOG     membersMap after populating: {}
+[00:10:11.862] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:11.862] Server  LOG     Family Members: [{...},{...}]
+[00:10:12.140] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:14.228] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:10:14.399] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...}]
+[00:10:14.399] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...}]
+[00:10:14.723] Server  LOG     Supabase upsert error: {}
+[00:12:03.710] Server  LOG     listData: {}
+[00:12:03.927] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:12:04.107] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:12:04.107] Server  LOG     membersMap after populating: {}
+[00:12:04.107] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:12:04.107] Server  LOG     Family Members: [{...},{...}]
+[00:12:04.218] Server  LOG     listData: {}
+[00:12:04.390] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:12:04.576] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:12:04.577] Server  LOG     membersMap after populating: {}
+[00:12:04.577] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:12:04.577] Server  LOG     Family Members: [{...},{...}]
+[00:12:04.718] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:06.805] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:12:06.977] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:06.978] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:07.331] Server  LOG     Supabase upsert error: null
+[00:12:10.111] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:12:10.295] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:10.296] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:10.640] Server  LOG     Supabase upsert error: null
+[00:12:11.512] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:12:11.683] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:11.684] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:12.027] Server  LOG     Supabase upsert error: null
+[00:12:12.861] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:12:13.043] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:13.044] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:13.395] Server  LOG     Supabase upsert error: null
+[00:12:14.218] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:12:14.405] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:14.406] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:14.772] Server  LOG     Supabase upsert error: null
+[00:12:15.474] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:12:15.655] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:15.656] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:15.980] Server  LOG     Supabase upsert error: null
+[00:12:16.666] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:12:16.845] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:16.846] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:17.216] Server  LOG     Supabase upsert error: null
+[00:12:19.197] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:12:19.378] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:19.379] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...}]
+[00:12:19.719] Server  LOG     Supabase upsert error: null
+[00:12:23.019] Server  LOG     DELETE /api/gifts/[giftId] reached!
+[00:12:23.360] Server  LOG     Supabase delete error: null
+[00:12:23.941] Server  LOG     listData: {}
+[00:12:24.110] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:12:24.297] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:12:24.298] Server  LOG     membersMap after populating: {}
+[00:12:24.298] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:12:24.298] Server  LOG     Family Members: [{...},{...}]
+[00:12:25.758] Server  LOG     listData: {}
+[00:12:25.946] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:12:26.129] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:12:26.130] Server  LOG     membersMap after populating: {}
+[00:12:26.130] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:12:26.130] Server  LOG     Family Members: [{...},{...}]
+[00:12:26.243] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:33.075] Server  LOG     listData: {}
+[00:12:33.272] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:12:33.445] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:12:33.446] Server  LOG     membersMap after populating: {}
+[00:12:33.446] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:12:33.446] Server  LOG     Family Members: [{...},{...}]
+[00:17:36.713] Server  LOG      ✓ Compiled in 16ms
+[00:18:07.921] Server  LOG     listData: {}
+[00:18:08.099] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:18:08.365] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:18:08.365] Server  LOG     membersMap after populating: {}
+[00:18:08.365] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:18:08.366] Server  LOG     Family Members: [{...},{...}]
+[00:18:08.543] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:34.278] Server  LOG      ✓ Compiled in 12ms
+[00:21:07.558] Server  LOG     listData: {}
+[00:21:07.751] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:21:07.949] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:21:07.949] Server  LOG     membersMap after populating: {}
+[00:21:07.949] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:21:07.949] Server  LOG     Family Members: [{...},{...}]
+[00:21:08.269] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:15.735] Server  LOG     listData: {}
+[00:21:15.919] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:21:16.086] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:21:16.087] Server  LOG     membersMap after populating: {}
+[00:21:16.087] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:21:16.087] Server  LOG     Family Members: [{...},{...}]
+[00:21:16.198] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:29.348] Server  LOG     listData: {}
+[00:21:29.528] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:21:29.716] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:21:29.716] Server  LOG     membersMap after populating: {}
+[00:21:29.716] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:21:29.716] Server  LOG     Family Members: [{...},{...}]
+[00:21:31.354] Server  LOG     listData: {}
+[00:21:31.533] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:21:31.716] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:21:31.716] Server  LOG     membersMap after populating: {}
+[00:21:31.717] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:21:31.717] Server  LOG     Family Members: [{...},{...}]
+[00:21:32.011] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:35.795] Server  LOG     listData: {}
+[00:21:35.981] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:21:36.163] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:21:36.163] Server  LOG     membersMap after populating: {}
+[00:21:36.163] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:21:36.164] Server  LOG     Family Members: [{...},{...}]
+[00:21:40.065] Server  LOG     listData: {}
+[00:21:40.402] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:21:40.583] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:21:40.583] Server  LOG     membersMap after populating: {}
+[00:21:40.583] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:21:40.583] Server  LOG     Family Members: [{...},{...}]
+[00:21:40.856] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:04.543] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:23:04.716] Server  LOG     Request body (description, notes, price for edit): {}
+[00:23:04.782] Server  WARN    Error: Route "/api/gifts/[giftId]" used `params.giftId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:23:04.980] Server  LOG     Supabase update error: {}
+[00:23:04.981] Server  LOG     Supabase update error: {}
+[00:23:57.462] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:23:57.672] Server  LOG     Request body (description, notes, price for edit): {}
+[00:23:58.008] Server  LOG     Supabase update error: null
+[00:23:58.008] Server  LOG     Supabase update error: null
+[00:23:58.665] Server  LOG     listData: {}
+[00:23:58.844] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:23:59.040] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:23:59.040] Server  LOG     membersMap after populating: {}
+[00:23:59.040] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:23:59.041] Server  LOG     Family Members: [{...},{...}]
+[00:27:03.439] Server  LOG      ✓ Compiled in 22ms
+[00:27:16.093] Server  LOG     listData: {}
+[00:27:16.266] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:27:16.432] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:27:16.432] Server  LOG     membersMap after populating: {}
+[00:27:16.432] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:27:16.432] Server  LOG     Family Members: [{...},{...}]
+[00:27:16.573] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:31.189] Server  LOG     listData: {}
+[00:27:31.374] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:27:31.551] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:27:31.551] Server  LOG     membersMap after populating: {}
+[00:27:31.551] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:27:31.551] Server  LOG     Family Members: [{...},{...}]
+[00:27:31.664] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:52.350] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:27:52.528] Server  LOG     Request body (description, notes, price for edit): {}
+[00:27:52.720] Server  LOG     Supabase update error: null
+[00:27:52.720] Server  LOG     Supabase update error: null
+[00:27:53.299] Server  LOG     listData: {}
+[00:27:53.474] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:27:53.655] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:27:53.655] Server  LOG     membersMap after populating: {}
+[00:27:53.655] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:27:53.655] Server  LOG     Family Members: [{...},{...}]
+[00:29:06.782] Server  LOG     listData: {}
+[00:29:06.959] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:29:07.152] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:29:07.152] Server  LOG     membersMap after populating: {}
+[00:29:07.152] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:29:07.153] Server  LOG     Family Members: [{...},{...}]
+[00:29:07.273] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:09.489] Server  LOG     listData: {}
+[00:29:09.666] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:29:09.850] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:29:09.850] Server  LOG     membersMap after populating: {}
+[00:29:09.850] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:29:09.851] Server  LOG     Family Members: [{...},{...}]
+[00:29:10.143] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:38.476] Server  LOG     DELETE /api/gifts/[giftId] reached!
+[00:29:38.820] Server  LOG     Supabase delete error: null
+[00:29:39.375] Server  LOG     listData: {}
+[00:29:39.542] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:29:39.705] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:29:39.705] Server  LOG     membersMap after populating: {}
+[00:29:39.705] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:29:39.705] Server  LOG     Family Members: [{...},{...}]
+[00:29:39.880] Server  LOG     listData: {}
+[00:29:40.054] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:29:40.261] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:29:40.261] Server  LOG     membersMap after populating: {}
+[00:29:40.261] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:29:40.262] Server  LOG     Family Members: [{...},{...}]
+[00:29:40.374] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:09.277] Server  LOG     listData: {}
+[00:30:09.497] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:30:09.714] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:30:09.714] Server  LOG     membersMap after populating: {}
+[00:30:09.714] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:30:09.715] Server  LOG     Family Members: [{...},{...}]
+[00:30:13.241] Server  LOG     listData: {}
+[00:30:13.432] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:30:13.621] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:30:13.621] Server  LOG     membersMap after populating: {}
+[00:30:13.621] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:30:13.621] Server  LOG     Family Members: [{...},{...}]
+[00:30:13.913] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:39.477] Server  LOG     listData: {}
+[00:30:39.684] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:30:39.866] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:30:39.867] Server  LOG     membersMap after populating: {}
+[00:30:39.867] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:30:39.867] Server  LOG     Family Members: [{...},{...}]
+[00:30:39.983] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:24.496] Server  LOG     listData: {}
+[00:31:24.666] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:31:24.849] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:31:24.850] Server  LOG     membersMap after populating: {}
+[00:31:24.850] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:31:24.850] Server  LOG     Family Members: [{...},{...}]
+[00:32:59.288] Server  LOG      ✓ Compiled in 25ms
+[00:33:29.062] Server  LOG     listData: {}
+[00:33:29.276] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:33:29.484] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:33:29.485] Server  LOG     membersMap after populating: {}
+[00:33:29.485] Server  LOG     Current User ID: "04c35f89-d9b9-473d-82b2-ef95f426a001"
+[00:33:29.485] Server  LOG     Family Members: [{...},{...}]
+[00:33:49.094] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:33:49.253] Server  LOG     Request body (description, notes, price for edit): {}
+[00:33:49.425] Server  LOG     Supabase update error: null
+[00:33:49.425] Server  LOG     Supabase update error: null
+[00:33:49.993] Server  LOG     listData: {}
+[00:33:50.168] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:33:50.363] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:33:50.363] Server  LOG     membersMap after populating: {}
+[00:33:50.363] Server  LOG     Current User ID: "04c35f89-d9b9-473d-82b2-ef95f426a001"
+[00:33:50.363] Server  LOG     Family Members: [{...},{...}]
+[00:34:46.446] Server  LOG     listData: {}
+[00:34:46.645] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:34:46.865] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:34:46.865] Server  LOG     membersMap after populating: {}
+[00:34:46.865] Server  LOG     Current User ID: "04c35f89-d9b9-473d-82b2-ef95f426a001"
+[00:34:46.865] Server  LOG     Family Members: [{...},{...}]
+[00:35:37.500] Server  LOG     listData: {}
+[00:35:37.684] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:35:37.853] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:35:37.853] Server  LOG     membersMap after populating: {}
+[00:35:37.853] Server  LOG     Current User ID: "04c35f89-d9b9-473d-82b2-ef95f426a001"
+[00:35:37.853] Server  LOG     Family Members: [{...},{...}]
+[00:36:17.816] Server  LOG     listData: {}
+[00:36:17.994] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:36:18.186] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:36:18.186] Server  LOG     membersMap after populating: {}
+[00:36:18.186] Server  LOG     Current User ID: "04c35f89-d9b9-473d-82b2-ef95f426a001"
+[00:36:18.186] Server  LOG     Family Members: [{...},{...}]
+[00:36:19.000] Server  LOG     listData: {}
+[00:36:19.171] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:36:19.353] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:36:19.353] Server  LOG     membersMap after populating: {}
+[00:36:19.354] Server  LOG     Current User ID: "04c35f89-d9b9-473d-82b2-ef95f426a001"
+[00:36:19.354] Server  LOG     Family Members: [{...},{...}]
+[00:36:19.500] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:38.627] Server  LOG     listData: {}
+[00:38:38.822] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:38:39.004] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:38:39.005] Server  LOG     membersMap after populating: {}
+[00:38:39.005] Server  LOG     Current User ID: "04c35f89-d9b9-473d-82b2-ef95f426a001"
+[00:38:39.005] Server  LOG     Family Members: [{...},{...}]
+[00:38:40.995] Server  LOG     listData: {}
+[00:38:41.201] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:38:41.379] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:38:41.379] Server  LOG     membersMap after populating: {}
+[00:38:41.379] Server  LOG     Current User ID: "04c35f89-d9b9-473d-82b2-ef95f426a001"
+[00:38:41.379] Server  LOG     Family Members: [{...},{...}]
+[00:38:41.513] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:43.905] Server  LOG     listData: {}
+[00:38:44.083] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:38:44.277] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:38:44.277] Server  LOG     membersMap after populating: {}
+[00:38:44.277] Server  LOG     Current User ID: "04c35f89-d9b9-473d-82b2-ef95f426a001"
+[00:38:44.277] Server  LOG     Family Members: [{...},{...}]
+[00:38:44.925] Server  LOG     listData: {}
+[00:38:45.099] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:38:45.291] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:38:45.291] Server  LOG     membersMap after populating: {}
+[00:38:45.291] Server  LOG     Current User ID: "04c35f89-d9b9-473d-82b2-ef95f426a001"
+[00:38:45.292] Server  LOG     Family Members: [{...},{...}]
+[00:38:45.398] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:39:05.823] Server  LOG     listData: {}
+[00:39:06.127] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:39:06.333] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:39:06.333] Server  LOG     membersMap after populating: {}
+[00:39:06.334] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:39:06.334] Server  LOG     Family Members: [{...},{...}]
+[00:39:30.744] Server  LOG     listData: {}
+[00:39:30.926] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:39:31.106] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:39:31.106] Server  LOG     membersMap after populating: {}
+[00:39:31.106] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:39:31.107] Server  LOG     Family Members: [{...},{...}]
+[00:39:31.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

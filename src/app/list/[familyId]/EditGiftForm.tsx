@@ -6,6 +6,8 @@ import { createClient } from '@/lib/supabase'
 interface Gift {
   id: string;
   description: string;
+  notes?: string;
+  price?: number;
 }
 
 interface EditGiftFormProps {
@@ -16,6 +18,8 @@ interface EditGiftFormProps {
 
 export default function EditGiftForm({ gift, onClose, onSave }: EditGiftFormProps) {
   const [newDescription, setNewDescription] = useState(gift.description)
+  const [newNotes, setNewNotes] = useState(gift.notes || '')
+  const [newPrice, setNewPrice] = useState<string>(gift.price?.toString() || '')
   const [message, setMessage] = useState('')
   const supabase = createClient()
 
@@ -31,7 +35,11 @@ export default function EditGiftForm({ gift, onClose, onSave }: EditGiftFormProp
     const res = await fetch(`/api/gifts/${gift.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ description: newDescription }),
+      body: JSON.stringify({
+        description: newDescription,
+        notes: newNotes,
+        price: newPrice ? parseFloat(newPrice) : null,
+      }),
     })
 
     if (res.ok) {
@@ -58,6 +66,29 @@ export default function EditGiftForm({ gift, onClose, onSave }: EditGiftFormProp
               value={newDescription}
               onChange={(e) => setNewDescription(e.target.value)}
               required
+            />
+          </div>
+          <div>
+            <label htmlFor="gift-notes" className="block text-sm font-medium text-gray-700">Notes (Optional)</label>
+            <textarea
+              id="gift-notes"
+              placeholder="e.g., Size M, color blue, link to product"
+              rows={3}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              value={newNotes}
+              onChange={(e) => setNewNotes(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="gift-price" className="block text-sm font-medium text-gray-700">Price (Optional)</label>
+            <input
+              type="number"
+              id="gift-price"
+              placeholder="e.g., 25.99"
+              step="0.01"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              value={newPrice}
+              onChange={(e) => setNewPrice(e.target.value)}
             />
           </div>
           <div className="flex justify-end space-x-2">
