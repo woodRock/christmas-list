@@ -1,12 +1,12 @@
 import { createClient } from '@/lib/supabase-server'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function PATCH(
-  request: Request,
-  { params }: { params: { giftId: string } }
+  request: NextRequest,
+  context: { params: Promise<{ giftId: string }> }
 ) {
   const supabase = await createClient()
-  const resolvedParams = await params;
+  const { giftId } = await context.params;
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
@@ -16,7 +16,7 @@ export async function PATCH(
   const { error } = await supabase
     .from('items')
     .update({ is_purchased: false, purchased_by: null })
-    .eq('id', resolvedParams.giftId)
+    .eq('id', giftId)
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })

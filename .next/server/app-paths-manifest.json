@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/family/[familyId]/members/route": "app/api/family/[familyId]/members/route.js",
+  "/api/gifts/[giftId]/claim/route": "app/api/gifts/[giftId]/claim/route.js",
+  "/api/gifts/[giftId]/route": "app/api/gifts/[giftId]/route.js",
+  "/api/gifts/[giftId]/unclaim/route": "app/api/gifts/[giftId]/unclaim/route.js",
+  "/api/gifts/reorder/route": "app/api/gifts/reorder/route.js",
+  "/create-family/page": "app/create-family/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/list/[familyId]/page": "app/list/[familyId]/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js"
+}

@@ -1,9 +1,9 @@
 import { createClient } from '@/lib/supabase-server'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(
-  request: Request,
-  { params }: { params: { familyId: string } }
+  request: NextRequest,
+  context: { params: Promise<{ familyId: string }> }
 ) {
   console.log("POST /api/family/[familyId]/members reached!");
   const supabase = await createClient()
@@ -14,7 +14,7 @@ export async function POST(
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const { familyId } = await params
+  const { familyId } = await context.params;
   const { memberName, memberEmail } = await request.json()
   console.log("Request body:", { familyId, memberName, memberEmail });
 
@@ -53,7 +53,7 @@ export async function POST(
   if (existingProfileError || !newMemberProfileId) {
     console.log("Profile not found by name, trying by email in auth.users.");
     // If profile not found by name, try to find by email in auth.users (if they have signed up)
-    const { data: authUser, error: authUserError } = await supabase.auth.admin.getUserByEmail(memberEmail);
+    const { data: authUser, error: authUserError } = await supabase.auth.admin.inviteUserByEmail(memberEmail);
     console.log("Auth user found by email:", authUser, authUserError);
     if (authUserError || !authUser?.user) {
       console.log("Could not find a registered user with that email.");

@@ -1,3 +1,9 @@
-[00:00:00.612] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:00.614] Server  ERROR    ⨯ Middleware cannot be used with "output: export". See more info here: https://nextjs.org/docs/advanced-features/static-html-export
-[00:00:00.670] Server  LOG      ✓ Ready in 542ms
+[00:00:00.655] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:00.706] Server  LOG      ✓ Ready in 539ms
+[00:00:03.804] Server  LOG     listData: {}
+[00:00:04.003] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:04.191] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:00:04.192] Server  LOG     membersMap after populating: {}
+[00:00:04.192] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:04.193] Server  LOG     Family Members: [{...},{...}]
+[00:00:04.678] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

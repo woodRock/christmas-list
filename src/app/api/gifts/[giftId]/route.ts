@@ -1,13 +1,13 @@
 import { createClient } from '@/lib/supabase-server'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function PATCH(
-  request: Request,
-  { params }: { params: { giftId: string } }
+  request: NextRequest,
+  context: { params: Promise<{ giftId: string }> }
 ) {
   console.log("PATCH /api/gifts/[giftId] reached!");
   const supabase = await createClient()
-  const resolvedParams = await params
+  const { giftId } = await context.params;
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
@@ -30,7 +30,7 @@ export async function PATCH(
   const { error } = await supabase
     .from('items')
     .update(updatePayload)
-    .eq('id', resolvedParams.giftId)
+    .eq('id', giftId)
     .eq('user_id', user.id) // Ensure only the owner can edit their gift
   console.log("Supabase update error:", error);
   console.log("Supabase update error:", error);
@@ -43,12 +43,12 @@ export async function PATCH(
 }
 
 export async function DELETE(
-  request: Request,
-  { params }: { params: { giftId: string } }
+  request: NextRequest,
+  context: { params: Promise<{ giftId: string }> }
 ) {
   console.log("DELETE /api/gifts/[giftId] reached!");
   const supabase = await createClient()
-  const resolvedParams = await params
+  const { giftId } = await context.params;
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
@@ -59,7 +59,7 @@ export async function DELETE(
   const { error } = await supabase
     .from('items')
     .delete()
-    .eq('id', resolvedParams.giftId)
+    .eq('id', giftId)
     .eq('user_id', user.id) // Ensure only the owner can delete their gift
   console.log("Supabase delete error:", error);
 
