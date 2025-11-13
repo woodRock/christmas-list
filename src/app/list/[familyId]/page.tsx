@@ -9,6 +9,8 @@ interface Gift {
   purchased_by?: string;
   user_id: string;
   order_index?: number; // Add order_index
+  notes?: string; // Add notes
+  price?: number; // Add price
 }
 
 interface Member {
@@ -25,8 +27,8 @@ interface Family {
 }
 
 export default async function FamilyListPage({ params }: { params: { familyId: string } }) {
+  const resolvedParams = await Promise.resolve(params); // Ensure params are resolved
   const supabase = await createClient()
-  const resolvedParams = await params
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
@@ -50,7 +52,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
 
   const { data: itemsData, error: itemsError } = await supabase
     .from('items')
-    .select('id, name, is_purchased, purchased_by, user_id, order_index') // Select order_index
+    .select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price') // Select order_index, notes, price
     .eq('list_id', resolvedParams.familyId)
 
   if (itemsError) {
@@ -102,6 +104,8 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
         purchased_by: item.purchased_by || undefined,
         user_id: item.user_id,
         order_index: item.order_index || 0, // Assign order_index
+        notes: item.notes || undefined,
+        price: item.price || undefined,
       });
     }
   });

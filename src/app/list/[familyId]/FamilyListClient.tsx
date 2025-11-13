@@ -75,28 +75,29 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     const [removed] = sourceMember.gifts.splice(result.source.index, 1)
     destinationMember.gifts.splice(result.destination.index, 0, removed)
 
-    // Update order_index for all affected gifts
-    const updatedGifts = destinationMember.gifts.map((gift, index) => ({
-      ...gift,
-      order_index: index,
-    }))
+    // Re-index gifts in both source and destination members
+    sourceMember.gifts = sourceMember.gifts.map((gift, index) => ({ ...gift, order_index: index }));
+    destinationMember.gifts = destinationMember.gifts.map((gift, index) => ({ ...gift, order_index: index }));
 
     // Optimistically update UI
     newFamily.members[sourceMemberIndex] = sourceMember
     newFamily.members[destinationMemberIndex] = destinationMember
     setFamily(newFamily)
 
+    // Collect all gifts from the entire family structure that need their order_index updated
+    const giftsToUpdate = newFamily.members.flatMap(member =>
+      member.gifts.map(gift => ({
+        id: gift.id,
+        order_index: gift.order_index,
+        list_id: family.id, // Include list_id
+      }))
+    );
+
     // Call API to update order
     const res = await fetch('/api/gifts/reorder', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        items: updatedGifts.map(gift => ({
-          id: gift.id,
-          order_index: gift.order_index,
-          list_id: family.id, // Include list_id
-        })),
-      }),
+      body: JSON.stringify({ items: giftsToUpdate }),
     })
 
     if (!res.ok) {
@@ -201,12 +202,16 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                             <li
                               ref={provided.innerRef}
                               {...provided.draggableProps}
-                              {...provided.dragHandleProps}
-                              className="flex flex-col justify-between items-start bg-gray-50 p-2 rounded-md shadow-sm cursor-pointer"
-                              onClick={() => handleToggleExpand(gift.id)}
+                              className="flex flex-col justify-between items-start bg-gray-50 p-2 rounded-md shadow-sm"
                             >
-                              <div className="flex justify-between w-full items-center">
-                                <span>
+                              <div
+                                className="flex justify-between w-full items-center"
+                                {...provided.dragHandleProps} // Apply drag handle props here
+                              >
+                                <span
+                                  className="cursor-pointer flex-grow"
+                                  onClick={() => handleToggleExpand(gift.id)}
+                                >
                                   {gift.description}
                                   {gift.is_purchased && user.id !== gift.user_id && (
                                     <span className="ml-2 text-sm text-green-600">

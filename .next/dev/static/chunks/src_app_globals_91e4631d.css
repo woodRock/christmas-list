@@ -349,18 +349,6 @@
 @layer components;
 
 @layer utilities {
-  .sr-only {
-    clip-path: inset(50%);
-    white-space: nowrap;
-    border-width: 0;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    position: absolute;
-    overflow: hidden;
-  }
-
   .fixed {
     position: fixed;
   }
@@ -501,6 +489,10 @@
 
   .max-w-screen-md {
     max-width: var(--breakpoint-md);
+  }
+
+  .flex-grow {
+    flex-grow: 1;
   }
 
   .cursor-pointer {
