@@ -9,6 +9,7 @@ import AddGiftForm from './AddGiftForm'
 import ClaimUnclaimButtons from './ClaimUnclaimButtons'
 import AddMemberForm from './AddMemberForm'
 import EditGiftForm from './EditGiftForm' // New component for editing gifts
+import QRCode from 'react-qr-code'
 
 interface Gift {
   id: string;
@@ -57,6 +58,8 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
   const [expandedGiftId, setExpandedGiftId] = useState<string | null>(null); // State for expanded gift
   const [sortKey, setSortKey] = useState<keyof Gift | 'order_index'>('order_index'); // Default sort by order_index
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc'); // Default sort order ascending
+  const [showQrModal, setShowQrModal] = useState(false)
+  const [inviteToken, setInviteToken] = useState<string | null>(null)
   const supabase = createClient()
   const router = useRouter()
 
@@ -149,6 +152,21 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     } else {
       const errorText = await res.text()
       alert(`Failed to remove member: ${errorText}`)
+    }
+  }
+
+  const generateInvite = async () => {
+    const res = await fetch(`/api/lists/${familyId}/invites`, {
+      method: 'POST',
+    })
+
+    if (res.ok) {
+      const { token } = await res.json()
+      setInviteToken(token)
+      setShowQrModal(true)
+    } else {
+      const { error } = await res.json()
+      alert(`Failed to generate invite link: ${error}`)
     }
   }
 
@@ -302,6 +320,15 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
           />
         )}
 
+        <div className="mt-8">
+          <button
+            onClick={generateInvite}
+            className="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600"
+          >
+            Invite with QR Code
+          </button>
+        </div>
+
         {user && user.id === family.owner_id && (
           <AddMemberForm
             familyId={family.id}
@@ -319,6 +346,21 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
               router.refresh()
             }}
           />
+        )}
+
+        {showQrModal && inviteToken && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+              <h2 className="text-2xl font-bold mb-4">Scan to Join!</h2>
+              <QRCode value={`${window.location.origin}/invite?token=${inviteToken}`} />
+              <button
+                onClick={() => setShowQrModal(false)}
+                className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+              >
+                Close
+              </button>
+            </div>
+          </div>
         )}
       </div>
     </div>

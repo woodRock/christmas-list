@@ -719,7 +719,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$fami
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$ClaimUnclaimButtons$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$AddMemberForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/list/[familyId]/AddMemberForm.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$EditGiftForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/list/[familyId]/EditGiftForm.tsx [app-ssr] (ecmascript)"); // New component for editing gifts
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$qr$2d$code$2f$lib$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-qr-code/lib/index.js [app-ssr] (ecmascript)");
 'use client';
+;
 ;
 ;
 ;
@@ -744,7 +746,7 @@ const formatNotesWithLinks = (notes)=>{
                 children: part
             }, index, false, {
                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                lineNumber: 44,
+                lineNumber: 45,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0));
         }
@@ -758,6 +760,8 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
     const [expandedGiftId, setExpandedGiftId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null); // State for expanded gift
     const [sortKey, setSortKey] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('order_index'); // Default sort by order_index
     const [sortOrder, setSortOrder] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('asc'); // Default sort order ascending
+    const [showQrModal, setShowQrModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [inviteToken, setInviteToken] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createClient"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const handleDragEnd = async (result)=>{
@@ -847,6 +851,19 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
             alert(`Failed to remove member: ${errorText}`);
         }
     };
+    const generateInvite = async ()=>{
+        const res = await fetch(`/api/lists/${familyId}/invites`, {
+            method: 'POST'
+        });
+        if (res.ok) {
+            const { token } = await res.json();
+            setInviteToken(token);
+            setShowQrModal(true);
+        } else {
+            const { error } = await res.json();
+            alert(`Failed to generate invite link: ${error}`);
+        }
+    };
     const sortedGifts = (gifts)=>{
         return [
             ...gifts
@@ -881,7 +898,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 180,
+                    lineNumber: 198,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -890,7 +907,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                     children: "← Back to Home"
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 181,
+                    lineNumber: 199,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -901,7 +918,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                             children: "Sort by:"
                         }, void 0, false, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 184,
+                            lineNumber: 202,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -914,7 +931,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "Default Order"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 190,
+                                    lineNumber: 208,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -922,7 +939,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "Description"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 191,
+                                    lineNumber: 209,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -930,13 +947,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "Price"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 192,
+                                    lineNumber: 210,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 185,
+                            lineNumber: 203,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -945,13 +962,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                             children: sortOrder === 'asc' ? 'Asc' : 'Desc'
                         }, void 0, false, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 194,
+                            lineNumber: 212,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 183,
+                    lineNumber: 201,
                     columnNumber: 9
                 }, this),
                 family.members.map((member)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -968,7 +985,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                        lineNumber: 205,
+                                        lineNumber: 223,
                                         columnNumber: 15
                                     }, this),
                                     user && user.id === family.owner_id && user.id !== member.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -977,13 +994,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                         children: "Remove"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                        lineNumber: 207,
+                                        lineNumber: 225,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                lineNumber: 204,
+                                lineNumber: 222,
                                 columnNumber: 13
                             }, this),
                             member.gifts.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -994,7 +1011,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                lineNumber: 216,
+                                lineNumber: 234,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$hello$2d$pangea$2f$dnd$2f$dist$2f$dnd$2e$esm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DragDropContext"], {
                                 onDragEnd: handleDragEnd,
@@ -1031,13 +1048,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                        lineNumber: 244,
+                                                                                        lineNumber: 262,
                                                                                         columnNumber: 37
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                lineNumber: 238,
+                                                                                lineNumber: 256,
                                                                                 columnNumber: 33
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1054,7 +1071,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                                 children: "Edit"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                                lineNumber: 252,
+                                                                                                lineNumber: 270,
                                                                                                 columnNumber: 39
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1066,7 +1083,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                                 children: "Delete"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                                lineNumber: 258,
+                                                                                                lineNumber: 276,
                                                                                                 columnNumber: 39
                                                                                             }, this)
                                                                                         ]
@@ -1076,19 +1093,19 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                         userId: user.id
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                        lineNumber: 267,
+                                                                                        lineNumber: 285,
                                                                                         columnNumber: 37
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                lineNumber: 249,
+                                                                                lineNumber: 267,
                                                                                 columnNumber: 33
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                        lineNumber: 234,
+                                                                        lineNumber: 252,
                                                                         columnNumber: 31
                                                                     }, this),
                                                                     expandedGiftId === gift.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1100,7 +1117,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                         children: "Notes:"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                        lineNumber: 277,
+                                                                                        lineNumber: 295,
                                                                                         columnNumber: 40
                                                                                     }, this),
                                                                                     " ",
@@ -1108,7 +1125,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                lineNumber: 277,
+                                                                                lineNumber: 295,
                                                                                 columnNumber: 37
                                                                             }, this),
                                                                             gift.price && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1117,7 +1134,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                         children: "Price:"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                        lineNumber: 280,
+                                                                                        lineNumber: 298,
                                                                                         columnNumber: 40
                                                                                     }, this),
                                                                                     " $",
@@ -1125,47 +1142,47 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                lineNumber: 280,
+                                                                                lineNumber: 298,
                                                                                 columnNumber: 37
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                        lineNumber: 275,
+                                                                        lineNumber: 293,
                                                                         columnNumber: 33
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                lineNumber: 229,
+                                                                lineNumber: 247,
                                                                 columnNumber: 29
                                                             }, this)
                                                     }, gift.id, false, {
                                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                        lineNumber: 227,
+                                                        lineNumber: 245,
                                                         columnNumber: 25
                                                     }, this)),
                                                 provided.placeholder
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                            lineNumber: 221,
+                                            lineNumber: 239,
                                             columnNumber: 21
                                         }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 219,
+                                    lineNumber: 237,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                lineNumber: 218,
+                                lineNumber: 236,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, member.id, true, {
                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                        lineNumber: 203,
+                        lineNumber: 221,
                         columnNumber: 11
                     }, this)),
                 user && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$AddGiftForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1174,8 +1191,24 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                     members: family.members
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 298,
+                    lineNumber: 316,
                     columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mt-8",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: generateInvite,
+                        className: "w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600",
+                        children: "Invite with QR Code"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                        lineNumber: 324,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                    lineNumber: 323,
+                    columnNumber: 9
                 }, this),
                 user && user.id === family.owner_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$AddMemberForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                     familyId: family.id,
@@ -1183,7 +1216,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                     members: family.members
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 306,
+                    lineNumber: 333,
                     columnNumber: 11
                 }, this),
                 editingGift && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$EditGiftForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1195,18 +1228,58 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 314,
+                    lineNumber: 341,
+                    columnNumber: 11
+                }, this),
+                showQrModal && inviteToken && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-white p-8 rounded-lg shadow-lg text-center",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "text-2xl font-bold mb-4",
+                                children: "Scan to Join!"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                lineNumber: 354,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$qr$2d$code$2f$lib$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                value: `${window.location.origin}/invite?token=${inviteToken}`
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                lineNumber: 355,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>setShowQrModal(false),
+                                className: "mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600",
+                                children: "Close"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                lineNumber: 356,
+                                columnNumber: 15
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                        lineNumber: 353,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                    lineNumber: 352,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-            lineNumber: 179,
+            lineNumber: 197,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-        lineNumber: 178,
+        lineNumber: 196,
         columnNumber: 5
     }, this);
 }
