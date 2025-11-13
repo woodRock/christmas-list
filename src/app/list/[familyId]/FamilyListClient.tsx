@@ -71,6 +71,8 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
   const [isDragging, setIsDragging] = useState(false); // New state to track dragging
   const [sourceDroppableId, setSourceDroppableId] = useState<string | null>(null); // New state to track the source list of the dragged item
   const [copyMessage, setCopyMessage] = useState(''); // New state for copy feedback
+  const [isFindingImages, setIsFindingImages] = useState(false);
+  const [findImagesMessage, setFindImagesMessage] = useState('');
   const router = useRouter()
   const [mounted, setMounted] = useState(false);
   const [portalNode, setPortalNode] = useState<HTMLElement | null>(null);
@@ -183,6 +185,70 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
       console.error('Failed to copy: ', err);
       setCopyMessage('Failed to copy!');
     }
+  };
+
+  const handleFindMissingImages = async () => {
+    if (!user || user.id !== family.owner_id) {
+      alert('Only the list owner can find missing images.');
+      return;
+    }
+
+    setIsFindingImages(true);
+    setFindImagesMessage('Searching for missing images...');
+
+    const giftsToUpdate: Gift[] = [];
+
+    for (const member of family.members) {
+      for (const gift of member.gifts) {
+        if (!gift.product_image_url && gift.description) {
+          setFindImagesMessage(`Searching for image for "${gift.description}"...`);
+          try {
+            const scrapeRes = await fetch(`/api/scrape-pricespy?query=${gift.description}`);
+            const scrapeData = await scrapeRes.json();
+
+            if (scrapeRes.ok && scrapeData.imageUrl) {
+              setFindImagesMessage(`Found image for "${gift. description}". Updating...`);
+              const updateRes = await fetch('/api/gifts/update-image', {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ giftId: gift.id, imageUrl: scrapeData.imageUrl }),
+              });
+
+              if (updateRes.ok) {
+                giftsToUpdate.push({ ...gift, product_image_url: scrapeData.imageUrl });
+              } else {
+                const errorText = await updateRes.text();
+                console.error(`Failed to update image for ${gift.description}: ${errorText}`);
+                setFindImagesMessage(`Failed to update image for "${gift.description}".`);
+              }
+            } else {
+              console.log(`No image found for "${gift.description}" or scraping failed: ${scrapeData.message || scrapeData.error}`);
+              setFindImagesMessage(`No image found for "${gift.description}".`);
+            }
+          } catch (error) {
+            console.error(`Error processing ${gift.description}:`, error);
+            setFindImagesMessage(`Error processing "${gift.description}".`);
+          }
+        }
+      }
+    }
+
+    // Optimistically update the UI with found images
+    if (giftsToUpdate.length > 0) {
+      const newFamily = { ...family };
+      newFamily.members = newFamily.members.map(member => ({
+        ...member,
+        gifts: member.gifts.map(gift => {
+          const updatedGift = giftsToUpdate.find(g => g.id === gift.id);
+          return updatedGift || gift;
+        })
+      }));
+      setFamily(newFamily);
+    }
+
+    setFindImagesMessage('Finished searching for missing images.');
+    setIsFindingImages(false);
+    router.refresh(); // Refresh to ensure server state is fully consistent
   };
 
   const handleDeleteGift = async (giftId: string) => {
@@ -333,6 +399,17 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             <Image src="/qr_code.svg" alt="QR Code" width={24} height={24} />
             <span className="text-xs mt-1 dark:hover:text-black">Invite</span>
           </button>
+          {user && user.id === family.owner_id && ( // Only list owner can trigger this
+            <button
+              onClick={handleFindMissingImages}
+              className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
+              aria-label="Find Missing Images"
+              disabled={isFindingImages}
+            >
+              <Image src="/file.svg" alt="Find Missing Images" width={24} height={24} /> {/* Using file.svg as a placeholder */}
+              <span className="text-xs mt-1 dark:hover:text-black">{isFindingImages ? 'Finding...' : 'Find Images'}</span>
+            </button>
+          )}
           <Link href="/onboarding"
             className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
             aria-label="Help and Onboarding"
@@ -341,6 +418,10 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             <span className="text-xs mt-1 dark:hover:text-black">Help</span>
           </Link>
         </div>
+
+        {isFindingImages && findImagesMessage && (
+          <p className="text-center text-sm text-blue-500 mb-4">{findImagesMessage}</p>
+        )}
 
         <div className="mb-4 flex items-center space-x-2">
           <span className="text-gray-300">Sort by:</span>

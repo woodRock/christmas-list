@@ -1,7 +1,10 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/api/gifts/[giftId]/route": "app/api/gifts/[giftId]/route.js",
   "/api/gifts/fetch-metadata/route": "app/api/gifts/fetch-metadata/route.js",
+  "/api/gifts/update-image/route": "app/api/gifts/update-image/route.js",
   "/api/lists/[familyId]/invites/route": "app/api/lists/[familyId]/invites/route.js",
+  "/api/scrape-pricespy/route": "app/api/scrape-pricespy/route.js",
   "/invite/page": "app/invite/page.js",
   "/list/[familyId]/page": "app/list/[familyId]/page.js",
   "/login/page": "app/login/page.js",
