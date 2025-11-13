@@ -85,3 +85,4 @@
 [00:16:38.043] Server  LOG     Family Members: [{...},{...},{...}]
 [00:16:38.199] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:16:38.330] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:20:47.119] Server  LOG      ✓ Compiled in 19ms

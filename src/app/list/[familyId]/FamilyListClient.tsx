@@ -426,7 +426,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                         onClick={(e) => e.stopPropagation()}
                                         aria-label="Open Link"
                                       >
-                                        <Image src="/globe.svg" alt="Open Link" width={20} height={20} />
+                                        <Image src="/link.svg" alt="Open Link" width={20} height={20} />
                                       </a>
                                     )}
                                     {user && user.id !== gift.user_id && (
