@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function PATCH(
   request: NextRequest,
-  context: { params: { giftId: string } }
+  context: { params: Promise<{ giftId: string }> }
 ) {
   const supabase = await createClient()
   const { giftId } = await context.params;

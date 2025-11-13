@@ -3,8 +3,10 @@ import { NextResponse } from 'next/server'
 
 export async function DELETE(
   request: Request,
-  context: { params: { familyId: string; memberId: string } }
+  context: { params: Promise<{ familyId: string; memberId: string }> }
 ) {
+  console.log('context:', context);
+  console.log('context.params:', context.params);
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
@@ -12,7 +14,9 @@ export async function DELETE(
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const { familyId, memberId } = await context.params
+  const { familyId, memberId } = await context.params;
+  console.log('familyId:', familyId);
+  console.log('memberId:', memberId);
 
   // Verify that the current user is the owner of the list
   const { data: list, error: listError } = await supabase

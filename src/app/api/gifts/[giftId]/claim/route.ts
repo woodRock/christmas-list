@@ -3,10 +3,13 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function PATCH(
   request: NextRequest,
-  context: { params: { giftId: string } }
+  context: { params: Promise<{ giftId: string }> }
 ) {
+  console.log('context:', context);
+  console.log('context.params:', context.params);
   const supabase = await createClient()
   const { giftId } = await context.params;
+  console.log('giftId:', giftId);
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {

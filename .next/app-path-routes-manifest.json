@@ -1,11 +1,12 @@
 {
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
-  "/api/family/[familyId]/members/route": "/api/family/[familyId]/members",
   "/api/gifts/[giftId]/claim/route": "/api/gifts/[giftId]/claim",
   "/api/gifts/[giftId]/route": "/api/gifts/[giftId]",
   "/api/gifts/[giftId]/unclaim/route": "/api/gifts/[giftId]/unclaim",
   "/api/gifts/reorder/route": "/api/gifts/reorder",
+  "/api/lists/[familyId]/members/[memberId]/route": "/api/lists/[familyId]/members/[memberId]",
+  "/api/lists/[familyId]/members/route": "/api/lists/[familyId]/members",
   "/create-family/page": "/create-family",
   "/favicon.ico/route": "/favicon.ico",
   "/list/[familyId]/page": "/list/[familyId]",

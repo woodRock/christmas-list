@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function PATCH(
   request: NextRequest,
-  context: { params: { giftId: string } }
+  context: { params: Promise<{ giftId: string }> }
 ) {
   console.log("PATCH /api/gifts/[giftId] reached!");
   const supabase = await createClient()
@@ -43,7 +43,7 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  context: { params: { giftId: string } }
+  context: { params: Promise<{ giftId: string }> }
 ) {
   console.log("DELETE /api/gifts/[giftId] reached!");
   const supabase = await createClient()

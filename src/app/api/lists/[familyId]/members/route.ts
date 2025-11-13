@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(
   request: NextRequest,
-  context: { params: { familyId: string } }
+  context: { params: Promise<{ familyId: string }> }
 ) {
   console.log("POST /api/family/[familyId]/members reached!");
   const supabase = await createClient()
