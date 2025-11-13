@@ -43,7 +43,6 @@
     --color-red-900: #82181a;
     --color-yellow-100: #fef9c2;
     --color-yellow-600: #cd8900;
-    --color-yellow-700: #a36100;
     --color-green-500: #00c758;
     --color-green-600: #00a544;
     --color-green-700: #008138;
@@ -54,7 +53,6 @@
     --color-indigo-500: #625fff;
     --color-purple-100: #f3e8ff;
     --color-purple-600: #9810fa;
-    --color-purple-700: #8200da;
     --color-gray-50: #f9fafb;
     --color-gray-100: #f3f4f6;
     --color-gray-200: #e5e7eb;
@@ -106,7 +104,6 @@
       --color-red-900: lab(28.5139% 44.5539 29.0463);
       --color-yellow-100: lab(97.3564% -4.51407 27.344);
       --color-yellow-600: lab(62.7799% 22.4197 86.1544);
-      --color-yellow-700: lab(47.8202% 25.2426 66.5015);
       --color-green-500: lab(70.5521% -66.5147 45.8073);
       --color-green-600: lab(59.0978% -58.6621 41.2579);
       --color-green-700: lab(47.0329% -47.0239 31.4788);
@@ -117,7 +114,6 @@
       --color-indigo-500: lab(48.295% 38.3129 -81.9673);
       --color-purple-100: lab(93.3333% 6.97437 -9.83434);
       --color-purple-600: lab(43.0295% 75.21 -86.5669);
-      --color-purple-700: lab(36.1758% 69.8525 -80.0381);
       --color-gray-50: lab(98.2596% -.247031 -.706708);
       --color-gray-100: lab(96.1596% -.0823438 -1.13575);
       --color-gray-200: lab(91.6229% -.159115 -2.26791);
@@ -785,10 +781,6 @@
     background-color: var(--color-green-600);
   }
 
-  .bg-purple-600 {
-    background-color: var(--color-purple-600);
-  }
-
   .bg-red-50 {
     background-color: var(--color-red-50);
   }
@@ -803,10 +795,6 @@
 
   .bg-white {
     background-color: var(--color-white);
-  }
-
-  .bg-yellow-600 {
-    background-color: var(--color-yellow-600);
   }
 
   .object-cover {
@@ -867,10 +855,6 @@
 
   .text-center {
     text-align: center;
-  }
-
-  .text-left {
-    text-align: left;
   }
 
   .text-2xl {
@@ -1059,12 +1043,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-purple-700:hover {
-      background-color: var(--color-purple-700);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-red-600:hover {
       background-color: var(--color-red-600);
     }
@@ -1079,12 +1057,6 @@
   @media (hover: hover) {
     .hover\:bg-yellow-100:hover {
       background-color: var(--color-yellow-100);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-yellow-700:hover {
-      background-color: var(--color-yellow-700);
     }
   }
 
@@ -1132,12 +1104,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:w-auto {
-      width: auto;
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1158,12 +1124,6 @@
   @media (min-width: 40rem) {
     .sm\:justify-between {
       justify-content: space-between;
-    }
-  }
-
-  @media (min-width: 40rem) {
-    .sm\:justify-end {
-      justify-content: flex-end;
     }
   }
 

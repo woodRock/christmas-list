@@ -1,88 +1,26 @@
-[00:00:01.117] Server  LOG      ✓ Ready in 915ms
-[00:00:08.440] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:11.932] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:00:12.149] Server  LOG     Fetched families for user: [{...}]
-[00:00:12.150] Server  LOG     Fetch error (if any): null
-[00:00:14.462] Server  LOG     listData: {}
-[00:00:14.659] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:00:14.840] Server  LOG     profilesData after fetching: [{...},{...},{...}]
-[00:00:14.840] Server  LOG     membersMap after populating: {}
-[00:00:14.841] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:00:14.841] Server  LOG     Family Members: [{...},{...},{...}]
-[00:00:27.480] Server  LOG     context: {}
-[00:00:27.703] Server  WARN    Error: Route "/api/gifts/[giftId]/claim" used `...params` or similar expression. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-[00:00:27.703] Server  LOG     context.params: {}
-[00:00:27.707] Server  LOG     giftId: "04414ef9-4940-421c-9bc6-d5defd282d2d"
-[00:00:28.590] Server  LOG     listData: {}
-[00:00:28.775] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:00:28.944] Server  LOG     profilesData after fetching: [{...},{...},{...}]
-[00:00:28.944] Server  LOG     membersMap after populating: {}
-[00:00:28.945] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:00:28.945] Server  LOG     Family Members: [{...},{...},{...}]
-[00:00:30.414] Server  LOG     listData: {}
-[00:00:30.585] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:00:30.761] Server  LOG     profilesData after fetching: [{...},{...},{...}]
-[00:00:30.761] Server  LOG     membersMap after populating: {}
-[00:00:30.762] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:00:30.762] Server  LOG     Family Members: [{...},{...},{...}]
-[00:00:30.980] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:25.018] Server  LOG     listData: {}
-[00:03:25.208] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:03:25.385] Server  LOG     profilesData after fetching: [{...},{...},{...}]
-[00:03:25.385] Server  LOG     membersMap after populating: {}
-[00:03:25.386] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:03:25.386] Server  LOG     Family Members: [{...},{...},{...}]
-[00:03:25.577] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:26.518] Server  LOG      ✓ Compiled in 41ms
-[00:03:32.466] Server  LOG      ✓ Compiled in 17ms
-[00:03:35.557] Server  LOG      ✓ Compiled in 20ms
-[00:03:35.677] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:03:38.421] Server  LOG      ✓ Compiled in 17ms
-[00:03:47.712] Server  LOG     listData: {}
-[00:03:47.897] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:03:48.069] Server  LOG     profilesData after fetching: [{...},{...},{...}]
-[00:03:48.070] Server  LOG     membersMap after populating: {}
-[00:03:48.070] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:03:48.071] Server  LOG     Family Members: [{...},{...},{...}]
-[00:03:48.275] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:48.423] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:04:14.583] Server  LOG      ✓ Compiled in 17ms
-[00:05:06.108] Server  LOG      ✓ Compiled in 27ms
-[00:05:10.164] Server  LOG      ✓ Compiled in 21ms
-[00:05:14.047] Server  LOG      ✓ Compiled in 25ms
-[00:05:18.077] Server  LOG      ✓ Compiled in 18ms
-[00:05:51.494] Server  LOG      ✓ Compiled in 13ms
-[00:05:54.774] Server  LOG      ✓ Compiled in 16ms
-[00:05:58.524] Server  LOG     listData: {}
-[00:05:58.721] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:05:58.893] Server  LOG     profilesData after fetching: [{...},{...},{...}]
-[00:05:58.893] Server  LOG     membersMap after populating: {}
-[00:05:58.894] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:05:58.894] Server  LOG     Family Members: [{...},{...},{...}]
-[00:05:59.089] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:59.240] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:06:26.171] Server  LOG      ✓ Compiled in 13ms
-[00:09:30.634] Server  LOG      ✓ Compiled in 21ms
-[00:09:42.140] Server  LOG     listData: {}
-[00:09:42.334] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:09:42.504] Server  LOG     profilesData after fetching: [{...},{...},{...}]
-[00:09:42.505] Server  LOG     membersMap after populating: {}
-[00:09:42.505] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:09:42.506] Server  LOG     Family Members: [{...},{...},{...}]
-[00:09:42.714] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:42.864] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:09:43.871] Server  LOG      ✓ Compiled in 26ms
-[00:11:10.650] Server  LOG      ✓ Compiled in 18ms
-[00:13:32.613] Server  LOG      ✓ Compiled in 22ms
-[00:13:41.031] Server  LOG      ✓ Compiled in 26ms
-[00:15:20.261] Server  LOG      ✓ Compiled in 25ms
-[00:16:34.414] Server  LOG      ✓ Compiled in 22ms
-[00:16:37.649] Server  LOG     listData: {}
-[00:16:37.859] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:16:38.041] Server  LOG     profilesData after fetching: [{...},{...},{...}]
-[00:16:38.042] Server  LOG     membersMap after populating: {}
-[00:16:38.042] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:16:38.043] Server  LOG     Family Members: [{...},{...},{...}]
-[00:16:38.199] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:38.330] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:20:47.119] Server  LOG      ✓ Compiled in 19ms
+[00:00:00.678] Server  LOG      ✓ Ready in 532ms
+[00:00:03.194] Server  LOG     listData: {}
+[00:00:03.374] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:03.551] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:00:03.552] Server  LOG     membersMap after populating: {}
+[00:00:03.553] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:03.553] Server  LOG     Family Members: [{...},{...},{...}]
+[00:00:03.716] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.836] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:04.197] Server  LOG     listData: {}
+[00:00:04.372] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:04.552] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:00:04.552] Server  LOG     membersMap after populating: {}
+[00:00:04.552] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:04.553] Server  LOG     Family Members: [{...},{...},{...}]
+[00:00:04.678] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.799] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:08.073] Server  LOG     listData: {}
+[00:00:08.248] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:08.419] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:00:08.420] Server  LOG     membersMap after populating: {}
+[00:00:08.420] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:08.421] Server  LOG     Family Members: [{...},{...},{...}]
+[00:00:08.542] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:08.659] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:17.988] Server  LOG      ✓ Compiled in 16ms
