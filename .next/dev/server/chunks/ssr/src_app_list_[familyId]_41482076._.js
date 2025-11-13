@@ -61,7 +61,7 @@ function AddGiftForm({ familyId, currentUserId, members }) {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "mt-6 pt-4 border-t border-gray-200",
+        className: "mt-6 pt-4 border-t border-gray-200 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                 className: "text-xl font-semibold mb-3",
@@ -87,7 +87,7 @@ function AddGiftForm({ familyId, currentUserId, members }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                 htmlFor: "recipient",
-                                className: "block text-sm font-medium text-gray-700",
+                                className: "block text-sm font-medium text-gray-300",
                                 children: "Recipient"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
@@ -96,7 +96,7 @@ function AddGiftForm({ familyId, currentUserId, members }) {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                 id: "recipient",
-                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
                                 value: selectedRecipientId,
                                 onChange: (e)=>setSelectedRecipientId(e.target.value),
                                 required: true,
@@ -127,7 +127,7 @@ function AddGiftForm({ familyId, currentUserId, members }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                 htmlFor: "gift-desc",
-                                className: "block text-sm font-medium text-gray-700",
+                                className: "block text-sm font-medium text-gray-300",
                                 children: "Gift Description"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
@@ -138,7 +138,7 @@ function AddGiftForm({ familyId, currentUserId, members }) {
                                 type: "text",
                                 id: "gift-desc",
                                 placeholder: "Gift description",
-                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
                                 value: newGiftDescription,
                                 onChange: (e)=>setNewGiftDescription(e.target.value),
                                 required: true
@@ -157,7 +157,7 @@ function AddGiftForm({ familyId, currentUserId, members }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                 htmlFor: "gift-notes",
-                                className: "block text-sm font-medium text-gray-700",
+                                className: "block text-sm font-medium text-gray-300",
                                 children: "Notes (Optional)"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
@@ -168,7 +168,7 @@ function AddGiftForm({ familyId, currentUserId, members }) {
                                 id: "gift-notes",
                                 placeholder: "e.g., Size M, color blue, link to product",
                                 rows: 3,
-                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
                                 value: newGiftNotes,
                                 onChange: (e)=>setNewGiftNotes(e.target.value)
                             }, void 0, false, {
@@ -186,7 +186,7 @@ function AddGiftForm({ familyId, currentUserId, members }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                 htmlFor: "gift-price",
-                                className: "block text-sm font-medium text-gray-700",
+                                className: "block text-sm font-medium text-gray-300",
                                 children: "Price (Optional)"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
@@ -198,7 +198,7 @@ function AddGiftForm({ familyId, currentUserId, members }) {
                                 id: "gift-price",
                                 placeholder: "e.g., 25.99",
                                 step: "0.01",
-                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
                                 value: newGiftPrice,
                                 onChange: (e)=>setNewGiftPrice(e.target.value)
                             }, void 0, false, {
@@ -393,7 +393,7 @@ function AddMemberForm({ familyId, currentUserId, members }) {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "mt-8 p-6 bg-white rounded-lg shadow-md",
+        className: "mt-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                 className: "text-2xl font-semibold mb-4",
@@ -419,7 +419,7 @@ function AddMemberForm({ familyId, currentUserId, members }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                 htmlFor: "newMemberName",
-                                className: "block text-sm font-medium text-gray-700",
+                                className: "block text-sm font-medium text-gray-300",
                                 children: "Member Name"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
@@ -429,7 +429,7 @@ function AddMemberForm({ familyId, currentUserId, members }) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 type: "text",
                                 id: "newMemberName",
-                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
                                 value: newMemberName,
                                 onChange: (e)=>setNewMemberName(e.target.value),
                                 required: true
@@ -448,7 +448,7 @@ function AddMemberForm({ familyId, currentUserId, members }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                 htmlFor: "newMemberEmail",
-                                className: "block text-sm font-medium text-gray-700",
+                                className: "block text-sm font-medium text-gray-300",
                                 children: "Member Email"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
@@ -458,7 +458,7 @@ function AddMemberForm({ familyId, currentUserId, members }) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 type: "email",
                                 id: "newMemberEmail",
-                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
+                                className: "mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm",
                                 value: newMemberEmail,
                                 onChange: (e)=>setNewMemberEmail(e.target.value),
                                 required: true

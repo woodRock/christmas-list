@@ -18,22 +18,22 @@ export default async function Home() {
   console.log("Fetch error (if any):", error);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-8">
       <div className="max-w-screen-md mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-center">Your Family Lists</h1>
 
         {error && <p className="text-red-500 text-center mb-4">{error.message}</p>}
 
         {families && families.length === 0 ? (
-          <div className="text-center bg-white p-8 rounded-lg shadow-md">
+          <div className="text-center bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold mb-4">Welcome!</h2>
-            <p className="text-gray-600 mb-6">You are not a member of any family lists yet.</p>
-            <p className="text-gray-600">You can either create your own list or ask someone to add you to their existing list.</p>
+            <p className="text-gray-300 mb-6">You are not a member of any family lists yet.</p>
+            <p className="text-gray-300">You can either create your own list or ask someone to add you to their existing list.</p>
           </div>
         ) : (
           <ul className="space-y-4">
             {families?.map((family: { id: string; name: string }) => (
-              <li key={family.id} className="bg-white p-6 rounded-lg shadow-md">
+              <li key={family.id} className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
                 <Link href={`/list/${family.id}`} className="text-2xl font-semibold text-blue-600 hover:underline">
                   {family.name}
                 </Link>
