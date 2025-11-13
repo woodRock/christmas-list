@@ -142,6 +142,7 @@ async function PATCH(request) {
     // Verify that the user owns all items they are trying to reorder
     for (const update of updates){
         const existingItem = existingItems?.find((item)=>item.id === update.id);
+        console.log("User id: ", user.id, "Existing item for update:", existingItem?.user_id);
         if (!existingItem || existingItem.user_id !== user.id) {
             console.log("Unauthorized: User does not own item being reordered.", {
                 itemId: update.id,

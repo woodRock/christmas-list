@@ -10,9 +10,7 @@ export default async function Home() {
     redirect('/login')
   }
 
-  const { data: families, error } = await supabase
-    .from('lists')
-    .select('id, name')
+  const { data: families, error } = await supabase.rpc('get_lists_for_user', { user_id: user.id })
 
   return (
     <div className="min-h-screen bg-gray-100 py-8">
@@ -22,10 +20,14 @@ export default async function Home() {
         {error && <p className="text-red-500 text-center mb-4">{error.message}</p>}
 
         {families && families.length === 0 ? (
-          <p className="text-center text-gray-600">No family lists created yet.</p>
+          <div className="text-center bg-white p-8 rounded-lg shadow-md">
+            <h2 className="text-2xl font-semibold mb-4">Welcome!</h2>
+            <p className="text-gray-600 mb-6">You are not a member of any family lists yet.</p>
+            <p className="text-gray-600">You can either create your own list or ask someone to add you to their existing list.</p>
+          </div>
         ) : (
           <ul className="space-y-4">
-            {families?.map((family) => (
+            {families?.map((family: { id: string; name: string }) => (
               <li key={family.id} className="bg-white p-6 rounded-lg shadow-md">
                 <Link href={`/list/${family.id}`} className="text-2xl font-semibold text-blue-600 hover:underline">
                   {family.name}

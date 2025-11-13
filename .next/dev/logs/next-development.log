@@ -7,3 +7,114 @@
 [00:00:04.070] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
 [00:00:04.071] Server  LOG     Family Members: [{...},{...}]
 [00:00:04.196] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:38.399] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:05:38.403] Server  LOG     Unauthorized: No user session.
+[00:05:48.602] Server  LOG     listData: {}
+[00:05:48.792] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:48.968] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:48.968] Server  LOG     membersMap after populating: {}
+[00:05:48.969] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:48.969] Server  LOG     Family Members: [{...},{...}]
+[00:05:51.095] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:05:51.272] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:05:51.273] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:05:51.440] Server  LOG     Unauthorized: User does not own item being reordered. {}
+[00:07:03.938] Server  LOG     listData: {}
+[00:07:04.134] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:07:04.322] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:07:04.323] Server  LOG     membersMap after populating: {}
+[00:07:04.323] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:04.323] Server  LOG     Family Members: [{...},{...}]
+[00:07:18.715] Server  LOG     listData: {}
+[00:07:18.882] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:07:19.053] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:07:19.053] Server  LOG     membersMap after populating: {}
+[00:07:19.054] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:19.054] Server  LOG     Family Members: [{...},{...}]
+[00:07:19.243] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:21.376] Server  LOG     PATCH /api/gifts/reorder reached!
+[00:07:21.568] Server  LOG     Request body (items for reorder): [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:07:21.569] Server  LOG     Updates to be sent to Supabase: [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:07:21.748] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:21.748] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:21.749] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:21.749] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:21.749] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:21.750] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:21.750] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:21.750] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:21.750] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450" "Existing item for update:" "8261fdea-4831-4d14-bccb-f2c3cfa86d8f"
+[00:07:21.751] Server  LOG     Unauthorized: User does not own item being reordered. {}
+[00:07:34.634] Server  LOG     listData: {}
+[00:07:34.822] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:07:35.055] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:07:35.056] Server  LOG     membersMap after populating: {}
+[00:07:35.056] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:35.056] Server  LOG     Family Members: [{...},{...}]
+[00:31:28.065] Server  LOG      ✓ Compiled in 24ms
+[00:31:29.135] Server  LOG     listData: {}
+[00:31:29.137] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:31:29.138] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:31:29.138] Server  LOG     membersMap after populating: {}
+[00:31:29.138] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:31:29.138] Server  LOG     Family Members: [{...},{...}]
+[00:31:48.336] Server  LOG      ✓ Compiled in 11ms
+[00:31:48.579] Server  LOG     listData: {}
+[00:31:48.582] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:31:48.584] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:31:48.584] Server  LOG     membersMap after populating: {}
+[00:31:48.584] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:31:48.584] Server  LOG     Family Members: [{...},{...}]
+[00:32:09.251] Server  LOG      ✓ Compiled in 10ms
+[00:32:09.477] Server  LOG     listData: {}
+[00:32:09.479] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:32:09.481] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:32:09.481] Server  LOG     membersMap after populating: {}
+[00:32:09.481] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:32:09.481] Server  LOG     Family Members: [{...},{...}]
+[00:33:18.728] Server  LOG     listData: {}
+[00:33:18.946] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:33:19.122] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:33:19.122] Server  LOG     membersMap after populating: {}
+[00:33:19.123] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:33:19.123] Server  LOG     Family Members: [{...},{...}]
+[00:33:19.333] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:33.438] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:37.558] Server  LOG     listData: {}
+[00:33:46.364] Server  LOG     listData: {}
+[00:33:49.450] Server  LOG     listData: {}
+[00:33:53.011] Server  LOG     listData: {}
+[00:33:57.469] Server  LOG     listData: {}
+[00:34:12.945] Server  LOG     listData: {}
+[00:34:13.123] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:34:13.311] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:34:13.312] Server  LOG     membersMap after populating: {}
+[00:34:13.312] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:34:13.312] Server  LOG     Family Members: [{...},{...}]
+[00:35:08.672] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:17.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:20.633] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:21.429] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:23.393] Server  LOG     listData: {}
+[00:37:25.768] Server  LOG     listData: {}
+[00:37:27.963] Server  LOG     listData: {}
+[00:37:32.247] Server  LOG     listData: {}
+[00:37:38.224] Server  LOG     listData: null
+[00:37:38.384] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:52.218] Server  LOG     listData: {}
+[00:37:52.982] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:59.087] Server  LOG     listData: {}
+[00:40:08.461] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:16.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:56.291] Server  LOG      ✓ Compiled in 14ms
+[00:41:15.267] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:17.175] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:20.270] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:33.840] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:35.801] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:44:38.040] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:44:48.872] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:01.542] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:15.425] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:17.029] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:51.612] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

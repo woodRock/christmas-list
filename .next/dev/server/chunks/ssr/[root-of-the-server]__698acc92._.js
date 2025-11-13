@@ -97,6 +97,11 @@ async function FamilyListPage({ params }) {
             columnNumber: 12
         }, this);
     }
+    const isOwner = listData.user_id === user.id;
+    const isMember = listData.list_members.some((member)=>member.profile_id === user.id);
+    if (!isOwner && !isMember) {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["redirect"])('/');
+    }
     const { data: itemsData, error: itemsError } = await supabase.from('items').select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price') // Select order_index, notes, price
     .eq('list_id', resolvedParams.familyId);
     if (itemsError) {
@@ -108,7 +113,7 @@ async function FamilyListPage({ params }) {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/page.tsx",
-            lineNumber: 59,
+            lineNumber: 66,
             columnNumber: 12
         }, this);
     }
@@ -136,7 +141,7 @@ async function FamilyListPage({ params }) {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/page.tsx",
-            lineNumber: 84,
+            lineNumber: 91,
             columnNumber: 12
         }, this);
     }
@@ -178,7 +183,7 @@ async function FamilyListPage({ params }) {
         familyId: resolvedParams.familyId
     }, void 0, false, {
         fileName: "[project]/src/app/list/[familyId]/page.tsx",
-        lineNumber: 124,
+        lineNumber: 131,
         columnNumber: 5
     }, this);
 }

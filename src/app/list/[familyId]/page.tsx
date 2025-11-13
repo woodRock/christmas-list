@@ -50,6 +50,13 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
     return <p className="text-center text-gray-600">Family list not found.</p>
   }
 
+  const isOwner = listData.user_id === user.id;
+  const isMember = listData.list_members.some((member: any) => member.profile_id === user.id);
+
+  if (!isOwner && !isMember) {
+    redirect('/')
+  }
+
   const { data: itemsData, error: itemsError } = await supabase
     .from('items')
     .select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price') // Select order_index, notes, price
