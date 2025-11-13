@@ -4,6 +4,7 @@
   "/api/gifts/[giftId]/claim/route": "app/api/gifts/[giftId]/claim/route.js",
   "/api/gifts/[giftId]/route": "app/api/gifts/[giftId]/route.js",
   "/api/gifts/[giftId]/unclaim/route": "app/api/gifts/[giftId]/unclaim/route.js",
+  "/api/gifts/fetch-metadata/route": "app/api/gifts/fetch-metadata/route.js",
   "/api/gifts/reorder/route": "app/api/gifts/reorder/route.js",
   "/api/invites/accept/route": "app/api/invites/accept/route.js",
   "/api/lists/[familyId]/invites/route": "app/api/lists/[familyId]/invites/route.js",

@@ -3,9 +3,10 @@
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase' // Correct client-side Supabase client
 import { useRouter, useSearchParams } from 'next/navigation' // Import useSearchParams
+import { User } from '@supabase/supabase-js'
 
 export default function InviteClient() { // Not async
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const supabase = createClient() // No await here
@@ -16,7 +17,7 @@ export default function InviteClient() { // Not async
   useEffect(() => {
     const getUser = async () => {
       const { data } = await supabase.auth.getUser()
-      setUser(data.user)
+      setUser(data.user as User | null)
       setLoading(false)
     }
     getUser()
@@ -66,7 +67,7 @@ export default function InviteClient() { // Not async
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-3xl font-bold mb-4">You've been invited!</h1>
+      <h1 className="text-3xl font-bold mb-4">You&apos;ve been invited!</h1>
       {user ? (
         <p className="mb-4">Accept the invite to join the list.</p>
       ) : (

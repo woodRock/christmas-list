@@ -1,7 +1,5 @@
-'use client'
-
-import { useState } from 'react'
 import { createClient } from '@/lib/supabase'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 interface AddMemberFormProps {
@@ -54,8 +52,14 @@ export default function AddMemberForm({ familyId, currentUserId, members }: AddM
       } else {
         setMessage(`Failed to add member: ${data.error}`);
       }
-    } catch (error: any) {
-      setMessage(`Error adding member: ${error.message}`);
+    } catch (error: unknown) {
+      let errorMessage = 'Error adding member';
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      } else if (typeof error === 'string') {
+        errorMessage = error;
+      }
+      setMessage(`Error adding member: ${errorMessage}`);
       console.error("Error during add member fetch:", error);
     }
   }

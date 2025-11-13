@@ -1,9 +1,851 @@
-[00:00:00.703] Server  LOG      ✓ Ready in 546ms
-[00:00:03.448] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:05.520] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.262] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.901] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:07.445] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:08.045] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:16.958] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:18.028] Server  LOG      ✓ Compiled in 16ms
+[00:00:00.762] Server  LOG      ✓ Ready in 577ms
+[00:00:08.792] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:11.978] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:12.153] Server  LOG     Fetched families for user: [{...}]
+[00:00:12.154] Server  LOG     Fetch error (if any): null
+[00:00:16.035] Server  LOG     listData: {}
+[00:00:16.251] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:16.417] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:00:16.417] Server  LOG     membersMap after populating: {}
+[00:00:16.417] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:16.418] Server  LOG     Family Members: [{...},{...}]
+[00:00:39.427] Server  LOG      ✓ Compiled in 14ms
+[00:02:29.153] Server  LOG     listData: {}
+[00:02:29.319] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:02:29.487] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:02:29.487] Server  LOG     membersMap after populating: {}
+[00:02:29.487] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:02:29.487] Server  LOG     Family Members: [{...},{...}]
+[00:02:29.682] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:48.463] Server  LOG      ✓ Compiled in 16ms
+[00:03:03.709] Server  LOG     DELETE /api/gifts/[giftId] reached!
+[00:03:04.057] Server  LOG     Supabase delete error: null
+[00:03:04.203] Server  LOG      ✓ Compiled in 19ms
+[00:03:04.610] Server  LOG     listData: {}
+[00:03:04.777] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:03:04.943] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:03:04.943] Server  LOG     membersMap after populating: {}
+[00:03:04.944] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:03:04.944] Server  LOG     Family Members: [{...},{...}]
+[00:03:14.465] Server  LOG      ✓ Compiled in 9ms
+[00:03:36.493] Server  LOG      ✓ Compiled in 17ms
+[00:04:05.113] Server  LOG      ✓ Compiled in 22ms
+[00:04:38.241] Server  LOG      ✓ Compiled in 19ms
+[00:04:43.296] Server  LOG     listData: {}
+[00:04:43.466] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:04:43.631] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:04:43.631] Server  LOG     membersMap after populating: {}
+[00:04:43.631] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:04:43.632] Server  LOG     Family Members: [{...},{...}]
+[00:04:55.848] Server  LOG     listData: {}
+[00:04:56.013] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:04:56.179] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:04:56.180] Server  LOG     membersMap after populating: {}
+[00:04:56.180] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:04:56.180] Server  LOG     Family Members: [{...},{...}]
+[00:04:56.380] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:00.532] Server  LOG      ✓ Compiled in 17ms
+[00:05:23.912] Server  LOG      ✓ Compiled in 19ms
+[00:05:35.477] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:05:35.644] Server  LOG     Request body (description, notes, price for edit): {}
+[00:05:35.687] Server  LOG      ✓ Compiled in 20ms
+[00:05:35.823] Server  LOG     Supabase update error: null
+[00:05:36.384] Server  LOG     listData: {}
+[00:05:36.564] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:36.736] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:36.736] Server  LOG     membersMap after populating: {}
+[00:05:36.737] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:36.737] Server  LOG     Family Members: [{...},{...}]
+[00:05:48.923] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:05:49.084] Server  LOG     Request body (description, notes, price for edit): {}
+[00:05:49.269] Server  LOG     Supabase update error: null
+[00:05:49.779] Server  LOG     listData: {}
+[00:05:49.946] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:50.104] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:50.104] Server  LOG     membersMap after populating: {}
+[00:05:50.104] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:50.104] Server  LOG     Family Members: [{...},{...}]
+[00:05:53.460] Server  LOG     listData: {}
+[00:05:53.630] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:53.816] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:53.816] Server  LOG     membersMap after populating: {}
+[00:05:53.816] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:53.816] Server  LOG     Family Members: [{...},{...}]
+[00:05:54.042] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:07.556] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:06:07.712] Server  LOG     Request body (description, notes, price for edit): {}
+[00:06:07.867] Server  LOG     Supabase update error: null
+[00:06:08.377] Server  LOG     listData: {}
+[00:06:08.543] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:06:08.704] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:06:08.705] Server  LOG     membersMap after populating: {}
+[00:06:08.705] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:06:08.705] Server  LOG     Family Members: [{...},{...}]
+[00:06:31.588] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:06:31.743] Server  LOG     Request body (description, notes, price for edit): {}
+[00:06:31.898] Server  LOG     Supabase update error: null
+[00:06:32.426] Server  LOG     listData: {}
+[00:06:32.603] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:06:32.779] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:06:32.779] Server  LOG     membersMap after populating: {}
+[00:06:32.780] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:06:32.780] Server  LOG     Family Members: [{...},{...}]
+[00:07:07.200] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[00:07:07.357] Server  LOG     Request body (description, notes, price for edit): {}
+[00:07:07.530] Server  LOG     Supabase update error: null
+[00:07:08.046] Server  LOG     listData: {}
+[00:07:08.221] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:07:08.385] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:07:08.386] Server  LOG     membersMap after populating: {}
+[00:07:08.386] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:08.386] Server  LOG     Family Members: [{...},{...}]
+[00:07:10.002] Server  LOG     listData: {}
+[00:07:10.173] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:07:10.347] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:07:10.347] Server  LOG     membersMap after populating: {}
+[00:07:10.347] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:07:10.348] Server  LOG     Family Members: [{...},{...}]
+[00:07:10.532] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:24.685] Server  LOG      ✓ Compiled in 17ms
+[00:08:11.879] Server  LOG      ✓ Compiled in 14ms
+[00:08:11.953] Server  LOG     listData: {}
+[00:08:12.114] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:08:12.277] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:08:12.277] Server  LOG     membersMap after populating: {}
+[00:08:12.277] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:08:12.277] Server  LOG     Family Members: [{...},{...}]
+[00:08:17.884] Server  LOG     listData: {}
+[00:08:18.047] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:08:18.213] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:08:18.214] Server  LOG     membersMap after populating: {}
+[00:08:18.214] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:08:18.214] Server  LOG     Family Members: [{...},{...}]
+[00:08:18.421] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:03.250] Server  LOG      ✓ Compiled in 16ms
+[00:09:22.086] Server  LOG     listData: {}
+[00:09:22.275] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:09:22.448] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:09:22.449] Server  LOG     membersMap after populating: {}
+[00:09:22.449] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:09:22.449] Server  LOG     Family Members: [{...},{...}]
+[00:09:22.642] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:23.833] Server  LOG      ✓ Compiled in 13ms
+[00:09:33.977] Server  LOG      ✓ Compiled in 11ms
+[00:09:34.808] Browser ERROR   uncaughtError: ReferenceError: createClient is not defined
+[00:09:46.322] Server  LOG     listData: {}
+[00:09:46.496] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:09:46.668] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:09:46.669] Server  LOG     membersMap after populating: {}
+[00:09:46.669] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:09:46.669] Server  LOG     Family Members: [{...},{...}]
+[00:09:46.725] Server  ERROR    ⨯ ReferenceError: createClient is not defined
+[00:09:46.872] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:47.044] Browser ERROR   uncaughtError: ReferenceError: createClient is not defined
+[00:09:59.364] Server  LOG     listData: {}
+[00:09:59.534] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:09:59.704] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:09:59.704] Server  LOG     membersMap after populating: {}
+[00:09:59.704] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:09:59.704] Server  LOG     Family Members: [{...},{...}]
+[00:09:59.729] Server  ERROR    ⨯ ReferenceError: createClient is not defined
+[00:09:59.911] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:00.102] Browser ERROR   uncaughtError: ReferenceError: createClient is not defined
+[00:10:04.574] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:04.590] Server  LOG      ✓ Compiled in 14ms
+[00:10:05.553] Server  LOG     listData: {}
+[00:10:05.722] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:05.889] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:05.890] Server  LOG     membersMap after populating: {}
+[00:10:05.890] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:05.890] Server  LOG     Family Members: [{...},{...}]
+[00:10:05.940] Server  ERROR    ⨯ ReferenceError: createClient is not defined
+[00:10:06.077] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:06.815] Browser ERROR   uncaughtError: ReferenceError: createClient is not defined
+[00:10:38.411] Server  LOG     listData: {}
+[00:10:38.748] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:10:39.039] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:10:39.040] Server  LOG     membersMap after populating: {}
+[00:10:39.040] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:10:39.040] Server  LOG     Family Members: [{...},{...}]
+[00:10:39.062] Server  ERROR    ⨯ ReferenceError: createClient is not defined
+[00:10:39.216] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:39.396] Browser ERROR   uncaughtError: ReferenceError: createClient is not defined
+[00:10:54.931] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.932] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.932] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.933] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.935] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.936] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.937] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.937] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.938] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.939] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.940] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.941] Server  ERROR    ⨯ ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:10:54.964] Server  LOG      ✓ Compiled in 15ms
+[00:10:55.806] Browser ERROR   ./src/app/list/[familyId]/AddMemberForm.tsx:1:1
+Module not found: Can't resolve '@/lib/supabase-client'
+> 1 | import { createClient } from '@/lib/supabase-client'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { useState } from 'react'
+  3 | import { useRouter } from 'next/navigation'
+  4 |
+
+Import map: aliased to relative './src/lib/supabase-client' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:11:03.214] Server  LOG      ✓ Compiled in 50ms
+[00:11:03.806] Browser ERROR   ./src/lib/supabase-server.ts:2:1
+Ecmascript file had an error
+  1 | import { createServerClient, type CookieOptions } from '@supabase/ssr'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export async function createClient() {
+  5 |   const cookieStore = await cookies()
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  #1 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/layout.tsx
+
+  #2 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/list/[familyId]/page.tsx
+
+  #3 [Client Component Browser]:
+    ./src/lib/supabase-server.ts [Client Component Browser]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  #4 [Client Component SSR]:
+    ./src/lib/supabase-server.ts [Client Component SSR]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+[00:11:05.457] Browser ERROR   ./src/lib/supabase-server.ts:2:1
+Ecmascript file had an error
+  1 | import { createServerClient, type CookieOptions } from '@supabase/ssr'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export async function createClient() {
+  5 |   const cookieStore = await cookies()
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  #1 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/layout.tsx
+
+  #2 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/list/[familyId]/page.tsx
+
+  #3 [Client Component Browser]:
+    ./src/lib/supabase-server.ts [Client Component Browser]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  #4 [Client Component SSR]:
+    ./src/lib/supabase-server.ts [Client Component SSR]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+[00:11:06.276] Server  ERROR    ⨯ ./src/lib/supabase-server.ts:2:1
+Ecmascript file had an error
+  1 | import { createServerClient, type CookieOptions } from '@supabase/ssr'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export async function createClient() {
+  5 |   const cookieStore = await cookies()
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+
+
+Import traces:
+  #1 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/layout.tsx
+
+  #2 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/list/[familyId]/page.tsx
+
+  #3 [Client Component Browser]:
+    ./src/lib/supabase-server.ts [Client Component Browser]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  #4 [Client Component SSR]:
+    ./src/lib/supabase-server.ts [Client Component SSR]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+
+[00:11:06.397] Browser ERROR   ./src/lib/supabase-server.ts:2:1
+Ecmascript file had an error
+  1 | import { createServerClient, type CookieOptions } from '@supabase/ssr'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export async function createClient() {
+  5 |   const cookieStore = await cookies()
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  #1 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/layout.tsx
+
+  #2 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/list/[familyId]/page.tsx
+
+  #3 [Client Component Browser]:
+    ./src/lib/supabase-server.ts [Client Component Browser]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  #4 [Client Component SSR]:
+    ./src/lib/supabase-server.ts [Client Component SSR]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+[00:11:06.717] Browser ERROR   ./src/lib/supabase-server.ts:2:1
+Ecmascript file had an error
+  1 | import { createServerClient, type CookieOptions } from '@supabase/ssr'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export async function createClient() {
+  5 |   const cookieStore = await cookies()
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  #1 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/layout.tsx
+
+  #2 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/list/[familyId]/page.tsx
+
+  #3 [Client Component Browser]:
+    ./src/lib/supabase-server.ts [Client Component Browser]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  #4 [Client Component SSR]:
+    ./src/lib/supabase-server.ts [Client Component SSR]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+[00:11:06.849] Browser ERROR   uncaughtError: Error: ./src/lib/supabase-server.ts:2:1
+Ecmascript file had an error
+  1 | import { createServerClient, type CookieOptions } from '@supabase/ssr'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export async function createClient() {
+  5 |   const cookieStore = await cookies()
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+
+
+Import traces:
+  #1 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/layout.tsx
+
+  #2 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/list/[familyId]/page.tsx
+
+  #3 [Client Component Browser]:
+    ./src/lib/supabase-server.ts [Client Component Browser]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  #4 [Client Component SSR]:
+    ./src/lib/supabase-server.ts [Client Component SSR]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+
+[00:11:07.033] Browser ERROR   ./src/lib/supabase-server.ts:2:1
+Ecmascript file had an error
+  1 | import { createServerClient, type CookieOptions } from '@supabase/ssr'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export async function createClient() {
+  5 |   const cookieStore = await cookies()
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  #1 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/layout.tsx
+
+  #2 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/list/[familyId]/page.tsx
+
+  #3 [Client Component Browser]:
+    ./src/lib/supabase-server.ts [Client Component Browser]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  #4 [Client Component SSR]:
+    ./src/lib/supabase-server.ts [Client Component SSR]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+[00:11:07.033] Browser ERROR   ./src/lib/supabase-server.ts:2:1
+Ecmascript file had an error
+  1 | import { createServerClient, type CookieOptions } from '@supabase/ssr'
+> 2 | import { cookies } from 'next/headers'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | export async function createClient() {
+  5 |   const cookieStore = await cookies()
+
+You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+
+Import traces:
+  #1 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/layout.tsx
+
+  #2 [Server Component]:
+    ./src/lib/supabase-server.ts
+    ./src/app/list/[familyId]/page.tsx
+
+  #3 [Client Component Browser]:
+    ./src/lib/supabase-server.ts [Client Component Browser]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component Browser]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+
+  #4 [Client Component SSR]:
+    ./src/lib/supabase-server.ts [Client Component SSR]
+    ./src/app/list/[familyId]/AddMemberForm.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Client Component SSR]
+    ./src/app/list/[familyId]/FamilyListClient.tsx [Server Component]
+    ./src/app/list/[familyId]/page.tsx [Server Component]
+[00:11:38.700] Server  LOG      ✓ Compiled in 12ms
+[00:11:39.791] Server  LOG     listData: {}
+[00:11:40.090] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:11:40.348] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:11:40.348] Server  LOG     membersMap after populating: {}
+[00:11:40.349] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:11:40.349] Server  LOG     Family Members: [{...},{...}]
+[00:11:40.527] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:16.331] Server  LOG     listData: {}
+[00:12:16.636] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:12:16.816] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:12:16.817] Server  LOG     membersMap after populating: {}
+[00:12:16.817] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:12:16.817] Server  LOG     Family Members: [{...},{...}]
+[00:12:29.030] Server  LOG      ✓ Compiled in 23ms
+[00:12:54.087] Server  LOG     listData: {}
+[00:12:54.250] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:12:54.418] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:12:54.418] Server  LOG     membersMap after populating: {}
+[00:12:54.419] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:12:54.419] Server  LOG     Family Members: [{...},{...}]
+[00:12:57.804] Server  LOG     listData: {}
+[00:12:58.044] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:12:58.210] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:12:58.210] Server  LOG     membersMap after populating: {}
+[00:12:58.210] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:12:58.210] Server  LOG     Family Members: [{...},{...}]
+[00:12:58.415] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:01.252] Server  LOG      ✓ Compiled in 40ms
+[00:13:24.977] Server  LOG     listData: {}
+[00:13:25.136] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:13:25.294] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:13:25.294] Server  LOG     membersMap after populating: {}
+[00:13:25.294] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:13:25.294] Server  LOG     Family Members: [{...},{...}]
+[00:13:30.298] Server  LOG     listData: {}
+[00:13:30.466] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:13:30.631] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:13:30.631] Server  LOG     membersMap after populating: {}
+[00:13:30.631] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:13:30.632] Server  LOG     Family Members: [{...},{...}]
+[00:13:30.842] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:56.870] Server  LOG      ✓ Compiled in 16ms
+[00:14:09.422] Server  LOG     listData: {}
+[00:14:09.591] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:14:09.756] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:14:09.757] Server  LOG     membersMap after populating: {}
+[00:14:09.757] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:14:09.757] Server  LOG     Family Members: [{...},{...}]
+[00:14:09.906] Server  LOG      ✓ Compiled in 16ms
+[00:14:12.562] Server  LOG     listData: {}
+[00:14:12.729] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:14:12.890] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:14:12.890] Server  LOG     membersMap after populating: {}
+[00:14:12.890] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:14:12.890] Server  LOG     Family Members: [{...},{...}]
+[00:14:13.084] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

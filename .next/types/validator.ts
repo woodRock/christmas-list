@@ -128,6 +128,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/api/gifts/fetch-metadata/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/gifts/fetch-metadata">> = Specific
+  const handler = {} as typeof import("../../src/app/api/gifts/fetch-metadata/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/api/gifts/reorder/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/gifts/reorder">> = Specific

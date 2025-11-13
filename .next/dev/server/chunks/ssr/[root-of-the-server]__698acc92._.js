@@ -83,7 +83,7 @@ async function FamilyListPage({ params }) {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/page.tsx",
-            lineNumber: 46,
+            lineNumber: 55,
             columnNumber: 12
         }, this);
     }
@@ -93,7 +93,7 @@ async function FamilyListPage({ params }) {
             children: "Family list not found."
         }, void 0, false, {
             fileName: "[project]/src/app/list/[familyId]/page.tsx",
-            lineNumber: 50,
+            lineNumber: 59,
             columnNumber: 12
         }, this);
     }
@@ -113,7 +113,7 @@ async function FamilyListPage({ params }) {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/page.tsx",
-            lineNumber: 67,
+            lineNumber: 76,
             columnNumber: 12
         }, this);
     }
@@ -141,7 +141,7 @@ async function FamilyListPage({ params }) {
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/page.tsx",
-            lineNumber: 92,
+            lineNumber: 101,
             columnNumber: 12
         }, this);
     }
@@ -183,7 +183,7 @@ async function FamilyListPage({ params }) {
         familyId: resolvedParams.familyId
     }, void 0, false, {
         fileName: "[project]/src/app/list/[familyId]/page.tsx",
-        lineNumber: 132,
+        lineNumber: 141,
         columnNumber: 5
     }, this);
 }

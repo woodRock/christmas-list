@@ -26,6 +26,15 @@ interface Family {
   members: Member[];
 }
 
+interface ProfileInListMember {
+  full_name: string;
+}
+
+interface ListMember {
+  profile_id: string;
+  profiles: ProfileInListMember[];
+}
+
 export default async function FamilyListPage({ params }: { params: { familyId: string } }) {
   const resolvedParams = await Promise.resolve(params); // Ensure params are resolved
   const supabase = await createClient()
@@ -51,7 +60,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
   }
 
   const isOwner = listData.user_id === user.id;
-  const isMember = listData.list_members.some((member: any) => member.profile_id === user.id);
+  const isMember = listData.list_members.some((member: ListMember) => member.profile_id === user.id);
 
   if (!isOwner && !isMember) {
     redirect('/')
@@ -77,7 +86,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
   profileIds.add(listData.user_id); // List owner
 
   // Extract profiles from list_members
-  listData.list_members.forEach((lm: any) => {
+  listData.list_members.forEach((lm: ListMember) => {
     profileIds.add(lm.profile_id);
   });
   console.log("profileIds after collecting from items, owner, and list_members:", profileIds);

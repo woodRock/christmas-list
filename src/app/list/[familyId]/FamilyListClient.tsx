@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { createClient } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd'
 import Link from 'next/link'
@@ -10,6 +9,7 @@ import ClaimUnclaimButtons from './ClaimUnclaimButtons'
 import AddMemberForm from './AddMemberForm'
 import EditGiftForm from './EditGiftForm' // New component for editing gifts
 import QRCode from 'react-qr-code'
+import { User } from '@supabase/supabase-js'
 
 interface Gift {
   id: string;
@@ -20,6 +20,10 @@ interface Gift {
   order_index?: number;
   notes?: string; // Add notes
   price?: number; // Add price
+  product_url?: string;
+  product_title?: string;
+  product_image_url?: string;
+  product_price?: number;
 }
 
 interface Member {
@@ -51,16 +55,15 @@ const formatNotesWithLinks = (notes?: string) => {
   });
 };
 
-export default function FamilyListClient({ initialFamily, initialUser, familyId }: { initialFamily: Family, initialUser: any, familyId: string }) {
+export default function FamilyListClient({ initialFamily, initialUser, familyId }: { initialFamily: Family, initialUser: User | null, familyId: string }) {
   const [family, setFamily] = useState<Family>(initialFamily)
-  const [user] = useState(initialUser)
+  const [user, setUser] = useState<User | null>(initialUser)
   const [editingGift, setEditingGift] = useState<Gift | null>(null)
   const [expandedGiftId, setExpandedGiftId] = useState<string | null>(null); // State for expanded gift
   const [sortKey, setSortKey] = useState<keyof Gift | 'order_index'>('order_index'); // Default sort by order_index
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc'); // Default sort order ascending
   const [showQrModal, setShowQrModal] = useState(false)
   const [inviteToken, setInviteToken] = useState<string | null>(null)
-  const supabase = createClient()
   const router = useRouter()
 
   const handleDragEnd = async (result: DropResult) => {
@@ -181,15 +184,15 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
       alert('You have successfully left the family list.')
       router.push('/') // Redirect to home page
     } else {
-      const errorText = await res.json()
+      const errorText: any = await res.json()
       alert(`Failed to leave family: ${errorText.error}`)
     }
   }
 
   const sortedGifts = (gifts: Gift[]) => {
     return [...gifts].sort((a, b) => {
-      let valA: any;
-      let valB: any;
+      let valA: string | number;
+      let valB: string | number;
 
       if (sortKey === 'order_index') {
         valA = a.order_index || 0;
@@ -236,7 +239,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
         {family.members.map((member) => (
           <div key={member.id} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-8">
             <div className="flex justify-between items-center">
-              <h2 className="text-2xl font-semibold mb-4">{member.name}'s List</h2>
+              <h2 className="text-2xl font-semibold mb-4">{member.name}&apos;s List</h2>
               {user && user.id === family.owner_id && user.id !== member.id && (
                 <button
                   onClick={() => handleRemoveMember(member.id)}
@@ -274,7 +277,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                   onClick={() => handleToggleExpand(gift.id)}
                                 >
                                   {gift.description}
-                                  {gift.is_purchased && user.id !== gift.user_id && (
+                                  {gift.is_purchased && user?.id !== gift.user_id && (
                                     <span className="ml-2 text-sm text-green-600">
                                       (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
                                     </span>
@@ -307,6 +310,20 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                               </div>
                               {expandedGiftId === gift.id && (
                                 <div className="mt-2 text-sm text-gray-300 w-full">
+                                  {gift.product_image_url && (
+                                    // eslint-disable-next-line @next/next/no-img-element
+                                    <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-24 h-24 object-cover rounded-md mb-2" />
+                                  )}
+                                  {gift.product_title && gift.product_url ? (
+                                    <p>
+                                      <strong>Product:</strong>{' '}
+                                      <a href={gift.product_url} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                                        {gift.product_title}
+                                      </a>
+                                    </p>
+                                  ) : gift.product_title && (
+                                    <p><strong>Product:</strong> {gift.product_title}</p>
+                                  )}
                                   {gift.notes && (
                                     <p><strong>Notes:</strong> {formatNotesWithLinks(gift.notes)}</p>
                                   )}
