@@ -424,7 +424,9 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-ssr] (ecmascript)");
 'use client';
+;
 ;
 ;
 ;
@@ -473,31 +475,51 @@ function ClaimUnclaimButtons({ gift, userId }) {
                 children: message
             }, void 0, false, {
                 fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
-                lineNumber: 58,
+                lineNumber: 59,
                 columnNumber: 19
             }, this),
             !gift.is_purchased && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: handleClaimGift,
-                className: "ml-4 px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 text-sm",
-                children: "Claim"
+                className: "p-2 text-purple-600 rounded-full hover:bg-purple-100 transition-colors flex items-center justify-center",
+                "aria-label": "Claim Gift",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                    src: "/cart.svg",
+                    alt: "Claim Gift",
+                    width: 24,
+                    height: 24
+                }, void 0, false, {
+                    fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
+                    lineNumber: 66,
+                    columnNumber: 11
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
-                lineNumber: 60,
+                lineNumber: 61,
                 columnNumber: 9
             }, this),
             gift.is_purchased && gift.purchased_by === userId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: handleUnclaimGift,
-                className: "ml-4 px-3 py-1 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 text-sm",
-                children: "Unclaim"
+                className: "p-2 text-yellow-600 rounded-full hover:bg-yellow-100 transition-colors flex items-center justify-center",
+                "aria-label": "Unclaim Gift",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                    src: "/cart.svg",
+                    alt: "Unclaim Gift",
+                    width: 24,
+                    height: 24
+                }, void 0, false, {
+                    fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
+                    lineNumber: 75,
+                    columnNumber: 11
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
-                lineNumber: 68,
+                lineNumber: 70,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
-        lineNumber: 57,
+        lineNumber: 58,
         columnNumber: 5
     }, this);
 }
@@ -1600,82 +1622,222 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                             setEditingGift(gift);
                                                                         }
                                                                     },
-                                                                    className: "flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-2 rounded-md shadow-sm",
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "flex items-center flex-grow",
-                                                                            children: [
-                                                                                " ",
-                                                                                gift.product_image_url && // eslint-disable-next-line @next/next/no-img-element
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                                                    src: gift.product_image_url,
-                                                                                    alt: gift.product_title || gift.description,
-                                                                                    className: "w-16 h-16 object-cover rounded-md mr-3"
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                    lineNumber: 399,
-                                                                                    columnNumber: 35
-                                                                                }, this),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                    className: "flex-grow",
+                                                                    className: `bg-gray-50 dark:bg-gray-700 rounded-md shadow-sm ${viewMode === 'grid' ? 'relative aspect-square overflow-hidden flex flex-col justify-between' : 'flex flex-col items-center sm:flex-row sm:items-center sm:justify-between p-2'}`,
+                                                                    children: viewMode === 'grid' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                                        children: [
+                                                                            gift.product_image_url && // eslint-disable-next-line @next/next/no-img-element
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                                                src: gift.product_image_url,
+                                                                                alt: gift.product_title || gift.description,
+                                                                                className: "w-full h-2/3 object-cover"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                lineNumber: 400,
+                                                                                columnNumber: 37
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: "p-2 flex-grow flex flex-col justify-between",
+                                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                    className: "flex items-baseline",
                                                                                     children: [
-                                                                                        gift.description,
+                                                                                        " ",
+                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                            className: "text-sm font-semibold break-words",
+                                                                                            children: gift.description
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                            lineNumber: 404,
+                                                                                            columnNumber: 39
+                                                                                        }, this),
                                                                                         gift.is_purchased && user?.id !== gift.user_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                            className: "ml-2 text-sm text-green-600",
+                                                                                            className: "ml-2 text-xs text-green-600 flex-shrink-0",
                                                                                             children: [
+                                                                                                " ",
                                                                                                 "(Claimed by ",
                                                                                                 family.members.find((m)=>m.id === gift.purchased_by)?.name,
                                                                                                 ")"
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                            lineNumber: 406,
-                                                                                            columnNumber: 37
+                                                                                            lineNumber: 408,
+                                                                                            columnNumber: 41
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                    lineNumber: 401,
-                                                                                    columnNumber: 33
+                                                                                    lineNumber: 403,
+                                                                                    columnNumber: 37
                                                                                 }, this)
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                            lineNumber: 396,
-                                                                            columnNumber: 31
-                                                                        }, this),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: `flex items-center flex-shrink-0 ${viewMode === 'grid' ? 'flex-col space-y-2' : 'space-x-2'}`,
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                lineNumber: 402,
+                                                                                columnNumber: 35
+                                                                            }, this),
+                                                                            gift.price !== undefined && gift.price !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: "absolute bottom-2 left-2 text-sm font-semibold text-gray-700 dark:text-gray-300",
+                                                                                children: [
+                                                                                    "$",
+                                                                                    gift.price.toFixed(2)
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                lineNumber: 415,
+                                                                                columnNumber: 37
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: "absolute bottom-2 right-2 flex flex-col sm:flex-row sm:space-x-1 space-y-1",
+                                                                                children: [
+                                                                                    gift.product_url && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                                                        href: gift.product_url,
+                                                                                        target: "_blank",
+                                                                                        rel: "noopener noreferrer",
+                                                                                        className: "p-2 text-blue-500 rounded-full hover:bg-blue-100 transition-colors flex items-center justify-center",
+                                                                                        onClick: (e)=>e.stopPropagation(),
+                                                                                        "aria-label": "Open Link",
+                                                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                                            src: "/globe.svg",
+                                                                                            alt: "Open Link",
+                                                                                            width: 20,
+                                                                                            height: 20
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                            lineNumber: 429,
+                                                                                            columnNumber: 41
+                                                                                        }, this)
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                        lineNumber: 421,
+                                                                                        columnNumber: 39
+                                                                                    }, this),
+                                                                                    user && user.id !== gift.user_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$ClaimUnclaimButtons$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                                        gift: gift,
+                                                                                        userId: user.id
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                        lineNumber: 433,
+                                                                                        columnNumber: 39
+                                                                                    }, this)
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                lineNumber: 419,
+                                                                                columnNumber: 35
+                                                                            }, this)
+                                                                        ]
+                                                                    }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "flex w-full p-2",
                                                                             children: [
                                                                                 " ",
-                                                                                gift.product_url && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                                                    href: gift.product_url,
-                                                                                    target: "_blank",
-                                                                                    rel: "noopener noreferrer",
-                                                                                    className: "px-2 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-xs",
-                                                                                    onClick: (e)=>e.stopPropagation(),
-                                                                                    children: "Open Link"
+                                                                                gift.product_image_url && // Image on the left
+                                                                                // eslint-disable-next-line @next/next/no-img-element
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                                                    src: gift.product_image_url,
+                                                                                    alt: gift.product_title || gift.description,
+                                                                                    className: "w-24 h-24 object-cover rounded-md mr-3 flex-shrink-0"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                    lineNumber: 414,
-                                                                                    columnNumber: 35
+                                                                                    lineNumber: 446,
+                                                                                    columnNumber: 39
                                                                                 }, this),
-                                                                                user && user.id !== gift.user_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$ClaimUnclaimButtons$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                                    gift: gift,
-                                                                                    userId: user.id
-                                                                                }, void 0, false, {
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                    className: "flex-grow flex flex-col justify-between",
+                                                                                    children: [
+                                                                                        " ",
+                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                            children: [
+                                                                                                " ",
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                                    className: "font-semibold break-words",
+                                                                                                    children: gift.description
+                                                                                                }, void 0, false, {
+                                                                                                    fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                                    lineNumber: 451,
+                                                                                                    columnNumber: 41
+                                                                                                }, this),
+                                                                                                gift.is_purchased && user?.id !== gift.user_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                                    className: "ml-2 text-sm text-green-600",
+                                                                                                    children: [
+                                                                                                        "(Claimed by ",
+                                                                                                        family.members.find((m)=>m.id === gift.purchased_by)?.name,
+                                                                                                        ")"
+                                                                                                    ]
+                                                                                                }, void 0, true, {
+                                                                                                    fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                                    lineNumber: 455,
+                                                                                                    columnNumber: 43
+                                                                                                }, this)
+                                                                                            ]
+                                                                                        }, void 0, true, {
+                                                                                            fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                            lineNumber: 450,
+                                                                                            columnNumber: 39
+                                                                                        }, this),
+                                                                                        gift.price !== undefined && gift.price !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                            className: "text-sm font-semibold text-gray-700 dark:text-gray-300 mt-1",
+                                                                                            children: [
+                                                                                                "$",
+                                                                                                gift.price.toFixed(2)
+                                                                                            ]
+                                                                                        }, void 0, true, {
+                                                                                            fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                            lineNumber: 461,
+                                                                                            columnNumber: 41
+                                                                                        }, this)
+                                                                                    ]
+                                                                                }, void 0, true, {
                                                                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                    lineNumber: 425,
-                                                                                    columnNumber: 35
+                                                                                    lineNumber: 449,
+                                                                                    columnNumber: 37
+                                                                                }, this),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                    className: "flex-shrink-0 flex flex-col justify-end items-end ml-auto",
+                                                                                    children: [
+                                                                                        " ",
+                                                                                        gift.product_url && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                                                            href: gift.product_url,
+                                                                                            target: "_blank",
+                                                                                            rel: "noopener noreferrer",
+                                                                                            className: "p-2 text-blue-500 rounded-full hover:bg-blue-100 transition-colors flex items-center justify-center",
+                                                                                            onClick: (e)=>e.stopPropagation(),
+                                                                                            "aria-label": "Open Link",
+                                                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                                                src: "/globe.svg",
+                                                                                                alt: "Open Link",
+                                                                                                width: 24,
+                                                                                                height: 24
+                                                                                            }, void 0, false, {
+                                                                                                fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                                lineNumber: 477,
+                                                                                                columnNumber: 43
+                                                                                            }, this)
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                            lineNumber: 469,
+                                                                                            columnNumber: 41
+                                                                                        }, this),
+                                                                                        user && user.id !== gift.user_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$ClaimUnclaimButtons$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                                            gift: gift,
+                                                                                            userId: user.id
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                            lineNumber: 481,
+                                                                                            columnNumber: 41
+                                                                                        }, this)
+                                                                                    ]
+                                                                                }, void 0, true, {
+                                                                                    fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
+                                                                                    lineNumber: 467,
+                                                                                    columnNumber: 37
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                            lineNumber: 412,
-                                                                            columnNumber: 31
+                                                                            lineNumber: 442,
+                                                                            columnNumber: 35
                                                                         }, this)
-                                                                    ]
-                                                                }, void 0, true, {
+                                                                    }, void 0, false)
+                                                                }, void 0, false, {
                                                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
                                                                     lineNumber: 385,
                                                                     columnNumber: 29
@@ -1717,12 +1879,12 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 446,
+                                    lineNumber: 505,
                                     columnNumber: 17
                                 }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 444,
+                            lineNumber: 503,
                             columnNumber: 13
                         }, this), portalNode)
                     ]
@@ -1738,7 +1900,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                     onClose: ()=>setShowAddGiftModal(false)
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 464,
+                    lineNumber: 523,
                     columnNumber: 11
                 }, this),
                 showAddMemberModal && user && user.id === family.owner_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$AddMemberForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1748,7 +1910,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                     onClose: ()=>setShowAddMemberModal(false)
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 473,
+                    lineNumber: 532,
                     columnNumber: 11
                 }, this),
                 user && user.id !== family.owner_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1759,12 +1921,12 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                         children: "Leave Family List"
                     }, void 0, false, {
                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                        lineNumber: 483,
+                        lineNumber: 542,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 482,
+                    lineNumber: 541,
                     columnNumber: 11
                 }, this),
                 editingGift && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$EditGiftForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1779,7 +1941,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 493,
+                    lineNumber: 552,
                     columnNumber: 11
                 }, this),
                 showQrModal && inviteToken && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1792,14 +1954,14 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                 children: "Scan to Join!"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                lineNumber: 509,
+                                lineNumber: 568,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$qr$2d$code$2f$lib$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 value: `${window.location.origin}/invite?token=${inviteToken}`
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                lineNumber: 510,
+                                lineNumber: 569,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1808,18 +1970,18 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                 children: "Close"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                lineNumber: 511,
+                                lineNumber: 570,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                        lineNumber: 508,
+                        lineNumber: 567,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 507,
+                    lineNumber: 566,
                     columnNumber: 11
                 }, this)
             ]

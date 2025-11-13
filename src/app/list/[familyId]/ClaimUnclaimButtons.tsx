@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface Gift {
   id: string;
@@ -59,17 +60,19 @@ export default function ClaimUnclaimButtons({ gift, userId }: ClaimUnclaimButton
       {!gift.is_purchased && (
         <button
           onClick={handleClaimGift}
-          className="ml-4 px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 text-sm"
+          className="p-2 text-purple-600 rounded-full hover:bg-purple-100 transition-colors flex items-center justify-center"
+          aria-label="Claim Gift"
         >
-          Claim
+          <Image src="/cart.svg" alt="Claim Gift" width={24} height={24} />
         </button>
       )}
       {gift.is_purchased && gift.purchased_by === userId && (
         <button
           onClick={handleUnclaimGift}
-          className="ml-4 px-3 py-1 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 text-sm"
+          className="p-2 text-yellow-600 rounded-full hover:bg-yellow-100 transition-colors flex items-center justify-center"
+          aria-label="Unclaim Gift"
         >
-          Unclaim
+          <Image src="/cart.svg" alt="Unclaim Gift" width={24} height={24} />
         </button>
       )}
     </div>

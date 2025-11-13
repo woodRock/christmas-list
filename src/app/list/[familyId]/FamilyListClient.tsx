@@ -391,43 +391,102 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                   setEditingGift(gift);
                                 }
                               }}
-                              className="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-2 rounded-md shadow-sm" // li is now the flex container
+                              className={`bg-gray-50 dark:bg-gray-700 rounded-md shadow-sm ${viewMode === 'grid' ? 'relative aspect-square overflow-hidden flex flex-col justify-between' : 'flex flex-col items-center sm:flex-row sm:items-center sm:justify-between p-2'}`}
                             >
-                              <div className="flex items-center flex-grow"> {/* Container for image and description */}
-                                {gift.product_image_url && (
-                                  // eslint-disable-next-line @next/next/no-img-element
-                                  <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-16 h-16 object-cover rounded-md mr-3" />
-                                )}
-                                <span
-                                  className="flex-grow" // Description span
-                                >
-                                  {gift.description}
-                                  {gift.is_purchased && user?.id !== gift.user_id && (
-                                    <span className="ml-2 text-sm text-green-600">
-                                      (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
-                                    </span>
+                              {viewMode === 'grid' ? (
+                                <>
+                                  {gift.product_image_url && (
+                                    // eslint-disable-next-line @next/next/no-img-element
+                                    <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-full h-2/3 object-cover" />
                                   )}
-                                </span>
-                              </div>
-                              <div className={`flex items-center flex-shrink-0 ${viewMode === 'grid' ? 'flex-col space-y-2' : 'space-x-2'}`}> {/* Buttons container */}
-                                {gift.product_url && (
-                                  <a
-                                    href={gift.product_url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="px-2 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-xs"
-                                    onClick={(e) => e.stopPropagation()} // Prevent expanding gift when clicking link
-                                  >
-                                    Open Link
-                                  </a>
-                                )}
-                                {user && user.id !== gift.user_id && (
-                                  <ClaimUnclaimButtons
-                                    gift={gift}
-                                    userId={user.id}
-                                  />
-                                )}
-                              </div>
+                                  <div className="p-2 flex-grow flex flex-col justify-between">
+                                    <div className="flex items-baseline"> {/* Use flex to put description and claimed by on same line */}
+                                      <span className="text-sm font-semibold break-words">
+                                        {gift.description}
+                                      </span>
+                                      {gift.is_purchased && user?.id !== gift.user_id && (
+                                        <span className="ml-2 text-xs text-green-600 flex-shrink-0"> {/* Add ml-2 for spacing and flex-shrink-0 to prevent wrapping too early */}
+                                          (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
+                                        </span>
+                                      )}
+                                    </div>
+                                  </div>
+                                  {gift.price !== undefined && gift.price !== null && (
+                                    <div className="absolute bottom-2 left-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                                      ${gift.price.toFixed(2)}
+                                    </div>
+                                  )}
+                                  <div className="absolute bottom-2 right-2 flex flex-col sm:flex-row sm:space-x-1 space-y-1">
+                                    {gift.product_url && (
+                                      <a
+                                        href={gift.product_url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-2 text-blue-500 rounded-full hover:bg-blue-100 transition-colors flex items-center justify-center"
+                                        onClick={(e) => e.stopPropagation()}
+                                        aria-label="Open Link"
+                                      >
+                                        <Image src="/globe.svg" alt="Open Link" width={20} height={20} />
+                                      </a>
+                                    )}
+                                    {user && user.id !== gift.user_id && (
+                                      <ClaimUnclaimButtons
+                                        gift={gift}
+                                        userId={user.id}
+                                      />
+                                    )}
+                                  </div>
+                                </>
+                              ) : (
+                                <>
+                                  <div className="flex w-full p-2"> {/* Main container for image + text/price + buttons */}
+                                    {gift.product_image_url && (
+                                      // Image on the left
+                                      // eslint-disable-next-line @next/next/no-img-element
+                                      <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-24 h-24 object-cover rounded-md mr-3 flex-shrink-0" />
+                                    )}
+
+                                    <div className="flex-grow flex flex-col justify-between"> {/* Container for description, claimed by, and price */}
+                                      <div> {/* Description and claimed by */}
+                                        <span className="font-semibold break-words">
+                                          {gift.description}
+                                        </span>
+                                        {gift.is_purchased && user?.id !== gift.user_id && (
+                                          <span className="ml-2 text-sm text-green-600">
+                                            (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
+                                          </span>
+                                        )}
+                                      </div>
+                                      {gift.price !== undefined && gift.price !== null && (
+                                        <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 mt-1">
+                                          ${gift.price.toFixed(2)}
+                                        </div>
+                                      )}
+                                    </div>
+
+                                    <div className="flex-shrink-0 flex flex-col justify-end items-end ml-auto"> {/* Buttons container */}
+                                      {gift.product_url && (
+                                        <a
+                                          href={gift.product_url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="p-2 text-blue-500 rounded-full hover:bg-blue-100 transition-colors flex items-center justify-center"
+                                          onClick={(e) => e.stopPropagation()}
+                                          aria-label="Open Link"
+                                        >
+                                          <Image src="/globe.svg" alt="Open Link" width={24} height={24} />
+                                        </a>
+                                      )}
+                                      {user && user.id !== gift.user_id && (
+                                        <ClaimUnclaimButtons
+                                          gift={gift}
+                                          userId={user.id}
+                                        />
+                                      )}
+                                    </div>
+                                  </div>
+                                </>
+                              )}
                             </li>
                           )}
                         </Draggable>
