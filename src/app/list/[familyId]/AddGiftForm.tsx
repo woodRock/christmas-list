@@ -72,15 +72,15 @@ export default function AddGiftForm({ familyId, currentUserId, members }: AddGif
   }
 
   return (
-    <div className="mt-6 pt-4 border-t border-gray-200">
+    <div className="mt-6 pt-4 border-t border-gray-200 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
       <h3 className="text-xl font-semibold mb-3">Add a Gift</h3>
       {message && <p className="text-red-500 mb-3">{message}</p>}
       <form onSubmit={handleAddGift} className="space-y-3">
         <div>
-          <label htmlFor="recipient" className="block text-sm font-medium text-gray-700">Recipient</label>
+          <label htmlFor="recipient" className="block text-sm font-medium text-gray-300">Recipient</label>
           <select
             id="recipient"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             value={selectedRecipientId}
             onChange={(e) => setSelectedRecipientId(e.target.value)}
             required
@@ -93,34 +93,34 @@ export default function AddGiftForm({ familyId, currentUserId, members }: AddGif
           </select>
         </div>
         <div>
-          <label htmlFor="gift-desc" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="gift-desc" className="block text-sm font-medium text-gray-300">
             Gift Description
           </label>
           <input
             type="text"
             id="gift-desc"
             placeholder="Gift description"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             value={newGiftDescription}
             onChange={(e) => setNewGiftDescription(e.target.value)}
             required
           />
         </div>
         <div>
-          <label htmlFor="gift-notes" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="gift-notes" className="block text-sm font-medium text-gray-300">
             Notes (Optional)
           </label>
           <textarea
             id="gift-notes"
             placeholder="e.g., Size M, color blue, link to product"
             rows={3}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             value={newGiftNotes}
             onChange={(e) => setNewGiftNotes(e.target.value)}
           />
         </div>
         <div>
-          <label htmlFor="gift-price" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="gift-price" className="block text-sm font-medium text-gray-300">
             Price (Optional)
           </label>
           <input
@@ -128,7 +128,7 @@ export default function AddGiftForm({ familyId, currentUserId, members }: AddGif
             id="gift-price"
             placeholder="e.g., 25.99"
             step="0.01"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             value={newGiftPrice}
             onChange={(e) => setNewGiftPrice(e.target.value)}
           />
