@@ -15892,3 +15892,75 @@ Import trace:
 [01:47:29.544] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
 [01:47:29.545] Server  LOG     Family Members: [{...},{...}]
 [01:47:30.014] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:56:52.012] Server  LOG     listData: {}
+[01:56:52.222] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:56:52.387] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:56:52.387] Server  LOG     membersMap after populating: {}
+[01:56:52.387] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:56:52.387] Server  LOG     Family Members: [{...},{...}]
+[01:56:53.027] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:57:02.733] Server  LOG     context: {}
+[01:57:02.933] Server  WARN    Error: Route "/api/gifts/[giftId]/claim" used `...params` or similar expression. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:57:02.933] Server  LOG     context.params: {}
+[01:57:02.934] Server  LOG     giftId: "04414ef9-4940-421c-9bc6-d5defd282d2d"
+[01:57:03.862] Server  LOG     listData: {}
+[01:57:04.042] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:57:04.217] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:57:04.217] Server  LOG     membersMap after populating: {}
+[01:57:04.217] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:57:04.217] Server  LOG     Family Members: [{...},{...}]
+[01:57:05.548] Server  LOG     listData: {}
+[01:57:05.736] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:57:05.910] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:57:05.910] Server  LOG     membersMap after populating: {}
+[01:57:05.910] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:57:05.911] Server  LOG     Family Members: [{...},{...}]
+[01:57:06.379] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:57:19.538] Server  LOG     listData: {}
+[01:57:19.713] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:57:19.881] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:57:19.881] Server  LOG     membersMap after populating: {}
+[01:57:19.881] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:57:19.881] Server  LOG     Family Members: [{...},{...}]
+[01:57:20.494] Server  LOG     listData: {}
+[01:57:20.665] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:57:20.846] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:57:20.847] Server  LOG     membersMap after populating: {}
+[01:57:20.847] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:57:20.847] Server  LOG     Family Members: [{...},{...}]
+[01:57:21.205] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:01:27.221] Server  LOG      ✓ Compiled in 31ms
+[02:03:32.312] Server  LOG     listData: {}
+[02:03:32.717] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[02:03:33.027] Server  LOG     profilesData after fetching: [{...},{...}]
+[02:03:33.028] Server  LOG     membersMap after populating: {}
+[02:03:33.028] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[02:03:33.028] Server  LOG     Family Members: [{...},{...}]
+[02:03:33.586] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:03:39.107] Server  LOG      ✓ Compiled in 16ms
+[02:03:44.403] Server  LOG      ✓ Compiled in 171ms
+[02:03:44.632] Server  LOG     listData: {}
+[02:03:44.634] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[02:03:44.636] Server  LOG     profilesData after fetching: [{...},{...}]
+[02:03:44.636] Server  LOG     membersMap after populating: {}
+[02:03:44.636] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[02:03:44.636] Server  LOG     Family Members: [{...},{...}]
+[02:03:48.280] Server  LOG      ✓ Compiled in 16ms
+[02:03:51.933] Server  LOG      ✓ Compiled in 22ms
+[02:03:55.775] Server  LOG      ✓ Compiled in 18ms
+[02:04:27.739] Server  LOG      ✓ Compiled in 17ms
+[02:04:46.614] Server  LOG      ✓ Compiled in 15ms
+[02:04:51.911] Server  LOG     listData: {}
+[02:04:52.214] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[02:04:52.384] Server  LOG     profilesData after fetching: [{...},{...}]
+[02:04:52.385] Server  LOG     membersMap after populating: {}
+[02:04:52.385] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[02:04:52.385] Server  LOG     Family Members: [{...},{...}]
+[02:04:52.860] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:05:03.283] Server  LOG     listData: {}
+[02:05:03.471] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[02:05:03.658] Server  LOG     profilesData after fetching: [{...},{...}]
+[02:05:03.658] Server  LOG     membersMap after populating: {}
+[02:05:03.658] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[02:05:03.658] Server  LOG     Family Members: [{...},{...}]
+[02:05:04.115] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

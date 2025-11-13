@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd'
 import Link from 'next/link'
+import Image from 'next/image' // Import Image component
 import AddGiftForm from './AddGiftForm'
 import ClaimUnclaimButtons from './ClaimUnclaimButtons'
 import AddMemberForm from './AddMemberForm'
@@ -62,6 +63,8 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
   const [sortKey, setSortKey] = useState<keyof Gift | 'order_index'>('order_index'); // Default sort by order_index
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc'); // Default sort order ascending
   const [showQrModal, setShowQrModal] = useState(false)
+  const [showAddGiftModal, setShowAddGiftModal] = useState(false) // New state for AddGiftForm modal
+  const [showAddMemberModal, setShowAddMemberModal] = useState(false) // New state for AddMemberForm modal
   const [inviteToken, setInviteToken] = useState<string | null>(null)
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('list') // New state for view mode
   const [isDragging, setIsDragging] = useState(false); // New state to track dragging
@@ -253,6 +256,38 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
         <h1 className="text-4xl font-bold mb-4">{family.name} Christmas List</h1>
         <Link href="/" className="text-blue-500 hover:underline mb-4 block">← Back to Home</Link>
 
+        {/* Action Buttons */}
+        <div className="flex justify-end space-x-4 mb-4">
+          {user && (
+            <button
+              onClick={() => setShowAddGiftModal(true)}
+              className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
+              aria-label="Add Gift"
+            >
+              <Image src="/gift.svg" alt="Add Gift" width={24} height={24} />
+              <span className="text-xs mt-1">Add Gift</span>
+            </button>
+          )}
+          {user && user.id === family.owner_id && (
+            <button
+              onClick={() => setShowAddMemberModal(true)}
+              className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
+              aria-label="Add Member"
+            >
+              <Image src="/add-user.svg" alt="Add Member" width={24} height={24} />
+              <span className="text-xs mt-1">Add Member</span>
+            </button>
+          )}
+          <button
+            onClick={generateInvite}
+            className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
+            aria-label="Invite with QR Code"
+          >
+            <Image src="/qr_code.svg" alt="QR Code" width={24} height={24} />
+            <span className="text-xs mt-1">Invite</span>
+          </button>
+        </div>
+
         <div className="mb-4 flex items-center space-x-2">
           <span className="text-gray-300">Sort by:</span>
           <select
@@ -385,28 +420,24 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
 
           </DragDropContext>
 
-        {user && (
+        {/* Modals */}
+        {showAddGiftModal && user && (
           <AddGiftForm
             familyId={family.id}
             currentUserId={user.id}
             members={family.members}
+            onClose={() => setShowAddGiftModal(false)} // Pass onClose prop
           />
         )}
 
-        <div className="mt-8">
-          <button
-            onClick={generateInvite}
-            className="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600"
-          >
-            Invite with QR Code
-          </button>
-        </div>
+        
 
-        {user && user.id === family.owner_id && (
+        {showAddMemberModal && user && user.id === family.owner_id && (
           <AddMemberForm
             familyId={family.id}
             currentUserId={user.id}
             members={family.members}
+            onClose={() => setShowAddMemberModal(false)} // Pass onClose prop
           />
         )}
 

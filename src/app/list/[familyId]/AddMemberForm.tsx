@@ -6,9 +6,10 @@ interface AddMemberFormProps {
   familyId: string;
   currentUserId: string;
   members: { id: string; name: string }[];
+  onClose: () => void; // Add onClose prop
 }
 
-export default function AddMemberForm({ familyId, currentUserId, members }: AddMemberFormProps) {
+export default function AddMemberForm({ familyId, currentUserId, members, onClose }: AddMemberFormProps) {
   const [newMemberName, setNewMemberName] = useState('')
   const [newMemberEmail, setNewMemberEmail] = useState('') // Assuming email for finding user ID
   const [message, setMessage] = useState('')
@@ -49,6 +50,7 @@ export default function AddMemberForm({ familyId, currentUserId, members }: AddM
         setNewMemberName('');
         setNewMemberEmail('');
         router.refresh(); // Refresh the page to show the new member in the dropdowns
+        onClose(); // Close the modal after adding member
       } else {
         setMessage(`Failed to add member: ${data.error}`);
       }
@@ -65,39 +67,48 @@ export default function AddMemberForm({ familyId, currentUserId, members }: AddM
   }
 
   return (
-    <div className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-      <h3 className="text-2xl font-semibold mb-4">Add New Family Member</h3>
-      {message && <p className="text-red-500 mb-4">{message}</p>}
-      <form onSubmit={handleAddMember} className="space-y-4">
-        <div>
-          <label htmlFor="newMemberName" className="block text-sm font-medium text-gray-300">Member Name</label>
-          <input
-            type="text"
-            id="newMemberName"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            value={newMemberName}
-            onChange={(e) => setNewMemberName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="newMemberEmail" className="block text-sm font-medium text-gray-300">Member Email</label>
-          <input
-            type="email"
-            id="newMemberEmail"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            value={newMemberEmail}
-            onChange={(e) => setNewMemberEmail(e.target.value)}
-            required
-          />
-        </div>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md relative">
         <button
-          type="submit"
-          className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 text-sm"
+          onClick={onClose}
+          className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+          aria-label="Close"
         >
-          Add Member
+          &times;
         </button>
-      </form>
+        <h3 className="text-2xl font-semibold mb-4">Add New Family Member</h3>
+        {message && <p className="text-red-500 mb-4">{message}</p>}
+        <form onSubmit={handleAddMember} className="space-y-4">
+          <div>
+            <label htmlFor="newMemberName" className="block text-sm font-medium text-gray-300">Member Name</label>
+            <input
+              type="text"
+              id="newMemberName"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              value={newMemberName}
+              onChange={(e) => setNewMemberName(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="newMemberEmail" className="block text-sm font-medium text-gray-300">Member Email</label>
+            <input
+              type="email"
+              id="newMemberEmail"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              value={newMemberEmail}
+              onChange={(e) => setNewMemberEmail(e.target.value)}
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 text-sm"
+          >
+            Add Member
+          </button>
+        </form>
+      </div>
     </div>
   )
 }
