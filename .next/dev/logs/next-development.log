@@ -1,16 +1,37 @@
-[00:00:00.610] Server  LOG      ✓ Ready in 489ms
-[00:00:09.231] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
-[00:00:09.245] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
-[00:00:09.263] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
-[00:00:09.272] Server  ERROR   AuthApiError: Invalid Refresh Token: Refresh Token Not Found
-[00:00:10.311] Server  LOG     User id:  undefined
-[00:00:10.688] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:17.873] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:00:18.075] Server  LOG     Fetched families for user: [{...}]
-[00:00:18.075] Server  LOG     Fetch error (if any): null
-[00:00:20.324] Server  LOG     listData: {}
-[00:00:20.498] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
-[00:00:20.670] Server  LOG     profilesData after fetching: [{...},{...}]
-[00:00:20.671] Server  LOG     membersMap after populating: {}
-[00:00:20.671] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
-[00:00:20.672] Server  LOG     Family Members: [{...},{...}]
+[00:00:00.698] Server  LOG      ✓ Ready in 542ms
+[00:00:05.521] Server  LOG     listData: {}
+[00:00:05.695] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:00:05.861] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:00:05.862] Server  LOG     membersMap after populating: {}
+[00:00:05.862] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:00:05.862] Server  LOG     Family Members: [{...},{...}]
+[00:00:06.024] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:56.415] Server  LOG      ✓ Compiled in 28ms
+[00:03:00.606] Server  LOG      ✓ Compiled in 24ms
+[00:03:03.864] Server  LOG      ✓ Compiled in 23ms
+[00:03:09.146] Server  LOG      ✓ Compiled in 14ms
+[00:03:24.130] Server  LOG     listData: {}
+[00:03:24.303] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:03:24.481] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:03:24.481] Server  LOG     membersMap after populating: {}
+[00:03:24.481] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:03:24.481] Server  LOG     Family Members: [{...},{...}]
+[00:03:24.608] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:09.296] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:09.630] Server  LOG     Fetched families for user: [{...}]
+[00:05:09.630] Server  LOG     Fetch error (if any): null
+[00:05:11.601] Server  LOG     listData: {}
+[00:05:11.885] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:12.094] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:12.094] Server  LOG     membersMap after populating: {}
+[00:05:12.094] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:12.095] Server  LOG     Family Members: [{...},{...}]
+[00:05:21.476] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:21.696] Server  LOG     Fetched families for user: [{...}]
+[00:05:21.696] Server  LOG     Fetch error (if any): null
+[00:05:23.295] Server  LOG     listData: {}
+[00:05:23.596] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:05:23.826] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:05:23.826] Server  LOG     membersMap after populating: {}
+[00:05:23.826] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:05:23.827] Server  LOG     Family Members: [{...},{...}]

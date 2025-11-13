@@ -199,7 +199,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
         <Link href="/" className="text-blue-500 hover:underline mb-4 block">← Back to Home</Link>
 
         <div className="mb-4 flex items-center space-x-2">
-          <span className="text-gray-700">Sort by:</span>
+          <span className="text-gray-300">Sort by:</span>
           <select
             className="px-3 py-1 border border-gray-300 rounded-md text-sm"
             value={sortKey}
@@ -218,7 +218,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
         </div>
 
         {family.members.map((member) => (
-          <div key={member.id} className="bg-white p-6 rounded-lg shadow-md mb-8">
+          <div key={member.id} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-8">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-semibold mb-4">{member.name}'s List</h2>
               {user && user.id === family.owner_id && user.id !== member.id && (
@@ -247,7 +247,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                             <li
                               ref={provided.innerRef}
                               {...provided.draggableProps}
-                              className="flex flex-col justify-between items-start bg-gray-50 p-2 rounded-md shadow-sm"
+                              className="flex flex-col justify-between items-start bg-gray-50 dark:bg-gray-700 p-2 rounded-md shadow-sm"
                             >
                               <div
                                 className="flex justify-between w-full items-center"
@@ -290,7 +290,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                 </div>
                               </div>
                               {expandedGiftId === gift.id && (
-                                <div className="mt-2 text-sm text-gray-700 w-full">
+                                <div className="mt-2 text-sm text-gray-300 w-full">
                                   {gift.notes && (
                                     <p><strong>Notes:</strong> {formatNotesWithLinks(gift.notes)}</p>
                                   )}
