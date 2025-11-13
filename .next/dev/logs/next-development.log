@@ -24,3 +24,49 @@
 [00:00:08.542] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:00:08.659] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
 [00:00:17.988] Server  LOG      ✓ Compiled in 16ms
+[00:29:21.509] Server  LOG      ✓ Compiled in 35ms
+[00:29:51.006] Server  LOG     listData: {}
+[00:29:51.305] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:29:51.518] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:29:51.519] Server  LOG     membersMap after populating: {}
+[00:29:51.519] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:29:51.519] Server  LOG     Family Members: [{...},{...},{...}]
+[00:29:51.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:52.177] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:30:01.267] Browser LOG     handleDragEnd result: {"combine":null,"destination":{"droppableId":"8261fdea-4831-4d14-bccb-f2c3cfa86d8f","index":4},"draggableId":"fbe74c35-5be2-4acb-b042-d3d409b5ea48","mode":"FLUID","reason":"DROP","source":{"droppableId":"8261fdea-4831-4d14-bccb-f2c3cfa86d8f","index":4},"type":"DEFAULT"}
+[00:30:01.267] Browser LOG     Dropped into a valid droppable (not trash bin): 8261fdea-4831-4d14-bccb-f2c3cfa86d8f
+[00:30:02.047] Server  LOG     listData: {}
+[00:30:02.257] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:30:02.431] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:30:02.432] Server  LOG     membersMap after populating: {}
+[00:30:02.432] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:30:02.432] Server  LOG     Family Members: [{...},{...},{...}]
+[00:30:02.563] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:02.676] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:30:06.465] Browser LOG     handleDragEnd result: {"combine":null,"destination":{"droppableId":"trash-bin-global","index":0},"draggableId":"fbe74c35-5be2-4acb-b042-d3d409b5ea48","mode":"FLUID","reason":"DROP","source":{"droppableId":"8261fdea-4831-4d14-bccb-f2c3cfa86d8f","index":4},"type":"DEFAULT"}
+[00:30:06.465] Browser LOG     Dropped into trash bin: trash-bin-global
+[00:30:06.465] Browser LOG     Attempting to delete gift: fbe74c35-5be2-4acb-b042-d3d409b5ea48
+[00:30:07.208] Server  LOG     DELETE /api/gifts/[giftId] reached!
+[00:30:07.557] Server  LOG     Supabase delete error: null
+[00:30:07.666] Browser LOG     Gift deleted successfully from API: fbe74c35-5be2-4acb-b042-d3d409b5ea48
+[00:30:07.666] Browser LOG     Local state updated for gift: fbe74c35-5be2-4acb-b042-d3d409b5ea48
+[00:30:11.226] Server  LOG     listData: {}
+[00:30:11.401] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:30:11.571] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:30:11.572] Server  LOG     membersMap after populating: {}
+[00:30:11.572] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:30:11.572] Server  LOG     Family Members: [{...},{...},{...}]
+[00:30:11.702] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:11.820] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:32:22.618] Server  LOG      ✓ Compiled in 23ms
+[00:32:26.837] Server  LOG      ✓ Compiled in 24ms
+[00:32:31.717] Server  LOG      ✓ Compiled in 33ms
+[00:32:38.121] Server  LOG     listData: {}
+[00:32:38.311] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:32:38.505] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:32:38.505] Server  LOG     membersMap after populating: {}
+[00:32:38.506] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:32:38.506] Server  LOG     Family Members: [{...},{...},{...}]
+[00:32:38.657] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:38.776] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:32:52.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

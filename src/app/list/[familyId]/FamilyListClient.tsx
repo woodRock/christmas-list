@@ -70,6 +70,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('list') // New state for view mode
   const [isDragging, setIsDragging] = useState(false); // New state to track dragging
   const [sourceDroppableId, setSourceDroppableId] = useState<string | null>(null); // New state to track the source list of the dragged item
+  const [copyMessage, setCopyMessage] = useState(''); // New state for copy feedback
   const router = useRouter()
   const [mounted, setMounted] = useState(false);
   const [portalNode, setPortalNode] = useState<HTMLElement | null>(null);
@@ -172,8 +173,26 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     setIsDragging(false); // End dragging after all logic is complete
   }
 
+  const handleCopyInviteLink = async () => {
+    const inviteUrl = `${window.location.origin}/invite?token=${inviteToken}`;
+    try {
+      await navigator.clipboard.writeText(inviteUrl);
+      setCopyMessage('Copied!');
+      setTimeout(() => setCopyMessage(''), 2000); // Clear message after 2 seconds
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+      setCopyMessage('Failed to copy!');
+    }
+  };
+
   const handleDeleteGift = async (giftId: string) => {
     console.log('Attempting to delete gift:', giftId);
+
+    // Add ownership check here
+    if (!user || user.id !== family.owner_id) {
+      alert('You do not have permission to delete gifts from this list.');
+      return;
+    }
 
     const res = await fetch(`/api/gifts/${giftId}`, {
       method: 'DELETE',
@@ -563,16 +582,25 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
         )}
 
         {showQrModal && inviteToken && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <h2 className="text-2xl font-bold mb-4">Scan to Join!</h2>
               <QRCode value={`${window.location.origin}/invite?token=${inviteToken}`} />
-              <button
-                onClick={() => setShowQrModal(false)}
-                className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
-              >
-                Close
-              </button>
+              {copyMessage && <p className="text-green-500 mt-2">{copyMessage}</p>}
+              <div className="mt-4 flex justify-center space-x-2">
+                <button
+                  onClick={handleCopyInviteLink}
+                  className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                >
+                  Copy Invite Link
+                </button>
+                <button
+                  onClick={() => setShowQrModal(false)}
+                  className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         )}

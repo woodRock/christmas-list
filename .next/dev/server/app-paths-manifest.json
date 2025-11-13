@@ -1,3 +1,6 @@
 {
+  "/api/gifts/[giftId]/route": "app/api/gifts/[giftId]/route.js",
+  "/api/lists/[familyId]/invites/route": "app/api/lists/[familyId]/invites/route.js",
+  "/invite/page": "app/invite/page.js",
   "/list/[familyId]/page": "app/list/[familyId]/page.js"
 }
