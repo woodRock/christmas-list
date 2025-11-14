@@ -7,8 +7,8 @@ interface LoginPageProps {
   };
 }
 
-export default function LoginPage({ searchParams }: LoginPageProps) {
-  const { redirect, mode } = searchParams;
+export default async function LoginPage({ searchParams }: LoginPageProps) {
+  const { redirect, mode } = await searchParams;
 
   return (
     <LoginClient redirectUrl={redirect} initialMode={mode} />

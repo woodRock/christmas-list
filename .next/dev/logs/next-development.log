@@ -1353,3 +1353,20 @@ https://supabase.com/dashboard/project/_/settings/api
 [02:40:51.416] Server  LOG     Fetched families for user: [{...},{...}]
 [02:40:51.416] Server  LOG     Fetch error (if any): null
 [02:41:15.069] Server  LOG      ✓ Compiled in 27ms
+[02:43:42.536] Server  LOG     listData: {}
+[02:43:42.848] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[02:43:43.091] Server  LOG     profilesData after fetching: [{...},{...}]
+[02:43:43.092] Server  LOG     membersMap after populating: {}
+[02:43:43.092] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[02:43:43.093] Server  LOG     Family Members: [{...},{...}]
+[02:44:03.693] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:44:09.736] Server  WARN    Error: Route "/login" used `searchParams.redirect`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[02:45:19.768] Server  WARN    Error: Route "/login" used `searchParams.redirect`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[02:49:07.456] Server  LOG      ✓ Compiled in 28ms
+[02:49:07.849] Server  LOG     listData: {}
+[02:49:07.851] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[02:49:07.854] Server  LOG     profilesData after fetching: [{...},{...}]
+[02:49:07.854] Server  LOG     membersMap after populating: {}
+[02:49:07.854] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[02:49:07.854] Server  LOG     Family Members: [{...},{...}]
+[02:51:26.288] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

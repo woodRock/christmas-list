@@ -11,6 +11,7 @@
   "/api/scrape-pricespy/route": "app/api/scrape-pricespy/route.js",
   "/claimed-items/page": "app/claimed-items/page.js",
   "/create-family/page": "app/create-family/page.js",
+  "/invite/page": "app/invite/page.js",
   "/list/[familyId]/page": "app/list/[familyId]/page.js",
   "/list/[familyId]/settings/page": "app/list/[familyId]/settings/page.js",
   "/login/page": "app/login/page.js",
