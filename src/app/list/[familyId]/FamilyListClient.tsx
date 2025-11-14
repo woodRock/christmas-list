@@ -402,13 +402,6 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
               <span className="text-xs mt-1 dark:hover:text-black">Settings</span>
             </Link>
           )}
-          <Link href="/onboarding"
-            className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
-            aria-label="Help and Onboarding"
-          >
-            <Image src="/question.svg" alt="Help" width={24} height={24} />
-            <span className="text-xs mt-1 dark:hover:text-black">Help</span>
-          </Link>
         </div>
 
         {isFindingImages && findImagesMessage && (

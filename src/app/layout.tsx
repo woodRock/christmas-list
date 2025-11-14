@@ -29,6 +29,9 @@ export default async function RootLayout({
             <div className="flex items-center space-x-4">
               {user ? (
                 <>
+                  <Link href="/onboarding" className="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:bg-gray-200 transition-colors" aria-label="Help">
+                    <Image src="/question.svg" alt="Help" width={16} height={16} />
+                  </Link>
                   <Link href="/claimed-items" className="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:bg-gray-200 transition-colors" aria-label="Cart">
                     <Image src="/cart.svg" alt="Cart" width={16} height={16} />
                   </Link>

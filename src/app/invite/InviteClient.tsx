@@ -71,14 +71,32 @@ export default function InviteClient() { // Not async
       {user ? (
         <p className="mb-4">Accept the invite to join the list.</p>
       ) : (
-        <p className="mb-4">Please log in or sign up to accept the invite.</p>
+        <div className="text-center">
+          <p className="mb-4">Please log in or sign up to accept the invite.</p>
+          <div className="flex space-x-4 justify-center">
+            <button
+              onClick={() => router.push(`/login?redirect=/invite?token=${token}`)}
+              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+            >
+              Login
+            </button>
+            <button
+              onClick={() => router.push(`/login?mode=signup&redirect=/invite?token=${token}`)}
+              className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
       )}
-      <button
-        onClick={handleAcceptInvite}
-        className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-      >
-        {user ? 'Accept Invite' : 'Login to Accept'}
-      </button>
+      {user && (
+        <button
+          onClick={handleAcceptInvite}
+          className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 mt-4"
+        >
+          Accept Invite
+        </button>
+      )}
       {error && <p className="text-red-500 mt-4">{error}</p>}
     </div>
   )
