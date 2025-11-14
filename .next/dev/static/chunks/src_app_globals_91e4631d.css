@@ -409,10 +409,6 @@
     top: calc(var(--spacing) * 3);
   }
 
-  .right-2 {
-    right: calc(var(--spacing) * 2);
-  }
-
   .right-3 {
     right: calc(var(--spacing) * 3);
   }
@@ -421,16 +417,8 @@
     bottom: calc(var(--spacing) * 0);
   }
 
-  .bottom-2 {
-    bottom: calc(var(--spacing) * 2);
-  }
-
   .left-1\/2 {
     left: 50%;
-  }
-
-  .left-2 {
-    left: calc(var(--spacing) * 2);
   }
 
   .z-50 {
@@ -497,10 +485,6 @@
 
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
-  }
-
-  .mr-2 {
-    margin-right: calc(var(--spacing) * 2);
   }
 
   .mr-3 {
@@ -574,10 +558,6 @@
     height: 50%;
   }
 
-  .h-2\/3 {
-    height: 66.6667%;
-  }
-
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -608,10 +588,6 @@
 
   .min-h-screen {
     min-height: 100vh;
-  }
-
-  .w-1\/2 {
-    width: 50%;
   }
 
   .w-8 {
@@ -675,10 +651,6 @@
     flex-direction: row;
   }
 
-  .items-baseline {
-    align-items: baseline;
-  }
-
   .items-center {
     align-items: center;
   }
@@ -701,12 +673,6 @@
 
   .gap-4 {
     gap: calc(var(--spacing) * 4);
-  }
-
-  :where(.space-y-1 > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-y-reverse)));
   }
 
   :where(.space-y-2 > :not(:last-child)) {
@@ -749,10 +715,6 @@
     --tw-space-x-reverse: 0;
     margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
     margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .overflow-hidden {
-    overflow: hidden;
   }
 
   .overflow-y-auto {
@@ -892,10 +854,6 @@
 
   .p-8 {
     padding: calc(var(--spacing) * 8);
-  }
-
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
   }
 
   .px-3 {
@@ -1233,14 +1191,6 @@
   @media (min-width: 40rem) {
     .sm\:justify-between {
       justify-content: space-between;
-    }
-  }
-
-  @media (min-width: 40rem) {
-    :where(.sm\:space-x-1 > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 1) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
 

@@ -50,8 +50,7 @@ export async function PATCH(
   request: NextRequest,
   context: any // Temporarily cast to any to bypass stubborn type error
 ) {
-  const { params } = context; // Destructure params from context
-  const { familyId } = params; // Destructure familyId from params
+  const { familyId } = await context.params; // Destructure familyId from params
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
@@ -73,7 +72,7 @@ export async function PATCH(
     .single();
 
   if (fetchError || !listData) {
-    return NextResponse.json({ error: 'List not found or access denied' }, { status: 404 });
+    return NextResponse.json({ error: `List not found or access denied: ${fetchError?.message || 'No data found'}` }, { status: 404 });
   }
 
   if (listData.user_id !== user.id) {
