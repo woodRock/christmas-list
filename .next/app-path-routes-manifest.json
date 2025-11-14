@@ -1,6 +1,7 @@
 {
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
+  "/api/claimed-items/route": "/api/claimed-items",
   "/api/gifts/[giftId]/claim/route": "/api/gifts/[giftId]/claim",
   "/api/gifts/[giftId]/route": "/api/gifts/[giftId]",
   "/api/gifts/[giftId]/unclaim/route": "/api/gifts/[giftId]/unclaim",
@@ -17,6 +18,7 @@
   "/api/scrape-pricespy/route": "/api/scrape-pricespy",
   "/auth/callback/route": "/auth/callback",
   "/auth/update-password/page": "/auth/update-password",
+  "/claimed-items/page": "/claimed-items",
   "/create-family/page": "/create-family",
   "/favicon.ico/route": "/favicon.ico",
   "/invite/page": "/invite",

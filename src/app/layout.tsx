@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image"; // Import Image component
 import LogoutButton from "@/components/LogoutButton";
 import { createClient } from '@/lib/supabase-server'
 
@@ -28,7 +29,9 @@ export default async function RootLayout({
             <div className="flex items-center space-x-4">
               {user ? (
                 <>
-                  <span>Hello, {user.email}</span>
+                  <Link href="/claimed-items" className="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:bg-gray-200 transition-colors" aria-label="Cart">
+                    <Image src="/cart.svg" alt="Cart" width={16} height={16} />
+                  </Link>
                   <LogoutButton />
                 </>
               ) : (

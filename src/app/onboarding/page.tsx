@@ -31,6 +31,18 @@ export default function OnboardingPage() {
         </section>
 
         <section className="mb-6">
+          <h2 className="text-2xl font-semibold mb-2">Your Claimed Items (Cart)</h2>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <strong>Access Your Cart:</strong> Click the <Image src="/cart.svg" alt="Cart Icon" width={16} height={16} className="inline-block" /> cart icon in the navigation bar to view all the gifts you have claimed across different lists.
+            </li>
+            <li>
+              <strong>Share Your Cart:</strong> On your claimed items page, you can generate a to-do list of your claimed gifts and copy it to your clipboard, making it easy to keep track of your shopping!
+            </li>
+          </ul>
+        </section>
+
+        <section className="mb-6">
           <h2 className="text-2xl font-semibold mb-2">Joining Lists</h2>
           <ul className="list-disc pl-5 space-y-2">
             <li>

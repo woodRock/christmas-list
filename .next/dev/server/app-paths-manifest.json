@@ -1,4 +1,6 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/claimed-items/route": "app/api/claimed-items/route.js",
   "/api/gifts/[giftId]/route": "app/api/gifts/[giftId]/route.js",
   "/api/gifts/reorder/route": "app/api/gifts/reorder/route.js",
   "/api/gifts/update-image/route": "app/api/gifts/update-image/route.js",
@@ -7,9 +9,11 @@
   "/api/lists/[familyId]/members/[memberId]/route": "app/api/lists/[familyId]/members/[memberId]/route.js",
   "/api/lists/[familyId]/route": "app/api/lists/[familyId]/route.js",
   "/api/scrape-pricespy/route": "app/api/scrape-pricespy/route.js",
+  "/claimed-items/page": "app/claimed-items/page.js",
   "/create-family/page": "app/create-family/page.js",
   "/list/[familyId]/page": "app/list/[familyId]/page.js",
   "/list/[familyId]/settings/page": "app/list/[familyId]/settings/page.js",
+  "/login/page": "app/login/page.js",
   "/onboarding/page": "app/onboarding/page.js",
   "/page": "app/page.js"
 }

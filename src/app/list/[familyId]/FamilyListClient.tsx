@@ -380,7 +380,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
               aria-label="Find Missing Images"
               disabled={isFindingImages}
             >
-              <Image src="/image.svg" alt="Find Missing Images" width={24} height={24} /> {/* Using file.svg as a placeholder */}
+              <Image src="/file.svg" alt="Find Missing Images" width={24} height={24} /> {/* Using file.svg as a placeholder */}
               <span className="text-xs mt-1 dark:hover:text-black">{isFindingImages ? 'Finding...' : 'Find Images'}</span>
             </button>
           )}
@@ -398,7 +398,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
               className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
               aria-label="List Settings"
             >
-              <Image src="/settings.svg" alt="Settings" width={24} height={24} /> {/* Using file.svg as a placeholder for settings */}
+              <Image src="/file.svg" alt="Settings" width={24} height={24} /> {/* Using file.svg as a placeholder for settings */}
               <span className="text-xs mt-1 dark:hover:text-black">Settings</span>
             </Link>
           )}

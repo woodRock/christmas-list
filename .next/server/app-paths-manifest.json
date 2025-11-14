@@ -1,6 +1,7 @@
 {
   "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/claimed-items/route": "app/api/claimed-items/route.js",
   "/api/gifts/[giftId]/claim/route": "app/api/gifts/[giftId]/claim/route.js",
   "/api/gifts/[giftId]/route": "app/api/gifts/[giftId]/route.js",
   "/api/gifts/[giftId]/unclaim/route": "app/api/gifts/[giftId]/unclaim/route.js",
@@ -17,6 +18,7 @@
   "/api/scrape-pricespy/route": "app/api/scrape-pricespy/route.js",
   "/auth/callback/route": "app/auth/callback/route.js",
   "/auth/update-password/page": "app/auth/update-password/page.js",
+  "/claimed-items/page": "app/claimed-items/page.js",
   "/create-family/page": "app/create-family/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/invite/page": "app/invite/page.js",
