@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
-import Image from "next/image"; // Import Image component
-import LogoutButton from "@/components/LogoutButton";
-import { createClient } from '@/lib/supabase-server'
+import AuthNavbarButtons from "@/components/AuthNavbarButtons"; // Import the new client component
 
 export const metadata: Metadata = {
-  title: "Christmas List App",
-  description: "Manage your family's Christmas lists",
+  title: "Giftd",
+  description: "Manage your family's Christmas/Birthday lists",
 };
 
 export default async function RootLayout({
@@ -15,33 +13,17 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-
+  // Remove user fetching logic from here, it's now handled in AuthNavbarButtons
   return (
     <html lang="en">
       <body>
         <nav className="bg-gray-800 p-4 text-white">
           <div className="container mx-auto flex justify-between items-center">
             <Link href="/" className="text-xl font-bold">
-              Christmas List App
+              Giftd
             </Link>
             <div className="flex items-center space-x-4">
-              {user ? (
-                <>
-                  <Link href="/onboarding" className="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:bg-gray-200 transition-colors" aria-label="Help">
-                    <Image src="/question.svg" alt="Help" width={16} height={16} />
-                  </Link>
-                  <Link href="/claimed-items" className="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:bg-gray-200 transition-colors" aria-label="Cart">
-                    <Image src="/cart.svg" alt="Cart" width={16} height={16} />
-                  </Link>
-                  <LogoutButton />
-                </>
-              ) : (
-                <Link href="/login" className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium">
-                  Login
-                </Link>
-              )}
+              <AuthNavbarButtons /> {/* Render the client component here */}
             </div>
           </div>
         </nav>
