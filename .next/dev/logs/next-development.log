@@ -96,3 +96,19 @@
 [00:03:29.518] Server  LOG     PATCH /api/gifts/[giftId] reached!
 [00:03:29.694] Server  LOG     Request body (description, notes, price for edit): {}
 [00:03:29.882] Server  LOG     Supabase update error: null
+[00:20:35.119] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:20:35.734] Server  LOG     Fetched families for user: [{...},{...}]
+[00:20:35.734] Server  LOG     Fetch error (if any): null
+[00:20:39.830] Server  LOG     listData: {}
+[00:20:40.243] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:20:40.547] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[00:20:40.547] Server  LOG     membersMap after populating: {}
+[00:20:40.547] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:20:40.548] Server  LOG     Family Members: [{...},{...},{...}]
+[00:21:10.266] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:21:10.564] Server  LOG     Fetched families for user: [{...},{...}]
+[00:21:10.564] Server  LOG     Fetch error (if any): null
+[00:21:33.962] Server  LOG      ✓ Compiled in 12ms
+[00:21:34.170] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:21:34.171] Server  LOG     Fetched families for user: [{...},{...}]
+[00:21:34.171] Server  LOG     Fetch error (if any): null

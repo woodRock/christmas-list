@@ -4,5 +4,7 @@
   "/api/gifts/update-image/route": "app/api/gifts/update-image/route.js",
   "/api/lists/[familyId]/details/route": "app/api/lists/[familyId]/details/route.js",
   "/api/scrape-pricespy/route": "app/api/scrape-pricespy/route.js",
-  "/list/[familyId]/page": "app/list/[familyId]/page.js"
+  "/list/[familyId]/page": "app/list/[familyId]/page.js",
+  "/onboarding/page": "app/onboarding/page.js",
+  "/page": "app/page.js"
 }

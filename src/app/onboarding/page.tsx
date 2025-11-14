@@ -25,7 +25,7 @@ export default function OnboardingPage() {
               <strong>Claim/Unclaim Items:</strong> If you&apos;re a member of a list, you can claim an item by clicking the <Image src="/cart.svg" alt="Claim Gift" width={16} height={16} className="inline-block" /> cart icon. Click it again to unclaim.
             </li>
             <li>
-              <strong>View Product Link:</strong> Click the <Image src="/globe.svg" alt="Open Link" width={16} height={16} className="inline-block" /> globe icon to open the product link in a new tab.
+              <strong>View Product Link:</strong> Click the <Image src="/link.svg" alt="Open Link" width={16} height={16} className="inline-block" /> link icon to open the product link in a new tab.
             </li>
           </ul>
         </section>
