@@ -42,6 +42,9 @@ export default function AuthNavbarButtons() {
           <Link href="/claimed-items" className="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:bg-gray-200 transition-colors" aria-label="Cart">
             <Image src="/cart.svg" alt="Cart" width={16} height={16} />
           </Link>
+          <Link href="/profile" className="flex items-center justify-center w-8 h-8 bg-white rounded-full hover:bg-gray-200 transition-colors" aria-label="Profile">
+            <Image src="/person.svg" alt="Profile" width={16} height={16} /> {/* Placeholder icon */}
+          </Link>
           <LogoutButton />
         </>
       ) : (

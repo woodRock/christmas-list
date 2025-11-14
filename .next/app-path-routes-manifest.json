@@ -15,6 +15,8 @@
   "/api/lists/[familyId]/members/[memberId]/route": "/api/lists/[familyId]/members/[memberId]",
   "/api/lists/[familyId]/members/route": "/api/lists/[familyId]/members",
   "/api/lists/[familyId]/route": "/api/lists/[familyId]",
+  "/api/profile/delete-gifts/route": "/api/profile/delete-gifts",
+  "/api/profile/route": "/api/profile",
   "/api/scrape-pricespy/route": "/api/scrape-pricespy",
   "/auth/callback/route": "/auth/callback",
   "/auth/update-password/page": "/auth/update-password",
@@ -26,5 +28,6 @@
   "/list/[familyId]/settings/page": "/list/[familyId]/settings",
   "/login/page": "/login",
   "/onboarding/page": "/onboarding",
-  "/page": "/"
+  "/page": "/",
+  "/profile/page": "/profile"
 }

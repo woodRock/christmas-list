@@ -1558,3 +1558,548 @@ https://supabase.com/dashboard/project/_/settings/api
 [03:12:04.578] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
 [03:12:04.579] Server  LOG     Fetched families for user: [{...},{...}]
 [03:12:04.579] Server  LOG     Fetch error (if any): null
+[03:17:04.128] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:04.130] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:04.130] Server  LOG     Fetch error (if any): null
+[03:17:04.324] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:04.326] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:04.326] Server  LOG     Fetch error (if any): null
+[03:17:04.515] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:04.517] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:04.517] Server  LOG     Fetch error (if any): null
+[03:17:04.724] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:04.726] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:04.726] Server  LOG     Fetch error (if any): null
+[03:17:04.915] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:04.916] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:04.916] Server  LOG     Fetch error (if any): null
+[03:17:05.106] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:05.108] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:05.108] Server  LOG     Fetch error (if any): null
+[03:17:05.298] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:05.300] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:05.300] Server  LOG     Fetch error (if any): null
+[03:17:05.510] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:05.514] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:05.514] Server  LOG     Fetch error (if any): null
+[03:17:05.749] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:05.751] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:05.751] Server  LOG     Fetch error (if any): null
+[03:17:05.943] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:05.944] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:05.944] Server  LOG     Fetch error (if any): null
+[03:17:06.137] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:06.138] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:06.138] Server  LOG     Fetch error (if any): null
+[03:17:06.334] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:06.335] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:06.335] Server  LOG     Fetch error (if any): null
+[03:17:06.539] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:06.541] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:06.541] Server  LOG     Fetch error (if any): null
+[03:17:06.730] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:06.731] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:06.731] Server  LOG     Fetch error (if any): null
+[03:17:06.919] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:06.921] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:06.921] Server  LOG     Fetch error (if any): null
+[03:17:07.112] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:07.113] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:07.113] Server  LOG     Fetch error (if any): null
+[03:17:07.302] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:07.304] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:07.304] Server  LOG     Fetch error (if any): null
+[03:17:07.504] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:07.506] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:07.506] Server  LOG     Fetch error (if any): null
+[03:17:07.688] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:07.690] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:07.690] Server  LOG     Fetch error (if any): null
+[03:17:07.900] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:07.902] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:07.902] Server  LOG     Fetch error (if any): null
+[03:17:08.095] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:08.097] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:08.097] Server  LOG     Fetch error (if any): null
+[03:17:08.299] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:08.301] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:08.301] Server  LOG     Fetch error (if any): null
+[03:17:08.504] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:08.507] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:08.507] Server  LOG     Fetch error (if any): null
+[03:17:08.720] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:08.723] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:08.723] Server  LOG     Fetch error (if any): null
+[03:17:08.918] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:08.920] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:08.920] Server  LOG     Fetch error (if any): null
+[03:17:09.143] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:09.145] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:09.146] Server  LOG     Fetch error (if any): null
+[03:17:09.355] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:09.358] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:09.358] Server  LOG     Fetch error (if any): null
+[03:17:09.562] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:09.565] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:09.565] Server  LOG     Fetch error (if any): null
+[03:17:09.770] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:09.773] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:09.773] Server  LOG     Fetch error (if any): null
+[03:17:09.976] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:09.977] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:09.977] Server  LOG     Fetch error (if any): null
+[03:17:10.171] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:10.173] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:10.173] Server  LOG     Fetch error (if any): null
+[03:17:10.367] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:10.369] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:10.369] Server  LOG     Fetch error (if any): null
+[03:17:10.576] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:10.578] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:10.578] Server  LOG     Fetch error (if any): null
+[03:17:10.779] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:10.781] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:10.781] Server  LOG     Fetch error (if any): null
+[03:17:10.974] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:10.976] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:10.976] Server  LOG     Fetch error (if any): null
+[03:17:11.172] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:11.174] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:11.174] Server  LOG     Fetch error (if any): null
+[03:17:11.380] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:11.382] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:11.382] Server  LOG     Fetch error (if any): null
+[03:17:11.584] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:11.586] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:11.586] Server  LOG     Fetch error (if any): null
+[03:17:11.803] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:11.805] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:11.805] Server  LOG     Fetch error (if any): null
+[03:17:11.996] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:11.998] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:11.998] Server  LOG     Fetch error (if any): null
+[03:17:12.219] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:12.221] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:12.221] Server  LOG     Fetch error (if any): null
+[03:17:12.430] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:12.432] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:12.432] Server  LOG     Fetch error (if any): null
+[03:17:12.628] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:12.629] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:12.629] Server  LOG     Fetch error (if any): null
+[03:17:12.831] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:12.833] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:12.833] Server  LOG     Fetch error (if any): null
+[03:17:13.036] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:13.038] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:13.039] Server  LOG     Fetch error (if any): null
+[03:17:13.239] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:13.242] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:13.242] Server  LOG     Fetch error (if any): null
+[03:17:13.461] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:13.464] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:13.464] Server  LOG     Fetch error (if any): null
+[03:17:13.683] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:13.686] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:13.686] Server  LOG     Fetch error (if any): null
+[03:17:13.875] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:13.877] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:13.877] Server  LOG     Fetch error (if any): null
+[03:17:14.078] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:14.080] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:14.080] Server  LOG     Fetch error (if any): null
+[03:17:14.307] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:14.309] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:14.309] Server  LOG     Fetch error (if any): null
+[03:17:14.597] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:14.599] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:14.599] Server  LOG     Fetch error (if any): null
+[03:17:14.926] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:14.928] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:14.928] Server  LOG     Fetch error (if any): null
+[03:17:15.126] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:15.128] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:15.128] Server  LOG     Fetch error (if any): null
+[03:17:15.310] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:15.311] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:15.311] Server  LOG     Fetch error (if any): null
+[03:17:15.516] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:15.518] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:15.518] Server  LOG     Fetch error (if any): null
+[03:17:15.794] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:15.797] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:15.797] Server  LOG     Fetch error (if any): null
+[03:17:16.000] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:16.002] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:16.002] Server  LOG     Fetch error (if any): null
+[03:17:16.188] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:16.190] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:16.190] Server  LOG     Fetch error (if any): null
+[03:17:16.373] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:16.374] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:16.374] Server  LOG     Fetch error (if any): null
+[03:17:16.555] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:16.557] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:16.557] Server  LOG     Fetch error (if any): null
+[03:17:16.766] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:16.767] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:16.767] Server  LOG     Fetch error (if any): null
+[03:17:16.954] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:16.956] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:16.956] Server  LOG     Fetch error (if any): null
+[03:17:17.153] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:17.155] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:17.155] Server  LOG     Fetch error (if any): null
+[03:17:17.352] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:17.354] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:17.354] Server  LOG     Fetch error (if any): null
+[03:17:17.532] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:17.533] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:17.533] Server  LOG     Fetch error (if any): null
+[03:17:17.756] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:17.759] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:17.759] Server  LOG     Fetch error (if any): null
+[03:17:17.955] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:17.956] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:17.957] Server  LOG     Fetch error (if any): null
+[03:17:18.152] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:18.154] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:18.154] Server  LOG     Fetch error (if any): null
+[03:17:18.353] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:18.355] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:18.355] Server  LOG     Fetch error (if any): null
+[03:17:18.560] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:18.562] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:18.562] Server  LOG     Fetch error (if any): null
+[03:17:18.754] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:18.756] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:18.756] Server  LOG     Fetch error (if any): null
+[03:17:18.955] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:18.957] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:18.958] Server  LOG     Fetch error (if any): null
+[03:17:19.153] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:19.155] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:19.155] Server  LOG     Fetch error (if any): null
+[03:17:19.356] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:19.358] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:19.358] Server  LOG     Fetch error (if any): null
+[03:17:19.548] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:19.550] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:19.551] Server  LOG     Fetch error (if any): null
+[03:17:19.755] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:19.757] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:19.757] Server  LOG     Fetch error (if any): null
+[03:17:19.959] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:19.961] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:19.961] Server  LOG     Fetch error (if any): null
+[03:17:20.165] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:20.167] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:20.167] Server  LOG     Fetch error (if any): null
+[03:17:20.349] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:20.351] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:20.351] Server  LOG     Fetch error (if any): null
+[03:17:20.576] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:20.579] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:20.579] Server  LOG     Fetch error (if any): null
+[03:17:20.796] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:20.799] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:20.799] Server  LOG     Fetch error (if any): null
+[03:17:21.002] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:21.004] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:21.004] Server  LOG     Fetch error (if any): null
+[03:17:21.211] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:21.213] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:21.213] Server  LOG     Fetch error (if any): null
+[03:17:21.424] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:21.426] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:21.426] Server  LOG     Fetch error (if any): null
+[03:17:21.635] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:21.637] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:21.637] Server  LOG     Fetch error (if any): null
+[03:17:21.824] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:21.826] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:21.826] Server  LOG     Fetch error (if any): null
+[03:17:22.022] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:22.024] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:22.024] Server  LOG     Fetch error (if any): null
+[03:17:22.289] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:22.292] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:22.292] Server  LOG     Fetch error (if any): null
+[03:17:22.536] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:22.538] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:22.538] Server  LOG     Fetch error (if any): null
+[03:17:22.744] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:22.746] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:22.746] Server  LOG     Fetch error (if any): null
+[03:17:22.967] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:22.969] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:22.969] Server  LOG     Fetch error (if any): null
+[03:17:23.150] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:23.152] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:23.152] Server  LOG     Fetch error (if any): null
+[03:17:23.343] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:23.345] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:23.345] Server  LOG     Fetch error (if any): null
+[03:17:23.541] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:23.542] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:23.542] Server  LOG     Fetch error (if any): null
+[03:17:23.733] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:23.735] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:23.735] Server  LOG     Fetch error (if any): null
+[03:17:23.925] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:23.926] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:23.926] Server  LOG     Fetch error (if any): null
+[03:17:24.131] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:24.133] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:24.133] Server  LOG     Fetch error (if any): null
+[03:17:24.331] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:24.333] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:24.333] Server  LOG     Fetch error (if any): null
+[03:17:24.540] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:24.543] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:24.543] Server  LOG     Fetch error (if any): null
+[03:17:24.730] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:24.732] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:24.732] Server  LOG     Fetch error (if any): null
+[03:17:24.916] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:24.918] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:24.918] Server  LOG     Fetch error (if any): null
+[03:17:25.101] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:25.102] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:25.103] Server  LOG     Fetch error (if any): null
+[03:17:25.298] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:25.299] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:25.299] Server  LOG     Fetch error (if any): null
+[03:17:25.483] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:25.485] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:25.485] Server  LOG     Fetch error (if any): null
+[03:17:25.666] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:25.668] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:25.668] Server  LOG     Fetch error (if any): null
+[03:17:25.854] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:25.856] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:25.856] Server  LOG     Fetch error (if any): null
+[03:17:26.045] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:26.047] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:26.047] Server  LOG     Fetch error (if any): null
+[03:17:26.237] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:26.239] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:26.239] Server  LOG     Fetch error (if any): null
+[03:17:26.499] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:26.501] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:26.501] Server  LOG     Fetch error (if any): null
+[03:17:26.781] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:26.783] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:26.783] Server  LOG     Fetch error (if any): null
+[03:17:27.022] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:27.024] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:27.024] Server  LOG     Fetch error (if any): null
+[03:17:27.208] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:27.210] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:27.210] Server  LOG     Fetch error (if any): null
+[03:17:27.396] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:27.397] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:27.397] Server  LOG     Fetch error (if any): null
+[03:17:27.600] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:27.602] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:27.602] Server  LOG     Fetch error (if any): null
+[03:17:27.850] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:27.853] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:27.853] Server  LOG     Fetch error (if any): null
+[03:17:28.077] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:28.080] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:28.080] Server  LOG     Fetch error (if any): null
+[03:17:28.289] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:28.291] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:28.291] Server  LOG     Fetch error (if any): null
+[03:17:28.513] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:28.516] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:28.516] Server  LOG     Fetch error (if any): null
+[03:17:28.731] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:28.734] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:28.734] Server  LOG     Fetch error (if any): null
+[03:17:28.926] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:28.928] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:28.928] Server  LOG     Fetch error (if any): null
+[03:17:29.130] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:29.132] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:29.132] Server  LOG     Fetch error (if any): null
+[03:17:29.329] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:29.331] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:29.332] Server  LOG     Fetch error (if any): null
+[03:17:29.522] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:29.524] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:29.524] Server  LOG     Fetch error (if any): null
+[03:17:29.721] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:29.723] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:29.723] Server  LOG     Fetch error (if any): null
+[03:17:29.911] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:29.913] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:29.913] Server  LOG     Fetch error (if any): null
+[03:17:30.119] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:30.121] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:30.121] Server  LOG     Fetch error (if any): null
+[03:17:30.320] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:30.322] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:30.322] Server  LOG     Fetch error (if any): null
+[03:17:30.530] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:30.532] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:30.532] Server  LOG     Fetch error (if any): null
+[03:17:30.754] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:30.756] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:30.756] Server  LOG     Fetch error (if any): null
+[03:17:30.967] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:30.970] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:30.970] Server  LOG     Fetch error (if any): null
+[03:17:31.171] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:31.174] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:31.174] Server  LOG     Fetch error (if any): null
+[03:17:31.385] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:31.388] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:31.388] Server  LOG     Fetch error (if any): null
+[03:17:31.586] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:31.588] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:31.588] Server  LOG     Fetch error (if any): null
+[03:17:31.771] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:31.773] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:31.773] Server  LOG     Fetch error (if any): null
+[03:17:31.964] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:31.967] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:31.967] Server  LOG     Fetch error (if any): null
+[03:17:32.156] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:32.158] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:32.158] Server  LOG     Fetch error (if any): null
+[03:17:32.348] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:32.350] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:32.350] Server  LOG     Fetch error (if any): null
+[03:17:32.585] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:32.587] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:32.587] Server  LOG     Fetch error (if any): null
+[03:17:32.777] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:32.779] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:32.779] Server  LOG     Fetch error (if any): null
+[03:17:32.967] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:32.969] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:32.969] Server  LOG     Fetch error (if any): null
+[03:17:33.199] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:33.201] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:33.201] Server  LOG     Fetch error (if any): null
+[03:17:33.396] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:33.398] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:33.398] Server  LOG     Fetch error (if any): null
+[03:17:33.601] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:33.603] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:33.603] Server  LOG     Fetch error (if any): null
+[03:17:33.817] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:33.819] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:33.820] Server  LOG     Fetch error (if any): null
+[03:17:34.031] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:34.033] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:34.033] Server  LOG     Fetch error (if any): null
+[03:17:34.227] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:34.229] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:34.229] Server  LOG     Fetch error (if any): null
+[03:17:34.438] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:34.441] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:34.441] Server  LOG     Fetch error (if any): null
+[03:17:34.649] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:34.652] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:34.652] Server  LOG     Fetch error (if any): null
+[03:17:34.842] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:34.844] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:34.844] Server  LOG     Fetch error (if any): null
+[03:17:35.048] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:35.050] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:35.050] Server  LOG     Fetch error (if any): null
+[03:17:35.257] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:35.259] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:35.259] Server  LOG     Fetch error (if any): null
+[03:17:35.449] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:35.451] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:35.451] Server  LOG     Fetch error (if any): null
+[03:17:35.640] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:35.642] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:35.642] Server  LOG     Fetch error (if any): null
+[03:17:35.840] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:35.842] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:35.842] Server  LOG     Fetch error (if any): null
+[03:17:36.031] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:36.033] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:36.033] Server  LOG     Fetch error (if any): null
+[03:17:36.226] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:36.228] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:36.228] Server  LOG     Fetch error (if any): null
+[03:17:36.437] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:36.439] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:36.439] Server  LOG     Fetch error (if any): null
+[03:17:36.635] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:36.638] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:36.638] Server  LOG     Fetch error (if any): null
+[03:17:36.889] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:36.891] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:36.891] Server  LOG     Fetch error (if any): null
+[03:17:37.098] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:37.101] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:37.101] Server  LOG     Fetch error (if any): null
+[03:17:37.297] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:37.299] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:37.299] Server  LOG     Fetch error (if any): null
+[03:17:37.503] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:37.505] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:37.505] Server  LOG     Fetch error (if any): null
+[03:17:37.704] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:37.707] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:37.707] Server  LOG     Fetch error (if any): null
+[03:17:37.922] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:37.924] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:37.924] Server  LOG     Fetch error (if any): null
+[03:17:38.132] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:38.135] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:38.135] Server  LOG     Fetch error (if any): null
+[03:17:38.340] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:38.342] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:38.342] Server  LOG     Fetch error (if any): null
+[03:17:38.566] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:38.568] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:38.568] Server  LOG     Fetch error (if any): null
+[03:17:38.769] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:38.771] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:38.771] Server  LOG     Fetch error (if any): null
+[03:17:38.966] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:38.968] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:38.968] Server  LOG     Fetch error (if any): null
+[03:17:39.182] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:39.185] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:39.185] Server  LOG     Fetch error (if any): null
+[03:17:39.384] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:39.386] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:39.386] Server  LOG     Fetch error (if any): null
+[03:17:39.587] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:39.589] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:39.590] Server  LOG     Fetch error (if any): null
+[03:17:39.799] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:39.801] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:39.801] Server  LOG     Fetch error (if any): null
+[03:17:42.212] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:17:42.413] Server  LOG     Fetched families for user: [{...},{...}]
+[03:17:42.413] Server  LOG     Fetch error (if any): null
+[03:17:42.551] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:17:42.702] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:17:50.830] Server  LOG      ✓ Compiled in 27ms
+[03:18:19.078] Server  LOG      ✓ Compiled in 14ms
+[03:18:40.129] Server  LOG      ✓ Compiled in 49ms
+[03:18:47.365] Server  LOG      ✓ Compiled in 16ms
+[03:19:39.404] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:19:39.610] Server  LOG     Fetched families for user: [{...},{...}]
+[03:19:39.610] Server  LOG     Fetch error (if any): null
+[03:20:14.795] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:20:14.917] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:20:18.005] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:20:18.213] Server  LOG     Fetched families for user: [{...},{...}]
+[03:20:18.213] Server  LOG     Fetch error (if any): null
+[03:20:28.059] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:20:28.234] Server  LOG     Fetched families for user: [{...},{...}]
+[03:20:28.235] Server  LOG     Fetch error (if any): null
+[03:20:33.588] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[03:20:33.779] Server  LOG     Fetched families for user: [{...},{...}]
+[03:20:33.779] Server  LOG     Fetch error (if any): null

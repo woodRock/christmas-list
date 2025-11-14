@@ -9,6 +9,7 @@
   "/api/lists/[familyId]/members/[memberId]/route": "app/api/lists/[familyId]/members/[memberId]/route.js",
   "/api/lists/[familyId]/route": "app/api/lists/[familyId]/route.js",
   "/api/scrape-pricespy/route": "app/api/scrape-pricespy/route.js",
+  "/auth/update-password/page": "app/auth/update-password/page.js",
   "/claimed-items/page": "app/claimed-items/page.js",
   "/create-family/page": "app/create-family/page.js",
   "/invite/page": "app/invite/page.js",
@@ -16,5 +17,6 @@
   "/list/[familyId]/settings/page": "app/list/[familyId]/settings/page.js",
   "/login/page": "app/login/page.js",
   "/onboarding/page": "app/onboarding/page.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/profile/page": "app/profile/page.js"
 }
