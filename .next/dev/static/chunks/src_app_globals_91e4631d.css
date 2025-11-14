@@ -555,10 +555,6 @@
     height: 66.6667%;
   }
 
-  .h-6 {
-    height: calc(var(--spacing) * 6);
-  }
-
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
@@ -581,10 +577,6 @@
 
   .w-1\/2 {
     width: 50%;
-  }
-
-  .w-6 {
-    width: calc(var(--spacing) * 6);
   }
 
   .w-16 {

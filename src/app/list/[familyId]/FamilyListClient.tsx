@@ -77,6 +77,17 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
   const [mounted, setMounted] = useState(false);
   const [portalNode, setPortalNode] = useState<HTMLElement | null>(null);
 
+  const refreshFamily = async () => {
+    const res = await fetch(`/api/lists/${familyId}/details`);
+    if (res.ok) {
+      const updatedFamily = await res.json();
+      setFamily(updatedFamily);
+    } else {
+      console.error('Failed to refresh family data');
+      // Optionally, handle error more gracefully, e.g., show a toast notification
+    }
+  };
+
   useEffect(() => {
     let element = document.getElementById('drag-portal');
     if (!element) {
@@ -170,7 +181,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
       // Revert UI on API failure
       setFamily(originalFamily);
     } else {
-      router.refresh(); // Refresh the page to ensure server-side state is consistent
+      refreshFamily(); // Refresh the page to ensure server-side state is consistent
     }
     setIsDragging(false); // End dragging after all logic is complete
   }
@@ -248,7 +259,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
 
     setFindImagesMessage('Finished searching for missing images.');
     setIsFindingImages(false);
-    router.refresh(); // Refresh to ensure server state is fully consistent
+    refreshFamily(); // Refresh to ensure server state is fully consistent
   };
 
   const handleDeleteGift = async (giftId: string) => {
@@ -274,6 +285,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
       }));
       setFamily(newFamily);
       console.log('Local state updated for gift:', giftId);
+      refreshFamily(); // Refresh data after successful deletion
     } else {
       const errorText = await res.text()
       console.error('Failed to delete gift from API:', giftId, errorText);
@@ -304,6 +316,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
       const newFamily = { ...family };
       newFamily.members = newFamily.members.filter(member => member.id !== memberId);
       setFamily(newFamily);
+      refreshFamily(); // Refresh data after successful member removal
     } else {
       const errorText = await res.text()
       alert(`Failed to remove member: ${errorText}`)
@@ -540,6 +553,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                       <ClaimUnclaimButtons
                                         gift={gift}
                                         userId={user.id}
+                                        refreshFamily={refreshFamily}
                                       />
                                     )}
                                   </div>
@@ -586,9 +600,10 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                       )}
                                       {user && user.id !== gift.user_id && (
                                         <ClaimUnclaimButtons
-                                          gift={gift}
-                                          userId={user.id}
-                                        />
+                                        gift={gift}
+                                        userId={user.id}
+                                        refreshFamily={refreshFamily}
+                                      />
                                       )}
                                     </div>
                                   </div>
@@ -632,6 +647,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             currentUserId={user.id}
             members={family.members}
             onClose={() => setShowAddGiftModal(false)} // Pass onClose prop
+            onGiftAdded={refreshFamily} // Pass refreshFamily to AddGiftForm
           />
         )}
 
@@ -641,6 +657,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             currentUserId={user.id}
             members={family.members}
             onClose={() => setShowAddMemberModal(false)} // Pass onClose prop
+            onMemberAdded={refreshFamily} // Pass refreshFamily to AddMemberForm
           />
         )}
 
@@ -659,12 +676,9 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
           <EditGiftForm
             gift={editingGift}
             onClose={() => setEditingGift(null)}
-            onSave={() => {
+            onSave={async () => { // Make the onSave callback async
               setEditingGift(null)
-              // Instead of router.refresh(), update local state
-              // This would involve refetching the family data or updating the specific gift in the family state
-              // For now, we'll just close the form. A full re-fetch might be needed for complex updates.
-              // router.refresh()
+              await refreshFamily() // Call refreshFamily after saving an edited gift
             }}
           />
         )}

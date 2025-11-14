@@ -15,11 +15,12 @@ interface Gift {
 interface ClaimUnclaimButtonsProps {
   gift: Gift;
   userId: string;
+  refreshFamily: () => Promise<void>;
 }
 
-export default function ClaimUnclaimButtons({ gift, userId }: ClaimUnclaimButtonsProps) {
+export default function ClaimUnclaimButtons({ gift, userId, refreshFamily }: ClaimUnclaimButtonsProps) {
   const [message, setMessage] = useState('')
-  const router = useRouter()
+  // const router = useRouter() // No longer needed
 
   const handleClaimGift = async () => {
     setMessage('')
@@ -31,7 +32,7 @@ export default function ClaimUnclaimButtons({ gift, userId }: ClaimUnclaimButton
 
     if (res.ok) {
       setMessage('Gift claimed successfully!')
-      router.refresh()
+      refreshFamily() // Use refreshFamily instead of router.refresh()
     } else {
       const errorText = await res.text()
       setMessage(`Failed to claim gift: ${errorText}`)
@@ -47,7 +48,7 @@ export default function ClaimUnclaimButtons({ gift, userId }: ClaimUnclaimButton
 
     if (res.ok) {
       setMessage('Gift unclaimed successfully!')
-      router.refresh()
+      refreshFamily() // Use refreshFamily instead of router.refresh()
     } else {
       const errorText = await res.text()
       setMessage(`Failed to unclaim gift: ${errorText}`)

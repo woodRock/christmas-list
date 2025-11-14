@@ -9,11 +9,9 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/supabase.ts [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
-;
 ;
 ;
 // Debounce function defined outside the component to be stable
@@ -28,7 +26,7 @@ const debounce = (func, delay)=>{
         }, delay);
     };
 };
-function AddGiftForm({ familyId, currentUserId, members, onClose }) {
+function AddGiftForm({ familyId, currentUserId, members, onClose, onGiftAdded }) {
     _s();
     const [newGiftDescription, setNewGiftDescription] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [newGiftNotes, setNewGiftNotes] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
@@ -42,7 +40,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
     ;
     const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createClient"])();
-    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    // const router = useRouter() // No longer needed
     const fetchMetadata = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "AddGiftForm.useCallback[fetchMetadata]": async (url)=>{
             if (!url || !url.startsWith('http')) {
@@ -135,7 +133,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
             setFetchedProductTitle('');
             setFetchedProductImageUrl('');
             setFetchedProductPrice('');
-            router.refresh(); // Refresh the current page to show the new gift
+            await onGiftAdded(); // Refresh the current page to show the new gift
             onClose(); // Close the modal after adding gift
         }
     };
@@ -151,7 +149,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                     children: "×"
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                    lineNumber: 152,
+                    lineNumber: 153,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -159,7 +157,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                     children: "Add a Gift"
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                    lineNumber: 159,
+                    lineNumber: 160,
                     columnNumber: 9
                 }, this),
                 message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -167,7 +165,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                     children: message
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                    lineNumber: 160,
+                    lineNumber: 161,
                     columnNumber: 21
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -182,7 +180,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                     children: "Recipient"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 163,
+                                    lineNumber: 164,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -200,18 +198,18 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                             ]
                                         }, member.id, true, {
                                             fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                            lineNumber: 172,
+                                            lineNumber: 173,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 164,
+                                    lineNumber: 165,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                            lineNumber: 162,
+                            lineNumber: 163,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -222,7 +220,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                     children: "Product URL (Optional)"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 179,
+                                    lineNumber: 180,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -238,7 +236,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                     onBlur: (e)=>fetchMetadata(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 182,
+                                    lineNumber: 183,
                                     columnNumber: 13
                                 }, this),
                                 isFetchingMetadata && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -246,7 +244,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                     children: "Fetching product details..."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 194,
+                                    lineNumber: 195,
                                     columnNumber: 36
                                 }, this),
                                 fetchedProductTitle && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -259,7 +257,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                             className: "w-16 h-16 object-cover rounded-md"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                            lineNumber: 199,
+                                            lineNumber: 200,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -269,7 +267,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                                     children: fetchedProductTitle
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                                    lineNumber: 202,
+                                                    lineNumber: 203,
                                                     columnNumber: 19
                                                 }, this),
                                                 fetchedProductPrice && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -280,25 +278,25 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                                    lineNumber: 203,
+                                                    lineNumber: 204,
                                                     columnNumber: 43
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                            lineNumber: 201,
+                                            lineNumber: 202,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 196,
+                                    lineNumber: 197,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                            lineNumber: 178,
+                            lineNumber: 179,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -309,7 +307,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                     children: "Gift Description (or use fetched title)"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 209,
+                                    lineNumber: 210,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -322,13 +320,13 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                     required: !fetchedProductTitle
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 212,
+                                    lineNumber: 213,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                            lineNumber: 208,
+                            lineNumber: 209,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -339,7 +337,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                     children: "Notes (Optional)"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 223,
+                                    lineNumber: 224,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -351,13 +349,13 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                     onChange: (e)=>setNewGiftNotes(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 226,
+                                    lineNumber: 227,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                            lineNumber: 222,
+                            lineNumber: 223,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -368,7 +366,7 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                     children: "Price (Optional)"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 236,
+                                    lineNumber: 237,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -381,13 +379,13 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                                     onChange: (e)=>setNewGiftPrice(e.target.value)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                                    lineNumber: 239,
+                                    lineNumber: 240,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                            lineNumber: 235,
+                            lineNumber: 236,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -396,32 +394,28 @@ function AddGiftForm({ familyId, currentUserId, members, onClose }) {
                             children: "Add Gift"
                         }, void 0, false, {
                             fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                            lineNumber: 249,
+                            lineNumber: 250,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-                    lineNumber: 161,
+                    lineNumber: 162,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-            lineNumber: 151,
+            lineNumber: 152,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/list/[familyId]/AddGiftForm.tsx",
-        lineNumber: 150,
+        lineNumber: 151,
         columnNumber: 5
     }, this);
 }
-_s(AddGiftForm, "1zHNjk0wt2IuIwSJaPuTyeghX48=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
-    ];
-});
+_s(AddGiftForm, "xtiUJioQqBC2dyBhB8edk04YoWA=");
 _c = AddGiftForm;
 var _c;
 __turbopack_context__.k.register(_c, "AddGiftForm");
@@ -437,7 +431,6 @@ __turbopack_context__.s([
     ()=>ClaimUnclaimButtons
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 ;
@@ -445,11 +438,10 @@ var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
-;
-function ClaimUnclaimButtons({ gift, userId }) {
+function ClaimUnclaimButtons({ gift, userId, refreshFamily }) {
     _s();
     const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
-    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    // const router = useRouter() // No longer needed
     const handleClaimGift = async ()=>{
         setMessage('');
         const res = await fetch(`/api/gifts/${gift.id}/claim`, {
@@ -463,7 +455,7 @@ function ClaimUnclaimButtons({ gift, userId }) {
         });
         if (res.ok) {
             setMessage('Gift claimed successfully!');
-            router.refresh();
+            refreshFamily(); // Use refreshFamily instead of router.refresh()
         } else {
             const errorText = await res.text();
             setMessage(`Failed to claim gift: ${errorText}`);
@@ -479,7 +471,7 @@ function ClaimUnclaimButtons({ gift, userId }) {
         });
         if (res.ok) {
             setMessage('Gift unclaimed successfully!');
-            router.refresh();
+            refreshFamily(); // Use refreshFamily instead of router.refresh()
         } else {
             const errorText = await res.text();
             setMessage(`Failed to unclaim gift: ${errorText}`);
@@ -492,7 +484,7 @@ function ClaimUnclaimButtons({ gift, userId }) {
                 children: message
             }, void 0, false, {
                 fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
-                lineNumber: 59,
+                lineNumber: 60,
                 columnNumber: 19
             }, this),
             !gift.is_purchased && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -506,12 +498,12 @@ function ClaimUnclaimButtons({ gift, userId }) {
                     height: 24
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
-                    lineNumber: 66,
+                    lineNumber: 67,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
-                lineNumber: 61,
+                lineNumber: 62,
                 columnNumber: 9
             }, this),
             gift.is_purchased && gift.purchased_by === userId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -525,26 +517,22 @@ function ClaimUnclaimButtons({ gift, userId }) {
                     height: 24
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
-                    lineNumber: 75,
+                    lineNumber: 76,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
-                lineNumber: 70,
+                lineNumber: 71,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/list/[familyId]/ClaimUnclaimButtons.tsx",
-        lineNumber: 58,
+        lineNumber: 59,
         columnNumber: 5
     }, this);
 }
-_s(ClaimUnclaimButtons, "R0q7tHdChZllRnUPrpAE9Tj9aXw=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
-    ];
-});
+_s(ClaimUnclaimButtons, "l8KXAebGu4sZHsyCIQX7P8si41w=");
 _c = ClaimUnclaimButtons;
 var _c;
 __turbopack_context__.k.register(_c, "ClaimUnclaimButtons");
@@ -562,20 +550,18 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/supabase.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 ;
 ;
-;
-function AddMemberForm({ familyId, currentUserId, members, onClose }) {
+function AddMemberForm({ familyId, currentUserId, members, onClose, onMemberAdded }) {
     _s();
     const [newMemberName, setNewMemberName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [newMemberEmail, setNewMemberEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('') // Assuming email for finding user ID
     ;
     const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createClient"])();
-    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    // const router = useRouter() // No longer needed
     const handleAddMember = async (e)=>{
         e.preventDefault();
         setMessage('');
@@ -613,7 +599,7 @@ function AddMemberForm({ familyId, currentUserId, members, onClose }) {
                 setMessage(data.message);
                 setNewMemberName('');
                 setNewMemberEmail('');
-                router.refresh(); // Refresh the page to show the new member in the dropdowns
+                await onMemberAdded(); // Refresh the current page to show the new member in the dropdowns
                 onClose(); // Close the modal after adding member
             } else {
                 setMessage(`Failed to add member: ${data.error}`);
@@ -641,7 +627,7 @@ function AddMemberForm({ familyId, currentUserId, members, onClose }) {
                     children: "×"
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-                    lineNumber: 72,
+                    lineNumber: 73,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -649,7 +635,7 @@ function AddMemberForm({ familyId, currentUserId, members, onClose }) {
                     children: "Add New Family Member"
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-                    lineNumber: 79,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, this),
                 message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -657,7 +643,7 @@ function AddMemberForm({ familyId, currentUserId, members, onClose }) {
                     children: message
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-                    lineNumber: 80,
+                    lineNumber: 81,
                     columnNumber: 21
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -672,7 +658,7 @@ function AddMemberForm({ familyId, currentUserId, members, onClose }) {
                                     children: "Member Name"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-                                    lineNumber: 83,
+                                    lineNumber: 84,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -684,13 +670,13 @@ function AddMemberForm({ familyId, currentUserId, members, onClose }) {
                                     required: true
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-                                    lineNumber: 84,
+                                    lineNumber: 85,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-                            lineNumber: 82,
+                            lineNumber: 83,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -701,7 +687,7 @@ function AddMemberForm({ familyId, currentUserId, members, onClose }) {
                                     children: "Member Email"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-                                    lineNumber: 94,
+                                    lineNumber: 95,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -713,13 +699,13 @@ function AddMemberForm({ familyId, currentUserId, members, onClose }) {
                                     required: true
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-                                    lineNumber: 95,
+                                    lineNumber: 96,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-                            lineNumber: 93,
+                            lineNumber: 94,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -728,32 +714,28 @@ function AddMemberForm({ familyId, currentUserId, members, onClose }) {
                             children: "Add Member"
                         }, void 0, false, {
                             fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-                            lineNumber: 104,
+                            lineNumber: 105,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-                    lineNumber: 81,
+                    lineNumber: 82,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-            lineNumber: 71,
+            lineNumber: 72,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/list/[familyId]/AddMemberForm.tsx",
-        lineNumber: 70,
+        lineNumber: 71,
         columnNumber: 5
     }, this);
 }
-_s(AddMemberForm, "1KyunDc4SeoSgJnC8+BCF8DAaRc=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
-    ];
-});
+_s(AddMemberForm, "+n44WUr7gXYoMxpM9Cqiwo34tm4=");
 _c = AddMemberForm;
 var _c;
 __turbopack_context__.k.register(_c, "AddMemberForm");
@@ -872,7 +854,7 @@ function EditGiftForm({ gift, onClose, onSave }) {
         });
         if (res.ok) {
             setMessage('Gift updated successfully!');
-            onSave();
+            await onSave(); // Call onSave after successful update
         } else {
             const errorText = await res.text();
             setMessage(`Failed to update gift: ${errorText}`);
@@ -1209,6 +1191,16 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const [mounted, setMounted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [portalNode, setPortalNode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const refreshFamily = async ()=>{
+        const res = await fetch(`/api/lists/${familyId}/details`);
+        if (res.ok) {
+            const updatedFamily = await res.json();
+            setFamily(updatedFamily);
+        } else {
+            console.error('Failed to refresh family data');
+        // Optionally, handle error more gracefully, e.g., show a toast notification
+        }
+    };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "FamilyListClient.useEffect": ()=>{
             let element = document.getElementById('drag-portal');
@@ -1307,7 +1299,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
             // Revert UI on API failure
             setFamily(originalFamily);
         } else {
-            router.refresh(); // Refresh the page to ensure server-side state is consistent
+            refreshFamily(); // Refresh the page to ensure server-side state is consistent
         }
         setIsDragging(false); // End dragging after all logic is complete
     };
@@ -1386,7 +1378,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
         }
         setFindImagesMessage('Finished searching for missing images.');
         setIsFindingImages(false);
-        router.refresh(); // Refresh to ensure server state is fully consistent
+        refreshFamily(); // Refresh to ensure server state is fully consistent
     };
     const handleDeleteGift = async (giftId)=>{
         console.log('Attempting to delete gift:', giftId);
@@ -1410,6 +1402,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                 }));
             setFamily(newFamily);
             console.log('Local state updated for gift:', giftId);
+            refreshFamily(); // Refresh data after successful deletion
         } else {
             const errorText = await res.text();
             console.error('Failed to delete gift from API:', giftId, errorText);
@@ -1437,6 +1430,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
             };
             newFamily.members = newFamily.members.filter((member)=>member.id !== memberId);
             setFamily(newFamily);
+            refreshFamily(); // Refresh data after successful member removal
         } else {
             const errorText = await res.text();
             alert(`Failed to remove member: ${errorText}`);
@@ -1502,7 +1496,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 369,
+                    lineNumber: 382,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1511,7 +1505,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                     children: "← Back to Home"
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 370,
+                    lineNumber: 383,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1529,7 +1523,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     height: 24
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 380,
+                                    lineNumber: 393,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1537,13 +1531,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "Add Gift"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 381,
+                                    lineNumber: 394,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 375,
+                            lineNumber: 388,
                             columnNumber: 13
                         }, this),
                         user && user.id === family.owner_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1558,7 +1552,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     height: 24
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 390,
+                                    lineNumber: 403,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1566,13 +1560,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "Add Member"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 391,
+                                    lineNumber: 404,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 385,
+                            lineNumber: 398,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1587,7 +1581,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     height: 24
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 399,
+                                    lineNumber: 412,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1595,13 +1589,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "Invite"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 400,
+                                    lineNumber: 413,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 394,
+                            lineNumber: 407,
                             columnNumber: 11
                         }, this),
                         user && user.id === family.owner_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1617,7 +1611,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     height: 24
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 409,
+                                    lineNumber: 422,
                                     columnNumber: 15
                                 }, this),
                                 " ",
@@ -1626,13 +1620,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: isFindingImages ? 'Finding...' : 'Find Images'
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 410,
+                                    lineNumber: 423,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 403,
+                            lineNumber: 416,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1647,7 +1641,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     height: 24
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 417,
+                                    lineNumber: 430,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1655,19 +1649,19 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "Help"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 418,
+                                    lineNumber: 431,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 413,
+                            lineNumber: 426,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 373,
+                    lineNumber: 386,
                     columnNumber: 9
                 }, this),
                 isFindingImages && findImagesMessage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1675,7 +1669,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                     children: findImagesMessage
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 423,
+                    lineNumber: 436,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1686,7 +1680,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                             children: "Sort by:"
                         }, void 0, false, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 427,
+                            lineNumber: 440,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1699,7 +1693,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "Default Order"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 433,
+                                    lineNumber: 446,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1707,7 +1701,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "Description"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 434,
+                                    lineNumber: 447,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1715,13 +1709,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "Price"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 435,
+                                    lineNumber: 448,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 428,
+                            lineNumber: 441,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1730,7 +1724,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                             children: sortOrder === 'asc' ? 'Asc' : 'Desc'
                         }, void 0, false, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 437,
+                            lineNumber: 450,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1742,7 +1736,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "☰ List"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 444,
+                                    lineNumber: 457,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1751,19 +1745,19 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     children: "▦ Grid"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 450,
+                                    lineNumber: 463,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 443,
+                            lineNumber: 456,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 426,
+                    lineNumber: 439,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$hello$2d$pangea$2f$dnd$2f$dist$2f$dnd$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DragDropContext"], {
@@ -1787,7 +1781,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                lineNumber: 469,
+                                                lineNumber: 482,
                                                 columnNumber: 17
                                             }, this),
                                             user && user.id === family.owner_id && user.id !== member.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1796,13 +1790,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                 children: "Remove"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                lineNumber: 471,
+                                                lineNumber: 484,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                        lineNumber: 468,
+                                        lineNumber: 481,
                                         columnNumber: 15
                                     }, this),
                                     member.gifts.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1813,7 +1807,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                        lineNumber: 480,
+                                        lineNumber: 493,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$hello$2d$pangea$2f$dnd$2f$dist$2f$dnd$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Droppable"], {
                                         droppableId: member.id,
@@ -1845,7 +1839,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                 className: "w-full h-2/3 object-cover"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                lineNumber: 507,
+                                                                                lineNumber: 520,
                                                                                 columnNumber: 37
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1859,7 +1853,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                             children: gift.description
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                            lineNumber: 511,
+                                                                                            lineNumber: 524,
                                                                                             columnNumber: 39
                                                                                         }, this),
                                                                                         gift.is_purchased && user?.id !== gift.user_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1872,18 +1866,18 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                            lineNumber: 515,
+                                                                                            lineNumber: 528,
                                                                                             columnNumber: 41
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                    lineNumber: 510,
+                                                                                    lineNumber: 523,
                                                                                     columnNumber: 37
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                lineNumber: 509,
+                                                                                lineNumber: 522,
                                                                                 columnNumber: 35
                                                                             }, this),
                                                                             gift.price !== undefined && gift.price !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1894,7 +1888,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                lineNumber: 522,
+                                                                                lineNumber: 535,
                                                                                 columnNumber: 37
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1914,26 +1908,27 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                             height: 20
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                            lineNumber: 536,
+                                                                                            lineNumber: 549,
                                                                                             columnNumber: 41
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                        lineNumber: 528,
+                                                                                        lineNumber: 541,
                                                                                         columnNumber: 39
                                                                                     }, this),
                                                                                     user && user.id !== gift.user_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$ClaimUnclaimButtons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                                                         gift: gift,
-                                                                                        userId: user.id
+                                                                                        userId: user.id,
+                                                                                        refreshFamily: refreshFamily
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                        lineNumber: 540,
+                                                                                        lineNumber: 553,
                                                                                         columnNumber: 39
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                lineNumber: 526,
+                                                                                lineNumber: 539,
                                                                                 columnNumber: 35
                                                                             }, this)
                                                                         ]
@@ -1950,7 +1945,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                     className: "w-24 h-24 object-cover rounded-md mr-3 flex-shrink-0"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                    lineNumber: 553,
+                                                                                    lineNumber: 567,
                                                                                     columnNumber: 39
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1965,7 +1960,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                                     children: gift.description
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                                    lineNumber: 558,
+                                                                                                    lineNumber: 572,
                                                                                                     columnNumber: 41
                                                                                                 }, this),
                                                                                                 gift.is_purchased && user?.id !== gift.user_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1977,13 +1972,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                                     ]
                                                                                                 }, void 0, true, {
                                                                                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                                    lineNumber: 562,
+                                                                                                    lineNumber: 576,
                                                                                                     columnNumber: 43
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                            lineNumber: 557,
+                                                                                            lineNumber: 571,
                                                                                             columnNumber: 39
                                                                                         }, this),
                                                                                         gift.price !== undefined && gift.price !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1994,13 +1989,13 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                            lineNumber: 568,
+                                                                                            lineNumber: 582,
                                                                                             columnNumber: 41
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                    lineNumber: 556,
+                                                                                    lineNumber: 570,
                                                                                     columnNumber: 37
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2021,61 +2016,62 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                                                                                 height: 24
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                                lineNumber: 584,
+                                                                                                lineNumber: 598,
                                                                                                 columnNumber: 43
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                            lineNumber: 576,
+                                                                                            lineNumber: 590,
                                                                                             columnNumber: 41
                                                                                         }, this),
                                                                                         user && user.id !== gift.user_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$ClaimUnclaimButtons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                                                             gift: gift,
-                                                                                            userId: user.id
+                                                                                            userId: user.id,
+                                                                                            refreshFamily: refreshFamily
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                            lineNumber: 588,
+                                                                                            lineNumber: 602,
                                                                                             columnNumber: 41
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                                    lineNumber: 574,
+                                                                                    lineNumber: 588,
                                                                                     columnNumber: 37
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                            lineNumber: 549,
+                                                                            lineNumber: 563,
                                                                             columnNumber: 35
                                                                         }, this)
                                                                     }, void 0, false)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                                    lineNumber: 492,
+                                                                    lineNumber: 505,
                                                                     columnNumber: 29
                                                                 }, this)
                                                         }, gift.id, false, {
                                                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                            lineNumber: 490,
+                                                            lineNumber: 503,
                                                             columnNumber: 25
                                                         }, this)),
                                                     provided.placeholder
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                                lineNumber: 484,
+                                                lineNumber: 497,
                                                 columnNumber: 21
                                             }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                        lineNumber: 482,
+                                        lineNumber: 495,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, member.id, true, {
                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                lineNumber: 467,
+                                lineNumber: 480,
                                 columnNumber: 13
                             }, this)),
                         mounted && portalNode && /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2d$dom$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createPortal(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$hello$2d$pangea$2f$dnd$2f$dist$2f$dnd$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Droppable"], {
@@ -2092,38 +2088,40 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                    lineNumber: 612,
+                                    lineNumber: 627,
                                     columnNumber: 17
                                 }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                            lineNumber: 610,
+                            lineNumber: 625,
                             columnNumber: 13
                         }, this), portalNode)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 459,
+                    lineNumber: 472,
                     columnNumber: 9
                 }, this),
                 showAddGiftModal && user && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$AddGiftForm$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     familyId: family.id,
                     currentUserId: user.id,
                     members: family.members,
-                    onClose: ()=>setShowAddGiftModal(false)
+                    onClose: ()=>setShowAddGiftModal(false),
+                    onGiftAdded: refreshFamily
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 630,
+                    lineNumber: 645,
                     columnNumber: 11
                 }, this),
                 showAddMemberModal && user && user.id === family.owner_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$AddMemberForm$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     familyId: family.id,
                     currentUserId: user.id,
                     members: family.members,
-                    onClose: ()=>setShowAddMemberModal(false)
+                    onClose: ()=>setShowAddMemberModal(false),
+                    onMemberAdded: refreshFamily
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 639,
+                    lineNumber: 655,
                     columnNumber: 11
                 }, this),
                 user && user.id !== family.owner_id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2134,27 +2132,24 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                         children: "Leave Family List"
                     }, void 0, false, {
                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                        lineNumber: 649,
+                        lineNumber: 666,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 648,
+                    lineNumber: 665,
                     columnNumber: 11
                 }, this),
                 editingGift && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$list$2f5b$familyId$5d2f$EditGiftForm$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     gift: editingGift,
                     onClose: ()=>setEditingGift(null),
-                    onSave: ()=>{
+                    onSave: async ()=>{
                         setEditingGift(null);
-                    // Instead of router.refresh(), update local state
-                    // This would involve refetching the family data or updating the specific gift in the family state
-                    // For now, we'll just close the form. A full re-fetch might be needed for complex updates.
-                    // router.refresh()
+                        await refreshFamily(); // Call refreshFamily after saving an edited gift
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 659,
+                    lineNumber: 676,
                     columnNumber: 11
                 }, this),
                 showQrModal && inviteToken && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2167,14 +2162,14 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                 children: "Scan to Join!"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                lineNumber: 675,
+                                lineNumber: 689,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$qr$2d$code$2f$lib$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 value: `${window.location.origin}/invite?token=${inviteToken}`
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                lineNumber: 676,
+                                lineNumber: 690,
                                 columnNumber: 15
                             }, this),
                             copyMessage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2182,7 +2177,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                 children: copyMessage
                             }, void 0, false, {
                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                lineNumber: 677,
+                                lineNumber: 691,
                                 columnNumber: 31
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2194,7 +2189,7 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                         children: "Copy Invite Link"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                        lineNumber: 679,
+                                        lineNumber: 693,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2203,35 +2198,35 @@ function FamilyListClient({ initialFamily, initialUser, familyId }) {
                                         children: "Close"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                        lineNumber: 685,
+                                        lineNumber: 699,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                                lineNumber: 678,
+                                lineNumber: 692,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                        lineNumber: 674,
+                        lineNumber: 688,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-                    lineNumber: 673,
+                    lineNumber: 687,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-            lineNumber: 368,
+            lineNumber: 381,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/list/[familyId]/FamilyListClient.tsx",
-        lineNumber: 367,
+        lineNumber: 380,
         columnNumber: 5
     }, this);
 }

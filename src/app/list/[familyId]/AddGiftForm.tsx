@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from 'react'
 import { createClient } from '@/lib/supabase'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation' // No longer needed
 
 interface Member {
   id: string;
@@ -14,6 +14,7 @@ interface AddGiftFormProps {
   currentUserId: string;
   members: Member[];
   onClose: () => void; // Add onClose prop
+  onGiftAdded: () => Promise<void>; // New prop to refresh family list
 }
 
 // Debounce function defined outside the component to be stable
@@ -29,7 +30,7 @@ const debounce = <Args extends unknown[]>(func: (...args: Args) => unknown, dela
   }
 }
 
-export default function AddGiftForm({ familyId, currentUserId, members, onClose }: AddGiftFormProps) {
+export default function AddGiftForm({ familyId, currentUserId, members, onClose, onGiftAdded }: AddGiftFormProps) {
   const [newGiftDescription, setNewGiftDescription] = useState('')
   const [newGiftNotes, setNewGiftNotes] = useState('')
   const [newGiftPrice, setNewGiftPrice] = useState<string>('')
@@ -41,7 +42,7 @@ export default function AddGiftForm({ familyId, currentUserId, members, onClose 
   const [selectedRecipientId, setSelectedRecipientId] = useState(currentUserId) // Default to current user
   const [message, setMessage] = useState('')
   const supabase = createClient()
-  const router = useRouter()
+  // const router = useRouter() // No longer needed
 
   const fetchMetadata = useCallback(async (url: string) => {
     if (!url || !url.startsWith('http')) {
@@ -141,7 +142,7 @@ export default function AddGiftForm({ familyId, currentUserId, members, onClose 
       setFetchedProductTitle('')
       setFetchedProductImageUrl('')
       setFetchedProductPrice('')
-      router.refresh() // Refresh the current page to show the new gift
+      await onGiftAdded() // Refresh the current page to show the new gift
       onClose() // Close the modal after adding gift
     }
   }

@@ -1,20 +1,21 @@
 import { createClient } from '@/lib/supabase'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation' // No longer needed
 
 interface AddMemberFormProps {
   familyId: string;
   currentUserId: string;
   members: { id: string; name: string }[];
   onClose: () => void; // Add onClose prop
+  onMemberAdded: () => Promise<void>; // New prop to refresh family list
 }
 
-export default function AddMemberForm({ familyId, currentUserId, members, onClose }: AddMemberFormProps) {
+export default function AddMemberForm({ familyId, currentUserId, members, onClose, onMemberAdded }: AddMemberFormProps) {
   const [newMemberName, setNewMemberName] = useState('')
   const [newMemberEmail, setNewMemberEmail] = useState('') // Assuming email for finding user ID
   const [message, setMessage] = useState('')
   const supabase = createClient()
-  const router = useRouter()
+  // const router = useRouter() // No longer needed
 
   const handleAddMember = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -49,7 +50,7 @@ export default function AddMemberForm({ familyId, currentUserId, members, onClos
         setMessage(data.message);
         setNewMemberName('');
         setNewMemberEmail('');
-        router.refresh(); // Refresh the page to show the new member in the dropdowns
+        await onMemberAdded(); // Refresh the current page to show the new member in the dropdowns
         onClose(); // Close the modal after adding member
       } else {
         setMessage(`Failed to add member: ${data.error}`);

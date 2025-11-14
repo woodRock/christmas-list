@@ -16,7 +16,7 @@ interface Gift {
 interface EditGiftFormProps {
   gift: Gift;
   onClose: () => void;
-  onSave: () => void;
+  onSave: () => Promise<void>; // Changed to Promise<void>
 }
 
 export default function EditGiftForm({ gift, onClose, onSave }: EditGiftFormProps) {
@@ -115,7 +115,7 @@ const debounce = <Args extends unknown[]>(func: (...args: Args) => unknown, dela
 
     if (res.ok) {
       setMessage('Gift updated successfully!')
-      onSave()
+      await onSave() // Call onSave after successful update
     } else {
       const errorText = await res.text()
       setMessage(`Failed to update gift: ${errorText}`)
