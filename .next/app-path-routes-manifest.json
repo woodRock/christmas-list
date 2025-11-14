@@ -21,6 +21,7 @@
   "/favicon.ico/route": "/favicon.ico",
   "/invite/page": "/invite",
   "/list/[familyId]/page": "/list/[familyId]",
+  "/list/[familyId]/settings/page": "/list/[familyId]/settings",
   "/login/page": "/login",
   "/onboarding/page": "/onboarding",
   "/page": "/"

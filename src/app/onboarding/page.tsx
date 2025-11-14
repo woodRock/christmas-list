@@ -16,13 +16,13 @@ export default function OnboardingPage() {
               <strong>Add Items:</strong> Click the <Image src="/gift.svg" alt="Add Gift" width={16} height={16} className="inline-block" /> &quot;Add Gift&quot; button to add a new item to your list. You can include details like description, price, and a product link.
             </li>
             <li>
-              <strong>Edit Items:</strong> Double-click on any gift item to open the edit form. You can update its details, notes, or product information.
+              <strong>Edit Items:</strong> Double-click on any gift item on *your own list* to open the edit form. You can update its details, notes, or product information.
             </li>
             <li>
-              <strong>Delete Items:</strong> In list view, drag an item to the trash bin that appears at the bottom of the screen. In grid view, you can also drag items to the trash bin.
+              <strong>Delete Items:</strong> On *your own list*, drag an item to the trash bin that appears at the bottom of the screen.
             </li>
             <li>
-              <strong>Claim/Unclaim Items:</strong> If you&apos;re a member of a list, you can claim an item by clicking the <Image src="/cart.svg" alt="Claim Gift" width={16} height={16} className="inline-block" /> cart icon. Click it again to unclaim.
+              <strong>Claim/Unclaim Items:</strong> If you&apos;re viewing someone else&apos;s list, you can claim an item by clicking the <Image src="/cart.svg" alt="Claim Gift" width={16} height={16} className="inline-block" /> cart icon. Click it again to unclaim. This helps others know what&apos;s already covered!
             </li>
             <li>
               <strong>View Product Link:</strong> Click the <Image src="/link.svg" alt="Open Link" width={16} height={16} className="inline-block" /> link icon to open the product link in a new tab.
@@ -31,16 +31,10 @@ export default function OnboardingPage() {
         </section>
 
         <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-2">Managing Members &amp; Invites</h2>
+          <h2 className="text-2xl font-semibold mb-2">Joining Lists</h2>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              <strong>Add Members:</strong> If you own the list, click the <Image src="/add-user.svg" alt="Add Member" width={16} height={16} className="inline-block" /> &quot;Add Member&quot; button to add existing users to your list.
-            </li>
-            <li>
-              <strong>Invite Members:</strong> Click the <Image src="/qr_code.svg" alt="Invite" width={16} height={16} className="inline-block" /> &quot;Invite&quot; button to generate a QR code or copy an invite link. Share this with others to let them join your list.
-            </li>
-            <li>
-              <strong>Remove Members:</strong> As the list owner, you can remove members from their list by clicking the &quot;Remove&quot; button next to their name.
+              <strong>Join via Invite:</strong> If someone shares an invite link or QR code with you, use it to join their list and start contributing!
             </li>
           </ul>
         </section>

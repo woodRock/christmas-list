@@ -64,8 +64,8 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
   const [sortKey, setSortKey] = useState<keyof Gift | 'order_index'>('order_index'); // Default sort by order_index
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc'); // Default sort order ascending
   const [showQrModal, setShowQrModal] = useState(false)
-  const [showAddGiftModal, setShowAddGiftModal] = useState(false) // New state for AddGiftForm modal
-  const [showAddMemberModal, setShowAddMemberModal] = useState(false) // New state for AddMemberForm modal
+  const [listName, setListName] = useState(initialFamily.name)
+  const [showAddGiftModal, setShowAddGiftModal] = useState(false)
   const [inviteToken, setInviteToken] = useState<string | null>(null)
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('list') // New state for view mode
   const [isDragging, setIsDragging] = useState(false); // New state to track dragging
@@ -302,27 +302,6 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     }
   };
 
-  const handleRemoveMember = async (memberId: string) => {
-    if (!confirm('Are you sure you want to remove this member? This will delete all of their gifts from the list.')) return
-
-    console.log(`Removing member ${memberId} from family ${family.id}`)
-
-    const res = await fetch(`/api/lists/${family.id}/members/${memberId}`, {
-      method: 'DELETE',
-    })
-
-    if (res.ok) {
-      // Update local state to remove the member and their gifts
-      const newFamily = { ...family };
-      newFamily.members = newFamily.members.filter(member => member.id !== memberId);
-      setFamily(newFamily);
-      refreshFamily(); // Refresh data after successful member removal
-    } else {
-      const errorText = await res.text()
-      alert(`Failed to remove member: ${errorText}`)
-    }
-  }
-
   const generateInvite = async () => {
     const res = await fetch(`/api/lists/${familyId}/invites`, {
       method: 'POST',
@@ -394,14 +373,15 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
               <span className="text-xs mt-1 dark:hover:text-black">Add Gift</span>
             </button>
           )}
-          {user && user.id === family.owner_id && (
+          {user && user.id === family.owner_id && ( // Only list owner can trigger this
             <button
-              onClick={() => setShowAddMemberModal(true)}
+              onClick={handleFindMissingImages}
               className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
-              aria-label="Add Member"
+              aria-label="Find Missing Images"
+              disabled={isFindingImages}
             >
-              <Image src="/add-user.svg" alt="Add Member" width={24} height={24} />
-              <span className="text-xs mt-1 dark:hover:text-black">Add Member</span>
+              <Image src="/image.svg" alt="Find Missing Images" width={24} height={24} /> {/* Using file.svg as a placeholder */}
+              <span className="text-xs mt-1 dark:hover:text-black">{isFindingImages ? 'Finding...' : 'Find Images'}</span>
             </button>
           )}
           <button
@@ -412,16 +392,15 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             <Image src="/qr_code.svg" alt="QR Code" width={24} height={24} />
             <span className="text-xs mt-1 dark:hover:text-black">Invite</span>
           </button>
-          {user && user.id === family.owner_id && ( // Only list owner can trigger this
-            <button
-              onClick={handleFindMissingImages}
+          {user && user.id === family.owner_id && (
+            <Link
+              href={`/list/${family.id}/settings`}
               className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
-              aria-label="Find Missing Images"
-              disabled={isFindingImages}
+              aria-label="List Settings"
             >
-              <Image src="/file.svg" alt="Find Missing Images" width={24} height={24} /> {/* Using file.svg as a placeholder */}
-              <span className="text-xs mt-1 dark:hover:text-black">{isFindingImages ? 'Finding...' : 'Find Images'}</span>
-            </button>
+              <Image src="/settings.svg" alt="Settings" width={24} height={24} /> {/* Using file.svg as a placeholder for settings */}
+              <span className="text-xs mt-1 dark:hover:text-black">Settings</span>
+            </Link>
           )}
           <Link href="/onboarding"
             className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
@@ -480,14 +459,6 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             <div key={member.id} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-8">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-semibold mb-4">{member.name}&#39;s List</h2>
-                {user && user.id === family.owner_id && user.id !== member.id && (
-                  <button
-                    onClick={() => handleRemoveMember(member.id)}
-                    className="px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 text-xs"
-                  >
-                    Remove
-                  </button>
-                )}
               </div>
               {member.gifts.length === 0 ? (
                 <p>No gifts on {member.name}&#39;s list yet.</p>
@@ -511,51 +482,53 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                   setEditingGift(gift);
                                 }
                               }}
-                              className={`bg-gray-50 dark:bg-gray-700 rounded-md shadow-sm ${viewMode === 'grid' ? 'relative aspect-square overflow-hidden flex flex-col justify-between' : 'flex flex-col items-center sm:flex-row sm:items-center sm:justify-between p-2'}`}
+                              className={`bg-gray-50 dark:bg-gray-700 rounded-md shadow-sm ${viewMode === 'grid' ? 'relative aspect-square flex flex-col justify-between' : 'flex flex-col items-center sm:flex-row sm:items-center sm:justify-between p-2'}`}
                             >
                               {viewMode === 'grid' ? (
                                 <>
                                   {gift.product_image_url && (
                                     // eslint-disable-next-line @next/next/no-img-element
-                                    <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-full h-2/3 object-cover" />
+                                    <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-full h-1/2 object-cover flex-shrink-0 min-h-0" />
                                   )}
-                                  <div className="p-2 flex-grow flex flex-col justify-between">
-                                    <div className="flex items-baseline"> {/* Use flex to put description and claimed by on same line */}
-                                      <span className="text-sm font-semibold break-words">
+                                  <div className="p-2 flex flex-col flex-grow justify-between">
+                                    <div> {/* Container for description and claimed by */}
+                                      <span className="text-sm font-semibold break-words line-clamp-2"> {/* Added line-clamp-2 for truncation */}
                                         {gift.description}
                                       </span>
                                       {gift.is_purchased && user?.id !== gift.user_id && (
-                                        <span className="ml-2 text-xs text-green-600 flex-shrink-0"> {/* Add ml-2 for spacing and flex-shrink-0 to prevent wrapping too early */}
+                                        <span className="ml-2 text-xs text-green-600 flex-shrink-0">
                                           (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
                                         </span>
                                       )}
                                     </div>
-                                  </div>
-                                  {gift.price !== undefined && gift.price !== null && (
-                                    <div className="absolute bottom-2 left-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
-                                      ${gift.price.toFixed(2)}
+                                    <div className="flex justify-between items-end mt-2"> {/* Container for price and buttons */}
+                                      {gift.price !== undefined && gift.price !== null && (
+                                        <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                                          ${gift.price.toFixed(2)}
+                                        </span>
+                                      )}
+                                      <div className="flex flex-row space-x-1"> {/* Buttons */}
+                                        {gift.product_url && (
+                                          <a
+                                            href={gift.product_url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-1 text-blue-500 rounded-full hover:bg-blue-100 transition-colors flex items-center justify-center"
+                                            onClick={(e) => e.stopPropagation()}
+                                            aria-label="Open Link"
+                                          >
+                                            <Image src="/link.svg" alt="Open Link" width={16} height={16} />
+                                          </a>
+                                        )}
+                                        {user && user.id !== gift.user_id && (
+                                          <ClaimUnclaimButtons
+                                            gift={gift}
+                                            userId={user.id}
+                                            refreshFamily={refreshFamily}
+                                          />
+                                        )}
+                                      </div>
                                     </div>
-                                  )}
-                                  <div className="absolute bottom-2 right-2 flex flex-col sm:flex-row sm:space-x-1 space-y-1">
-                                    {gift.product_url && (
-                                      <a
-                                        href={gift.product_url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-2 text-blue-500 rounded-full hover:bg-blue-100 transition-colors flex items-center justify-center"
-                                        onClick={(e) => e.stopPropagation()}
-                                        aria-label="Open Link"
-                                      >
-                                        <Image src="/link.svg" alt="Open Link" width={20} height={20} />
-                                      </a>
-                                    )}
-                                    {user && user.id !== gift.user_id && (
-                                      <ClaimUnclaimButtons
-                                        gift={gift}
-                                        userId={user.id}
-                                        refreshFamily={refreshFamily}
-                                      />
-                                    )}
                                   </div>
                                 </>
                               ) : (
@@ -648,16 +621,6 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
             members={family.members}
             onClose={() => setShowAddGiftModal(false)} // Pass onClose prop
             onGiftAdded={refreshFamily} // Pass refreshFamily to AddGiftForm
-          />
-        )}
-
-        {showAddMemberModal && user && user.id === family.owner_id && (
-          <AddMemberForm
-            familyId={family.id}
-            currentUserId={user.id}
-            members={family.members}
-            onClose={() => setShowAddMemberModal(false)} // Pass onClose prop
-            onMemberAdded={refreshFamily} // Pass refreshFamily to AddMemberForm
           />
         )}
 

@@ -61,19 +61,19 @@ export default function ClaimUnclaimButtons({ gift, userId, refreshFamily }: Cla
       {!gift.is_purchased && (
         <button
           onClick={handleClaimGift}
-          className="p-2 text-purple-600 rounded-full hover:bg-purple-100 transition-colors flex items-center justify-center"
+          className="p-1 text-purple-600 rounded-full hover:bg-purple-100 transition-colors flex items-center justify-center"
           aria-label="Claim Gift"
         >
-          <Image src="/cart.svg" alt="Claim Gift" width={24} height={24} />
+          <Image src="/cart.svg" alt="Claim Gift" width={16} height={16} />
         </button>
       )}
       {gift.is_purchased && gift.purchased_by === userId && (
         <button
           onClick={handleUnclaimGift}
-          className="p-2 text-yellow-600 rounded-full hover:bg-yellow-100 transition-colors flex items-center justify-center"
+          className="p-1 text-yellow-600 rounded-full hover:bg-yellow-100 transition-colors flex items-center justify-center"
           aria-label="Unclaim Gift"
         >
-          <Image src="/cart.svg" alt="Unclaim Gift" width={24} height={24} />
+          <Image src="/cart.svg" alt="Unclaim Gift" width={16} height={16} />
         </button>
       )}
     </div>

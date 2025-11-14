@@ -112,3 +112,194 @@
 [00:21:34.170] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
 [00:21:34.171] Server  LOG     Fetched families for user: [{...},{...}]
 [00:21:34.171] Server  LOG     Fetch error (if any): null
+[00:34:18.720] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:34:18.919] Server  LOG     Fetched families for user: [{...},{...}]
+[00:34:18.919] Server  LOG     Fetch error (if any): null
+[00:34:19.029] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:21.865] Server  LOG     listData: {}
+[00:34:22.058] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:34:22.259] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:34:22.259] Server  LOG     membersMap after populating: {}
+[00:34:22.260] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:34:22.260] Server  LOG     Family Members: [{...},{...}]
+[00:34:22.486] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:34:59.459] Server  LOG     listData: {}
+[00:34:59.641] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:34:59.848] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:34:59.848] Server  LOG     membersMap after populating: {}
+[00:34:59.848] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:34:59.849] Server  LOG     Family Members: [{...},{...}]
+[00:35:01.677] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:35:01.888] Server  LOG     Fetched families for user: [{...},{...}]
+[00:35:01.888] Server  LOG     Fetch error (if any): null
+[00:35:09.824] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:35:10.025] Server  LOG     Fetched families for user: [{...},{...},{...}]
+[00:35:10.025] Server  LOG     Fetch error (if any): null
+[00:35:12.318] Server  LOG     listData: {}
+[00:35:12.501] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:35:12.728] Server  LOG     profilesData after fetching: [{...}]
+[00:35:12.728] Server  LOG     membersMap after populating: {}
+[00:35:12.728] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:35:12.728] Server  LOG     Family Members: [{...}]
+[00:35:39.308] Server  WARN    Error: Route "/api/lists/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:35:50.054] Server  WARN    Error: Route "/api/lists/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:35:54.389] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:55.651] Server  LOG     listData: {}
+[00:35:55.851] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:35:56.075] Server  LOG     profilesData after fetching: [{...}]
+[00:35:56.076] Server  LOG     membersMap after populating: {}
+[00:35:56.076] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:35:56.076] Server  LOG     Family Members: [{...}]
+[00:35:58.698] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:35:58.898] Server  LOG     Fetched families for user: [{...},{...},{...}]
+[00:35:58.898] Server  LOG     Fetch error (if any): null
+[00:36:01.604] Server  LOG     listData: {}
+[00:36:01.792] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:36:02.015] Server  LOG     profilesData after fetching: [{...}]
+[00:36:02.015] Server  LOG     membersMap after populating: {}
+[00:36:02.015] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:36:02.015] Server  LOG     Family Members: [{...}]
+[00:36:19.193] Server  WARN    Error: Route "/api/lists/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:36:53.497] Server  WARN    Error: Route "/api/lists/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:36:56.006] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:01.377] Server  WARN    Error: Route "/api/lists/[familyId]" used `params.familyId`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:37:38.912] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:37:39.104] Server  LOG     Fetched families for user: [{...},{...}]
+[00:37:39.104] Server  LOG     Fetch error (if any): null
+[00:38:08.623] Server  LOG     listData: {}
+[00:38:08.816] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[00:38:08.996] Server  LOG     profilesData after fetching: [{...},{...}]
+[00:38:08.997] Server  LOG     membersMap after populating: {}
+[00:38:08.997] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[00:38:08.998] Server  LOG     Family Members: [{...},{...}]
+[01:07:52.028] Server  LOG     listData: {}
+[01:07:52.320] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:07:52.515] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:07:52.515] Server  LOG     membersMap after populating: {}
+[01:07:52.515] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:07:52.515] Server  LOG     Family Members: [{...},{...}]
+[01:09:55.211] Server  LOG      ✓ Compiled in 23ms
+[01:10:08.249] Server  LOG     listData: {}
+[01:10:08.439] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:10:08.618] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:10:08.619] Server  LOG     membersMap after populating: {}
+[01:10:08.619] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:10:08.619] Server  LOG     Family Members: [{...},{...}]
+[01:10:08.770] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:11:29.169] Server  LOG      ✓ Compiled in 17ms
+[01:13:05.824] Server  LOG      ✓ Compiled in 16ms
+[01:13:25.940] Server  LOG      ✓ Compiled in 17ms
+[01:13:33.402] Server  LOG      ✓ Compiled in 15ms
+[01:13:38.516] Server  LOG     listData: {}
+[01:13:38.711] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:13:38.900] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:13:38.901] Server  LOG     membersMap after populating: {}
+[01:13:38.901] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:13:38.902] Server  LOG     Family Members: [{...},{...}]
+[01:13:39.058] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:14:16.039] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:14:20.231] Browser LOG     handleDragEnd result: {"combine":null,"destination":{"droppableId":"bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450","index":11},"draggableId":"0c6ba2f7-abb5-439a-93d5-c46d1cf9c4d5","mode":"FLUID","reason":"DROP","source":{"droppableId":"bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450","index":11},"type":"DEFAULT"}
+[01:14:20.231] Browser LOG     Dropped into a valid droppable (not trash bin): bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450
+[01:14:36.443] Server  LOG     Scraping PriceSpy for query: Nintendo Switch 2
+[01:14:36.443] Server  LOG     Nintendo+Switch+2
+[01:14:59.347] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[01:14:59.522] Server  LOG     Request body (description, notes, price for edit): {}
+[01:14:59.710] Server  LOG     Supabase update error: null
+[01:15:13.419] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[01:15:13.591] Server  LOG     Request body (description, notes, price for edit): {}
+[01:15:13.769] Server  LOG     Supabase update error: null
+[01:15:22.746] Server  LOG     PATCH /api/gifts/[giftId] reached!
+[01:15:22.919] Server  LOG     Request body (description, notes, price for edit): {}
+[01:15:23.078] Server  LOG     Supabase update error: null
+[01:17:13.986] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:17:14.190] Server  LOG     Fetched families for user: [{...},{...}]
+[01:17:14.190] Server  LOG     Fetch error (if any): null
+[01:17:17.887] Server  LOG      ✓ Compiled in 41ms
+[01:17:21.643] Server  LOG     listData: {}
+[01:17:21.853] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:17:22.034] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:17:22.034] Server  LOG     membersMap after populating: {}
+[01:17:22.035] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:17:22.035] Server  LOG     Family Members: [{...},{...}]
+[01:17:26.210] Server  LOG     listData: {}
+[01:17:26.384] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:17:26.548] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[01:17:26.548] Server  LOG     membersMap after populating: {}
+[01:17:26.548] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:17:26.548] Server  LOG     Family Members: [{...},{...},{...}]
+[01:17:51.222] Server  LOG     listData: {}
+[01:17:51.410] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:17:51.624] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[01:17:51.624] Server  LOG     membersMap after populating: {}
+[01:17:51.624] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:17:51.625] Server  LOG     Family Members: [{...},{...},{...}]
+[01:19:03.113] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:19:03.308] Server  LOG     Fetched families for user: [{...},{...}]
+[01:19:03.308] Server  LOG     Fetch error (if any): null
+[01:19:05.725] Server  LOG      ✓ Compiled in 19ms
+[01:19:05.936] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:19:05.939] Server  LOG     Fetched families for user: [{...},{...}]
+[01:19:05.939] Server  LOG     Fetch error (if any): null
+[01:20:43.046] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:20:43.250] Server  LOG     Fetched families for user: [{...},{...}]
+[01:20:43.251] Server  LOG     Fetch error (if any): null
+[01:20:43.376] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:20:45.101] Server  LOG     listData: {}
+[01:20:45.342] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:20:45.916] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:20:45.917] Server  LOG     membersMap after populating: {}
+[01:20:45.917] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:20:45.917] Server  LOG     Family Members: [{...},{...}]
+[01:20:47.817] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:21:08.350] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:21:08.554] Server  LOG     Fetched families for user: [{...},{...}]
+[01:21:08.554] Server  LOG     Fetch error (if any): null
+[01:21:10.826] Server  LOG     listData: {}
+[01:21:11.012] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:21:11.192] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:21:11.193] Server  LOG     membersMap after populating: {}
+[01:21:11.193] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:21:11.193] Server  LOG     Family Members: [{...},{...}]
+[01:21:27.457] Server  LOG     listData: {}
+[01:21:27.635] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:21:27.816] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:21:27.816] Server  LOG     membersMap after populating: {}
+[01:21:27.817] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:21:27.817] Server  LOG     Family Members: [{...},{...}]
+[01:22:32.332] Server  LOG      ✓ Compiled in 25ms
+[01:22:38.789] Server  LOG      ✓ Compiled in 28ms
+[01:22:53.561] Server  LOG      ✓ Compiled in 15ms
+[01:23:00.906] Server  LOG     listData: {}
+[01:23:01.090] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:23:01.264] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:23:01.264] Server  LOG     membersMap after populating: {}
+[01:23:01.264] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:23:01.264] Server  LOG     Family Members: [{...},{...}]
+[01:23:01.444] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:23:01.575] Browser WARN    Image with src "http://localhost:3000/cart.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:23:38.166] Server  LOG     listData: {}
+[01:23:38.466] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:23:38.656] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:23:38.657] Server  LOG     membersMap after populating: {}
+[01:23:38.657] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:23:38.658] Server  LOG     Family Members: [{...},{...}]
+[01:23:56.736] Server  LOG     User id:  "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:23:56.931] Server  LOG     Fetched families for user: [{...},{...}]
+[01:23:56.932] Server  LOG     Fetch error (if any): null
+[01:23:59.871] Server  LOG     listData: {}
+[01:24:00.076] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:24:00.270] Server  LOG     profilesData after fetching: [{...},{...},{...}]
+[01:24:00.271] Server  LOG     membersMap after populating: {}
+[01:24:00.271] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:24:00.271] Server  LOG     Family Members: [{...},{...},{...}]
+[01:36:19.349] Server  LOG     context: {}
+[01:36:19.546] Server  WARN    Error: Route "/api/lists/[familyId]/members/[memberId]" used `...params` or similar expression. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[01:36:19.546] Server  LOG     context.params: {}
+[01:36:19.717] Server  LOG     familyId: "7bb2821a-a2bc-4248-be1e-ebcf05253edc"
+[01:36:19.719] Server  LOG     memberId: "04c35f89-d9b9-473d-82b2-ef95f426a001"
+[01:36:24.842] Server  LOG     listData: {}
+[01:36:25.028] Server  LOG     profileIds after collecting from items, owner, and list_members: {}
+[01:36:25.210] Server  LOG     profilesData after fetching: [{...},{...}]
+[01:36:25.210] Server  LOG     membersMap after populating: {}
+[01:36:25.210] Server  LOG     Current User ID: "bb737b6e-dfd5-46e5-bc6f-b8acbb7e5450"
+[01:36:25.210] Server  LOG     Family Members: [{...},{...}]

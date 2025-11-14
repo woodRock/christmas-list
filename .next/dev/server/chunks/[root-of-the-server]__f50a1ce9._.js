@@ -102,6 +102,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$serv
 ;
 ;
 async function DELETE(request, context) {
+    console.log('context:', context);
+    console.log('context.params:', context.params);
     const supabase = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$supabase$2d$server$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["createClient"])();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
@@ -112,6 +114,8 @@ async function DELETE(request, context) {
         });
     }
     const { familyId, memberId } = await context.params;
+    console.log('familyId:', familyId);
+    console.log('memberId:', memberId);
     // Verify that the current user is the owner of the list
     const { data: list, error: listError } = await supabase.from('lists').select('user_id').eq('id', familyId).single();
     if (listError || !list) {
