@@ -1,7 +1,5 @@
 {
-  "/api/lists/[familyId]/details/route": "app/api/lists/[familyId]/details/route.js",
-  "/api/lists/[familyId]/route": "app/api/lists/[familyId]/route.js",
   "/list/[familyId]/page": "app/list/[familyId]/page.js",
-  "/list/[familyId]/settings/page": "app/list/[familyId]/settings/page.js",
+  "/login/page": "app/login/page.js",
   "/page": "app/page.js"
 }

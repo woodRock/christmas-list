@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd'
 import Link from 'next/link'
-import Image from 'next/image' // Import Image component
+import Image from 'next/image'
 import AddGiftForm from './AddGiftForm'
 import ClaimUnclaimButtons from './ClaimUnclaimButtons'
 import AddMemberForm from './AddMemberForm'
@@ -12,6 +12,7 @@ import EditGiftForm from './EditGiftForm' // New component for editing gifts
 import QRCode from 'react-qr-code'
 import { User } from '@supabase/supabase-js'
 import ReactDOM from 'react-dom' // Import ReactDOM
+import IconButton from '@/components/IconButton'
 
 interface Gift {
   id: string;
@@ -475,7 +476,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                   setEditingGift(gift);
                                 }
                               }}
-                              className={`bg-gray-50 dark:bg-gray-700 rounded-md shadow-sm ${viewMode === 'grid' ? 'relative aspect-square flex flex-col justify-between' : 'flex flex-col items-center sm:flex-row sm:items-center sm:justify-between p-2'}`}
+                              className={`bg-gray-50 dark:bg-gray-700 rounded-md shadow-sm ${viewMode === 'grid' ? 'relative aspect-square flex flex-col justify-between' : 'flex items-center p-2'}`}
                             >
                               {viewMode === 'grid' ? (
                                 <>
@@ -502,16 +503,13 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                       )}
                                       <div className="flex flex-row space-x-1"> {/* Buttons */}
                                         {gift.product_url && (
-                                          <a
+                                          <IconButton
                                             href={gift.product_url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="p-1 text-blue-500 rounded-full hover:bg-blue-100 transition-colors flex items-center justify-center"
-                                            onClick={(e) => e.stopPropagation()}
-                                            aria-label="Open Link"
-                                          >
-                                            <Image src="/link.svg" alt="Open Link" width={16} height={16} />
-                                          </a>
+                                            src="/link.svg"
+                                            alt="Open Link"
+                                            ariaLabel="Open Link"
+                                            className="text-blue-500 hover:bg-blue-100"
+                                          />
                                         )}
                                         {user && user.id !== gift.user_id && (
                                           <ClaimUnclaimButtons
@@ -526,24 +524,22 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                 </>
                               ) : (
                                 <>
-                                  <div className="flex w-full p-2"> {/* Main container for image + text/price + buttons */}
+                                  <div className="flex items-center w-full p-2"> {/* Main container */}
                                     {gift.product_image_url && (
                                       // Image on the left
                                       // eslint-disable-next-line @next/next/no-img-element
-                                      <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-24 h-24 object-cover rounded-md mr-3 flex-shrink-0" />
+                                      <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-md mr-3 flex-shrink-0" />
                                     )}
 
-                                    <div className="flex-grow flex flex-col justify-between"> {/* Container for description, claimed by, and price */}
-                                      <div> {/* Description and claimed by */}
-                                        <span className="font-semibold break-words">
-                                          {gift.description}
+                                    <div className="flex-grow flex flex-col justify-center"> {/* Text container */}
+                                      <span className="font-semibold break-words">
+                                        {gift.description}
+                                      </span>
+                                      {gift.is_purchased && user?.id !== gift.user_id && (
+                                        <span className="text-sm text-green-600">
+                                          (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
                                         </span>
-                                        {gift.is_purchased && user?.id !== gift.user_id && (
-                                          <span className="ml-2 text-sm text-green-600">
-                                            (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
-                                          </span>
-                                        )}
-                                      </div>
+                                      )}
                                       {gift.price !== undefined && gift.price !== null && (
                                         <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 mt-1">
                                           ${gift.price.toFixed(2)}
@@ -551,25 +547,22 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                                       )}
                                     </div>
 
-                                    <div className="flex-shrink-0 flex flex-col justify-end items-end ml-auto"> {/* Buttons container */}
+                                    <div className="flex flex-col sm:flex-row items-center ml-auto space-x-2 flex-shrink-0"> {/* Buttons container */}
                                       {gift.product_url && (
-                                        <a
+                                        <IconButton
                                           href={gift.product_url}
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                          className="p-2 text-blue-500 rounded-full hover:bg-blue-100 transition-colors flex items-center justify-center"
-                                          onClick={(e) => e.stopPropagation()}
-                                          aria-label="Open Link"
-                                        >
-                                          <Image src="/link.svg" alt="Open Link" width={24} height={24} />
-                                        </a>
+                                          src="/link.svg"
+                                          alt="Open Link"
+                                          ariaLabel="Open Link"
+                                          className="text-blue-500 hover:bg-blue-100"
+                                        />
                                       )}
                                       {user && user.id !== gift.user_id && (
                                         <ClaimUnclaimButtons
-                                        gift={gift}
-                                        userId={user.id}
-                                        refreshFamily={refreshFamily}
-                                      />
+                                          gift={gift}
+                                          userId={user.id}
+                                          refreshFamily={refreshFamily}
+                                        />
                                       )}
                                     </div>
                                   </div>

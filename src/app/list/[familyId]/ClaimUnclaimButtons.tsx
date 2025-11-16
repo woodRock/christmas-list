@@ -1,8 +1,7 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import Image from 'next/image'
+import IconButton from '@/components/IconButton'
 
 interface Gift {
   id: string;
@@ -20,7 +19,6 @@ interface ClaimUnclaimButtonsProps {
 
 export default function ClaimUnclaimButtons({ gift, userId, refreshFamily }: ClaimUnclaimButtonsProps) {
   const [message, setMessage] = useState('')
-  // const router = useRouter() // No longer needed
 
   const handleClaimGift = async () => {
     setMessage('')
@@ -32,7 +30,7 @@ export default function ClaimUnclaimButtons({ gift, userId, refreshFamily }: Cla
 
     if (res.ok) {
       setMessage('Gift claimed successfully!')
-      refreshFamily() // Use refreshFamily instead of router.refresh()
+      refreshFamily()
     } else {
       const errorText = await res.text()
       setMessage(`Failed to claim gift: ${errorText}`)
@@ -42,13 +40,13 @@ export default function ClaimUnclaimButtons({ gift, userId, refreshFamily }: Cla
   const handleUnclaimGift = async () => {
     setMessage('')
     const res = await fetch(`/api/gifts/${gift.id}/unclaim`, {
-      method: 'PATCH', // Changed to PATCH as per API route
+      method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
     })
 
     if (res.ok) {
       setMessage('Gift unclaimed successfully!')
-      refreshFamily() // Use refreshFamily instead of router.refresh()
+      refreshFamily()
     } else {
       const errorText = await res.text()
       setMessage(`Failed to unclaim gift: ${errorText}`)
@@ -56,26 +54,26 @@ export default function ClaimUnclaimButtons({ gift, userId, refreshFamily }: Cla
   }
 
   return (
-    <div>
+    <>
       {message && <p className="text-red-500 text-sm mb-2">{message}</p>}
       {!gift.is_purchased && (
-        <button
+        <IconButton
           onClick={handleClaimGift}
-          className="p-1 text-purple-600 rounded-full hover:bg-purple-100 transition-colors flex items-center justify-center"
-          aria-label="Claim Gift"
-        >
-          <Image src="/cart.svg" alt="Claim Gift" width={16} height={16} />
-        </button>
+          src="/cart.svg"
+          alt="Claim Gift"
+          ariaLabel="Claim Gift"
+          className="text-purple-600 hover:bg-purple-100"
+        />
       )}
       {gift.is_purchased && gift.purchased_by === userId && (
-        <button
+        <IconButton
           onClick={handleUnclaimGift}
-          className="p-1 text-yellow-600 rounded-full hover:bg-yellow-100 transition-colors flex items-center justify-center"
-          aria-label="Unclaim Gift"
-        >
-          <Image src="/cart.svg" alt="Unclaim Gift" width={16} height={16} />
-        </button>
+          src="/cart.svg"
+          alt="Unclaim Gift"
+          ariaLabel="Unclaim Gift"
+          className="text-yellow-600 hover:bg-yellow-100"
+        />
       )}
-    </div>
+    </>
   )
 }
