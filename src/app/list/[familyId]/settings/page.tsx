@@ -21,6 +21,7 @@ interface Family {
   id: string;
   name: string;
   owner_id: string;
+  season_name?: string;
   members: Member[];
 }
 
@@ -35,7 +36,7 @@ export default async function ListSettingsPage({ params }: { params: { familyId:
 
   const { data: listData, error: listError } = await supabase
     .from('lists')
-    .select('id, name, user_id, list_members(profile_id, profiles(full_name))')
+    .select('id, name, user_id, season_name, list_members(profile_id, profiles(full_name))')
     .eq('id', resolvedParams.familyId)
     .single()
 
@@ -70,14 +71,24 @@ export default async function ListSettingsPage({ params }: { params: { familyId:
     name: profile.full_name,
   }));
 
+  // Counts for the "start a new season" summary.
+  const { data: activeItems } = await supabase
+    .from('items')
+    .select('is_purchased')
+    .eq('list_id', resolvedParams.familyId)
+    .is('archived_at', null)
+  const claimedCount = (activeItems ?? []).filter((i) => i.is_purchased).length
+  const unclaimedCount = (activeItems ?? []).length - claimedCount
+
   const initialFamily: Family = {
     id: listData.id,
     name: listData.name,
     owner_id: listData.user_id,
+    season_name: listData.season_name ?? undefined,
     members: members,
   };
 
   return (
-    <ListSettingsClient initialFamily={initialFamily} currentUserId={user.id} />
+    <ListSettingsClient initialFamily={initialFamily} currentUserId={user.id} claimedCount={claimedCount} unclaimedCount={unclaimedCount} />
   )
 }

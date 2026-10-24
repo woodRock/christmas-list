@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd'
 import { User } from '@supabase/supabase-js'
-import { Gift as GiftIcon, ImageIcon, LayoutGrid, List, LogOut, MoreHorizontal, Plus, Settings, UserPlus } from 'lucide-react'
+import { CalendarPlus, Gift as GiftIcon, History, ImageIcon, LayoutGrid, List, LogOut, MoreHorizontal, Plus, RotateCcw, Settings, TreePine, UserPlus } from 'lucide-react'
 import PageHeader from '@/components/ui/PageHeader'
 import Button from '@/components/ui/Button'
 import Avatar from '@/components/ui/Avatar'
@@ -18,6 +18,8 @@ import { useLocalStorage } from '@/components/ui/useLocalStorage'
 import GiftCard from './GiftCard'
 import GiftFormModal from './GiftFormModal'
 import InviteModal from './InviteModal'
+import StartSeasonDialog from './StartSeasonDialog'
+import { isSeasonOver, suggestedSeasonName } from './season'
 import type { Family, Gift } from './types'
 
 type SortKey = 'order' | 'name' | 'price-asc' | 'price-desc'
@@ -46,6 +48,8 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
   const [giftModal, setGiftModal] = useState<{ open: boolean; gift?: Gift | null; recipientId?: string }>({ open: false })
   const [deletingGift, setDeletingGift] = useState<Gift | null>(null)
   const [confirmLeave, setConfirmLeave] = useState(false)
+  const [showStartSeason, setShowStartSeason] = useState(false)
+  const [confirmClearCarried, setConfirmClearCarried] = useState(false)
   const [inviteToken, setInviteToken] = useState<string | null>(null)
   const [showInvite, setShowInvite] = useState(false)
   const [creatingInvite, setCreatingInvite] = useState(false)
@@ -65,6 +69,9 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
   )
   const nameById = useMemo(() => new Map(family.members.map((m) => [m.id, m.name])), [family.members])
   const totalGifts = family.members.reduce((n, m) => n + m.gifts.length, 0)
+  const claimedTotal = family.members.reduce((n, m) => n + m.gifts.filter((g) => g.is_purchased).length, 0)
+  const myCarriedOver = family.members.find((m) => m.id === user?.id)?.gifts.filter((g) => g.carried_over) ?? []
+  const seasonOver = isSeasonOver(family.season_started_at)
 
   const refreshFamily = async () => {
     const res = await fetch(`/api/lists/${familyId}/details`)
@@ -225,12 +232,34 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     refreshFamily()
   }
 
+  const resolveCarriedOver = async (action: 'keep' | 'clear') => {
+    const res = await fetch(`/api/lists/${family.id}/carried-over`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action }),
+    })
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}))
+      const message = data.error || 'Something went wrong. Please try again.'
+      if (action === 'clear') throw new Error(message)
+      toast(message, { tone: 'error' })
+      return
+    }
+    setConfirmClearCarried(false)
+    toast(action === 'keep' ? 'Kept your wishes from last year' : 'Cleared your wishes from last year')
+    await refreshFamily()
+  }
+
+  const historyItem: MenuItem = { label: 'Previous years', href: `/list/${family.id}/history`, icon: <History className="h-4 w-4" aria-hidden /> }
+
   const menuItems: MenuItem[] = isOwner
     ? [
         { label: 'List settings', href: `/list/${family.id}/settings`, icon: <Settings className="h-4 w-4" aria-hidden /> },
+        { label: 'Start a new season', onSelect: () => setShowStartSeason(true), icon: <CalendarPlus className="h-4 w-4" aria-hidden /> },
+        historyItem,
         { label: 'Find missing images', onSelect: findMissingImages, disabled: Boolean(imageProgress), icon: <ImageIcon className="h-4 w-4" aria-hidden /> },
       ]
-    : [{ label: 'Leave list', onSelect: () => setConfirmLeave(true), destructive: true, icon: <LogOut className="h-4 w-4" aria-hidden /> }]
+    : [historyItem, { label: 'Leave list', onSelect: () => setConfirmLeave(true), destructive: true, icon: <LogOut className="h-4 w-4" aria-hidden /> }]
 
   const canReorder = view === 'list' && sort === 'order'
 
@@ -239,7 +268,11 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
       <PageHeader
         back={{ href: '/', label: 'My lists' }}
         title={family.name}
-        description={`${family.members.length} ${family.members.length === 1 ? 'person' : 'people'} · ${totalGifts} ${totalGifts === 1 ? 'gift' : 'gifts'}`}
+        description={[
+          family.season_name && family.season_name !== family.name ? family.season_name : null,
+          `${family.members.length} ${family.members.length === 1 ? 'person' : 'people'}`,
+          `${totalGifts} ${totalGifts === 1 ? 'gift' : 'gifts'}`,
+        ].filter(Boolean).join(' · ')}
         actions={
           <>
             <Button variant="secondary" onClick={openInvite} loading={creatingInvite}>
@@ -264,6 +297,24 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
           </>
         }
       />
+
+      {isOwner && seasonOver && (
+        <div className="mb-6 flex flex-col gap-4 rounded-2xl border border-primary/25 bg-primary-soft p-4 sm:flex-row sm:items-center sm:p-5">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-on-primary">
+            <TreePine className="h-5 w-5" aria-hidden />
+          </span>
+          <div className="min-w-0 flex-1">
+            <p className="font-display text-lg font-semibold text-ink">Ready for {suggestedSeasonName()}?</p>
+            <p className="text-sm text-muted">
+              Last Christmas has been and gone. Start a new season to tuck away what was given and give everyone a fresh start — same list, same people.
+            </p>
+          </div>
+          <Button onClick={() => setShowStartSeason(true)} className="shrink-0">
+            <CalendarPlus className="h-4 w-4" aria-hidden />
+            Start new season
+          </Button>
+        </div>
+      )}
 
       {imageProgress && (
         <Alert tone="info" className="mb-4">
@@ -369,6 +420,22 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
                 )}
               </div>
 
+              {isMe && myCarriedOver.length > 0 && (
+                <div className="mb-4 flex flex-col gap-3 rounded-2xl border border-gold/30 bg-gold-soft p-4 sm:flex-row sm:items-center">
+                  <RotateCcw className="hidden h-5 w-5 shrink-0 text-gold sm:block" aria-hidden />
+                  <p className="min-w-0 flex-1 text-sm text-ink">
+                    <strong className="font-semibold">
+                      {myCarriedOver.length} {myCarriedOver.length === 1 ? 'wish' : 'wishes'} from last year.
+                    </strong>{' '}
+                    Still want {myCarriedOver.length === 1 ? 'it' : 'them'}? You can also edit or delete each one below.
+                  </p>
+                  <div className="flex shrink-0 gap-2">
+                    <Button variant="secondary" size="sm" onClick={() => setConfirmClearCarried(true)}>Clear them out</Button>
+                    <Button size="sm" onClick={() => resolveCarriedOver('keep')}>Keep all</Button>
+                  </div>
+                </div>
+              )}
+
               {gifts.length === 0 ? (
                 <div className="rounded-2xl border border-dashed border-line-strong px-6 py-8 text-center">
                   <GiftIcon className="mx-auto mb-2 h-6 w-6 text-muted/60" aria-hidden />
@@ -425,6 +492,30 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
           defaultRecipientId={giftModal.recipientId}
         />
       )}
+
+      {isOwner && (
+        <StartSeasonDialog
+          open={showStartSeason}
+          onClose={() => setShowStartSeason(false)}
+          onStarted={async () => {
+            await refreshFamily()
+            router.refresh()
+          }}
+          listId={family.id}
+          listName={family.name}
+          claimedCount={claimedTotal}
+          unclaimedCount={totalGifts - claimedTotal}
+        />
+      )}
+
+      <ConfirmDialog
+        open={confirmClearCarried}
+        onClose={() => setConfirmClearCarried(false)}
+        onConfirm={() => resolveCarriedOver('clear')}
+        title="Clear last year’s wishes?"
+        description={<>This deletes the {myCarriedOver.length} {myCarriedOver.length === 1 ? 'wish' : 'wishes'} marked “From last year” from your wishlist. Nobody had claimed {myCarriedOver.length === 1 ? 'it' : 'them'}.</>}
+        confirmLabel="Clear them out"
+      />
 
       <InviteModal open={showInvite} onClose={() => setShowInvite(false)} token={inviteToken} listName={family.name} />
 

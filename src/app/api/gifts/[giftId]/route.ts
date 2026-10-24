@@ -21,7 +21,8 @@ export async function PATCH(
     return NextResponse.json({ error: 'Description is required' }, { status: 400 })
   }
 
-  const updatePayload: Record<string, string | number | null> = { name: description };
+  // Editing a wish carried over from last season counts as choosing to keep it.
+  const updatePayload: Record<string, string | number | boolean | null> = { name: description, carried_over: false };
   if (notes !== undefined) updatePayload.notes = notes;
   if (price !== undefined) updatePayload.price = price;
   if (product_url !== undefined) updatePayload.product_url = product_url;

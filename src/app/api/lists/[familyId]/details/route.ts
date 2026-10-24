@@ -14,6 +14,7 @@ interface Gift {
   product_title?: string;
   product_image_url?: string;
   product_price?: number;
+  carried_over?: boolean;
 }
 
 interface Member {
@@ -26,6 +27,8 @@ interface Family {
   id: string;
   name: string;
   owner_id: string;
+  season_name?: string;
+  season_started_at?: string;
   members: Member[];
 }
 
@@ -47,7 +50,7 @@ export async function GET(
 
   const { data: listData, error: listError } = await supabase
     .from('lists')
-    .select('id, name, user_id, list_members(profile_id, profiles(full_name))')
+    .select('id, name, user_id, season_name, season_started_at, list_members(profile_id, profiles(full_name))')
     .eq('id', familyId) // Use familyId directly
     .single()
 
@@ -75,8 +78,9 @@ export async function GET(
 
   const { data: itemsData, error: itemsError } = await supabase
     .from('items')
-    .select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price, product_url, product_title, product_image_url, product_price')
+    .select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price, product_url, product_title, product_image_url, product_price, carried_over')
     .eq('list_id', familyId)
+    .is('archived_at', null)
     .order('order_index')
 
   if (itemsError) {
@@ -132,6 +136,7 @@ export async function GET(
         product_title: item.product_title || undefined,
         product_image_url: item.product_image_url || undefined,
         product_price: item.product_price || undefined,
+        carried_over: item.carried_over || undefined,
       });
     }
   });
@@ -140,6 +145,8 @@ export async function GET(
     id: listData.id,
     name: listData.name,
     owner_id: listData.user_id,
+    season_name: listData.season_name ?? undefined,
+    season_started_at: listData.season_started_at ?? undefined,
     members: Array.from(membersMap.values()),
   };
 
