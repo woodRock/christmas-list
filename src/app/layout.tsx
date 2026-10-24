@@ -1,36 +1,36 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Link from "next/link";
-import AuthNavbarButtons from "@/components/AuthNavbarButtons"; // Import the new client component
+import type { Metadata, Viewport } from 'next'
+import { Fraunces, Inter } from 'next/font/google'
+import './globals.css'
+import Navbar from '@/components/Navbar'
+import { ToastProvider } from '@/components/ui/Toast'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
+const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces', display: 'swap', axes: ['SOFT', 'opsz'] })
 
 export const metadata: Metadata = {
-  title: "Giftd",
-  description: "Manage your family's Christmas/Birthday lists",
-};
+  title: 'Giftd',
+  description: "Manage your family's Christmas and birthday lists",
+}
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  // Remove user fetching logic from here, it's now handled in AuthNavbarButtons
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#faf6f0' },
+    { media: '(prefers-color-scheme: dark)', color: '#0e1612' },
+  ],
+}
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body>
-        <nav className="bg-gray-800 p-4 text-white">
-          <div className="container mx-auto flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold">
-              Giftd
-            </Link>
-            <div className="flex items-center space-x-4">
-              <AuthNavbarButtons /> {/* Render the client component here */}
-            </div>
-          </div>
-        </nav>
-        <main className="container mx-auto p-4">
-          {children}
-        </main>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
+      <body className="min-h-dvh">
+        <ToastProvider>
+          <Navbar />
+          <main className="mx-auto max-w-5xl px-4 pb-28 pt-6 sm:px-6 sm:pt-10 md:pb-16">{children}</main>
+        </ToastProvider>
       </body>
     </html>
-  );
+  )
 }

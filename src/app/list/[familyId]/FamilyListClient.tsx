@@ -1,662 +1,450 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd'
-import Link from 'next/link'
-import Image from 'next/image'
-import AddGiftForm from './AddGiftForm'
-import ClaimUnclaimButtons from './ClaimUnclaimButtons'
-import AddMemberForm from './AddMemberForm'
-import EditGiftForm from './EditGiftForm' // New component for editing gifts
-import QRCode from 'react-qr-code'
 import { User } from '@supabase/supabase-js'
-import ReactDOM from 'react-dom' // Import ReactDOM
-import IconButton from '@/components/IconButton'
+import { Gift as GiftIcon, ImageIcon, LayoutGrid, List, LogOut, MoreHorizontal, Plus, Settings, UserPlus } from 'lucide-react'
+import PageHeader from '@/components/ui/PageHeader'
+import Button from '@/components/ui/Button'
+import Avatar from '@/components/ui/Avatar'
+import Menu, { type MenuItem } from '@/components/ui/Menu'
+import ConfirmDialog from '@/components/ui/ConfirmDialog'
+import Alert from '@/components/ui/Alert'
+import { Select } from '@/components/ui/Field'
+import { useToast } from '@/components/ui/Toast'
+import { cn } from '@/components/ui/cn'
+import { useLocalStorage } from '@/components/ui/useLocalStorage'
+import GiftCard from './GiftCard'
+import GiftFormModal from './GiftFormModal'
+import InviteModal from './InviteModal'
+import type { Family, Gift } from './types'
 
-interface Gift {
-  id: string;
-  description: string;
-  is_purchased: boolean;
-  purchased_by?: string;
-  user_id: string;
-  order_index?: number;
-  notes?: string; // Add notes
-  price?: number; // Add price
-  product_url?: string;
-  product_title?: string;
-  product_image_url?: string;
-  product_price?: number;
+type SortKey = 'order' | 'name' | 'price-asc' | 'price-desc'
+type View = 'list' | 'grid'
+
+function sortGifts(gifts: Gift[], sort: SortKey) {
+  const sorted = [...gifts]
+  switch (sort) {
+    case 'name':
+      return sorted.sort((a, b) => a.description.localeCompare(b.description))
+    case 'price-asc':
+      return sorted.sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity))
+    case 'price-desc':
+      return sorted.sort((a, b) => (b.price ?? -Infinity) - (a.price ?? -Infinity))
+    default:
+      return sorted.sort((a, b) => (a.order_index ?? 0) - (b.order_index ?? 0))
+  }
 }
-
-interface Member {
-  id: string;
-  name: string;
-  gifts: Gift[];
-}
-
-interface Family {
-  id: string;
-  name: string;
-  owner_id: string;
-  members: Member[];
-}
-
-// Utility function to format notes with clickable links
-const formatNotesWithLinks = (notes?: string) => {
-  if (!notes) return null;
-  const urlRegex = /(https?:\/\/[^\s]+)/g;
-  return notes.split(urlRegex).map((part, index) => {
-    if (part.match(urlRegex)) {
-      return (
-        <a key={index} href={part} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-          {part}
-        </a>
-      );
-    }
-    return part;
-  });
-};
 
 export default function FamilyListClient({ initialFamily, initialUser, familyId }: { initialFamily: Family, initialUser: User | null, familyId: string }) {
   const [family, setFamily] = useState<Family>(initialFamily)
-  const [user] = useState<User | null>(initialUser)
-  const [editingGift, setEditingGift] = useState<Gift | null>(null)
-  const [sortKey, setSortKey] = useState<keyof Gift | 'order_index'>('order_index'); // Default sort by order_index
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc'); // Default sort order ascending
-  const [showQrModal, setShowQrModal] = useState(false)
-  const [listName, setListName] = useState(initialFamily.name)
-  const [showAddGiftModal, setShowAddGiftModal] = useState(false)
+  const user = initialUser
+  const [sort, setSort] = useState<SortKey>('order')
+  const [storedView, setStoredView] = useLocalStorage('giftd:view', 'list')
+  const view: View = storedView === 'grid' ? 'grid' : 'list'
+  const [giftModal, setGiftModal] = useState<{ open: boolean; gift?: Gift | null; recipientId?: string }>({ open: false })
+  const [deletingGift, setDeletingGift] = useState<Gift | null>(null)
+  const [confirmLeave, setConfirmLeave] = useState(false)
   const [inviteToken, setInviteToken] = useState<string | null>(null)
-  const [viewMode, setViewMode] = useState<'list' | 'grid'>('list') // New state for view mode
-  const [isDragging, setIsDragging] = useState(false); // New state to track dragging
-  const [sourceDroppableId, setSourceDroppableId] = useState<string | null>(null); // New state to track the source list of the dragged item
-  const [copyMessage, setCopyMessage] = useState(''); // New state for copy feedback
-  const [isFindingImages, setIsFindingImages] = useState(false);
-  const [findImagesMessage, setFindImagesMessage] = useState('');
+  const [showInvite, setShowInvite] = useState(false)
+  const [creatingInvite, setCreatingInvite] = useState(false)
+  const [busyGiftIds, setBusyGiftIds] = useState<Set<string>>(new Set())
+  const [imageProgress, setImageProgress] = useState<{ done: number; total: number } | null>(null)
   const router = useRouter()
-  const [mounted, setMounted] = useState(false);
-  const [portalNode, setPortalNode] = useState<HTMLElement | null>(null);
+  const toast = useToast()
+
+  const isOwner = user?.id === family.owner_id
+
+  const changeView = (next: View) => setStoredView(next)
+
+  // You first, then everyone else alphabetically.
+  const members = useMemo(
+    () => [...family.members].sort((a, b) => (a.id === user?.id ? -1 : b.id === user?.id ? 1 : a.name.localeCompare(b.name))),
+    [family.members, user?.id],
+  )
+  const nameById = useMemo(() => new Map(family.members.map((m) => [m.id, m.name])), [family.members])
+  const totalGifts = family.members.reduce((n, m) => n + m.gifts.length, 0)
 
   const refreshFamily = async () => {
-    const res = await fetch(`/api/lists/${familyId}/details`);
+    const res = await fetch(`/api/lists/${familyId}/details`)
     if (res.ok) {
-      const updatedFamily = await res.json();
-      setFamily(updatedFamily);
+      setFamily(await res.json())
     } else {
-      console.error('Failed to refresh family data');
-      // Optionally, handle error more gracefully, e.g., show a toast notification
+      toast('Couldn’t refresh the list. Pull to refresh or reload the page.', { tone: 'error' })
     }
-  };
+  }
 
-  useEffect(() => {
-    let element = document.getElementById('drag-portal');
-    if (!element) {
-      element = document.createElement('div');
-      element.id = 'drag-portal';
-      document.body.appendChild(element);
+  const updateGift = (giftId: string, patch: Partial<Gift>) => {
+    setFamily((f) => ({
+      ...f,
+      members: f.members.map((m) => ({ ...m, gifts: m.gifts.map((g) => (g.id === giftId ? { ...g, ...patch } : g)) })),
+    }))
+  }
+
+  const setBusy = (giftId: string, busy: boolean) =>
+    setBusyGiftIds((s) => {
+      const next = new Set(s)
+      if (busy) next.add(giftId)
+      else next.delete(giftId)
+      return next
+    })
+
+  const claimGift = async (gift: Gift) => {
+    if (!user) return
+    setBusy(gift.id, true)
+    updateGift(gift.id, { is_purchased: true, purchased_by: user.id })
+    const res = await fetch(`/api/gifts/${gift.id}/claim`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ claimedByUserId: user.id }),
+    })
+    setBusy(gift.id, false)
+    if (res.ok) {
+      toast(`You're getting “${gift.description}”`, { action: { label: 'Shopping list', onClick: () => router.push('/claimed-items') } })
+      refreshFamily()
+    } else {
+      updateGift(gift.id, { is_purchased: false, purchased_by: undefined })
+      toast('Couldn’t claim that gift. Please try again.', { tone: 'error' })
     }
-    const animationFrame = requestAnimationFrame(() => {
-      setPortalNode(element);
-      setMounted(true);
-    });
-    return () => cancelAnimationFrame(animationFrame);
-  }, []);
+  }
+
+  const unclaimGift = async (gift: Gift) => {
+    setBusy(gift.id, true)
+    updateGift(gift.id, { is_purchased: false, purchased_by: undefined })
+    const res = await fetch(`/api/gifts/${gift.id}/unclaim`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' } })
+    setBusy(gift.id, false)
+    if (res.ok) {
+      toast(`Unclaimed “${gift.description}”`, { action: { label: 'Undo', onClick: () => claimGift(gift) } })
+      refreshFamily()
+    } else {
+      updateGift(gift.id, { is_purchased: true, purchased_by: user?.id })
+      toast('Couldn’t unclaim that gift. Please try again.', { tone: 'error' })
+    }
+  }
+
+  const deleteGift = async (gift: Gift) => {
+    const res = await fetch(`/api/gifts/${gift.id}`, { method: 'DELETE' })
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}))
+      throw new Error(data.error || 'Couldn’t delete that gift.')
+    }
+    setFamily((f) => ({ ...f, members: f.members.map((m) => ({ ...m, gifts: m.gifts.filter((g) => g.id !== gift.id) })) }))
+    setDeletingGift(null)
+    toast(`Deleted “${gift.description}”`)
+    refreshFamily()
+  }
 
   const handleDragEnd = async (result: DropResult) => {
-    console.log('handleDragEnd result:', result);
+    if (!user || !result.destination || result.destination.index === result.source.index) return
 
-    // If no destination, or dropped outside any droppable, delete the item
-    if (!result.destination) {
-      console.log('Dropped outside any droppable. Deleting item:', result.draggableId);
-      handleDeleteGift(result.draggableId);
-      setIsDragging(false); // End dragging state here if deleted
-      setSourceDroppableId(null); // Clear source droppable ID
-      return;
-    }
+    const me = family.members.find((m) => m.id === user.id)
+    if (!me) return
 
-    // Check if dropped into a trash bin
-    if (result.destination.droppableId === 'trash-bin-global') {
-      console.log('Dropped into trash bin:', result.destination.droppableId);
-      handleDeleteGift(result.draggableId);
-      setIsDragging(false); // End dragging state here if deleted
-      setSourceDroppableId(null); // Clear source droppable ID
-      return;
-    }
+    const reordered = sortGifts(me.gifts, 'order')
+    const [moved] = reordered.splice(result.source.index, 1)
+    reordered.splice(result.destination.index, 0, moved)
+    const withIndex = reordered.map((g, i) => ({ ...g, order_index: i }))
 
-    console.log('Dropped into a valid droppable (not trash bin):', result.destination.droppableId);
+    const previous = family
+    setFamily((f) => ({ ...f, members: f.members.map((m) => (m.id === me.id ? { ...m, gifts: withIndex } : m)) }))
 
-    const sourceMemberIndex = family.members.findIndex(m => m.id === result.source.droppableId)
-    const destinationMemberIndex = family.members.findIndex(m => m.id === result.destination?.droppableId)
-
-    if (sourceMemberIndex === -1 || destinationMemberIndex === -1) {
-      console.error('Source or destination member not found.');
-      setIsDragging(false); // End dragging state if members not found
-      return;
-    }
-
-    const newFamily = { ...family }
-    const sourceMember = { ...newFamily.members[sourceMemberIndex] }
-    const destinationMember = { ...newFamily.members[destinationMemberIndex] }
-
-    // If dropped in the same list and same position, do nothing
-    if (result.source.droppableId === result.destination.droppableId && result.source.index === result.destination.index) {
-      setIsDragging(false); // End dragging state if no change
-      return;
-    }
-
-    const [removed] = sourceMember.gifts.splice(result.source.index, 1)
-    destinationMember.gifts.splice(result.destination.index, 0, removed)
-
-    // Re-index gifts in both source and destination members
-    sourceMember.gifts = sourceMember.gifts.map((gift, index) => ({ ...gift, order_index: index }));
-    destinationMember.gifts = destinationMember.gifts.map((gift, index) => ({ ...gift, order_index: index }));
-
-    // Optimistically update UI
-    newFamily.members[sourceMemberIndex] = sourceMember
-    newFamily.members[destinationMemberIndex] = destinationMember
-    setFamily(newFamily)
-
-    // Store the original family state for potential rollback
-    const originalFamily = family;
-
-    // Collect all gifts from the entire family structure that need their order_index updated
-    const giftsToUpdate = newFamily.members.flatMap(member =>
-      member.gifts.map(gift => ({
-        id: gift.id,
-        order_index: gift.order_index,
-        list_id: family.id, // Include list_id
-      }))
-    );
-
-    // Call API to update order
     const res = await fetch('/api/gifts/reorder', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items: giftsToUpdate }),
+      body: JSON.stringify({ items: withIndex.map((g) => ({ id: g.id, order_index: g.order_index, list_id: family.id })) }),
     })
 
     if (!res.ok) {
-      const errorText = await res.text()
-      alert(`Failed to reorder gifts: ${errorText}`)
-      // Revert UI on API failure
-      setFamily(originalFamily);
-    } else {
-      refreshFamily(); // Refresh the page to ensure server-side state is consistent
-    }
-    setIsDragging(false); // End dragging after all logic is complete
-  }
-
-  const handleCopyInviteLink = async () => {
-    const inviteUrl = `${window.location.origin}/invite?token=${inviteToken}`;
-    try {
-      await navigator.clipboard.writeText(inviteUrl);
-      setCopyMessage('Copied!');
-      setTimeout(() => setCopyMessage(''), 2000); // Clear message after 2 seconds
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-      setCopyMessage('Failed to copy!');
-    }
-  };
-
-  const handleFindMissingImages = async () => {
-    if (!user || user.id !== family.owner_id) {
-      alert('Only the list owner can find missing images.');
-      return;
-    }
-
-    setIsFindingImages(true);
-    setFindImagesMessage('Searching for missing images...');
-
-    const giftsToUpdate: Gift[] = [];
-
-    for (const member of family.members) {
-      for (const gift of member.gifts) {
-        if (!gift.product_image_url && gift.description) {
-          setFindImagesMessage(`Searching for image for "${gift.description}"...`);
-          try {
-            const scrapeRes = await fetch(`/api/scrape-pricespy?query=${gift.description}`);
-            const scrapeData = await scrapeRes.json();
-
-            if (scrapeRes.ok && scrapeData.imageUrl) {
-              setFindImagesMessage(`Found image for "${gift. description}". Updating...`);
-              const updateRes = await fetch('/api/gifts/update-image', {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ giftId: gift.id, imageUrl: scrapeData.imageUrl }),
-              });
-
-              if (updateRes.ok) {
-                giftsToUpdate.push({ ...gift, product_image_url: scrapeData.imageUrl });
-              } else {
-                const errorText = await updateRes.text();
-                console.error(`Failed to update image for ${gift.description}: ${errorText}`);
-                setFindImagesMessage(`Failed to update image for "${gift.description}".`);
-              }
-            } else {
-              console.log(`No image found for "${gift.description}" or scraping failed: ${scrapeData.message || scrapeData.error}`);
-              setFindImagesMessage(`No image found for "${gift.description}".`);
-            }
-          } catch (error) {
-            console.error(`Error processing ${gift.description}:`, error);
-            setFindImagesMessage(`Error processing "${gift.description}".`);
-          }
-        }
-      }
-    }
-
-    // Optimistically update the UI with found images
-    if (giftsToUpdate.length > 0) {
-      const newFamily = { ...family };
-      newFamily.members = newFamily.members.map(member => ({
-        ...member,
-        gifts: member.gifts.map(gift => {
-          const updatedGift = giftsToUpdate.find(g => g.id === gift.id);
-          return updatedGift || gift;
-        })
-      }));
-      setFamily(newFamily);
-    }
-
-    setFindImagesMessage('Finished searching for missing images.');
-    setIsFindingImages(false);
-    refreshFamily(); // Refresh to ensure server state is fully consistent
-  };
-
-  const handleDeleteGift = async (giftId: string) => {
-    console.log('Attempting to delete gift:', giftId);
-
-    // Add ownership check here
-    if (!user || user.id !== family.owner_id) {
-      alert('You do not have permission to delete gifts from this list.');
-      return;
-    }
-
-    const res = await fetch(`/api/gifts/${giftId}`, {
-      method: 'DELETE',
-    })
-
-    if (res.ok) {
-      console.log('Gift deleted successfully from API:', giftId);
-      // Update local state to remove the deleted gift
-      const newFamily = { ...family };
-      newFamily.members = newFamily.members.map(member => ({
-        ...member,
-        gifts: member.gifts.filter(gift => gift.id !== giftId)
-      }));
-      setFamily(newFamily);
-      console.log('Local state updated for gift:', giftId);
-      refreshFamily(); // Refresh data after successful deletion
-    } else {
-      const errorText = await res.text()
-      console.error('Failed to delete gift from API:', giftId, errorText);
-      alert(`Failed to delete gift: ${errorText}`)
+      setFamily(previous)
+      toast('Couldn’t save the new order.', { tone: 'error' })
     }
   }
 
-  const handleSort = (key: keyof Gift | 'order_index') => {
-    if (sortKey === key) {
-      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-    } else {
-      setSortKey(key);
-      setSortOrder('asc');
+  const openInvite = async () => {
+    if (inviteToken) {
+      setShowInvite(true)
+      return
     }
-  };
-
-  const generateInvite = async () => {
-    const res = await fetch(`/api/lists/${familyId}/invites`, {
-      method: 'POST',
-    })
-
+    setCreatingInvite(true)
+    const res = await fetch(`/api/lists/${familyId}/invites`, { method: 'POST' })
+    setCreatingInvite(false)
     if (res.ok) {
       const { token } = await res.json()
       setInviteToken(token)
-      setShowQrModal(true)
+      setShowInvite(true)
     } else {
-      const { error } = await res.json()
-      alert(`Failed to generate invite link: ${error}`)
+      const { error } = await res.json().catch(() => ({ error: '' }))
+      toast(`Couldn’t create an invite link${error ? `: ${error}` : '.'}`, { tone: 'error' })
     }
   }
 
-  const handleLeaveFamily = async () => {
-    if (!confirm('Are you sure you want to leave this family list? You will lose access to all gifts and members.')) return
-
-    const res = await fetch(`/api/lists/${family.id}/leave`, {
-      method: 'DELETE',
-    })
-
-    if (res.ok) {
-      alert('You have successfully left the family list.')
-      router.push('/') // Redirect to home page
-    } else {
-      const errorText: unknown = await res.json()
-      alert(`Failed to leave family: ${typeof errorText === 'object' && errorText !== null && 'error' in errorText ? (errorText as { error: string }).error : 'Unknown error'}`)
+  const leaveList = async () => {
+    const res = await fetch(`/api/lists/${family.id}/leave`, { method: 'DELETE' })
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}))
+      throw new Error(data.error || 'Couldn’t leave this list.')
     }
+    toast(`You left “${family.name}”`)
+    router.push('/')
+    router.refresh()
   }
 
-  const sortedGifts = (gifts: Gift[]) => {
-    return [...gifts].sort((a, b) => {
-      let valA: string | number;
-      let valB: string | number;
+  const findMissingImages = async () => {
+    const missing = family.members.flatMap((m) => m.gifts).filter((g) => !g.product_image_url && g.description)
+    if (missing.length === 0) {
+      toast('Every gift already has an image')
+      return
+    }
 
-      if (sortKey === 'order_index') {
-        valA = a.order_index || 0;
-        valB = b.order_index || 0;
-      } else if (sortKey === 'price') {
-        valA = a.price || 0;
-        valB = b.price || 0;
-      } else {
-        valA = a[sortKey]?.toString().toLowerCase() || '';
-        valB = b[sortKey]?.toString().toLowerCase() || '';
+    let found = 0
+    setImageProgress({ done: 0, total: missing.length })
+    for (const [i, gift] of missing.entries()) {
+      try {
+        const scrapeRes = await fetch(`/api/scrape-pricespy?query=${encodeURIComponent(gift.description)}`)
+        const scrapeData = await scrapeRes.json()
+        if (scrapeRes.ok && scrapeData.imageUrl) {
+          const updateRes = await fetch('/api/gifts/update-image', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ giftId: gift.id, imageUrl: scrapeData.imageUrl }),
+          })
+          if (updateRes.ok) {
+            found++
+            updateGift(gift.id, { product_image_url: scrapeData.imageUrl })
+          }
+        }
+      } catch (error) {
+        console.error(`Error finding image for ${gift.description}:`, error)
       }
+      setImageProgress({ done: i + 1, total: missing.length })
+    }
 
-      if (valA < valB) return sortOrder === 'asc' ? -1 : 1;
-      if (valA > valB) return sortOrder === 'asc' ? 1 : -1;
-      return 0;
-    });
-  };
+    setImageProgress(null)
+    toast(found > 0 ? `Found images for ${found} of ${missing.length} gifts` : 'No new images found', { tone: found > 0 ? 'success' : 'error' })
+    refreshFamily()
+  }
+
+  const menuItems: MenuItem[] = isOwner
+    ? [
+        { label: 'List settings', href: `/list/${family.id}/settings`, icon: <Settings className="h-4 w-4" aria-hidden /> },
+        { label: 'Find missing images', onSelect: findMissingImages, disabled: Boolean(imageProgress), icon: <ImageIcon className="h-4 w-4" aria-hidden /> },
+      ]
+    : [{ label: 'Leave list', onSelect: () => setConfirmLeave(true), destructive: true, icon: <LogOut className="h-4 w-4" aria-hidden /> }]
+
+  const canReorder = view === 'list' && sort === 'order'
 
   return (
-    <div className="px-4 py-8 mx-auto fresh-gradient min-h-screen">
-      <div className="max-w-screen-lg mx-auto">
-        <h1 className="text-4xl font-bold mb-4">{family.name} List</h1>
-        <Link href="/" className="text-blue-500 hover:underline mb-4 block">← Back to Home</Link>
-
-        {/* Action Buttons */}
-        <div className="flex justify-end space-x-4 mb-4">
-          {user && (
-            <button
-              onClick={() => setShowAddGiftModal(true)}
-              className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
-              aria-label="Add Gift"
-            >
-              <Image src="/gift.svg" alt="Add Gift" width={24} height={24} />
-              <span className="text-xs mt-1 dark:hover:text-black">Add Gift</span>
-            </button>
-          )}
-          {user && user.id === family.owner_id && ( // Only list owner can trigger this
-            <button
-              onClick={handleFindMissingImages}
-              className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
-              aria-label="Find Missing Images"
-              disabled={isFindingImages}
-            >
-              <Image src="/image.svg" alt="Find Missing Images" width={24} height={24} /> {/* Using file.svg as a placeholder */}
-              <span className="text-xs mt-1 dark:hover:text-black">{isFindingImages ? 'Finding...' : 'Find Images'}</span>
-            </button>
-          )}
-          <button
-            onClick={generateInvite}
-            className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
-            aria-label="Invite with QR Code"
-          >
-            <Image src="/qr_code.svg" alt="QR Code" width={24} height={24} />
-            <span className="text-xs mt-1 dark:hover:text-black">Invite</span>
-          </button>
-          {user && user.id === family.owner_id && (
-            <Link
-              href={`/list/${family.id}/settings`}
-              className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-200 transition-colors"
-              aria-label="List Settings"
-            >
-              <Image src="/settings.svg" alt="Settings" width={24} height={24} /> {/* Using file.svg as a placeholder for settings */}
-              <span className="text-xs mt-1 dark:hover:text-black">Settings</span>
-            </Link>
-          )}
-        </div>
-
-        {isFindingImages && findImagesMessage && (
-          <p className="text-center text-sm text-blue-500 mb-4">{findImagesMessage}</p>
-        )}
-
-        <div className="mb-4 flex items-center space-x-2">
-          <span className="text-gray-300">Sort by:</span>
-          <select
-            className="px-3 py-1 border border-gray-300 rounded-md text-sm"
-            value={sortKey}
-            onChange={(e) => handleSort(e.target.value as keyof Gift | 'order_index')}
-          >
-            <option value="order_index">Default Order</option>
-            <option value="description">Description</option>
-            <option value="price">Price</option>
-          </select>
-          <button
-            onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
-            className="px-3 py-1 bg-gray-200 rounded-md text-sm"
-          >
-            {sortOrder === 'asc' ? 'Asc' : 'Desc'}
-          </button>
-          <div className="ml-auto flex space-x-2">
-            <button
-              onClick={() => setViewMode('list')}
-              className={`px-3 py-1 rounded-md text-sm ${viewMode === 'list' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-            >
-              ☰ List
-            </button>
-            <button
-              onClick={() => setViewMode('grid')}
-              className={`px-3 py-1 rounded-md text-sm ${viewMode === 'grid' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-            >
-              ▦ Grid
-            </button>
-          </div>
-        </div>
-
-        <DragDropContext
-          onBeforeDragStart={(start) => {
-            setIsDragging(true);
-            setSourceDroppableId(start.source.droppableId); // Set the ID of the list the item is dragged from
-          }}
-          onDragEnd={handleDragEnd}
-        >
-          {family.members.map((member) => (
-            <div key={member.id} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-8">
-              <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-semibold mb-4">{member.name}&#39;s List</h2>
-              </div>
-              {member.gifts.length === 0 ? (
-                <p>No gifts on {member.name}&#39;s list yet.</p>
-              ) : (
-                <Droppable droppableId={member.id} isDropDisabled={isDragging && sourceDroppableId !== member.id}>
-                  {(provided) => (
-                    <ul
-                      className={`relative ${viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4' : 'list-disc pl-5 space-y-2'}`}
-                      {...provided.droppableProps}
-                      ref={provided.innerRef}
-                    >
-                      {sortedGifts(member.gifts).map((gift, index) => (
-                        <Draggable key={gift.id} draggableId={gift.id} index={index}>
-                          {(provided) => (
-                            <li
-                              ref={provided.innerRef}
-                              {...provided.draggableProps}
-                              {...provided.dragHandleProps} // Apply dragHandleProps here
-                              onDoubleClick={() => {
-                                if (user && user.id === gift.user_id) {
-                                  setEditingGift(gift);
-                                }
-                              }}
-                              className={`bg-gray-50 dark:bg-gray-700 rounded-md shadow-sm ${viewMode === 'grid' ? 'relative aspect-square flex flex-col justify-between' : 'flex items-center p-2'}`}
-                            >
-                              {viewMode === 'grid' ? (
-                                <>
-                                  {gift.product_image_url && (
-                                    // eslint-disable-next-line @next/next/no-img-element
-                                    <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-full h-1/2 object-cover flex-shrink-0 min-h-0" />
-                                  )}
-                                  <div className="p-2 flex flex-col flex-grow justify-between">
-                                    <div> {/* Container for description and claimed by */}
-                                      <span className="text-sm font-semibold break-words line-clamp-2"> {/* Added line-clamp-2 for truncation */}
-                                        {gift.description}
-                                      </span>
-                                      {gift.is_purchased && user?.id !== gift.user_id && (
-                                        <span className="ml-2 text-xs text-green-600 flex-shrink-0">
-                                          (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
-                                        </span>
-                                      )}
-                                    </div>
-                                    <div className="flex justify-between items-end mt-2"> {/* Container for price and buttons */}
-                                      {gift.price !== undefined && gift.price !== null && (
-                                        <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                                          ${gift.price.toFixed(2)}
-                                        </span>
-                                      )}
-                                      <div className="flex flex-row space-x-1"> {/* Buttons */}
-                                        {gift.product_url && (
-                                          <IconButton
-                                            href={gift.product_url}
-                                            src="/link.svg"
-                                            alt="Open Link"
-                                            ariaLabel="Open Link"
-                                            className="text-blue-500 hover:bg-blue-100"
-                                          />
-                                        )}
-                                        {user && user.id !== gift.user_id && (
-                                          <ClaimUnclaimButtons
-                                            gift={gift}
-                                            userId={user.id}
-                                            refreshFamily={refreshFamily}
-                                          />
-                                        )}
-                                      </div>
-                                    </div>
-                                  </div>
-                                </>
-                              ) : (
-                                <>
-                                  <div className="flex items-center w-full p-2"> {/* Main container */}
-                                    {gift.product_image_url && (
-                                      // Image on the left
-                                      // eslint-disable-next-line @next/next/no-img-element
-                                      <img src={gift.product_image_url} alt={gift.product_title || gift.description} className="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-md mr-3 flex-shrink-0" />
-                                    )}
-
-                                    <div className="flex-grow flex flex-col justify-center"> {/* Text container */}
-                                      <span className="font-semibold break-words">
-                                        {gift.description}
-                                      </span>
-                                      {gift.is_purchased && user?.id !== gift.user_id && (
-                                        <span className="text-sm text-green-600">
-                                          (Claimed by {family.members.find(m => m.id === gift.purchased_by)?.name})
-                                        </span>
-                                      )}
-                                      {gift.price !== undefined && gift.price !== null && (
-                                        <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 mt-1">
-                                          ${gift.price.toFixed(2)}
-                                        </div>
-                                      )}
-                                    </div>
-
-                                    <div className="flex flex-col sm:flex-row items-center ml-auto space-x-2 flex-shrink-0"> {/* Buttons container */}
-                                      {gift.product_url && (
-                                        <IconButton
-                                          href={gift.product_url}
-                                          src="/link.svg"
-                                          alt="Open Link"
-                                          ariaLabel="Open Link"
-                                          className="text-blue-500 hover:bg-blue-100"
-                                        />
-                                      )}
-                                      {user && user.id !== gift.user_id && (
-                                        <ClaimUnclaimButtons
-                                          gift={gift}
-                                          userId={user.id}
-                                          refreshFamily={refreshFamily}
-                                        />
-                                      )}
-                                    </div>
-                                  </div>
-                                </>
-                              )}
-                            </li>
-                          )}
-                        </Draggable>
-                      ))}
-                      {provided.placeholder}
-                    </ul>
-                  )}
-                </Droppable>
+    <div>
+      <PageHeader
+        back={{ href: '/', label: 'My lists' }}
+        title={family.name}
+        description={`${family.members.length} ${family.members.length === 1 ? 'person' : 'people'} · ${totalGifts} ${totalGifts === 1 ? 'gift' : 'gifts'}`}
+        actions={
+          <>
+            <Button variant="secondary" onClick={openInvite} loading={creatingInvite}>
+              {!creatingInvite && <UserPlus className="h-4 w-4" aria-hidden />}
+              Invite
+            </Button>
+            {user && (
+              <Button onClick={() => setGiftModal({ open: true, recipientId: user.id })}>
+                <Plus className="h-4 w-4" aria-hidden />
+                Add gift
+              </Button>
+            )}
+            <Menu
+              label="More list actions"
+              items={menuItems}
+              trigger={({ open, toggle, id }) => (
+                <Button variant="ghost" size="icon" onClick={toggle} aria-haspopup="menu" aria-expanded={open} aria-controls={open ? id : undefined} aria-label="More list actions">
+                  <MoreHorizontal className="h-5 w-5" aria-hidden />
+                </Button>
               )}
-            </div>
-          ))}
+            />
+          </>
+        }
+      />
 
-          {mounted && portalNode && ReactDOM.createPortal(
-            <Droppable droppableId="trash-bin-global">
-              {(provided) => (
-                <div
-                  ref={provided.innerRef}
-                  {...provided.droppableProps}
-                  className={`fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md p-4 border-2 border-dashed rounded-lg text-center transition-all duration-200 z-50
-                    border-red-500 bg-red-50 dark:bg-red-900 text-red-500 dark:text-red-200
-                    ${isDragging ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-                >
-                  Drag here to delete gift 🗑️
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>,
-            portalNode
-          )}
-        </DragDropContext>
+      {imageProgress && (
+        <Alert tone="info" className="mb-4">
+          Looking for images… {imageProgress.done} of {imageProgress.total}
+        </Alert>
+      )}
 
-        {/* Modals */}
-        {showAddGiftModal && user && (
-          <AddGiftForm
-            familyId={family.id}
-            currentUserId={user.id}
-            members={family.members}
-            onClose={() => setShowAddGiftModal(false)} // Pass onClose prop
-            onGiftAdded={refreshFamily} // Pass refreshFamily to AddGiftForm
-          />
-        )}
-
-        {user && user.id !== family.owner_id && (
-          <div className="mt-4">
-            <button
-              onClick={handleLeaveFamily}
-              className="w-full bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600"
-            >
-              Leave Family List
-            </button>
-          </div>
-        )}
-
-        {editingGift && (
-          <EditGiftForm
-            gift={editingGift}
-            onClose={() => setEditingGift(null)}
-            onSave={async () => { // Make the onSave callback async
-              setEditingGift(null)
-              await refreshFamily() // Call refreshFamily after saving an edited gift
-            }}
-          />
-        )}
-
-        {showQrModal && inviteToken && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <h2 className="text-2xl font-bold mb-4">Scan to Join!</h2>
-              <QRCode value={`${window.location.origin}/invite?token=${inviteToken}`} />
-              {copyMessage && <p className="text-green-500 mt-2">{copyMessage}</p>}
-              <div className="mt-4 flex justify-center space-x-2">
+      {/* Jump-to-person chips + view controls */}
+      <div className="sticky top-16 z-20 -mx-4 mb-6 border-b border-line/70 bg-bg/90 px-4 py-3 backdrop-blur-md sm:-mx-6 sm:px-6">
+        <div className="flex items-center gap-3">
+          <nav aria-label="People on this list" className="-my-1 flex min-w-0 flex-1 gap-2 overflow-x-auto py-1 [scrollbar-width:none]">
+            {members.map((m) => (
+              <a
+                key={m.id}
+                href={`#member-${m.id}`}
+                className="flex shrink-0 items-center gap-2 rounded-full border border-line bg-surface py-1 pl-1 pr-3 text-sm font-medium text-ink transition-colors hover:border-line-strong"
+              >
+                <Avatar name={m.name} id={m.id} size="sm" />
+                {m.id === user?.id ? 'You' : m.name.split(' ')[0]}
+                <span className="text-xs text-muted">{m.gifts.length}</span>
+              </a>
+            ))}
+          </nav>
+          <div className="flex shrink-0 items-center gap-2">
+            <label htmlFor="sort" className="sr-only">Sort gifts</label>
+            <Select id="sort" value={sort} onChange={(e) => setSort(e.target.value as SortKey)} className="hidden w-44 sm:block [&_select]:h-9 [&_select]:py-1.5 [&_select]:text-sm">
+              <option value="order">Wishlist order</option>
+              <option value="name">Name (A–Z)</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+            </Select>
+            <div role="group" aria-label="Layout" className="flex rounded-xl border border-line bg-surface p-0.5">
+              {([['list', List], ['grid', LayoutGrid]] as const).map(([v, Icon]) => (
                 <button
-                  onClick={handleCopyInviteLink}
-                  className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                  key={v}
+                  type="button"
+                  onClick={() => changeView(v)}
+                  aria-pressed={view === v}
+                  aria-label={`${v === 'list' ? 'List' : 'Grid'} view`}
+                  className={cn('flex h-8 w-8 items-center justify-center rounded-lg transition-colors', view === v ? 'bg-primary-soft text-primary' : 'text-muted hover:text-ink')}
                 >
-                  Copy Invite Link
+                  <Icon className="h-4 w-4" aria-hidden />
                 </button>
-                <button
-                  onClick={() => setShowQrModal(false)}
-                  className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
-                >
-                  Close
-                </button>
-              </div>
+              ))}
             </div>
           </div>
-        )}
+        </div>
+        <Select aria-label="Sort gifts" value={sort} onChange={(e) => setSort(e.target.value as SortKey)} className="mt-3 sm:hidden [&_select]:h-9 [&_select]:py-1.5 [&_select]:text-sm">
+          <option value="order">Wishlist order</option>
+          <option value="name">Name (A–Z)</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+        </Select>
       </div>
+
+      <div className="space-y-10">
+        {members.map((member) => {
+          const isMe = member.id === user?.id
+          const gifts = sortGifts(member.gifts, sort)
+          const claimedCount = member.gifts.filter((g) => g.is_purchased).length
+
+          const renderCard = (gift: Gift, extra?: Partial<React.ComponentProps<typeof GiftCard>>) => (
+            <GiftCard
+              gift={gift}
+              view={view}
+              isMine={isMe}
+              currentUserId={user?.id ?? ''}
+              claimerName={gift.purchased_by ? nameById.get(gift.purchased_by) : undefined}
+              busy={busyGiftIds.has(gift.id)}
+              onEdit={() => setGiftModal({ open: true, gift })}
+              onDelete={() => setDeletingGift(gift)}
+              onClaim={() => claimGift(gift)}
+              onUnclaim={() => unclaimGift(gift)}
+              {...extra}
+            />
+          )
+
+          return (
+            <section key={member.id} id={`member-${member.id}`} aria-labelledby={`member-title-${member.id}`} className="scroll-mt-40">
+              <div className="mb-4 flex items-center gap-3">
+                <Avatar name={member.name} id={member.id} />
+                <div className="min-w-0 flex-1">
+                  <h2 id={`member-title-${member.id}`} className="truncate font-display text-xl font-semibold text-ink">
+                    {isMe ? 'Your wishlist' : `${member.name}’s wishlist`}
+                  </h2>
+                  <p className="text-sm text-muted">
+                    {member.gifts.length} {member.gifts.length === 1 ? 'gift' : 'gifts'}
+                    {!isMe && member.gifts.length > 0 && ` · ${claimedCount} claimed`}
+                    {isMe && member.gifts.length > 0 && ' · claims are hidden from you'}
+                  </p>
+                </div>
+                {isMe ? (
+                  <Button variant="secondary" size="sm" onClick={() => setGiftModal({ open: true, recipientId: member.id })}>
+                    <Plus className="h-4 w-4" aria-hidden />
+                    <span className="hidden sm:inline">Add gift</span>
+                    <span className="sm:hidden">Add</span>
+                  </Button>
+                ) : (
+                  <Button variant="ghost" size="sm" onClick={() => setGiftModal({ open: true, recipientId: member.id })} aria-label={`Suggest a gift for ${member.name}`}>
+                    <Plus className="h-4 w-4" aria-hidden />
+                    <span className="hidden sm:inline">Suggest</span>
+                  </Button>
+                )}
+              </div>
+
+              {gifts.length === 0 ? (
+                <div className="rounded-2xl border border-dashed border-line-strong px-6 py-8 text-center">
+                  <GiftIcon className="mx-auto mb-2 h-6 w-6 text-muted/60" aria-hidden />
+                  <p className="text-sm text-muted">
+                    {isMe ? 'Your wishlist is empty. Add a few things you’d love — big or small.' : `${member.name} hasn’t added anything yet.`}
+                  </p>
+                  {isMe && (
+                    <Button className="mt-4" size="sm" onClick={() => setGiftModal({ open: true, recipientId: member.id })}>
+                      <Plus className="h-4 w-4" aria-hidden />
+                      Add your first gift
+                    </Button>
+                  )}
+                </div>
+              ) : isMe && canReorder ? (
+                <DragDropContext onDragEnd={handleDragEnd}>
+                  <Droppable droppableId={member.id}>
+                    {(provided) => (
+                      <ul className="space-y-3" {...provided.droppableProps} ref={provided.innerRef}>
+                        {gifts.map((gift, index) => (
+                          <Draggable key={gift.id} draggableId={gift.id} index={index}>
+                            {(dragProvided, snapshot) => (
+                              <li ref={dragProvided.innerRef} {...dragProvided.draggableProps}>
+                                {renderCard(gift, { dragHandleProps: dragProvided.dragHandleProps, isDragging: snapshot.isDragging })}
+                              </li>
+                            )}
+                          </Draggable>
+                        ))}
+                        {provided.placeholder}
+                      </ul>
+                    )}
+                  </Droppable>
+                </DragDropContext>
+              ) : (
+                <ul className={view === 'grid' ? 'grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4' : 'space-y-3'}>
+                  {gifts.map((gift) => (
+                    <li key={gift.id}>{renderCard(gift)}</li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          )
+        })}
+      </div>
+
+      {user && (
+        <GiftFormModal
+          open={giftModal.open}
+          onClose={() => setGiftModal({ open: false })}
+          onSaved={refreshFamily}
+          familyId={family.id}
+          currentUserId={user.id}
+          members={members}
+          gift={giftModal.gift}
+          defaultRecipientId={giftModal.recipientId}
+        />
+      )}
+
+      <InviteModal open={showInvite} onClose={() => setShowInvite(false)} token={inviteToken} listName={family.name} />
+
+      <ConfirmDialog
+        open={Boolean(deletingGift)}
+        onClose={() => setDeletingGift(null)}
+        onConfirm={() => (deletingGift ? deleteGift(deletingGift) : undefined)}
+        title="Delete this gift?"
+        description={<>“{deletingGift?.description}” will be removed from your wishlist. If someone already claimed it, they&apos;ll lose it from their shopping list.</>}
+        confirmLabel="Delete gift"
+      />
+
+      <ConfirmDialog
+        open={confirmLeave}
+        onClose={() => setConfirmLeave(false)}
+        onConfirm={leaveList}
+        title={`Leave “${family.name}”?`}
+        description="You’ll lose access to everyone’s wishlists on this list. You can rejoin later with a new invite link."
+        confirmLabel="Leave list"
+      />
     </div>
   )
 }
-

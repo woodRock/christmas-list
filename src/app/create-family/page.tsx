@@ -1,34 +1,45 @@
 'use client'
 
-import { createClient } from '@/lib/supabase'
-import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { createClient } from '@/lib/supabase'
+import PageHeader from '@/components/ui/PageHeader'
+import Card from '@/components/ui/Card'
+import Button from '@/components/ui/Button'
+import Alert from '@/components/ui/Alert'
+import { Field, Input } from '@/components/ui/Field'
+import { useToast } from '@/components/ui/Toast'
 
 export default function CreateFamily() {
   const [familyName, setFamilyName] = useState('')
   const [message, setMessage] = useState('')
+  const [submitting, setSubmitting] = useState(false)
   const router = useRouter()
-  const supabase = createClient()
+  const toast = useToast()
+  const [supabase] = useState(createClient)
 
   const handleCreateFamily = async (e: React.FormEvent) => {
     e.preventDefault()
     setMessage('')
+    setSubmitting(true)
 
     const { data: { user } } = await supabase.auth.getUser()
 
     if (!user) {
-      setMessage('You must be logged in to create a family list.')
+      setMessage('You must be signed in to create a list.')
+      setSubmitting(false)
       return
     }
 
     const { data: list, error: listError } = await supabase
       .from('lists')
-      .insert([{ name: familyName, user_id: user.id }])
+      .insert([{ name: familyName.trim(), user_id: user.id }])
       .select()
       .single()
 
     if (listError) {
       setMessage(listError.message)
+      setSubmitting(false)
       return
     }
 
@@ -39,38 +50,40 @@ export default function CreateFamily() {
 
     if (memberError) {
       setMessage(memberError.message)
+      setSubmitting(false)
       return
     }
 
-    setMessage(`Family "${list.name}" created successfully!`)
-    router.push('/')
+    toast(`“${list.name}” is ready. Invite your family to join!`)
+    router.push(`/list/${list.id}`)
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
-      <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold mb-4">Create New Family List</h1>
-        {message && <p className="text-red-500 mb-4">{message}</p>}
-        <form onSubmit={handleCreateFamily} className="space-y-4">
-          <div>
-            <label htmlFor="familyName" className="block text-sm font-medium text-gray-700">Family Name</label>
-            <input
-              type="text"
+    <div className="mx-auto max-w-lg">
+      <PageHeader
+        back={{ href: '/', label: 'My lists' }}
+        title="Create a list"
+        description="One list per group — your family, friends, or a secret Santa."
+      />
+      <Card className="p-5 sm:p-6">
+        <form onSubmit={handleCreateFamily} className="space-y-5">
+          <Field label="List name" htmlFor="familyName" hint="You can change this later in settings.">
+            <Input
               id="familyName"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              placeholder="e.g. The Smiths — Christmas 2026"
               value={familyName}
               onChange={(e) => setFamilyName(e.target.value)}
               required
+              autoFocus
+              maxLength={80}
             />
-          </div>
-          <button
-            type="submit"
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-          >
-            Create Family
-          </button>
+          </Field>
+          {message && <Alert>{message}</Alert>}
+          <Button type="submit" size="lg" className="w-full" loading={submitting} disabled={!familyName.trim()}>
+            Create list
+          </Button>
         </form>
-      </div>
+      </Card>
     </div>
   )
 }

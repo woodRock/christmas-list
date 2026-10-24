@@ -1,103 +1,97 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { createClient } from '@/lib/supabase' // Correct client-side Supabase client
-import { useRouter, useSearchParams } from 'next/navigation' // Import useSearchParams
-import { User } from '@supabase/supabase-js'
+import { useRouter, useSearchParams } from 'next/navigation'
+import type { User } from '@supabase/supabase-js'
+import { Gift, Link2Off, Loader2 } from 'lucide-react'
+import { createClient } from '@/lib/supabase'
+import Card from '@/components/ui/Card'
+import Button from '@/components/ui/Button'
+import Alert from '@/components/ui/Alert'
+import EmptyState from '@/components/ui/EmptyState'
 
-export default function InviteClient() { // Not async
+export default function InviteClient() {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
+  const [accepting, setAccepting] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const supabase = createClient() // No await here
+  const [supabase] = useState(createClient)
   const router = useRouter()
-  const searchParams = useSearchParams() // Get search params
-  const token = searchParams.get('token') // Get token from search params
+  const searchParams = useSearchParams()
+  const token = searchParams.get('token')
+  const redirect = encodeURIComponent(`/invite?token=${token}`)
 
   useEffect(() => {
-    const getUser = async () => {
-      const { data } = await supabase.auth.getUser()
-      setUser(data.user as User | null)
+    supabase.auth.getUser().then(({ data }) => {
+      setUser(data.user)
       setLoading(false)
-    }
-    getUser()
-  }, [supabase.auth])
+    })
+  }, [supabase])
 
   const handleAcceptInvite = async () => {
-    if (!token) { // Check if token exists
-      setError('Invalid invite link. No token provided.')
-      return
-    }
-
-    if (!user) {
-      router.push(`/login?redirect=/invite?token=${token}`)
-      return
-    }
+    if (!token) return
+    setAccepting(true)
+    setError(null)
 
     const res = await fetch('/api/invites/accept', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token }), // Use 'token' directly
+      body: JSON.stringify({ token }),
     })
 
     if (res.ok) {
       const { listId } = await res.json()
       router.push(`/list/${listId}`)
     } else {
-      const { error } = await res.json()
-      setError(error || 'Failed to accept invite.')
+      const { error } = await res.json().catch(() => ({ error: null }))
+      setError(error || 'We couldn’t accept this invite. It may have expired — ask for a new link.')
+      setAccepting(false)
     }
   }
 
-  if (!token) { // Display error if no token
+  if (!token) {
     return (
-      <div className="flex items-center justify-center h-screen">
-        <p className="text-red-500">Invalid invite link. No token provided.</p>
-      </div>
-    )
-  }
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <p>Loading...</p>
-      </div>
+      <Card className="mx-auto mt-10 max-w-md">
+        <EmptyState
+          icon={<Link2Off className="h-6 w-6" />}
+          title="This invite link isn't complete"
+          description="Ask the person who invited you to send the link again, or scan their QR code."
+        />
+      </Card>
     )
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-3xl font-bold mb-4">You&apos;ve been invited!</h1>
-      {user ? (
-        <p className="mb-4">Accept the invite to join the list.</p>
-      ) : (
-        <div className="text-center">
-          <p className="mb-4">Please log in or sign up to accept the invite.</p>
-          <div className="flex space-x-4 justify-center">
-            <button
-              onClick={() => router.push(`/login?redirect=/invite?token=${token}`)}
-              className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-            >
-              Login
-            </button>
-            <button
-              onClick={() => router.push(`/login?mode=signup&redirect=/invite?token=${token}`)}
-              className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600"
-            >
-              Sign Up
-            </button>
-          </div>
+    <div className="mx-auto flex min-h-[70dvh] max-w-md flex-col justify-center">
+      <Card className="p-6 text-center sm:p-8">
+        <span className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent-soft text-accent">
+          <Gift className="h-8 w-8" aria-hidden />
+        </span>
+        <h1 className="font-display text-3xl font-semibold tracking-tight text-ink">You&apos;re invited!</h1>
+        <p className="mx-auto mt-2 max-w-xs text-[15px] text-muted">
+          Join the list to add your wishes and see what everyone else would love this year.
+        </p>
+
+        <div className="mt-7">
+          {loading ? (
+            <Loader2 className="mx-auto h-6 w-6 animate-spin text-muted" aria-label="Loading" />
+          ) : user ? (
+            <Button size="lg" className="w-full" onClick={handleAcceptInvite} loading={accepting}>
+              Join the list
+            </Button>
+          ) : (
+            <div className="space-y-2">
+              <Button size="lg" className="w-full" onClick={() => router.push(`/login?mode=signup&redirect=${redirect}`)}>
+                Create an account to join
+              </Button>
+              <Button variant="ghost" className="w-full" onClick={() => router.push(`/login?redirect=${redirect}`)}>
+                I already have an account
+              </Button>
+            </div>
+          )}
         </div>
-      )}
-      {user && (
-        <button
-          onClick={handleAcceptInvite}
-          className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 mt-4"
-        >
-          Accept Invite
-        </button>
-      )}
-      {error && <p className="text-red-500 mt-4">{error}</p>}
+        {error && <Alert className="mt-4 text-left">{error}</Alert>}
+      </Card>
     </div>
   )
 }
