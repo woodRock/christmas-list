@@ -37,7 +37,9 @@ export default function Modal({ open, onClose, title, description, children, foo
     document.body.style.overflow = 'hidden'
 
     const panel = panelRef.current
-    const firstField = panel?.querySelector<HTMLElement>('[data-autofocus], input:not([type=hidden]), textarea, select')
+    const firstField =
+      panel?.querySelector<HTMLElement>('[data-autofocus]') ??
+      panel?.querySelector<HTMLElement>('input:not([type=hidden]), textarea, select')
     ;(firstField ?? panel)?.focus()
 
     const onKey = (e: KeyboardEvent) => {
