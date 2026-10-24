@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Modal from '@/components/ui/Modal'
 import Button from '@/components/ui/Button'
 import Alert from '@/components/ui/Alert'
@@ -14,20 +14,17 @@ interface AddMemberFormProps {
   onMemberAdded: () => Promise<void>
 }
 
-export default function AddMemberForm({ open, familyId, onClose, onMemberAdded }: AddMemberFormProps) {
+export default function AddMemberForm(props: AddMemberFormProps) {
+  // Mount the form only while open so its fields start empty each time.
+  return props.open ? <AddMemberFormBody {...props} /> : null
+}
+
+function AddMemberFormBody({ open, familyId, onClose, onMemberAdded }: AddMemberFormProps) {
   const [newMemberName, setNewMemberName] = useState('')
   const [newMemberEmail, setNewMemberEmail] = useState('')
   const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const toast = useToast()
-
-  useEffect(() => {
-    if (open) {
-      setNewMemberName('')
-      setNewMemberEmail('')
-      setMessage('')
-    }
-  }, [open])
 
   const handleAddMember = async (e: React.FormEvent) => {
     e.preventDefault()

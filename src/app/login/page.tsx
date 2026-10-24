@@ -11,6 +11,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   const { redirect, mode } = await searchParams;
 
   return (
-    <LoginClient redirectUrl={redirect} initialMode={mode} />
+    // Keyed on mode so a ?mode= change resets the form to that tab.
+    <LoginClient key={mode ?? 'login'} redirectUrl={redirect} initialMode={mode} />
   );
 }

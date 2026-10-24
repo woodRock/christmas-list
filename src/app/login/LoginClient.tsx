@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Eye, EyeOff, Gift } from 'lucide-react'
 import { createClient } from '@/lib/supabase'
@@ -23,10 +23,6 @@ export default function LoginClient({ redirectUrl = '/', initialMode = 'login' }
   const [mode, setMode] = useState<Mode>(initialMode)
   const router = useRouter()
   const [supabase] = useState(createClient)
-
-  useEffect(() => {
-    setMode(initialMode)
-  }, [initialMode])
 
   const switchMode = (next: Mode) => {
     setMode(next)

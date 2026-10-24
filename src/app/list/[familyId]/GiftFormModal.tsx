@@ -30,39 +30,31 @@ interface ProductPreview {
 
 const emptyPreview: ProductPreview = { title: '', imageUrl: '', price: '' }
 
-export default function GiftFormModal({ open, onClose, onSaved, familyId, currentUserId, members, gift, defaultRecipientId }: GiftFormModalProps) {
+export default function GiftFormModal(props: GiftFormModalProps) {
+  // Mount the form only while open so its state starts fresh from `gift` each time.
+  return props.open ? <GiftForm {...props} /> : null
+}
+
+function GiftForm({ open, onClose, onSaved, familyId, currentUserId, members, gift, defaultRecipientId }: GiftFormModalProps) {
   const isEdit = Boolean(gift)
-  const [name, setName] = useState('')
-  const [notes, setNotes] = useState('')
-  const [price, setPrice] = useState('')
-  const [productUrl, setProductUrl] = useState('')
-  const [preview, setPreview] = useState<ProductPreview>(emptyPreview)
-  const [recipientId, setRecipientId] = useState(currentUserId)
+  const [name, setName] = useState(gift?.description ?? '')
+  const [notes, setNotes] = useState(gift?.notes ?? '')
+  const [price, setPrice] = useState(gift?.price?.toString() ?? '')
+  const [productUrl, setProductUrl] = useState(gift?.product_url ?? '')
+  const [preview, setPreview] = useState<ProductPreview>(() =>
+    gift ? { title: gift.product_title ?? '', imageUrl: gift.product_image_url ?? '', price: gift.product_price?.toString() ?? '' } : emptyPreview,
+  )
+  const [recipientId, setRecipientId] = useState(defaultRecipientId ?? currentUserId)
   const [fetching, setFetching] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [message, setMessage] = useState('')
   const [supabase] = useState(createClient)
   const toast = useToast()
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const lastFetchedUrl = useRef('')
+  const lastFetchedUrl = useRef(gift?.product_url ?? '')
   // Only auto-fill name/price while the user hasn't typed their own.
-  const nameTouched = useRef(false)
-  const priceTouched = useRef(false)
-
-  useEffect(() => {
-    if (!open) return
-    setName(gift?.description ?? '')
-    setNotes(gift?.notes ?? '')
-    setPrice(gift?.price?.toString() ?? '')
-    setProductUrl(gift?.product_url ?? '')
-    setPreview(gift ? { title: gift.product_title ?? '', imageUrl: gift.product_image_url ?? '', price: gift.product_price?.toString() ?? '' } : emptyPreview)
-    setRecipientId(defaultRecipientId ?? currentUserId)
-    setMessage('')
-    setSubmitting(false)
-    lastFetchedUrl.current = gift?.product_url ?? ''
-    nameTouched.current = Boolean(gift)
-    priceTouched.current = Boolean(gift?.price)
-  }, [open, gift, defaultRecipientId, currentUserId])
+  const nameTouched = useRef(Boolean(gift))
+  const priceTouched = useRef(Boolean(gift?.price))
 
   useEffect(() => () => {
     if (debounceRef.current) clearTimeout(debounceRef.current)
