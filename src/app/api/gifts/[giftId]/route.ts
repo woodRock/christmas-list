@@ -15,17 +15,19 @@ export async function PATCH(
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const { description, notes, price } = await request.json()
-  console.log("Request body (description, notes, price for edit):", { description, notes, price });
+  const { description, notes, price, product_url, product_title, product_image_url, product_price } = await request.json()
 
   if (!description) {
-    console.log("Validation error: Description is required.");
     return NextResponse.json({ error: 'Description is required' }, { status: 400 })
   }
 
-  const updatePayload: { name: string; notes?: string; price?: number } = { name: description };
+  const updatePayload: Record<string, string | number | null> = { name: description };
   if (notes !== undefined) updatePayload.notes = notes;
   if (price !== undefined) updatePayload.price = price;
+  if (product_url !== undefined) updatePayload.product_url = product_url;
+  if (product_title !== undefined) updatePayload.product_title = product_title;
+  if (product_image_url !== undefined) updatePayload.product_image_url = product_image_url;
+  if (product_price !== undefined) updatePayload.product_price = product_price;
 
   const { error } = await supabase
     .from('items')

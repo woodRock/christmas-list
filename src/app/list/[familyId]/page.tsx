@@ -1,34 +1,8 @@
 import { createClient } from '@/lib/supabase-server'
 import { redirect } from 'next/navigation'
-import FamilyListClient from './FamilyListClient' // Client component for the list
-
-interface Gift {
-  id: string;
-  description: string;
-  is_purchased: boolean;
-  purchased_by?: string;
-  user_id: string;
-  order_index?: number; // Add order_index
-  notes?: string; // Add notes
-  price?: number; // Add price
-  product_url?: string;
-  product_title?: string;
-  product_image_url?: string;
-  product_price?: number;
-}
-
-interface Member {
-  id: string;
-  name: string;
-  gifts: Gift[];
-}
-
-interface Family {
-  id: string;
-  name: string;
-  owner_id: string;
-  members: Member[];
-}
+import FamilyListClient from './FamilyListClient'
+import ErrorState from '@/components/ui/ErrorState'
+import type { Family, Member } from './types'
 
 interface ProfileInListMember {
   full_name: string;
@@ -56,11 +30,11 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
   console.log("listData:", listData);
 
   if (listError) {
-    return <p className="text-red-500 text-center">Error loading family list: {listError.message}</p>
+    return <ErrorState title="We couldn’t open this list" message={listError.message} />
   }
 
   if (!listData) {
-    return <p className="text-center text-gray-600">Family list not found.</p>
+    return <ErrorState title="List not found" message="It may have been deleted, or you might not have access." />
   }
 
   const isOwner = listData.user_id === user.id;
@@ -77,7 +51,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
     .order('order_index')
 
   if (itemsError) {
-    return <p className="text-red-500 text-center">Error loading gifts: {itemsError.message}</p>
+    return <ErrorState title="We couldn’t load the gifts" message={itemsError.message} />
   }
 
   const profileIds = new Set<string>();
@@ -102,7 +76,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
   console.log("profilesData after fetching:", profilesData);
 
   if (profilesError) {
-    return <p className="text-red-500 text-center">Error loading profiles: {profilesError.message}</p>
+    return <ErrorState title="We couldn’t load this list’s members" message={profilesError.message} />
   }
 
   const membersMap = new Map<string, Member>();

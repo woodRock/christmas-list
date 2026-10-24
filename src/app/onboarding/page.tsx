@@ -1,60 +1,75 @@
-// src/app/onboarding/page.tsx
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from 'next/link'
+import { EyeOff, GripVertical, Pencil, Plus, ShoppingBag, UserPlus } from 'lucide-react'
+import PageHeader from '@/components/ui/PageHeader'
+import Card from '@/components/ui/Card'
+import { buttonClasses } from '@/components/ui/Button'
+
+const steps = [
+  {
+    Icon: Plus,
+    title: 'Add what you’d love',
+    body: 'Open a list and tap “Add gift”. Paste a product link and we’ll fill in the name, picture and price for you — or just type it in.',
+  },
+  {
+    Icon: UserPlus,
+    title: 'Invite your family',
+    body: 'Tap “Invite” on a list to get a link and QR code. Anyone who opens it can join and add their own wishlist.',
+  },
+  {
+    Icon: ShoppingBag,
+    title: 'Claim a gift for someone',
+    body: 'On someone else’s wishlist, tap “I’ll get this”. Everyone else sees it’s taken, so nobody buys the same thing twice.',
+  },
+  {
+    Icon: EyeOff,
+    title: 'Surprises stay secret',
+    body: 'You’ll never see which of your own gifts have been claimed, or by whom. Only the people buying for you know.',
+  },
+]
+
+const tips = [
+  { Icon: Pencil, text: 'Use the pencil and bin icons on your own gifts to edit or delete them.' },
+  { Icon: GripVertical, text: 'Drag the handle on your gifts to put your favourites first (in list view, wishlist order).' },
+  { Icon: ShoppingBag, text: 'Your Shopping list collects everything you’ve claimed, grouped by person, with a running total.' },
+]
 
 export default function OnboardingPage() {
   return (
-    <div className="px-4 py-8 mx-auto fresh-gradient min-h-screen">
-      <div className="max-w-screen-lg mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Christmas List!</h1>
-        <p className="mb-6">Here&apos;s a quick guide to help you get started and manage your lists:</p>
+    <div className="mx-auto max-w-3xl">
+      <PageHeader title="How Giftd works" description="Four steps to a stress-free gift season." />
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-2">Managing Gifts</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              <strong>Add Items:</strong> Click the <Image src="/gift.svg" alt="Add Gift" width={16} height={16} className="inline-block" /> &quot;Add Gift&quot; button to add a new item to your list. You can include details like description, price, and a product link.
-            </li>
-            <li>
-              <strong>Edit Items:</strong> Double-click on any gift item on *your own list* to open the edit form. You can update its details, notes, or product information.
-            </li>
-            <li>
-              <strong>Delete Items:</strong> On *your own list*, drag an item to the trash bin that appears at the bottom of the screen.
-            </li>
-            <li>
-              <strong>Claim/Unclaim Items:</strong> If you&apos;re viewing someone else&apos;s list, you can claim an item by clicking the <Image src="/cart.svg" alt="Claim Gift" width={16} height={16} className="inline-block" /> cart icon. Click it again to unclaim. This helps others know what&apos;s already covered!
-            </li>
-            <li>
-              <strong>View Product Link:</strong> Click the <Image src="/link.svg" alt="Open Link" width={16} height={16} className="inline-block" /> link icon to open the product link in a new tab.
-            </li>
-          </ul>
-        </section>
+      <ol className="grid gap-4 sm:grid-cols-2">
+        {steps.map(({ Icon, title, body }, i) => (
+          <li key={title}>
+            <Card className="h-full p-5">
+              <div className="mb-3 flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-soft text-primary">
+                  <Icon className="h-5 w-5" aria-hidden />
+                </span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted">Step {i + 1}</span>
+              </div>
+              <h2 className="font-display text-lg font-semibold text-ink">{title}</h2>
+              <p className="mt-1.5 text-[15px] leading-relaxed text-muted">{body}</p>
+            </Card>
+          </li>
+        ))}
+      </ol>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-2">Your Claimed Items (Cart)</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              <strong>Access Your Cart:</strong> Click the <Image src="/cart.svg" alt="Cart Icon" width={16} height={16} className="inline-block" /> cart icon in the navigation bar to view all the gifts you have claimed across different lists.
+      <Card className="mt-6 p-5 sm:p-6">
+        <h2 className="text-base font-semibold text-ink">Handy tips</h2>
+        <ul className="mt-3 space-y-3">
+          {tips.map(({ Icon, text }) => (
+            <li key={text} className="flex gap-3 text-[15px] text-muted">
+              <Icon className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+              {text}
             </li>
-            <li>
-              <strong>Share Your Cart:</strong> On your claimed items page, you can generate a to-do list of your claimed gifts and copy it to your clipboard, making it easy to keep track of your shopping!
-            </li>
-          </ul>
-        </section>
+          ))}
+        </ul>
+      </Card>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-2">Joining Lists</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              <strong>Join via Invite:</strong> If someone shares an invite link or QR code with you, use it to join their list and start contributing!
-            </li>
-          </ul>
-        </section>
-
-        <Link href="/" className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 inline-block">
-          ← Back to My Lists
-        </Link>
+      <div className="mt-8 text-center">
+        <Link href="/" className={buttonClasses({ size: 'lg' })}>Go to my lists</Link>
       </div>
     </div>
-  );
+  )
 }

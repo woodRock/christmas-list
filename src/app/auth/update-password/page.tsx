@@ -1,78 +1,69 @@
 'use client'
 
-import { createClient } from '@/lib/supabase'
-import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { KeyRound } from 'lucide-react'
+import { createClient } from '@/lib/supabase'
+import Card from '@/components/ui/Card'
+import Button from '@/components/ui/Button'
+import Alert from '@/components/ui/Alert'
+import { Field, Input } from '@/components/ui/Field'
 
 export default function UpdatePassword() {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState<{ tone: 'error' | 'success'; text: string } | null>(null)
+  const [submitting, setSubmitting] = useState(false)
   const router = useRouter()
-  const supabase = createClient()
+  const [supabase] = useState(createClient)
 
   const handleUpdatePassword = async (e: React.FormEvent) => {
     e.preventDefault()
-    setMessage('')
-
-    if (password !== confirmPassword) {
-      setMessage('Passwords do not match.')
-      return
-    }
+    setMessage(null)
 
     if (password.length < 6) {
-      setMessage('Password must be at least 6 characters long.')
+      setMessage({ tone: 'error', text: 'Password must be at least 6 characters long.' })
       return
     }
 
+    if (password !== confirmPassword) {
+      setMessage({ tone: 'error', text: 'Passwords do not match.' })
+      return
+    }
+
+    setSubmitting(true)
     const { error } = await supabase.auth.updateUser({ password })
+    setSubmitting(false)
 
     if (error) {
-      setMessage(error.message)
+      setMessage({ tone: 'error', text: error.message })
     } else {
-      setMessage('Your password has been updated successfully! Redirecting to login...')
-      setTimeout(() => {
-        router.push('/login')
-      }, 3000)
+      setMessage({ tone: 'success', text: 'Your password has been updated. Taking you back to your lists…' })
+      setTimeout(() => router.push('/'), 2000)
     }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
-      <div className="max-w-md w-full bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Set New Password</h2>
-        {message && <p className="text-red-500 text-center mb-4">{message}</p>}
-        <form onSubmit={handleUpdatePassword} className="space-y-4">
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-300">New Password</label>
-            <input
-              type="password"
-              id="password"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-300">Confirm New Password</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-          >
-            Update Password
-          </button>
-        </form>
+    <div className="mx-auto flex min-h-[70dvh] max-w-md flex-col justify-center">
+      <div className="mb-8 text-center">
+        <span className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-soft text-primary">
+          <KeyRound className="h-7 w-7" aria-hidden />
+        </span>
+        <h1 className="font-display text-3xl font-semibold tracking-tight text-ink">Set a new password</h1>
+        <p className="mt-2 text-[15px] text-muted">Choose something you haven&apos;t used elsewhere.</p>
       </div>
+      <Card className="p-5 sm:p-7">
+        <form onSubmit={handleUpdatePassword} className="space-y-4">
+          <Field label="New password" htmlFor="password" hint="At least 6 characters.">
+            <Input id="password" type="password" autoComplete="new-password" value={password} onChange={(e) => setPassword(e.target.value)} required autoFocus />
+          </Field>
+          <Field label="Confirm new password" htmlFor="confirmPassword">
+            <Input id="confirmPassword" type="password" autoComplete="new-password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+          </Field>
+          {message && <Alert tone={message.tone}>{message.text}</Alert>}
+          <Button type="submit" size="lg" className="w-full" loading={submitting}>Update password</Button>
+        </form>
+      </Card>
     </div>
   )
 }

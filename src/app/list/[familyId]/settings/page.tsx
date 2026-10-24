@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase-server'
 import { redirect } from 'next/navigation'
-import Link from 'next/link'
+import ErrorState from '@/components/ui/ErrorState'
 import ListSettingsClient from './ListSettingsClient'
 
 interface ProfileInListMember {
@@ -41,11 +41,11 @@ export default async function ListSettingsPage({ params }: { params: { familyId:
 
   if (listError) {
     console.error("Error loading family list:", listError);
-    return <p className="text-red-500 text-center">Error loading family list: {listError.message}</p>
+    return <ErrorState title="We couldn’t open this list" message={listError.message} />
   }
 
   if (!listData) {
-    return <p className="text-center text-gray-600">Family list not found.</p>
+    return <ErrorState title="List not found" />
   }
 
   const isOwner = listData.user_id === user.id;
@@ -62,7 +62,7 @@ export default async function ListSettingsPage({ params }: { params: { familyId:
 
   if (profilesError) {
     console.error("Error loading profiles:", profilesError);
-    return <p className="text-red-500 text-center">Error loading profiles: {profilesError.message}</p>
+    return <ErrorState title="We couldn’t load this list’s members" message={profilesError.message} />
   }
 
   const members: Member[] = profilesData.map(profile => ({

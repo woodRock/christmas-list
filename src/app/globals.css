@@ -1,26 +1,136 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens. Warm cream + evergreen + cranberry, with a deep-forest dark
+ * mode. Components use these through Tailwind classes (bg-surface, text-muted,
+ * border-line, bg-primary, ...) so both themes stay in sync.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --bg: #faf6f0;
+  --surface: #ffffff;
+  --surface-muted: #f4eee5;
+  --line: #e8dfd2;
+  --line-strong: #d6cab9;
+  --ink: #1d2a23;
+  --muted: #69716b;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --primary: #1f5c45;
+  --primary-hover: #184a37;
+  --primary-soft: #e3efe8;
+  --on-primary: #ffffff;
+
+  --accent: #b4233c;
+  --accent-hover: #971d32;
+  --accent-soft: #fbe8eb;
+
+  --gold: #a87a1c;
+  --gold-soft: #f8eed6;
+
+  --ring: #2f7d5f;
+  --shadow-color: 32 25% 30%;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1a1a1a;
-    --foreground: #cccccc;
+    --bg: #0e1612;
+    --surface: #16211b;
+    --surface-muted: #1d2a23;
+    --line: #29382f;
+    --line-strong: #37493e;
+    --ink: #ecebe4;
+    --muted: #9ba79f;
+
+    --primary: #5bb88d;
+    --primary-hover: #70c89e;
+    --primary-soft: #1b3428;
+    --on-primary: #0b1a12;
+
+    --accent: #f06b80;
+    --accent-hover: #f5899a;
+    --accent-soft: #3a1b21;
+
+    --gold: #e2b75a;
+    --gold-soft: #33291a;
+
+    --ring: #70c89e;
+    --shadow-color: 150 30% 2%;
   }
 }
 
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-on-primary: var(--on-primary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --shadow-card: 0 1px 2px hsl(var(--shadow-color) / 0.06), 0 2px 8px hsl(var(--shadow-color) / 0.05);
+  --shadow-lift: 0 4px 12px hsl(var(--shadow-color) / 0.1), 0 12px 32px hsl(var(--shadow-color) / 0.12);
+
+  --animate-fade-in: fade-in 150ms ease-out;
+  --animate-pop-in: pop-in 180ms cubic-bezier(0.2, 0.9, 0.3, 1.2);
+  --animate-sheet-in: sheet-in 220ms cubic-bezier(0.2, 0.9, 0.3, 1);
+  --animate-toast-in: toast-in 200ms ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes sheet-in {
+  from { transform: translateY(100%); }
+  to { transform: none; }
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--primary-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
 }
