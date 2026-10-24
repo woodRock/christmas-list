@@ -2,15 +2,17 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Trash2, UserMinus, UserPlus } from 'lucide-react'
+import Link from 'next/link'
+import { CalendarPlus, History, Trash2, UserMinus, UserPlus } from 'lucide-react'
 import PageHeader from '@/components/ui/PageHeader'
 import { CardSection } from '@/components/ui/Card'
-import Button from '@/components/ui/Button'
+import Button, { buttonClasses } from '@/components/ui/Button'
 import Avatar from '@/components/ui/Avatar'
 import ConfirmDialog from '@/components/ui/ConfirmDialog'
 import { Input } from '@/components/ui/Field'
 import { useToast } from '@/components/ui/Toast'
 import AddMemberForm from '../AddMemberForm'
+import StartSeasonDialog from '../StartSeasonDialog'
 
 interface Member {
   id: string
@@ -21,21 +23,25 @@ interface Family {
   id: string
   name: string
   owner_id: string
+  season_name?: string
   members: Member[]
 }
 
 interface ListSettingsClientProps {
   initialFamily: Family
   currentUserId: string
+  claimedCount: number
+  unclaimedCount: number
 }
 
-export default function ListSettingsClient({ initialFamily, currentUserId }: ListSettingsClientProps) {
+export default function ListSettingsClient({ initialFamily, currentUserId, claimedCount, unclaimedCount }: ListSettingsClientProps) {
   const [family, setFamily] = useState<Family>(initialFamily)
   const [listName, setListName] = useState(initialFamily.name)
   const [savingName, setSavingName] = useState(false)
   const [showAddMemberModal, setShowAddMemberModal] = useState(false)
   const [removingMember, setRemovingMember] = useState<Member | null>(null)
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
+  const [showStartSeason, setShowStartSeason] = useState(false)
   const router = useRouter()
   const toast = useToast()
 
@@ -100,6 +106,22 @@ export default function ListSettingsClient({ initialFamily, currentUserId }: Lis
           </form>
         </CardSection>
 
+        <CardSection
+          title="Season"
+          description={family.season_name ? <>Currently <strong className="text-ink">{family.season_name}</strong>. Start a new season after each Christmas or birthday to file away what was given.</> : 'Start a new season after each Christmas or birthday to file away what was given and keep the same people.'}
+        >
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <Button onClick={() => setShowStartSeason(true)}>
+              <CalendarPlus className="h-4 w-4" aria-hidden />
+              Start a new season
+            </Button>
+            <Link href={`/list/${family.id}/history`} className={buttonClasses({ variant: 'secondary' })}>
+              <History className="h-4 w-4" aria-hidden />
+              Previous years
+            </Link>
+          </div>
+        </CardSection>
+
         <CardSection title="People" description={`${family.members.length} ${family.members.length === 1 ? 'person' : 'people'} on this list.`}>
           <ul className="-mx-2 divide-y divide-line">
             {family.members.map((member) => (
@@ -133,6 +155,16 @@ export default function ListSettingsClient({ initialFamily, currentUserId }: Lis
           </Button>
         </CardSection>
       </div>
+
+      <StartSeasonDialog
+        open={showStartSeason}
+        onClose={() => setShowStartSeason(false)}
+        onStarted={() => router.push(`/list/${family.id}`)}
+        listId={family.id}
+        listName={family.name}
+        claimedCount={claimedCount}
+        unclaimedCount={unclaimedCount}
+      />
 
       <AddMemberForm open={showAddMemberModal} familyId={family.id} onClose={() => setShowAddMemberModal(false)} onMemberAdded={refreshFamily} />
 

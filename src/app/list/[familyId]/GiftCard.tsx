@@ -1,6 +1,6 @@
 'use client'
 
-import { Check, ExternalLink, Gift as GiftIcon, GripVertical, Pencil, ShoppingBag, Trash2, Undo2 } from 'lucide-react'
+import { Check, ExternalLink, Gift as GiftIcon, GripVertical, Pencil, RotateCcw, ShoppingBag, Trash2, Undo2 } from 'lucide-react'
 import type { DraggableProvidedDragHandleProps } from '@hello-pangea/dnd'
 import Button from '@/components/ui/Button'
 import { cn } from '@/components/ui/cn'
@@ -110,6 +110,10 @@ export default function GiftCard({ gift, view, isMine, currentUserId, claimerNam
   ) : claimedByOther ? (
     <span className="inline-flex items-center gap-1 rounded-full bg-surface-muted px-2 py-0.5 text-xs font-medium text-muted">
       <Check className="h-3 w-3" aria-hidden /> Claimed{claimerName ? ` by ${claimerName}` : ''}
+    </span>
+  ) : isMine && gift.carried_over ? (
+    <span className="inline-flex items-center gap-1 rounded-full bg-gold-soft px-2 py-0.5 text-xs font-medium text-gold">
+      <RotateCcw className="h-3 w-3" aria-hidden /> From last year
     </span>
   ) : null
 

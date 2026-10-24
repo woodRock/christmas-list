@@ -24,7 +24,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
 
   const { data: listData, error: listError } = await supabase
     .from('lists')
-    .select('id, name, user_id, list_members(profile_id, profiles(full_name))')
+    .select('id, name, user_id, season_name, season_started_at, list_members(profile_id, profiles(full_name))')
     .eq('id', resolvedParams.familyId)
     .single()
   console.log("listData:", listData);
@@ -46,8 +46,9 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
 
   const { data: itemsData, error: itemsError } = await supabase
     .from('items')
-    .select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price, product_url, product_title, product_image_url, product_price') // Select order_index, notes, price, product_url, product_title, product_image_url, product_price
+    .select('id, name, is_purchased, purchased_by, user_id, order_index, notes, price, product_url, product_title, product_image_url, product_price, carried_over')
     .eq('list_id', resolvedParams.familyId)
+    .is('archived_at', null)
     .order('order_index')
 
   if (itemsError) {
@@ -105,6 +106,7 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
         product_title: item.product_title || undefined,
         product_image_url: item.product_image_url || undefined,
         product_price: item.product_price || undefined,
+        carried_over: item.carried_over || undefined,
       });
     }
   });
@@ -113,6 +115,8 @@ export default async function FamilyListPage({ params }: { params: { familyId: s
     id: listData.id,
     name: listData.name,
     owner_id: listData.user_id,
+    season_name: listData.season_name ?? undefined,
+    season_started_at: listData.season_started_at ?? undefined,
     members: Array.from(membersMap.values()),
   };
 

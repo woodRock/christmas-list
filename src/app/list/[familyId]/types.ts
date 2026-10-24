@@ -11,6 +11,8 @@ export interface Gift {
   product_title?: string;
   product_image_url?: string;
   product_price?: number;
+  /** Unclaimed wish brought forward from the previous season. */
+  carried_over?: boolean;
 }
 
 export interface Member {
@@ -23,6 +25,8 @@ export interface Family {
   id: string;
   name: string;
   owner_id: string;
+  season_name?: string;
+  season_started_at?: string;
   members: Member[];
 }
 

@@ -11,6 +11,7 @@ export async function GET(request: NextRequest) {
     .from('items')
     .select('id, name, notes, price, product_url, product_title, product_image_url')
     .eq('purchased_by', user.id)
+    .is('archived_at', null)
     .order('name', { ascending: true }); // Order by name for a consistent list
 
   if (error) {

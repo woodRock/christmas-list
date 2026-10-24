@@ -15,6 +15,7 @@ export default async function ClaimedItemsPage() {
     .from('items')
     .select('id, name, notes, price, product_url, product_title, product_image_url, user_id, list_id')
     .eq('purchased_by', user.id)
+    .is('archived_at', null)
     .order('name', { ascending: true })
 
   if (error) {
