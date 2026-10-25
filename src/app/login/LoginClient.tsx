@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Eye, EyeOff, Gift } from 'lucide-react'
 import { createClient } from '@/lib/supabase'
+import { friendlyEmailError, usePasswordResetRequest } from '@/lib/usePasswordResetRequest'
 import Card from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
 import Alert from '@/components/ui/Alert'
@@ -23,15 +24,18 @@ export default function LoginClient({ redirectUrl = '/', initialMode = 'login' }
   const [mode, setMode] = useState<Mode>(initialMode)
   const router = useRouter()
   const [supabase] = useState(createClient)
+  const reset = usePasswordResetRequest(supabase)
 
   const switchMode = (next: Mode) => {
     setMode(next)
     setMessage(null)
+    reset.setStatus(null)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setMessage(null)
+    reset.setStatus(null)
     setSubmitting(true)
 
     if (mode === 'signup') {
@@ -42,7 +46,7 @@ export default function LoginClient({ redirectUrl = '/', initialMode = 'login' }
       })
       setSubmitting(false)
       if (error) {
-        setMessage({ tone: 'error', text: error.message })
+        setMessage({ tone: 'error', text: friendlyEmailError(error) })
       } else {
         // Supabase handles the email confirmation flow, then redirects back.
         setMessage({ tone: 'success', text: `Almost there! We sent a confirmation link to ${email}. Open it to finish creating your account.` })
@@ -60,17 +64,17 @@ export default function LoginClient({ redirectUrl = '/', initialMode = 'login' }
     }
   }
 
-  const handleResetPassword = async () => {
-    setMessage(null)
-    if (!email) {
+  const handleResetPassword = () => {
+    reset.setStatus(null)
+    if (!email.trim()) {
       setMessage({ tone: 'error', text: 'Enter your email above first, then tap “Forgot password?” again.' })
       return
     }
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/auth/update-password`,
-    })
-    setMessage(error ? { tone: 'error', text: error.message } : { tone: 'success', text: `Password reset link sent to ${email}. Check your inbox.` })
+    setMessage(null)
+    reset.send(email.trim())
   }
+
+  const shownMessage = message ?? reset.status
 
   return (
     <div className="mx-auto flex min-h-[70dvh] max-w-md flex-col justify-center">
@@ -137,7 +141,7 @@ export default function LoginClient({ redirectUrl = '/', initialMode = 'login' }
             </div>
           </Field>
 
-          {message && <Alert tone={message.tone}>{message.text}</Alert>}
+          {shownMessage && <Alert tone={shownMessage.tone}>{shownMessage.text}</Alert>}
 
           <Button type="submit" size="lg" className="w-full" loading={submitting}>
             {mode === 'login' ? 'Sign in' : 'Create account'}
@@ -145,8 +149,13 @@ export default function LoginClient({ redirectUrl = '/', initialMode = 'login' }
 
           {mode === 'login' && (
             <div className="text-center">
-              <button type="button" onClick={handleResetPassword} className="text-sm font-medium text-primary hover:underline">
-                Forgot password?
+              <button
+                type="button"
+                onClick={handleResetPassword}
+                disabled={reset.sending || reset.secondsLeft > 0}
+                className="text-sm font-medium text-primary hover:underline disabled:cursor-default disabled:text-muted disabled:no-underline"
+              >
+                {reset.sending ? 'Sending reset link…' : reset.secondsLeft > 0 ? `Resend reset link in ${reset.secondsLeft}s` : 'Forgot password?'}
               </button>
             </div>
           )}
