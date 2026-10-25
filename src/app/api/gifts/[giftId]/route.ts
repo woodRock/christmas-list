@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase-server'
+import { removeGiftPhotos } from '@/lib/giftPhotos'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function PATCH(
@@ -58,16 +59,19 @@ export async function DELETE(
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const { error } = await supabase
+  const { data: deleted, error } = await supabase
     .from('items')
     .delete()
     .eq('id', giftId)
     .eq('user_id', user.id) // Ensure only the owner can delete their gift
+    .select('product_image_url')
   console.log("Supabase delete error:", error);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
+
+  await removeGiftPhotos(supabase, deleted.map((item) => item.product_image_url))
 
   return NextResponse.json({ message: 'Gift deleted successfully' })
 }

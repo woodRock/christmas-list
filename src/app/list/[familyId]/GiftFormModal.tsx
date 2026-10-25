@@ -1,13 +1,16 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { ImageIcon, Loader2, X } from 'lucide-react'
+import { Camera, ImageIcon, Loader2, X } from 'lucide-react'
 import { createClient } from '@/lib/supabase'
+import { giftPhotoPath, removeGiftPhotos } from '@/lib/giftPhotos'
+import { uploadGiftPhoto } from '@/lib/uploadGiftPhoto'
 import Modal from '@/components/ui/Modal'
-import Button from '@/components/ui/Button'
+import Button, { buttonClasses } from '@/components/ui/Button'
 import Alert from '@/components/ui/Alert'
 import { Field, Input, Select, Textarea } from '@/components/ui/Field'
 import { useToast } from '@/components/ui/Toast'
+import { cn } from '@/components/ui/cn'
 import type { Gift } from './types'
 
 interface GiftFormModalProps {
@@ -41,8 +44,16 @@ function GiftForm({ open, onClose, onSaved, familyId, currentUserId, members, gi
   const [notes, setNotes] = useState(gift?.notes ?? '')
   const [price, setPrice] = useState(gift?.price?.toString() ?? '')
   const [productUrl, setProductUrl] = useState(gift?.product_url ?? '')
+  // An uploaded photo and a product-link image are tracked separately; the
+  // photo wins when both exist.
+  const originalPhoto = giftPhotoPath(gift?.product_image_url) ? gift?.product_image_url ?? '' : ''
+  const [photoUrl, setPhotoUrl] = useState(originalPhoto)
+  const [uploading, setUploading] = useState(false)
+  const uploadedThisSession = useRef<string[]>([])
   const [preview, setPreview] = useState<ProductPreview>(() =>
-    gift ? { title: gift.product_title ?? '', imageUrl: gift.product_image_url ?? '', price: gift.product_price?.toString() ?? '' } : emptyPreview,
+    gift
+      ? { title: gift.product_title ?? '', imageUrl: originalPhoto ? '' : gift.product_image_url ?? '', price: gift.product_price?.toString() ?? '' }
+      : emptyPreview,
   )
   const [recipientId, setRecipientId] = useState(defaultRecipientId ?? currentUserId)
   const [fetching, setFetching] = useState(false)
@@ -102,6 +113,32 @@ function GiftForm({ open, onClose, onSaved, familyId, currentUserId, members, gi
     setPreview(emptyPreview)
   }
 
+  const onPhotoChosen = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    e.target.value = '' // let the same file be picked again after removing it
+    if (!file) return
+
+    setUploading(true)
+    setMessage('')
+    try {
+      const url = await uploadGiftPhoto(supabase, familyId, file)
+      uploadedThisSession.current.push(url)
+      setPhotoUrl(url)
+    } catch (err) {
+      setMessage(err instanceof Error ? err.message : 'Couldn’t upload that photo.')
+    } finally {
+      setUploading(false)
+    }
+  }
+
+  // Photos uploaded and then abandoned (cancelled, replaced or removed) are
+  // deleted; storage rules refuse anything a gift still uses.
+  const handleClose = () => {
+    if (submitting) return
+    removeGiftPhotos(supabase, uploadedThisSession.current)
+    onClose()
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setMessage('')
@@ -116,7 +153,7 @@ function GiftForm({ open, onClose, onSaved, familyId, currentUserId, members, gi
     const product = {
       product_url: productUrl.trim() || null,
       product_title: preview.title || null,
-      product_image_url: preview.imageUrl || null,
+      product_image_url: photoUrl || preview.imageUrl || null,
       product_price: preview.price ? parseFloat(preview.price) : null,
     }
 
@@ -161,6 +198,7 @@ function GiftForm({ open, onClose, onSaved, familyId, currentUserId, members, gi
       toast(`Added “${finalName}”`)
     }
 
+    removeGiftPhotos(supabase, [...uploadedThisSession.current, originalPhoto].filter((url) => url && url !== photoUrl))
     await onSaved()
     onClose()
   }
@@ -170,13 +208,13 @@ function GiftForm({ open, onClose, onSaved, familyId, currentUserId, members, gi
   return (
     <Modal
       open={open}
-      onClose={onClose}
+      onClose={handleClose}
       title={isEdit ? 'Edit gift' : 'Add a gift'}
       description={isEdit ? undefined : 'Paste a link and we’ll fill in the details for you.'}
       footer={
         <>
-          <Button variant="secondary" onClick={onClose} disabled={submitting}>Cancel</Button>
-          <Button type="submit" form="gift-form" loading={submitting}>{isEdit ? 'Save changes' : 'Add to list'}</Button>
+          <Button variant="secondary" onClick={handleClose} disabled={submitting}>Cancel</Button>
+          <Button type="submit" form="gift-form" loading={submitting} disabled={uploading}>{isEdit ? 'Save changes' : 'Add to list'}</Button>
         </>
       }
     >
@@ -214,6 +252,42 @@ function GiftForm({ open, onClose, onSaved, familyId, currentUserId, members, gi
             </button>
           </div>
         )}
+
+        <Field
+          label="Photo"
+          htmlFor="gift-photo"
+          optional
+          hint={!photoUrl && preview.imageUrl ? 'Using the picture from the product link. Add your own to replace it.' : 'Snap it in a shop or pick one from your photos.'}
+        >
+          <div className="flex items-center gap-3">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-line bg-surface-muted">
+              {photoUrl || preview.imageUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={photoUrl || preview.imageUrl} alt="" className={cn('h-full w-full', photoUrl ? 'object-cover' : 'bg-white object-contain p-1')} />
+              ) : (
+                <span className="flex h-full w-full items-center justify-center text-muted/60"><Camera className="h-6 w-6" aria-hidden /></span>
+              )}
+              {uploading && (
+                <span className="absolute inset-0 flex items-center justify-center bg-surface/70">
+                  <Loader2 className="h-5 w-5 animate-spin text-ink" aria-label="Uploading photo" />
+                </span>
+              )}
+            </div>
+            <div className="flex flex-wrap items-center gap-1">
+              <input id="gift-photo" type="file" accept="image/*" className="peer sr-only" onChange={onPhotoChosen} disabled={uploading} />
+              <label
+                htmlFor="gift-photo"
+                className={buttonClasses({ variant: 'secondary', size: 'sm', className: cn('cursor-pointer peer-focus-visible:ring-2 peer-focus-visible:ring-ring', uploading && 'pointer-events-none opacity-50') })}
+              >
+                <Camera className="h-4 w-4" aria-hidden />
+                {photoUrl ? 'Replace photo' : 'Take or choose photo'}
+              </label>
+              {photoUrl && (
+                <Button variant="ghost" size="sm" onClick={() => setPhotoUrl('')} disabled={uploading}>Remove</Button>
+              )}
+            </div>
+          </div>
+        </Field>
 
         <Field label="What is it?" htmlFor="gift-name">
           <Input
