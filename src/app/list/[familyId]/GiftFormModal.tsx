@@ -1,7 +1,7 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { Camera, ImageIcon, Loader2, X } from 'lucide-react'
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react'
+import { Camera, ImageIcon, Images, Loader2, X } from 'lucide-react'
 import { createClient } from '@/lib/supabase'
 import { giftPhotoPath, removeGiftPhotos } from '@/lib/giftPhotos'
 import { uploadGiftPhoto } from '@/lib/uploadGiftPhoto'
@@ -33,6 +33,21 @@ interface ProductPreview {
 
 const emptyPreview: ProductPreview = { title: '', imageUrl: '', price: '' }
 
+const COARSE_POINTER = '(pointer: coarse)'
+
+/** True on phones and tablets, where a "Take photo" button can open the camera directly. */
+function useIsTouchDevice() {
+  return useSyncExternalStore(
+    (onChange) => {
+      const query = window.matchMedia(COARSE_POINTER)
+      query.addEventListener('change', onChange)
+      return () => query.removeEventListener('change', onChange)
+    },
+    () => window.matchMedia(COARSE_POINTER).matches,
+    () => false,
+  )
+}
+
 export default function GiftFormModal(props: GiftFormModalProps) {
   // Mount the form only while open so its state starts fresh from `gift` each time.
   return props.open ? <GiftForm {...props} /> : null
@@ -50,6 +65,7 @@ function GiftForm({ open, onClose, onSaved, familyId, currentUserId, members, gi
   const [photoUrl, setPhotoUrl] = useState(originalPhoto)
   const [uploading, setUploading] = useState(false)
   const uploadedThisSession = useRef<string[]>([])
+  const isTouchDevice = useIsTouchDevice()
   const [preview, setPreview] = useState<ProductPreview>(() =>
     gift
       ? { title: gift.product_title ?? '', imageUrl: originalPhoto ? '' : gift.product_image_url ?? '', price: gift.product_price?.toString() ?? '' }
@@ -273,15 +289,25 @@ function GiftForm({ open, onClose, onSaved, familyId, currentUserId, members, gi
                 </span>
               )}
             </div>
-            <div className="flex flex-wrap items-center gap-1">
-              <input id="gift-photo" type="file" accept="image/*" className="peer sr-only" onChange={onPhotoChosen} disabled={uploading} />
-              <label
-                htmlFor="gift-photo"
-                className={buttonClasses({ variant: 'secondary', size: 'sm', className: cn('cursor-pointer peer-focus-visible:ring-2 peer-focus-visible:ring-ring', uploading && 'pointer-events-none opacity-50') })}
-              >
-                <Camera className="h-4 w-4" aria-hidden />
-                {photoUrl ? 'Replace photo' : 'Take or choose photo'}
-              </label>
+            <div className="flex flex-wrap items-center gap-1.5">
+              {/* Separate inputs: Android's photo picker often omits the camera, so
+                  "Take photo" uses capture to open it directly. */}
+              {isTouchDevice && (
+                <span>
+                  <input id="gift-photo-camera" type="file" accept="image/*" capture="environment" className="peer sr-only" onChange={onPhotoChosen} disabled={uploading} />
+                  <label htmlFor="gift-photo-camera" className={buttonClasses({ variant: 'secondary', size: 'sm', className: cn('cursor-pointer peer-focus-visible:ring-2 peer-focus-visible:ring-ring', uploading && 'pointer-events-none opacity-50') })}>
+                    <Camera className="h-4 w-4" aria-hidden />
+                    Take photo
+                  </label>
+                </span>
+              )}
+              <span>
+                <input id="gift-photo" type="file" accept="image/*" className="peer sr-only" onChange={onPhotoChosen} disabled={uploading} />
+                <label htmlFor="gift-photo" className={buttonClasses({ variant: 'secondary', size: 'sm', className: cn('cursor-pointer peer-focus-visible:ring-2 peer-focus-visible:ring-ring', uploading && 'pointer-events-none opacity-50') })}>
+                  <Images className="h-4 w-4" aria-hidden />
+                  {photoUrl ? 'Choose another' : 'Choose photo'}
+                </label>
+              </span>
               {photoUrl && (
                 <Button variant="ghost" size="sm" onClick={() => setPhotoUrl('')} disabled={uploading}>Remove</Button>
               )}
