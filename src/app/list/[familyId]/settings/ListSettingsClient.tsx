@@ -11,7 +11,7 @@ import Avatar from '@/components/ui/Avatar'
 import ConfirmDialog from '@/components/ui/ConfirmDialog'
 import { Input } from '@/components/ui/Field'
 import { useToast } from '@/components/ui/Toast'
-import AddMemberForm from '../AddMemberForm'
+import InviteModal from '../InviteModal'
 import StartSeasonDialog from '../StartSeasonDialog'
 
 interface Member {
@@ -38,7 +38,8 @@ export default function ListSettingsClient({ initialFamily, currentUserId, claim
   const [family, setFamily] = useState<Family>(initialFamily)
   const [listName, setListName] = useState(initialFamily.name)
   const [savingName, setSavingName] = useState(false)
-  const [showAddMemberModal, setShowAddMemberModal] = useState(false)
+  const [inviteToken, setInviteToken] = useState<string | null>(null)
+  const [creatingInvite, setCreatingInvite] = useState(false)
   const [removingMember, setRemovingMember] = useState<Member | null>(null)
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
   const [showStartSeason, setShowStartSeason] = useState(false)
@@ -53,6 +54,17 @@ export default function ListSettingsClient({ initialFamily, currentUserId, claim
       setListName(updatedFamily.name)
     } else {
       toast('Couldn’t refresh list details.', { tone: 'error' })
+    }
+  }
+
+  const openInvite = async () => {
+    setCreatingInvite(true)
+    const res = await fetch(`/api/lists/${family.id}/invites`, { method: 'POST' })
+    setCreatingInvite(false)
+    if (res.ok) {
+      setInviteToken((await res.json()).token)
+    } else {
+      toast('Couldn’t create an invite link.', { tone: 'error' })
     }
   }
 
@@ -142,9 +154,9 @@ export default function ListSettingsClient({ initialFamily, currentUserId, claim
               </li>
             ))}
           </ul>
-          <Button variant="secondary" className="mt-3" onClick={() => setShowAddMemberModal(true)}>
-            <UserPlus className="h-4 w-4" aria-hidden />
-            Add a person
+          <Button variant="secondary" className="mt-3" onClick={openInvite} loading={creatingInvite}>
+            {!creatingInvite && <UserPlus className="h-4 w-4" aria-hidden />}
+            Invite people
           </Button>
         </CardSection>
 
@@ -166,7 +178,7 @@ export default function ListSettingsClient({ initialFamily, currentUserId, claim
         unclaimedCount={unclaimedCount}
       />
 
-      <AddMemberForm open={showAddMemberModal} familyId={family.id} onClose={() => setShowAddMemberModal(false)} onMemberAdded={refreshFamily} />
+      <InviteModal open={Boolean(inviteToken)} onClose={() => setInviteToken(null)} token={inviteToken} listName={family.name} />
 
       <ConfirmDialog
         open={Boolean(removingMember)}

@@ -46,5 +46,5 @@ export default async function ClaimedItemsPage() {
     list_name: listNames.get(item.list_id),
   }))
 
-  return <ClaimedItemsClient claimedItems={claimedItems} currentUserId={user.id} />
+  return <ClaimedItemsClient claimedItems={claimedItems} />
 }
