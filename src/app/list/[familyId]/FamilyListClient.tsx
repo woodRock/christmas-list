@@ -101,11 +101,7 @@ export default function FamilyListClient({ initialFamily, initialUser, familyId 
     if (!user) return
     setBusy(gift.id, true)
     updateGift(gift.id, { is_purchased: true, purchased_by: user.id })
-    const res = await fetch(`/api/gifts/${gift.id}/claim`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ claimedByUserId: user.id }),
-    })
+    const res = await fetch(`/api/gifts/${gift.id}/claim`, { method: 'PATCH' })
     setBusy(gift.id, false)
     if (res.ok) {
       toast(`You're getting “${gift.description}”`, { action: { label: 'Shopping list', onClick: () => router.push('/claimed-items') } })

@@ -31,7 +31,7 @@ const BOUGHT_KEY = 'giftd:bought'
 
 const money = (n: number) => `$${n.toFixed(2)}`
 
-export default function ClaimedItemsClient({ claimedItems: initialClaimedItems, currentUserId }: { claimedItems: ClaimedItem[]; currentUserId: string }) {
+export default function ClaimedItemsClient({ claimedItems: initialClaimedItems }: { claimedItems: ClaimedItem[] }) {
   const [items, setItems] = useState<ClaimedItem[]>(initialClaimedItems)
   const [boughtRaw, setBoughtRaw] = useLocalStorage(BOUGHT_KEY, '[]')
   const bought = useMemo(() => {
@@ -71,11 +71,7 @@ export default function ClaimedItemsClient({ claimedItems: initialClaimedItems, 
         action: {
           label: 'Undo',
           onClick: async () => {
-            const claimRes = await fetch(`/api/gifts/${item.id}/claim`, {
-              method: 'PATCH',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ claimedByUserId: currentUserId }),
-            })
+            const claimRes = await fetch(`/api/gifts/${item.id}/claim`, { method: 'PATCH' })
             if (claimRes.ok) setItems((prev) => [...prev, item].sort((a, b) => a.name.localeCompare(b.name)))
           },
         },
