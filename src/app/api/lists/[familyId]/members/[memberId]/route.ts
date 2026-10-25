@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase-server'
+import { removeGiftPhotos } from '@/lib/giftPhotos'
 import { NextResponse } from 'next/server'
 
 export async function DELETE(
@@ -45,15 +46,18 @@ export async function DELETE(
   }
 
   // Delete all items from the items table that belong to the removed member and the current list
-  const { error: deleteItemsError } = await supabase
+  const { data: deletedItems, error: deleteItemsError } = await supabase
     .from('items')
     .delete()
     .eq('list_id', familyId)
     .eq('user_id', memberId)
+    .select('product_image_url')
 
   if (deleteItemsError) {
     return NextResponse.json({ error: deleteItemsError.message }, { status: 500 })
   }
+
+  await removeGiftPhotos(supabase, deletedItems.map((item) => item.product_image_url))
 
   return NextResponse.json({ message: 'Member removed successfully' })
 }

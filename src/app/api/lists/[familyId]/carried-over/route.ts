@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase-server'
+import { removeGiftPhotos } from '@/lib/giftPhotos'
 import { NextRequest, NextResponse } from 'next/server'
 
 // Lets someone deal with their own wishes carried over from last season:
@@ -27,14 +28,19 @@ export async function POST(
     return NextResponse.json({ error: 'Action must be "keep" or "clear"' }, { status: 400 })
   }
 
-  const { error } = await query
+  const { data: affected, error } = await query
     .eq('list_id', familyId)
     .eq('user_id', user.id)
     .eq('carried_over', true)
     .is('archived_at', null)
+    .select('product_image_url')
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
+  }
+
+  if (action === 'clear') {
+    await removeGiftPhotos(supabase, affected.map((item) => item.product_image_url))
   }
 
   return NextResponse.json({ message: 'Done' })
